@@ -1,0 +1,529 @@
+#Estructura {
+  width: 25%;
+  height: 3.5%;
+  background-color: rgba(38, 44, 52, 0.6);
+  position: fixed;
+  float: left;
+  margin-top: 0%;
+  top: 0;
+  margin-top: 6%;
+  margin-left: 25%;
+  border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:0px 0px;
+  border-bottom-right-radius:0px 0px;
+  -moz-transition: 1s;
+  text-decoration: blink;
+
+
+  /* nueva secuencia de animación  */
+  animation: 0.6s linear infinite Estructura; /* duración | veces que se reproduce | nombre */
+ }
+#Estructura:hover{
+  width: 25%;
+  height: 3.5%;
+  animation: 0.6s linear infinite Estructura;
+  }
+
+  /*esta es la animacion para que se vea latir el div*/
+
+.latir {
+  position: absolute;
+  width: 500px;
+  height: 45px;
+  background-color: rgba(38, 44, 52, 0.6);
+  float: left;
+  margin-top: 0%;
+  top: 0;
+  padding: 5px;
+  margin-top: 30px;
+ margin-left: 50%;
+  border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:6px 6px;
+  border-bottom-right-radius:6px 6px;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+z-index: 1;
+text-align: center;
+  /* Secuencia de animación */
+  animation: 2.5s infinite latidico; /* duración | veces que se reproduce | nombre */
+}
+/*.latir:after{
+  position: absolute;
+  float: left;
+  content: "";
+  width: 55px;
+  height: 55px;
+  background-color: rgba(38, 44, 52, 0.6) ;
+  margin-left: 148px;
+  margin-top: -5px;
+   border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:6px 6px;
+  border-bottom-right-radius:6px 6px;
+  /*background:url(Abc.png) center no-repeat;
+  background-size: 55px 55px;
+  z-index: 1;
+}
+.latir:before{
+  position: absolute;
+  float: left;
+  content: "";
+  width: 55px;
+  height: 55px;
+  background-color: rgba(38, 44, 52, 0.6) ;
+  margin-left: -308px;
+  margin-top: -5px;
+   border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:6px 6px;
+  border-bottom-right-radius:6px 6px;
+  /*background:url(Abc.png) center no-repeat;
+  background-size: 55px 55px;
+  z-index: 1;
+}
+*/
+@keyframes latidico {
+  0% {
+          transform: translate(-50%,-50%) scale(1);
+  }
+  94% {
+    background-color: #16899b;
+          transform: translate(-50%,-50%) scale(1);
+  }
+  98% {
+    background-color: #169eae;
+          transform: translate(-50%,-50%) scale(1.35); /* Alem do scale mantemos o translate, para o ponto continuar centrado ao variar de tamanho */
+  }
+  100% {
+    background-color: #0b87a7;
+          transform: translate(-50%,-50%) scale(1);
+  }
+}
+@keyframes Sombras {
+  0% {
+          transform: scale(1);
+  }
+  94% {
+              transform: scale(1);
+  }
+  98% {
+             transform: scale(1.35); /* Alem do scale mantemos o translate, para o ponto continuar centrado ao variar de tamanho */
+  }
+  100% {
+    
+          transform:scale(1);
+  }
+}
+.latir:hover {
+ width: 500px;
+  height: 450px;}
+.latir:hover {
+ width: 500px;
+  height: 45px;
+
+  /* nueva secuencia de animación  */
+  animation: 0.6s linear infinite ; /* duración | veces que se reproduce | nombre */
+}
+@keyframes latido {
+  0% {
+          transform: translate(-50%,-50%) scale(1);
+  }
+  20% {
+    background-color: #0b87a7;
+          transform: translate(-50%,-50%) scale(1.15);
+  }
+  40% {
+    background-color: #0b87a7;
+          transform: translate(-50%,-50%) scale(1);
+  }
+}
+#Icono_1{
+  position: relative;
+  float: left;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 5px;
+  background:url(correo.png) center no-repeat;
+  background-size: 45px 45px;
+  -moz-transition: 0.5s;
+  animation: 1s infinite Sombras;
+}
+#Icono_1:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_1:hover:after{
+ content: 'Activar Convenio Electrónico'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -35px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 15px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+    animation: 1s infinite ;
+}
+#Icono_2{
+  position: relative;
+  float: left;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 15px;
+  background:url(Elegido.png) center no-repeat;
+  background-size: 45px 45px;
+  -moz-transition: 0.5s;
+  animation: 1s infinite Sombras;
+}
+#Icono_2:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_2:hover:after{
+ content: 'Activar Elegido Fijo Móvil'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -30px;
+    margin-top: 45px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 15px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+   
+}
+#Icono_3{
+  position: relative;
+  float: left;
+  content: "";
+  width: 75px;
+  height: 65px;
+  background-color: transparent;
+  position: relative;
+  margin-top: -10px;
+  margin-left: 10px;
+  background:url(Claro_Video.png) center no-repeat;
+  background-size: 75px 55px;
+  -moz-transition: 0.5s;
+  animation: 1s infinite Sombras;
+}
+#Icono_3:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_3:hover:after{
+ content: 'Activar Claro Video'; 
+    position: absolute;
+    z-index: 98;
+  margin-left: -15px;
+    margin-top: 52px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 15px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+   
+}
+#Icono_4{
+  position: relative;
+  float: left;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 8px;
+  background:url(Carrito.png) center no-repeat;
+  background-size: 45px 45px;
+  -moz-transition: 0.5s;
+  animation: 1s infinite Sombras;
+}
+#Icono_4:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_4:hover:after{
+ content: 'Siguiente Mejor Oferta'; 
+    position: absolute;
+    z-index: 98;
+  margin-left: -25px;
+    margin-top: 45px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 15px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+   
+}
+#Menu_Opciones{
+  position: relative;
+  height: 60px;
+  width: 99.5%;
+  margin-left: 0.1%;
+  float: left;
+  margin-top: 5px;
+  border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:6px 6px;
+  border-bottom-right-radius:6px 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+#Menu_Opciones_MEC{
+  position: relative;
+  height: 60px;
+  width: 99.5%;
+  margin-left: 0.1%;
+  float: left;
+  margin-top: 5px;
+  border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:6px 6px;
+  border-bottom-right-radius:6px 6px;
+  /*background-color: rgba(0, 0, 0, 0.1);*/
+  z-index: 2;
+}
+.latir_MEC {
+  position: absolute;
+  width: 900px;
+  height: 45px;
+  background-color:#16899b;
+  float: left;
+  margin-top: 0%;
+  top: 0;
+  padding: 5px;
+  margin-top: 30px;
+  margin-left: 50%;
+  border-top-left-radius: 6px 6px;
+  border-bottom-left-radius: 6px 6px;
+  border-top-right-radius:6px 6px;
+  border-bottom-right-radius:6px 6px;
+  transform: translate(-50%,-50%);
+  /*cursor: pointer;*/
+  z-index: 1;
+  text-align: center;
+  /*border:1px solid rgba(0, 0, 0, 0.2);*/
+  /* Secuencia de animación */
+  /*animation: 2.5s infinite latidico; /* duración | veces que se reproduce | nombre */
+}
+#Icono_1_MEC{
+  position: relative;
+  float: left;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 5px;
+  background:url(correo.png) center no-repeat;
+  background-size: 45px 45px;
+  -moz-transition: 0.5s;
+  animation: 2s infinite Sombras;
+}
+#Icono_1_MEC:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 2s infinite ;
+}
+#Icono_1_MEC:hover:after{
+ content: 'Convenio Electrónico'; 
+    position: absolute;
+    z-index: 98;
+    margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+    /*animation: 1s infinite ;*/
+}
+#Icono_2_MEC{
+  position: relative;
+  float: left;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 15px;
+  background:url(Elegido.png) center no-repeat;
+  background-size: 45px 45px;
+  -moz-transition: 0.5s;
+  /*animation: 1s infinite Sombras;*/
+}
+#Icono_2_MEC:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 2s infinite ;
+}
+#Icono_2_MEC:hover:after{
+ content: 'Elegido Fijo Móvil'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 90px;
+   
+}
+#Icono_3_MEC{
+  position: relative;
+  float: left;
+  content: "";
+  width: 75px;
+  height: 65px;
+  background-color: transparent;
+  position: relative;
+  margin-top: -10px;
+  margin-left: 10px;
+  background:url(Claro_Video.png) center no-repeat;
+  background-size: 75px 55px;
+  -moz-transition: 0.5s;
+  /*animation: 1s infinite Sombras;*/
+}
+#Icono_3_MEC:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 2s infinite ;
+}
+#Icono_3_MEC:hover:after{
+ content: 'Activar Claro Video'; 
+    position: absolute;
+    z-index: 98;
+  margin-left: -45px;
+    margin-top: 55px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+   
+}
+#Icono_4_MEC{
+  position: relative;
+  float: left;
+  content: "";
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 8px;
+  background:url(Carrito.png) center no-repeat;
+  background-size: 45px 45px;
+  cursor: pointer;
+  -moz-transition: 0.5s;
+  animation: 2s infinite Sombras;
+}
+#Icono_4_MEC:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 2s infinite ;
+}
+#Icono_4_MEC:hover:after{
+ content: 'Siguiente Mejor Oferta'; 
+    position: absolute;
+    z-index: 98;
+  margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+   
+}

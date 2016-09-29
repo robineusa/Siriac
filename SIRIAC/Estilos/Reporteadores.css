@@ -1,0 +1,126 @@
+.Titulo_Reporte{
+font-size: 20px;
+font-family: sans-serif;
+color: black;
+text-align: center;
+}
+.Reporte_Cierre{
+height:  400px;
+width: 520px;
+	background-color: rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 15px;
+	border-radius: 15px;
+	padding: 5px;
+	float: left;
+}
+.Reporte_Fechas{
+text-align: center;
+height: 500px;
+width: 802px;
+	background-color: rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 15px;
+	border-radius: 15px;
+	margin-bottom: 15px;
+float: left;
+}
+.Reporte_Fechas_U{
+text-align: center;
+height: 500px;
+width: 1620px;
+	background-color: rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 15px;
+	border-radius: 15px;
+	margin-bottom: 15px;
+float: left;
+}
+
+.amcharts-graph-g1 .amcharts-graph-stroke , .amcharts-graph-g2 .amcharts-graph-stroke,
+.amcharts-graph-g3 .amcharts-graph-stroke,	 .amcharts-graph-g4 .amcharts-graph-stroke{
+  stroke-dasharray: 7px 10px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  -webkit-animation: am-moving-dashes .5s linear infinite;
+  animation: am-moving-dashes .5s linear infinite;
+}
+
+@-webkit-keyframes am-moving-dashes {
+  100% {
+    stroke-dashoffset: -31px;
+  }
+}
+@keyframes am-moving-dashes {
+  100% {
+    stroke-dashoffset: -31px;
+  }
+}
+
+
+.lastBullet {
+  -webkit-animation: am-pulsating 1s ease-out infinite;
+  -moz-animation: am-pulsating 1s ease-out infinite;
+  animation: am-pulsating 1s ease-out infinite;
+}
+@-webkit-keyframes am-pulsating {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0px;
+  }
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 50px;
+  }
+}
+@keyframes am-pulsating {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0px;
+  }
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 50px;
+  }
+}
+
+.amcharts-graph-column-front {
+  -webkit-transition: all .3s .3s ease-out;
+  transition: all .3s .3s ease-out;
+}
+.amcharts-graph-column-front:hover {
+  fill: #496375;
+  stroke: #496375;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.amcharts-graph-g3 {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 500%;
+  stroke-dasharray: 0 \0/;    /* fixes IE prob */
+  stroke-dashoffset: 0 \0/;   /* fixes IE prob */
+  -webkit-animation: am-draw 40s;
+  animation: am-draw 40s;
+}
+@-webkit-keyframes am-draw {
+    0% {
+        stroke-dashoffset: 500%;
+    }
+    100% {
+        stroke-dashoffset: 0%;
+    }
+}
+@-webkit-keyframes am-draw {
+    0% {
+        stroke-dashoffset: 500%;
+    }
+    100% {
+        stroke-dashoffset: 0%;
+    }
+}
+

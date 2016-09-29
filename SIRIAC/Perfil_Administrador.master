@@ -1,0 +1,294 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Perfil_Administrador.master.cs" Inherits="Perfil_Administrador" %>
+
+<!DOCTYPE html>
+
+<html>
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Siriac - Perfil Administrador</title>
+
+    <link rel="stylesheet" href="Estilos/Style_Perfil_Asesor.css?1.0.0" />
+    <link rel="stylesheet" href="Estilos/Menu.css?1.0.0" />
+    <link href="Estilos/Style_Ingreso_Casos.css?1.0.0" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css?1.0.0" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css?1.0.0" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            margin-left: 5px;
+        }
+
+        .auto-style2 {
+            border: 1.5px groove gray;
+            height: 23px;
+            max-width: 250px;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-image: url("Estilos/fondo.png");
+        }
+
+        .auto-style3 {
+            height: 43px;
+            border-color: #CC0000;
+            border-style: groove;
+            border-left-width: 1.5px;
+            border-top-width: 1.5px;
+            border-right-width: 1.5px;
+            border-bottom-width: 1.5px;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #CC0000;
+            text-align: center;
+            width: 250px;
+            max-width: 250px;
+        }
+
+        .auto-style7 {
+            height: 23px;
+            width: auto;
+            border: 1.5px groove gray;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            text-align: match-parent;
+        }
+
+        .auto-style12 {
+            border: 1.5px groove #606060;
+            width: auto;
+            height: 88px;
+            max-width: 250px;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #606060;
+            text-align: center;
+        }
+
+        .auto-style16 {
+            border: 1.5px groove #606060;
+            height: 88px;
+            width: auto;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #606060;
+            text-align: right;
+            font-family: Verdana;
+            font-size: 1em;
+        }
+
+        .auto-style17 {
+            border: 1.5px groove gray;
+            background-image: none;
+            height: 4px;
+            width: 250px;
+            max-width: 250px;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            border-color: #FF0000;
+            background-color: #FF0000;
+        }
+
+        .auto-style18 {
+            border: 1.5px groove #606060;
+            height: 88px;
+            width: auto;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #606060;
+            text-align: right;
+            font-family: Verdana;
+            font-size: 1em;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        var iStart = 0;
+        var iMinute = <%=Session.Timeout%> //Obtengo el tiempo de session permitida
+function showTimer() {
+    iStart = 60;
+    iMinute -= 1
+    lessMinutes();
+}
+        function lessMinutes() {
+            //Busco mi elemento que uso para mostrar los minutos que le quedan (minutos y segundos)
+            obj = document.getElementById('TimeLeft');
+            if (iStart == 0) {
+                iStart = 60
+                iMinute -= 1;
+            }
+            iStart = iStart - 1;
+
+            //Si minuto y segundo = 0 ya expiró la sesion 
+            if (iMinute == 0 && iStart == 0) {
+                alert("Su sesion ha expirado, sera redireccionado a la página principal");
+                window.location.href = 'Inicio_de_Sesion.aspx';
+            }
+
+            if (iStart < 10)
+                obj.innerText = iMinute.toString() + ':0' + iStart.toString();
+            else
+                obj.innerText = iMinute.toString() + ':' + iStart.toString();
+
+            //actualizo mi método cada segundo  
+            window.setTimeout("lessMinutes();", 1000)
+        }
+    </script>
+    <script type="text/javascript">
+        function salir() {
+            var Button2 = '<%=Button2.ClientID%>';
+            var btn2 = document.getElementById(<%=Button2.ClientID%>);
+            btn2.click();
+        }
+    </script>
+    <script type="text/javascript">
+        function GetUserName() {
+
+            var Usuario = '<%= Session["Usuario_Logueado"] %>';
+            var Rol = '<%= Session["Rol_Usuario"] %>';
+            var Aliado = '<%= Session["Aliado_Usuario"] %>';
+            var Linea = '<%= Session["Nombre_Linea_Usuario"] %>';
+            var Nombre = '<%= Session["Nombre_Usuario"] %>';
+            Usuario = "";
+            Rol = ""
+            Aliado = "";
+            Linea = "";
+            Nombre = "";
+            window.location.href = 'Inicio_de_Sesion.aspx?id=';
+        }
+    </script>
+
+</head>
+
+<body class="body" onunload="InitializeTimer()">
+    <form id="form1" runat="server">
+
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style12">
+
+                    <img src="Estilos/Imagenes/Logo_Claro.png" style="height: 79px; width: 81px" />
+
+                </td>
+                <td class="auto-style16">
+                    <nav id="colorNav">
+                        <ul>
+                            <li class="green">
+                                <a href="Bienvenida_Administrador.aspx">
+                                    <img class="icon" src="Estilos/pictures/icon1.png" /></a>
+                            </li>
+                            <li class="red">
+                                <a>
+                                    <img class="icon" src="Estilos/pictures/icon2.png" /></a>
+                                <ul>
+                                    <li><a href="Administracion_de_Usuarios.aspx">Administración de Usuarios</a></li>
+                                    <li><a href="Administracion_de_Casos.aspx">Administración de Casos</a></li>
+                                </ul>
+                            </li>
+                            <li class="blue">
+                                <a>
+                                    <img class="icon" src="Estilos/pictures/icon13.png" /></a>
+                                <ul>
+                                    <li><a href="Consulta_Paloteo_Admin.aspx">Consulta de Paloteo</a></li>
+                                    <li><a href="Consulta_de_Gestion_Admin.aspx">Consulta de Gestión</a></li>
+                                    <li><a href="Consulta_Rechazos_Admin.aspx">Consulta de Rechazos</a></li>
+                                    <li><a href="Consulta_Outbound_Admin.aspx">Consulta Oubound</a></li>
+                                    <li><a href="Consulta_Cierre_Ciclo_Admin.aspx">Consulta Cierre Ciclo</a></li>
+                                    <li><a href="Consulta_de_Gestion_Blending.aspx">Consulta Blending</a></li>
+                                </ul>
+                            </li>
+                            <li class="yellow">
+                                <a>
+                                    <img class="icon" src="Estilos/pictures/icon7.png" /></a>
+                                <ul>
+                                    <li><a href="Reporte_Logistica_Inversa.aspx">Logistica Inversa</a></li>
+                                    <li><a href="Reporte_Convenio_Electronico.aspx">Convenio Electrónico</a></li>
+                                    <li><a href="Reporte_Ventas.aspx">Ventas</a></li>
+                                </ul>
+                            </li>
+                            <li class="purple">
+                                <a>
+                                    <img class="icon" src="Estilos/pictures/Mensajes.png" /></a>
+                                <ul>
+                                    <li><a href="Administracion_Buenservicio.aspx">Pieza Buen Servicio</a></li>
+                                    <li><a onclick="document.getElementById('Chat_Completo').style.display = 'block';">Comunicación Global</a></li>
+                                </ul>
+                            </li>
+                            <li class="purple">
+                                <a>
+                                    <img class="icon" src="Estilos/pictures/icon6.png" /></a>
+                                <ul>
+                                    <li><a href="Cambio_Contrasena_Admin.aspx">Cambio de Contraseña</a></li>
+                                    <li><a href="Manual_de_Usuario_Admin.aspx">Manual de Usuario</a></li>
+                                    <li><a onclick="return salir()">Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                </td>
+                <td class="auto-style18">
+                    <asp:Panel ID="Panel1" runat="server">
+                    </asp:Panel>
+                    <asp:Label CssClass="nombre_usuario" ID="Label5" runat="server" Text="Bienvenido(a):"></asp:Label>
+                    <br />
+                    <asp:Label CssClass="nombre_usuario" ID="Nombre_Usuario" runat="server" Text="Label"></asp:Label>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style17" colspan="3"></td>
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="3">
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </td>
+            </tr>
+            <tr style="display: none">
+                <td class="auto-style3" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label CssClass="texto1" runat="server" Text="Sistema Integrado de Radicaciones, Información y Atención al Cliente (SIRIAC)" ID="Label2"></asp:Label>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label CssClass="texto2" runat="server" Text="Jefatura de Planeación y Estrategia - Gerencia de Cuidado al Cliente" ID="Label3"></asp:Label>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label CssClass="texto2" runat="server" Text="Claro Soluciones Fijas" ID="Label4"></asp:Label>
+
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+
+        <asp:Button CssClass="bt_colse_sesion" ID="Button1" runat="server" Text="" Style="display: none" />
+        &nbsp; &nbsp;
+        <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button1_Click" Style="display: none" />
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,471 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Perfil_Celula.master.cs" Inherits="Perfil_Celula" %>
+
+<!DOCTYPE html>
+
+<html>
+<head id="Head1" runat="server">
+   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Siriac - Perfil Celula</title>
+
+    <link rel="stylesheet" href="Estilos/Style_Perfil_Asesor.css?1.0.1" />
+    <link rel="stylesheet" href="Estilos/Menu.css?1.0.0" />
+    <link href="Estilos/Style_Ingreso_Casos.css?1.0.1" rel="stylesheet" />
+    <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&user=<%=Session["Usuario_Logueado"]%>"></script>
+    <link rel="stylesheet" href="assets/css/styles.css?1.0.0" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css?1.0.0" />
+    <script src="Js/jquery-1.12.4.js"></script>
+    <script src="Js/jquery-ui.js"></script>
+    <script src="scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="signalr/hubs"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            margin-left: 5px;
+        }
+
+        .auto-style2 {
+            border: 1.5px groove gray;
+            height: 23px;
+            max-width: 250px;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-image: url("Estilos/fondo.png");
+        }
+
+        .auto-style3 {
+            height: 43px;
+            border-color: #CC0000;
+            border-style: groove;
+            border-left-width: 1.5px;
+            border-top-width: 1.5px;
+            border-right-width: 1.5px;
+            border-bottom-width: 1.5px;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #CC0000;
+            text-align: center;
+            width: 250px;
+            max-width: 250px;
+        }
+
+        .auto-style7 {
+            height: 23px;
+            width: auto;
+            border: 1.5px groove gray;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            text-align: match-parent;
+        }
+
+        .auto-style12 {
+            border: 1.5px groove #606060;
+            width: auto;
+            height: 88px;
+            max-width: 250px;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #606060;
+            text-align: center;
+        }
+
+        .auto-style16 {
+            border: 1.5px groove #606060;
+            height: 88px;
+            width: auto;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #606060;
+            text-align: right;
+            font-family: Verdana;
+            font-size: 1em;
+        }
+
+        .auto-style17 {
+            border: 1.5px groove gray;
+            background-image: none;
+            height: 4px;
+            width: 250px;
+            max-width: 250px;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            border-color: #FF0000;
+            background-color: #FF0000;
+        }
+
+        .auto-style18 {
+            border: 1.5px groove #606060;
+            height: 88px;
+            width: auto;
+            background-image: none;
+            border-top-left-radius: 20px 20px;
+            border-bottom-left-radius: 20px 20px;
+            border-top-right-radius: 20px 20px;
+            border-bottom-right-radius: 20px 20px;
+            background-color: #606060;
+            text-align: right;
+            font-family: Verdana;
+            font-size: 1em;
+        }
+    </style>
+
+<script type="text/javascript">
+
+    var iStart = 0;
+    var iMinute = <%=Session.Timeout%> //Obtengo el tiempo de session permitida
+function showTimer() {
+    iStart = 60;
+    iMinute -= 1
+    lessMinutes();
+}
+    function lessMinutes() {
+        //Busco mi elemento que uso para mostrar los minutos que le quedan (minutos y segundos)
+        obj = document.getElementById('TimeLeft');
+        if (iStart == 0) {
+            iStart = 60
+            iMinute -= 1;
+        }
+        iStart = iStart - 1;
+
+        //Si minuto y segundo = 0 ya expiró la sesion 
+        if (iMinute == 0 && iStart == 0) {
+            alert("Su sesion ha expirado, sera redireccionado a la página principal");
+            window.location.href = 'Inicio_de_Sesion.aspx';
+        }
+
+        if (iStart < 10)
+            obj.innerText = iMinute.toString() + ':0' + iStart.toString();
+        else
+            obj.innerText = iMinute.toString() + ':' + iStart.toString();
+
+        //actualizo mi método cada segundo  
+        window.setTimeout("lessMinutes();", 1000)
+    }
+</script>
+    <script type="text/javascript">
+        function salir() {
+            var Button2 = '<%=Button2.ClientID%>';
+            var btn2 = document.getElementById(Button2);
+            btn2.click()
+        }
+    </script>
+    <script type="text/javascript">
+        function GetUserName() {
+
+            var Usuario = '<%= Session["Usuario_Logueado"] %>';
+            var Rol = '<%= Session["Rol_Usuario"] %>';
+            var Aliado = '<%= Session["Aliado_Usuario"] %>';
+            var Linea = '<%= Session["Nombre_Linea_Usuario"] %>';
+            var Nombre = '<%= Session["Nombre_Usuario"] %>';
+            Usuario = "";
+            Rol = ""
+            Aliado = "";
+            Linea = "";
+            Nombre = "";
+            window.location.href = 'Inicio_de_Sesion.aspx?id=';
+        }
+</script>
+    <script type="text/javascript">
+        function Mensaje_Global() {
+            var Nombre = document.getElementById("<%=Visto.ClientID %>");
+            Nombre.click();
+        }
+    </script>
+    <script type="text/javascript">
+        function mensaje2() {
+            alert('Registro NO Almacenado');
+        }
+    </script>
+    <script type="text/javascript">
+        function Guardar_Visto_Imagen() {
+            var click = document.getElementById('<%=Visto.ClientID%>');
+            click.click();
+        }
+    </script>
+
+</head>
+    
+<body class="body" onunload="InitializeTimer()">
+    <form id="form1" runat="server">  
+
+        
+                <script>
+                    $(function () {
+                        $('#Chat_Completo').draggable();
+                    });
+                </script>
+                <div id="Chat_Completo" class="Chat_Completo" style="display:none">
+                    <div id="header-chat" class="header-chat">
+                        Notificaciones Administración
+                    </div>
+                    <div id="chat">
+
+                        <div id="cuerpo_chat" class="cuerpo-chat">
+                        </div>
+                    </div>
+                    <div id="caja-mensaje" style="display:none" >
+
+                        <textarea class="Caja_Chat" placeholder="Escribir mensaje..." id="Mensaje" rows="5" style="display:none"></textarea>
+                         <input class="Button_Chat" type="button" id="Enviar_Mensaje" value="Enviar" style="display:none" />
+                    </div>
+
+                </div>
+   
+                <script type="text/javascript">
+                    $(function Enviar_Mensage_Global() {
+                        var chat = $.connection.chatHub;
+                        Llama_Metodos_Clientes(chat);
+                        $('#Mensaje').focus();
+                        $.connection.hub.start().done(function () {
+                            Registra_Eventos(chat);
+                        });
+
+                    });
+
+                    function Registra_Eventos(chat) {
+                        $('#Enviar_notificacion').click(function () {
+                            chat.server.send($(<%=Nombre_de_Imagen.ClientID%>).text(), $(<%=Ruta_de_Imagen.ClientID%>).text(),
+                                $(<%=Id_de_Notificado.ClientID%>).text(), $(<%=Descripcion_de_Imagen.ClientID%>).text());
+                        });
+
+                        $('#Enviar_Mensaje').click(function () {
+                            chat.server.enviar($(<%=Nombre_Usuario.ClientID%>).text(), $('#Mensaje').val());
+                            $('#Mensaje').val('');
+                        });
+
+                        $("#Mensaje").keypress(function (e) {
+                            if (e.which == 13) {
+                                $("#Enviar_Mensaje").click();
+                            }
+                        });
+
+                    }
+
+                    function Llama_Metodos_Clientes(chat) {
+                        chat.client.broadcastMessage = function (Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen) {
+                            var V_Nombre_Imagen = $('<div/>').text(Nombre_Imagen).html();
+                            var V_Ruta_Imagen = $('<div/>').text(Ruta_Imagen).html();
+                            var V_Id_Notificado = $('<div/>').text(Id_Notificado).html();
+                            var V_Descripcion_Imagen = $('<div/>').text(Descripcion_Imagen).html();
+
+                            //$('#chat').append('<div class="Contenido_Mensajes" ><ul><li>' + V_Nombre_Imagen + ':&nbsp;&nbsp;' + V_Ruta_Imagen + ':&nbsp;&nbsp;' + V_Id_Notificado + ':&nbsp;&nbsp;' + V_Descripcion_Imagen + '</li></ul></div>');
+
+                            $(<%=Nombre_de_Imagen.ClientID%>).val(V_Nombre_Imagen);
+                            $(<%=Ruta_de_Imagen.ClientID%>).val(V_Ruta_Imagen);
+                            $(<%=Id_de_Notificado.ClientID%>).val(V_Id_Notificado);
+                            $(<%=Descripcion_de_Imagen.ClientID%>).val(V_Descripcion_Imagen);
+
+                            document.getElementById('BS_Imagen_Inicial').style.display = 'block';
+                            document.getElementById('Abrir_Notificacion').href = "#BS_Imagen_Inicial";
+                            document.getElementById('Abrir_Notificacion').click();
+
+                            $(<%=Imagen_Seleccionada.ClientID%>).attr("src", V_Nombre_Imagen);
+                            document.getElementById('Url_Destino').href = V_Ruta_Imagen;
+                            play_single_sound();
+
+                        }
+                        chat.client.Mensajes = function (Nombre, Mensaje) {
+
+                            var V_Nombre_U = $('<div/>').text(Nombre).html();
+                            var V_Mensaje = $('<div/>').text(Mensaje).html();
+                            document.getElementById('Chat_Completo').style.display = 'block';
+                            $('#chat').append('<div class="Contenido_Mensajes" ><ul><li>' + V_Nombre_U + ':&nbsp;&nbsp;' + V_Mensaje + '</li></ul></div>');
+
+                        }
+                    }
+
+
+
+
+                </script>  
+        <audio id="audiotag1" src="sounds/Notificacion.aac" preload="auto" style="display:none"></audio>
+<script type="text/javascript">
+    function play_single_sound() {
+        document.getElementById('audiotag1').play();
+    }
+</script>
+   <asp:TextBox ID="Nombre_de_Imagen" runat="server" Style="display:none" ></asp:TextBox>
+   <asp:TextBox ID="Ruta_de_Imagen" runat="server" Style="display:none"></asp:TextBox>
+   <asp:TextBox ID="Id_de_Notificado" runat="server" Style="display:none"></asp:TextBox>
+   <asp:TextBox ID="Descripcion_de_Imagen" runat="server" Style="display:none"></asp:TextBox>
+   <asp:Button CssClass="button_BS_Inicia" ID="Visto" runat="server" Text="Aceptar" OnClick="Visto_Click" Style="display:none" />
+     
+
+       <div style="height: auto">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style12">
+                   
+                       <img src="Estilos/Imagenes/Logo_Claro.png" style="height:79px; width: 81px"/>
+       
+                    </td>
+                <td class="auto-style16">
+                     
+
+    	<nav id="colorNav">
+			<ul>
+				<li class="green">
+					<a href="Bienvenida_Celula.aspx"><img class="icon" src="Estilos/pictures/icon1.png"1/></a>
+					</li>
+				<li class="red">
+					<a><img class="icon" src="Estilos/pictures/icon2.png"1/></a>
+					<ul>
+						<li><a href="Gestion_Casos_Celula.aspx">Casos Abiertos</a></li>
+						<li><a href="Seguimientos_Celula.aspx">Seguimientos</a></li>
+						</ul>
+				</li>
+				<li class="blue">
+					<a><img class="icon" src="Estilos/pictures/icon13.png"1/></a>
+					<ul>
+						<li><a href="Consulta_Gestion_Celula.aspx">Consulta de Gestión</a></li>
+						</ul>
+				</li>
+                <li class="purple2">
+					<a><img class="icon" src="Estilos/pictures/icon99.png"/></a>
+					<ul>
+						<li><a class="openAssistant" href="#">
+                            Asistente
+                    </a>
+
+						</li>
+                        </ul>
+				</li>
+				<li class="yellow">
+					<a><img class="icon" src="Estilos/pictures/icon7.png"1/></a>
+					<ul>
+						<li><a href="#">Reportes</a></li>
+						</ul>
+				</li>
+				<li class="purple">
+					<a><img class="icon" src="Estilos/pictures/icon6.png"1/></a>
+					<ul>
+						<li><a href="Cambio_Contrasena_Celula.aspx">Cambio de Contraseña</a></li>
+                        <li><a href="Manual_de_Usuario_Celula.aspx">Manual de Usuario</a></li>
+                        <li><a onclick="salir()">Cerrar Sesión</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+                     </td>
+                <td class="auto-style18">
+                    <asp:Panel ID="Panel1" runat="server">
+                 
+                
+                 </asp:Panel>
+                    <asp:Label CssClass="nombre_usuario" ID="Label5" runat="server" Text="Bienvenido(a):"></asp:Label>
+                    <br />
+                    <asp:Label CssClass="nombre_usuario" ID="Nombre_Usuario" runat="server" Text="Label"></asp:Label>  
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style17" colspan="3">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="3">
+               
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1"  runat="server">
+                           </asp:ContentPlaceHolder>
+                                   
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="3" style="display:none">
+                      
+                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label CssClass="texto1" runat="server" Text="Sistema Integrado de Radicaciones, Información y Atención al Cliente (SIRIAC)" ID="Label2"></asp:Label>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label CssClass="texto2" runat="server" Text="Jefatura de Planeación y Estrategia - Gerencia de Cuidado al Cliente" ID="Label3"></asp:Label>
+                      <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label CssClass="texto2" runat="server" Text="Claro Soluciones Fijas" ID="Label4"></asp:Label>
+
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            </table>
+
+    </div>
+        <asp:Button CssClass="bt_colse_sesion" ID="Button1" runat="server" Text="" Style="display:none" /> &nbsp; &nbsp;
+        <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button1_Click" Style="display:none" />
+   
+
+    <%--<script>
+        $(document).ready(function () {
+
+            // cada vez que se mueva el scroll del navegador se ejecutara
+            // este evento
+            $(document).scroll(function () {
+
+                // si la posicion del scroll es superior a 55 pixels...
+                if ($(window).scrollTop() > 1) {
+                    // indicamos que el header tiene una posicion fija a -47 pixels
+                    $("header").css({ "position": "fixed", "bottom": 1 });
+                    // definimos el margen superior al contenido cuando queda fijado
+                    $("content").css({ "margin-top": 80 });
+                } else
+                    if ($(window).scrollTop() < 1) {
+                        // indicamos que el header tiene una posicion fija a -47 pixels
+                        $("header").css({ "position": "fixed", "bottom": 1 });
+                        // definimos el margen superior al contenido cuando queda fijado
+                        $("content").css({ "margin-top": 80 });
+                    }
+                    else {
+                        $("header").css({ "position": "inherit", "bottom": 1 });
+                        $("content").css({ "margin-top": 0 });
+                    }
+            });
+        });
+    </script>
+      <header class="spam">
+               Su sesión finalizará en: 
+               <span id="TimeLeft">
+    </span>
+              </header>
+     <script type="text/javascript">
+         showTimer();
+</script>--%>
+
+    <asp:Label ID="Label6" runat="server" Text="" Style="display:none"></asp:Label>
+
+     <div id="Notificacion_div" class="referencia" runat="server" style="display: none"><a id="Abrir_Notificacion" href="#BS_Imagen_Inicial">Abrir Notificacion</a></div>
+    <div class="modal-wrapper" id="BS_Imagen_Inicial" style="display:none">
+        <div id="Notificacion_Contene" class="BS_Imagen_Inicial-contenedor">
+            <a class="BS_Imagen_Inicial-cerrar"  onclick="return Guardar_Visto_Imagen();" href="#">X</a>
+                
+                            <div id="visualizar_imagen" class="visualizador_Imagen">
+                               <a id="Url_Destino"  onclick="return Guardar_Visto_Imagen();" href="#" Target="_blank">
+                                <asp:Image Cssclass="imagen_Base_de_Datos" ID="Imagen_Seleccionada" runat="server"/></a>
+                            </div>
+                            <br />           
+        </div>
+    </div>
+        
+     </form>
+        </body>
+
+</html>
+

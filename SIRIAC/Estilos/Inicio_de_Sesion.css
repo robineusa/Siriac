@@ -1,0 +1,157 @@
+﻿body {
+    /*background-image: url(fondo.jpg);*/
+    background: url(fondo.jpg) no-repeat fixed center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+div.contenedor{
+	border-radius: 20px;
+	background-color: none;
+	width: 14%;
+	/*margin-left: 800px;
+	margin-top: 200px;*/
+	margin-left: 0%;
+	margin-top: 5%;
+	border-style: solid;
+	font-family: verdana;
+	font-weight: 300;
+	color: white;
+	border-left-color: white;
+	border-top-color: white;
+	border-bottom-color: white;
+	border-right-color: white;
+	border-right-width: 0.15em;
+  	border-left-width: 0.15em;
+  	border-top-width: 0.15em;
+  	border-bottom-width: 0.15em;
+  	min-width: 270px;
+  	margin-left: 50%;
+  	margin-right: 50%;
+  	vertical-align: middle;
+	}
+div#login{
+	background-color: none;
+	}
+
+.textbox1{
+	border-top-left-radius: 6px 6px;
+	border-bottom-left-radius: 6px 6px;
+	border-top-right-radius:6px 6px ;
+	border-bottom-right-radius:6px 6px ;
+	border-style: none;
+	font-family: verdana;
+	color: gray;
+	width: 150px;
+	height: 25px;
+	font-weight: 300; 
+
+}
+
+.boton1{
+	width: 240px;
+	height: 40px;
+	border-radius: 5px;
+	border-style: none;
+	background-color: white;
+}
+
+.textbox1:hover{
+	background-color: rgb(255,255,204);
+	
+}
+.boton1:hover{
+	background-color: rgb(255,153,51);
+	border-radius: 5px;
+	border-style: none;
+	font-family: verdana;
+	font-size: 0.8em;
+	color: white;
+	font-style: bold;
+
+}
+.td1{
+	background-color: red;
+}
+div.etiquetas{
+	width: 100%;
+	text-align: center;
+	margin-top: -3%;
+	margin-left: -2%;
+}
+
+.texto1{
+	color: white;
+	font-weight: 300;
+	font-size: 1em;
+	font-family: arial;
+	font-style: bold;
+}
+.texto2{
+	color: white;
+	font-weight: 300;
+	font-size: 0.9em;
+	font-family: arial;
+}
+.texto3{
+	color: white;
+	font-weight: 300;
+	font-size: 0.8em;
+	font-family: arial;
+}
+.texto4{
+	color: white;
+	font-weight: bolder;
+	font-size: 120px;
+	font-style: bold;
+	font-family: fantasy;
+
+}
+.titulo_claro{
+	
+}
+.texto4:hover{
+
+}
+div.etiquetass{
+	width: 100%;
+	
+}
+div#loginn{
+	background-color: none;
+	top: 5%;
+	margin-left: 40.5%;
+  		}
+div#loginnn{
+	background-color: none;
+	}
+div#central{
+	border-radius: 20px;
+	background-color: none;
+	width: 150px;
+	height: 175px;
+	font-family: verdana;
+	font-weight: 300;
+	color: white;
+	border-style: solid;
+	border-left-color: white;
+	border-top-color: white;
+	border-bottom-color: white;
+	border-right-color: white;
+	border-right-width: 0.15em;
+  	border-left-width: 0.15em;
+  	border-top-width: 0.15em;
+  	border-bottom-width: 0.15em;
+  	min-width: 270px;
+  	vertical-align: middle;
+  	position: inherit;
+  	left: 41%;
+  	right: 41.5%;
+
+}
+.usuario{
+font-size: 0.7em;
+
+}

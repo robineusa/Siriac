@@ -1,0 +1,140 @@
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1032381244.A3BPO\Documents\Visual Studio 2012\Projects\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1032381244\Desktop\Desarrollos\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1032381244\Google Drive\Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1032381244\Desktop\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1076622744.A3BPO\Google Drive\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\80050814\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\1076622744\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\1032381244.A3BPO\Google Drive\02_Desarrollos\Siriac\Siriac_Capas (1)\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\1032381244\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb

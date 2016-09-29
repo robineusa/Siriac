@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{639864F0-7F52-4E67-B839-78B8A330840B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocios</RootNamespace>
+    <AssemblyName>Negocios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\net40\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="N_Arbol_Outbound.cs" />
+    <Compile Include="N_Atributos.cs" />
+    <Compile Include="N_Base_Personal.cs" />
+    <Compile Include="N_Buen_Servicio.cs" />
+    <Compile Include="N_Cierre_Ciclo.cs" />
+    <Compile Include="N_Ciudades.cs" />
+    <Compile Include="N_Claro_Video.cs" />
+    <Compile Include="N_Clientes.cs" />
+    <Compile Include="N_Mejor_Oferta.cs" />
+    <Compile Include="N_Reincidencias.cs" />
+    <Compile Include="N_Convenio_Electronico.cs" />
+    <Compile Include="N_Cuentas_Genericas.cs" />
+    <Compile Include="N_Datos_Cliente.cs" />
+    <Compile Include="N_Estado_Casos.cs" />
+    <Compile Include="N_Fraude.cs" />
+    <Compile Include="N_Gestion_General.cs" />
+    <Compile Include="N_Hobbies.cs" />
+    <Compile Include="N_Incremento_Tarifa.cs" />
+    <Compile Include="N_Ingresos.cs" />
+    <Compile Include="N_Logistica_Inversa.cs" />
+    <Compile Include="N_Log_Transacciones.cs" />
+    <Compile Include="N_Marcaciones.cs" />
+    <Compile Include="N_Midas.cs" />
+    <Compile Include="N_Nombre_Linea.cs" />
+    <Compile Include="N_Notas_Casos.cs" />
+    <Compile Include="N_Ofrecimientos_Incremento.cs" />
+    <Compile Include="N_Paloteo.cs" />
+    <Compile Include="N_Perfiles.cs" />
+    <Compile Include="N_Rechazos.cs" />
+    <Compile Include="N_Regleta.cs" />
+    <Compile Include="N_Regleta_Adicionales.cs" />
+    <Compile Include="N_Reportes.cs" />
+    <Compile Include="N_Seguimientos_Midas.cs" />
+    <Compile Include="N_Servicios.cs" />
+    <Compile Include="N_Usuarios.cs" />
+    <Compile Include="N_Ventas.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{a97ca42c-f298-4ba6-a1cb-30dbbc2476d4}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{f385f26b-58a2-4032-956c-3855849093a1}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\PublishProfiles\Robin.pubxml" />
+    <None Include="App_Data\PublishProfiles\Siriac.pubxml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
