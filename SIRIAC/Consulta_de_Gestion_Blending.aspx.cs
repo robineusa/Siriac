@@ -351,4 +351,9 @@ public partial class Consulta_de_Gestion_Blending : System.Web.UI.Page
         Response.Flush();
         Response.End();
     }
+
+    protected void CONSULTA_DOCSIS_OVERLAP_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+
+    }
 }

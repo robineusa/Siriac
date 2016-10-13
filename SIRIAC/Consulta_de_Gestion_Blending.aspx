@@ -212,21 +212,20 @@
                         <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIÓNES" />
                     </Columns>
                 </asp:GridView>
-                  <asp:GridView CssClass="mGrid" ID="CONSULTA_DOCSIS_OVERLAP" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnRowDataBound="DOCSIS_OVERLAP_RowDataBound">
+                  <asp:GridView CssClass="mGrid" ID="CONSULTA_DOCSIS_OVERLAP" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnRowDataBound="CONSULTA_DOCSIS_OVERLAP_RowDataBound">
                     <Columns>
                         <asp:BoundField DataField="FECHA_GESTION" HeaderText="FECHA DE GESTION" />
                         <asp:BoundField DataField="USUARIO_GESTION" HeaderText="USUARIO DE GESTION" />
                         <asp:BoundField DataField="NOMBRE_USUARIO_GESTION" HeaderText="NOMBRE USUARIO DE GESTION" />
                         <asp:BoundField DataField="ALIADO_GESTION" HeaderText="ALIADO DE GESTION" />
                         <asp:BoundField DataField="OPERACION_GESTION" HeaderText="OPERACION DE GESTION" />
+                        <asp:BoundField DataField="NOMBRE_BASE" HeaderText="NOMBRE BASE" />
                         <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA DEL CLIENTE" />
                         <asp:BoundField DataField="TIPO_DE_CONTACTO" HeaderText="TIPO DE CONTACTO" />
-                        <asp:BoundField DataField="TIPO_DE_GESTION" HeaderText="TIPO DE GESTIÓN" />
                         <asp:BoundField DataField="CIERRE" HeaderText="CIERRE" />
                         <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
-                        <asp:BoundField DataField="ATTRIBUTO_1" HeaderText="CLARO VIDEO" />
-                        <asp:BoundField DataField="ATTRIBUTO_2" HeaderText="ELEGIDO FIJO MÓVIL" />
                         <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIÓNES" />
+                        <asp:BoundField DataField="FECHA_AGENDA" HeaderText="FECHA DE SEGUIMIENTO" />
                     </Columns>
                 </asp:GridView>
 

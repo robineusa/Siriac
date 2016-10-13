@@ -55,6 +55,7 @@
     <Compile Include="N_Ciudades.cs" />
     <Compile Include="N_Claro_Video.cs" />
     <Compile Include="N_Clientes.cs" />
+    <Compile Include="N_Docsis_Overlap.cs" />
     <Compile Include="N_Mejor_Oferta.cs" />
     <Compile Include="N_Reincidencias.cs" />
     <Compile Include="N_Convenio_Electronico.cs" />
