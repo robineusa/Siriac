@@ -1423,7 +1423,7 @@ font-size: 18px;
    right:0;
    bottom:0;
    margin:0;
-
+z-index: 999;
    -webkit-transition:all 1s;
    -moz-transition:all 1s;
    transition:all 1s;
@@ -1502,7 +1502,7 @@ font-size: 18px;
    right:0;
    bottom:0;
    margin:0;
-
+z-index: 999;
    -webkit-transition:all 1s;
    -moz-transition:all 1s;
    transition:all 1s;
@@ -3988,13 +3988,13 @@ font-family: Arial;
    right:0;
    bottom:0;
    margin:0;
-
    -webkit-transition:all 1s;
    -moz-transition:all 1s;
    transition:all 1s;
    font-size: 12px;
    overflow-x: hidden;
   overflow-y: auto;
+  z-index: 999;
 }
 .Docsis_Overlap-contenedor {
    position: relative;
