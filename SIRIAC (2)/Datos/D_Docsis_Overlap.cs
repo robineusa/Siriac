@@ -11,7 +11,31 @@ namespace Datos
     public class D_Docsis_Overlap: D_Conexion_BD
     {
         public D_Docsis_Overlap() { }
-     
+        public DataSet Consulta_Temporal_Cuentas(double pCuenta_Cliente)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Cliente_Temporal_Claro_Video]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", pCuenta_Cliente);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los datos del cliente de Docsis", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+
         public DataSet Consulta_Admin_Docsis_Overlap(string pFecha_Inicial, string pFecha_Final)
         {
             SqlCommand cmd = new SqlCommand();

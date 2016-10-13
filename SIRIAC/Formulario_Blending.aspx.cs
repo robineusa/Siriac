@@ -32,8 +32,8 @@ public partial class Formulario_Blendign : System.Web.UI.Page
     public N_Ventas Obj_Neg_Ventas = new N_Ventas();
     public E_Claro_Video Obj_Entidad_Claro_Video = new E_Claro_Video();
     public N_Claro_Video Obj_Neg_Claro_Video = new N_Claro_Video();
-
-
+    public E_Docsis_Overlap obj_Entidad_Docsis_Overlap = new E_Docsis_Overlap();
+    public N_Docsis_Overlap Obj_Neg_Docsis_Overlap = new N_Docsis_Overlap();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -1752,6 +1752,177 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         }
     }
 
+
+    protected void D_Cuenta_Cliente_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            DataSet dt = new DataSet();
+            obj_Entidad_Docsis_Overlap.Cuenta_Cliente = Convert.ToDouble(D_Cuenta_Cliente.Text);
+            dt = Obj_Neg_Docsis_Overlap.Consulta_Temporal_Cuentas(obj_Entidad_Docsis_Overlap.Cuenta_Cliente);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                if (dt.Tables[0].Rows[0]["TELEFONO_1"].ToString() == "") { D_Telefono_1.Text = "0"; } else { D_Telefono_1.Text = dt.Tables[0].Rows[0]["TELEFONO_1"].ToString(); }
+                if (dt.Tables[0].Rows[0]["TELEFONO_2"].ToString() == "") { D_Telefono_2.Text = "0"; } else { D_Telefono_2.Text = dt.Tables[0].Rows[0]["TELEFONO_2"].ToString(); }
+                if (dt.Tables[0].Rows[0]["TELEFONO_3"].ToString() == "") { D_Telefono_Telmex.Text = "0"; } else { D_Telefono_Telmex.Text = dt.Tables[0].Rows[0]["TELEFONO_3"].ToString(); }
+                if (dt.Tables[0].Rows[0]["MOVIL_1"].ToString() == "") { D_Celular_1.Text = "0"; } else { D_Celular_1.Text = dt.Tables[0].Rows[0]["MOVIL_1"].ToString(); }
+                if (dt.Tables[0].Rows[0]["MOVIL_2"].ToString() == "") { D_Celular_2.Text = "0"; } else { D_Celular_2.Text = dt.Tables[0].Rows[0]["MOVIL_2"].ToString(); }
+                D_Paquete_Actual.Text = dt.Tables[0].Rows[0]["PAQUETE_ACTUAL"].ToString();
+                D_Operacion.Text = dt.Tables[0].Rows[0]["OPERACION"].ToString();
+                D_Consultar_Datos_Cliente();
+            }
+            else
+            {
+                string script5 = "mensaje5();";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje5", script5, true);
+                Limpiar_Docsis_Overlap();
+
+            }
+        }
+        catch (Exception esc)
+        { throw new Exception("Error al Consultar la cuenta del cliente de Docsis", esc); }
+    }
+    protected void D_Consultar_Datos_Cliente()
+    {
+        try
+        {
+            DataSet dt = new DataSet();
+            Obj_Entidad_Clientes.Cuenta_Cliente = D_Cuenta_Cliente.Text;
+            dt = Obj_Neg_Clientes.Consulta_Cliente(Obj_Entidad_Clientes.Cuenta_Cliente);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                D_Nombre_Cliente.Text = dt.Tables[0].Rows[0]["NOMBRE"].ToString();
+                D_Apellido_Cliente.Text = dt.Tables[0].Rows[0]["APELLIDO"].ToString();
+                D_Direccion.Text = dt.Tables[0].Rows[0]["DIR_INSTALACION"].ToString();
+                //CV_Direccion_de_Correspondencia.Text = dt.Tables[0].Rows[0]["DIR_CORRESPONDENCIA"].ToString();
+                D_Correo_Actual.Text = dt.Tables[0].Rows[0]["CORREO"].ToString();
+                D_Ciudad.Text = dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString();
+                D_Estrato.Text = dt.Tables[0].Rows[0]["ESTRATO"].ToString();
+                D_Tipo_Cliente.Text = dt.Tables[0].Rows[0]["DESCRIPCION"].ToString();
+                D_Movil_Pospago.Text = dt.Tables[0].Rows[0]["TELEFONO_CONV"].ToString();
+
+                Tipo_Contacto_Docsis_Overlap();
+                Cierre_Docsis_Overlap();
+                Razon_Docsis_Overlap();
+
+            }
+            else
+            {
+                string script5 = "mensaje5();";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje5", script5, true);
+                Limpiar_Docsis_Overlap();
+
+            }
+        }
+        catch (Exception esc)
+        { throw new Exception("Error al Consultar la cuenta del cliente en base cuentas", esc); }
+
+    }
+    protected void Tipo_Contacto_Docsis_Overlap()
+    {
+
+        DataSet dt = new DataSet();
+        Obj_Entidad_Arbol_Outbound.Id_Tipo_Gestion = 11;
+        dt = Obj_Neg_Arbol_Outbound.Oubound_Tipo_Contacto(Obj_Entidad_Arbol_Outbound.Id_Tipo_Gestion);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            D_Tipo_Contacto.DataSource = dt;
+            D_Tipo_Contacto.DataTextField = "TIPO_CONTACTO";
+            D_Tipo_Contacto.DataValueField = "ID_TIPO_CONTACTO";
+            D_Tipo_Contacto.DataBind();
+        }
+        else
+        {
+            D_Tipo_Contacto.Items.Clear();
+        }
+    }
+    protected void Cierre_Docsis_Overlap()
+    {
+        DataSet dt = new DataSet();
+        Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto = Convert.ToInt16(D_Tipo_Contacto.SelectedValue);
+        dt = Obj_Neg_Arbol_Outbound.Oubound_Cierre(Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+
+            D_Cierre.DataSource = dt;
+            D_Cierre.DataTextField = "CIERRE";
+            D_Cierre.DataValueField = "ID_CIERRE";
+            D_Cierre.DataBind();
+        }
+        else
+        {
+            D_Cierre.Items.Clear();
+        }
+    }
+    protected void Razon_Docsis_Overlap()
+    {
+        DataSet dt = new DataSet();
+        Obj_Entidad_Arbol_Outbound.Id_Cierre = Convert.ToInt16(D_Cierre.SelectedValue);
+        dt = Obj_Neg_Arbol_Outbound.Oubound_Razon(Obj_Entidad_Arbol_Outbound.Id_Cierre);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            D_Razon.DataSource = dt;
+            D_Razon.DataTextField = "RAZON";
+            D_Razon.DataValueField = "ID_RAZON";
+            D_Razon.DataBind();
+        }
+        else
+        {
+            D_Razon.Items.Clear();
+        }
+    }
+
+    protected void D_Tipo_Contacto_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Cierre_Docsis_Overlap();
+        Razon_Docsis_Overlap();
+    }
+
+    protected void D_Cierre_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (Convert.ToString(D_Cierre.SelectedItem) == "SEGUIMIENTO")
+        {
+            D_Tabla_Fecha_Seguimiento.Visible=true;
+        }
+        else
+        {
+            D_Tabla_Fecha_Seguimiento.Visible=false;
+        }
+        Razon_Docsis_Overlap();
+    }
+    protected void Limpiar_Docsis_Overlap()
+    {
+        var LIMPIAR = "";
+        D_Cuenta_Cliente.Text = LIMPIAR;
+        D_Nombre_Cliente.Text = LIMPIAR;
+        D_Apellido_Cliente.Text = LIMPIAR;
+        D_Direccion.Text = LIMPIAR;
+        CV_Direccion_de_Correspondencia.Text = LIMPIAR;
+        D_Telefono_1.Text = LIMPIAR;
+        D_Telefono_2.Text = LIMPIAR;
+        D_Telefono_Telmex.Text = LIMPIAR;
+        D_Celular_1.Text = LIMPIAR;
+        D_Celular_2.Text = LIMPIAR;
+        D_Ciudad.Text = LIMPIAR;
+        D_Correo_Actual.Text = LIMPIAR;
+        D_Estrato.Text = LIMPIAR;
+        D_Tipo_Cliente.Text = LIMPIAR;
+        D_Paquete_Actual.Text = LIMPIAR;
+        D_Movil_Pospago.Text = LIMPIAR;
+        D_Tipo_Contacto.Items.Clear();
+        D_Tipo_Contacto.ClearSelection();
+        D_Cierre.Items.Clear();
+        D_Cierre.ClearSelection();
+        D_Razon.Items.Clear();
+        D_Razon.ClearSelection();
+        D_Observaciones.Text = LIMPIAR;
+        D_Guardar.Enabled = true;
+    }
 }
 
 

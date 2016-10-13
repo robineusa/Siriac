@@ -18,5 +18,9 @@ namespace Negocios
         {
             return Consultas_Docsis_Overlap.Consulta_Admin_Docsis_Overlap(pFecha_Inicial, pFecha_Final);
         }
+        public DataSet Consulta_Temporal_Cuentas(double pCuenta_Cliente)
+        {
+            return Consultas_Docsis_Overlap.Consulta_Temporal_Cuentas(pCuenta_Cliente);
+        }
     }
 }

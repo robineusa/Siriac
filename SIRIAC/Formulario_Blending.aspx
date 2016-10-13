@@ -286,98 +286,101 @@
             </asp:UpdatePanel>
         </div>
     </div>
- <!-- NUEVO SCRIP DE DISEÑO-->
+    <!-- NUEVO SCRIP DE DISEÑO-->
     <div class="modal-wrapper" id="Docsis_Overlap">
         <div class="Docsis_Overlap-contenedor">
             <a class="Docsis_Overlap-cerrar" href="#">X</a>
             <h2>FORMULARIO OUTBOUND DOCSIS Y OVERLAP</h2>
             <hr />
-            <asp:UpdatePanel ID="UpdatePanel20" runat="server">
-                <ContentTemplate>
-                     <asp:Panel CssClass="panel_informativo" ID="Panel22" runat="server" GroupingText="Datos del Cliente">
-                         <table class="tabla">
-                             <tr>
-                                 <td>
-                                  <p class="etiquetas">Cuenta del Cliente:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Cuenta_Cliente" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Nombre del Cliente:</p>
+
+            <asp:Panel CssClass="panel_informativo" ID="Panel22" runat="server" GroupingText="Datos del Cliente">
+                <asp:UpdatePanel ID="UpdatePanel20" runat="server">
+                    <ContentTemplate>
+                        <table class="tabla">
+                            <tr>
+                                <td>
+                                    <p class="etiquetas">Cuenta del Cliente:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Cuenta_Cliente" runat="server" Placeholder="Ingrese la Cuenta" AutoPostBack="true" OnTextChanged="D_Cuenta_Cliente_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Nombre del Cliente:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Nombre_Cliente" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Apellido del Cliente:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Apellido del Cliente:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Apellido_Cliente" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Dirección:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Dirección:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Direccion" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Teléfono 1:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Teléfono 1:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_1" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Teléfono 2:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Teléfono 2:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_2" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Celular 1:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Celular 1:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Celular_1" runat="server"></asp:TextBox>
-                                 </td>
-                             </tr>
-                             <tr>
-                                 <td>
-                                  <p class="etiquetas">Celular 2:</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas">Celular 2:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Celular_2" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Teléfono Telmex:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Teléfono Telmex:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_Telmex" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Ciudad:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Ciudad:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Ciudad" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Correo Actual:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Correo Actual:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Correo_Actual" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Estrato:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Estrato:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Estrato" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Tipo de Cliente:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Tipo de Cliente:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Tipo_Cliente" runat="server"></asp:TextBox>
-                                 </td>
-                                 <td>
-                                  <p class="etiquetas">Paquete Actual:</p>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Paquete Actual:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Paquete_Actual" runat="server"></asp:TextBox>
-                                 </td>
-                             </tr>
-                             <tr>
-                                 <td>
-                                  <p class="etiquetas">Móvil Postpago:</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas">Móvil Postpago:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Movil_Pospago" runat="server"></asp:TextBox>
-                                 </td>
-                             </tr>
-                         </table>
-                     </asp:Panel>
-                    <asp:Panel CssClass="panel_informativo" ID="Panel23" runat="server" GroupingText="Árbol de Tipificación">
+                                </td>
+                            </tr>
+                        </table>
+                        <asp:Label ID="D_Operacion" runat="server" Visible="false"></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Visible="true"></asp:Label>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </asp:Panel>
+            <asp:Panel CssClass="panel_informativo" ID="Panel23" runat="server" GroupingText="Árbol de Tipificación">
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
                         <table class="tabla">
                             <tr>
                                 <td>
                                     <p class="etiquetas">Tipo de Contacto:</p>
-                                    <asp:DropDownList CssClass="dropdown2" ID="D_Tipo_Contacto" runat="server"></asp:DropDownList>
-                                </td>
-                                <td>
-                                    <p class="etiquetas">Tipo de Gestión:</p>
-                                    <asp:DropDownList CssClass="dropdown2" ID="D_Tipo_Gestion" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList CssClass="dropdown2" ID="D_Tipo_Contacto" runat="server" OnSelectedIndexChanged="D_Tipo_Contacto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                 </td>
                                 <td>
                                     <p class="etiquetas">Cierre:</p>
-                                    <asp:DropDownList CssClass="dropdown4" ID="D_Cierre" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList CssClass="dropdown4" ID="D_Cierre" runat="server" OnSelectedIndexChanged="D_Cierre_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                 </td>
                                 <td>
                                     <p class="etiquetas">Razón:</p>
@@ -385,7 +388,29 @@
                                 </td>
                             </tr>
                         </table>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate></ContentTemplate></asp:UpdatePanel>
+                
+            </asp:Panel>
+
+
+
+            <asp:Panel CssClass="panel_informativo" ID="Panel24" runat="server" GroupingText="Datos Actualizables">
+                <asp:Panel ID="D_Tabla_Fecha_Seguimiento" runat="server" >
                     <table class="tabla">
+                        <tr>
+                            <td>
+                                <p class="etiquetas">Seleccione fecha y hora del seguimiento:</p>
+                                <input type="Text" class="caja_de_texto" id="D_Fecha_Seguimiento" />
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <table class="tabla">
                             <tr>
                                 <td colspan="7">
                                     <p class="etiquetas">Observaciones:</p>
@@ -393,10 +418,19 @@
                                 </td>
                             </tr>
                         </table>
-                        </asp:Panel>
-                    <asp:Button CssClass="button" ID="D_Guardar" runat="server" Text="Guardar"/>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+
+                        <asp:Button CssClass="button" ID="D_Guardar" runat="server" Text="Guardar" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </asp:Panel>
+            <script type="text/javascript">
+                var x = document.getElementById("<%=D_Cierre.ClientID%>").value;
+                alert(x);
+
+                $('#D_Fecha_Seguimiento').datetimepicker({
+                    //minDate: '0'
+                });
+            </script>
         </div>
     </div>
 
