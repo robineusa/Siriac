@@ -21,7 +21,9 @@ public partial class Consulta_de_Gestion_Blending : System.Web.UI.Page
     E_Ventas Obj_Entidad_Ventas = new E_Ventas();
     N_Ventas Obj_Neg_Ventas = new N_Ventas();
     E_Logistica_Inversa obj_Entidad_Logistica = new E_Logistica_Inversa();
+    E_Docsis_Overlap obj_Entidad_Docsis_Overlap = new E_Docsis_Overlap();
     N_Logistica_Inversa obj_Neg_Logistica = new N_Logistica_Inversa();
+    N_Docsis_Overlap obj_Neg_Docsis_Overlap = new N_Docsis_Overlap();
     E_Claro_Video obj_Entidad_Claro_Video = new E_Claro_Video();
     N_Claro_Video obj_Neg_Claro_Video = new N_Claro_Video();
 
@@ -294,5 +296,59 @@ public partial class Consulta_de_Gestion_Blending : System.Web.UI.Page
         }
     }
 
-    
+
+
+    protected void Docsis_Overlap_Click(object sender, EventArgs e)
+    {
+        Exportar_Docsis_Overlap.Visible = true;
+        Panel2.Visible = false;
+
+        Fecha_Inicial.Text = CE_Fecha_Inicial.Text;
+        Fecha_Final.Text = CE_Fecha_Final.Text;
+
+        DataSet ds = new DataSet();
+        obj_Entidad_Docsis_Overlap.Fecha_Inicial = Fecha_Inicial.Text;
+        obj_Entidad_Docsis_Overlap.Fecha_Final = Fecha_Final.Text;
+        ds = obj_Neg_Docsis_Overlap.Consulta_Admin_Docsis_Overlap(obj_Entidad_Docsis_Overlap.Fecha_Inicial, obj_Entidad_Docsis_Overlap.Fecha_Final);
+
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+
+            CONSULTA_DOCSIS_OVERLAP.DataSource = ds.Tables[0];
+            CONSULTA_DOCSIS_OVERLAP.DataBind();
+        }
+        else
+        {
+            CONSULTA_DOCSIS_OVERLAP.DataSource = null;
+            CONSULTA_DOCSIS_OVERLAP.DataBind();
+        }
+
+    }
+
+    protected void Exportar_Docsis_Overlap_Click(object sender, EventArgs e)
+    {
+        Exportar_Docsis_Overlap.Enabled = false;
+        Exportar_Docsis_Overlap.Visible = false;
+
+        DataSet ds = new DataSet();
+        obj_Entidad_Docsis_Overlap.Fecha_Inicial = Fecha_Inicial.Text;
+        obj_Entidad_Docsis_Overlap.Fecha_Final = Fecha_Final.Text;
+        ds = obj_Neg_Docsis_Overlap.Consulta_Admin_Docsis_Overlap(obj_Entidad_Docsis_Overlap.Fecha_Inicial, obj_Entidad_Docsis_Overlap.Fecha_Final);
+
+        GridView gv = new GridView();
+        gv.DataSource = ds;
+        gv.DataBind();
+        Response.ClearContent();
+        Response.Buffer = true;
+        Response.AddHeader("content-disposition", "attachment; filename=Base_Docsis_Overlap-" + DateTime.Now.ToShortDateString() + ".xls");
+        Response.ContentType = "application/ms-excel";
+        Response.Charset = "";
+
+        StringWriter sw = new StringWriter();
+        HtmlTextWriter htw = new HtmlTextWriter(sw);
+        gv.RenderControl(htw);
+        Response.Output.Write(sw.ToString());
+        Response.Flush();
+        Response.End();
+    }
 }

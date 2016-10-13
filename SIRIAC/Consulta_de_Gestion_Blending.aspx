@@ -110,6 +110,11 @@
                                     <asp:Button CssClass="botones_Consulta_Gestion" ID="Claro_Video" runat="server" Text="Claro Video" OnClick="Claro_Video_Click"/>
                                 </div>
                             </td>
+                               <td>
+                                <div class="caja_boton">
+                                    <asp:Button CssClass="botones_Consulta_Gestion" ID="Docsis_Overlap" runat="server" Text="Docsis y Overlap" OnClick="Docsis_Overlap_Click" />
+                                </div>
+                                </td>
                         </tr>
                     </table>
 
@@ -207,6 +212,23 @@
                         <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIÓNES" />
                     </Columns>
                 </asp:GridView>
+                  <asp:GridView CssClass="mGrid" ID="CONSULTA_DOCSIS_OVERLAP" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnRowDataBound="DOCSIS_OVERLAP_RowDataBound">
+                    <Columns>
+                        <asp:BoundField DataField="FECHA_GESTION" HeaderText="FECHA DE GESTION" />
+                        <asp:BoundField DataField="USUARIO_GESTION" HeaderText="USUARIO DE GESTION" />
+                        <asp:BoundField DataField="NOMBRE_USUARIO_GESTION" HeaderText="NOMBRE USUARIO DE GESTION" />
+                        <asp:BoundField DataField="ALIADO_GESTION" HeaderText="ALIADO DE GESTION" />
+                        <asp:BoundField DataField="OPERACION_GESTION" HeaderText="OPERACION DE GESTION" />
+                        <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA DEL CLIENTE" />
+                        <asp:BoundField DataField="TIPO_DE_CONTACTO" HeaderText="TIPO DE CONTACTO" />
+                        <asp:BoundField DataField="TIPO_DE_GESTION" HeaderText="TIPO DE GESTIÓN" />
+                        <asp:BoundField DataField="CIERRE" HeaderText="CIERRE" />
+                        <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                        <asp:BoundField DataField="ATTRIBUTO_1" HeaderText="CLARO VIDEO" />
+                        <asp:BoundField DataField="ATTRIBUTO_2" HeaderText="ELEGIDO FIJO MÓVIL" />
+                        <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIÓNES" />
+                    </Columns>
+                </asp:GridView>
 
                 <asp:TextBox ID="Fecha_Inicial" runat="server" Style="display: none"></asp:TextBox>
                 <asp:TextBox ID="Fecha_Final" runat="server" Style="display: none"></asp:TextBox>
@@ -220,6 +242,7 @@
                             <asp:Button CssClass="button" ID="Exportar_Ventas" runat="server" Text="Exportar a Excel" Visible="false" OnClick="Exportar_Ventas_Click" />
                             <asp:Button CssClass="button" ID="Exportar_Logistica" runat="server" Text="Exportar a Excel" Visible="false" OnClick="Exportar_Logistica_Click" />
                             <asp:Button CssClass="button" ID="Exportar_Claro_Video" runat="server" Text="Exportar a Excel" Visible="false" OnClick="Exportar_Claro_Video_Click" />
+                             <asp:Button CssClass="button" ID="Exportar_Docsis_Overlap" runat="server" Text="Exportar a Excel" Visible="false" OnClick="Exportar_Docsis_Overlap_Click" />
                         </td>
                     </tr>
                 </table>
