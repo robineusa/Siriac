@@ -400,6 +400,13 @@
                                                     Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox202" runat="server" />
+                                                <asp:Label ID="Label284" AssociatedControlID="CheckBox202" runat="server"
+                                                    Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </table>
                             </asp:Panel>
@@ -800,6 +807,13 @@
                                                 <asp:CheckBox ID="CheckBox190" runat="server" />
                                                 <asp:Label ID="Label232" AssociatedControlID="CheckBox190" runat="server"
                                                     Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox203" runat="server" />
+                                                <asp:Label ID="Label285" AssociatedControlID="CheckBox203" runat="server"
+                                                    Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -1245,6 +1259,13 @@
                                                     Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox204" runat="server" />
+                                                <asp:Label ID="Label286" AssociatedControlID="CheckBox204" runat="server"
+                                                    Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
                                     </tr>
 
                                 </table>
@@ -1630,6 +1651,13 @@
                                                 <asp:CheckBox ID="CheckBox196" runat="server" />
                                                 <asp:Label ID="Label238" AssociatedControlID="CheckBox196" runat="server"
                                                     Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox206" runat="server" />
+                                                <asp:Label ID="Label288" AssociatedControlID="CheckBox206" runat="server"
+                                                    Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -2026,13 +2054,20 @@
                                         <asp:Label ID="Label207" AssociatedControlID="CheckBox127" runat="server"
                                             Text="Fraudes" CssClass="CheckBoxLabel"></asp:Label>
                                     </div>
-                                    <td>
-                                            <div class="SingleCheckbox">
-                                                <asp:CheckBox ID="CheckBox199" runat="server" />
-                                                <asp:Label ID="Label241" AssociatedControlID="CheckBox199" runat="server"
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox199" runat="server" />
+                                        <asp:Label ID="Label241" AssociatedControlID="CheckBox199" runat="server"
                                                     Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
-                                            </div>
-                                        </td>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox205" runat="server" />
+                                        <asp:Label ID="Label287" AssociatedControlID="CheckBox205" runat="server"
+                                                    Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
                                 </td>
                             </tr>
                         </table>

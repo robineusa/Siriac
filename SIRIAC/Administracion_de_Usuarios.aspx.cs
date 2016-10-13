@@ -465,6 +465,7 @@ public partial class Administracion_de_Usuarios : System.Web.UI.Page
             if (CheckBox88.Checked == true) { ACCESO_15 = 1; } else { ACCESO_15 = 0; };
             if (CheckBox89.Checked == true) { ACCESO_16 = 1; } else { ACCESO_16 = 0; };
             if (CheckBox187.Checked == true) { ACCESO_17 = 1; } else { ACCESO_17 = 0; };
+            if (CheckBox202.Checked == true) { ACCESO_18 = 1; } else { ACCESO_18 = 0; };
 
         };
 
@@ -594,6 +595,7 @@ public partial class Administracion_de_Usuarios : System.Web.UI.Page
             if (CheckBox104.Checked == true) { ACCESO_15 = 1; } else { ACCESO_15 = 0; };
             if (CheckBox105.Checked == true) { ACCESO_16 = 1; } else { ACCESO_16 = 0; };
             if (CheckBox193.Checked == true) { ACCESO_17 = 1; } else { ACCESO_17 = 0; };
+            if (CheckBox204.Checked == true) { ACCESO_18 = 1; } else { ACCESO_18 = 0; };
         };
 
         Obj_Entidad_Usuarios.Cedula = Convert.ToDouble(A_Cedula.Text);
@@ -854,6 +856,7 @@ public partial class Administracion_de_Usuarios : System.Web.UI.Page
                 if (Label101.Text == "1") { CheckBox97.Checked = true; } else { CheckBox97.Checked = false; };
                 if (Label101.Text == "1") { CheckBox97.Checked = true; } else { CheckBox97.Checked = false; };
                 if (Label102.Text == "1") { CheckBox190.Checked = true; } else { CheckBox190.Checked = false; };
+                if (Label103.Text == "1") { CheckBox203.Checked = true; } else { CheckBox203.Checked = false; };
             };
         }
         else
@@ -970,6 +973,7 @@ public partial class Administracion_de_Usuarios : System.Web.UI.Page
                 if (Label100.Text == "1") { CheckBox104.Checked = true; } else { CheckBox104.Checked = false; };
                 if (Label101.Text == "1") { CheckBox105.Checked = true; } else { CheckBox105.Checked = false; };
                 if (Label102.Text == "1") { CheckBox193.Checked = true; } else { CheckBox193.Checked = false; };
+                if (Label103.Text == "1") { CheckBox204.Checked = true; } else { CheckBox204.Checked = false; };
             };
         }
         else
@@ -1271,6 +1275,7 @@ public partial class Administracion_de_Usuarios : System.Web.UI.Page
                         if (CheckBox126.Checked == true) { ACCESO_15 = 1; } else { ACCESO_15 = 0; };
                         if (CheckBox127.Checked == true) { ACCESO_16 = 1; } else { ACCESO_16 = 0; };
                         if (CheckBox199.Checked == true) { ACCESO_17 = 1; } else { ACCESO_17 = 0; };
+                        if (CheckBox205.Checked == true) { ACCESO_18 = 1; } else { ACCESO_18 = 0; };
                     };
 
                     Obj_Entidad_Usuarios.Cedula = Convert.ToDouble(rows.Cells[0].Text);
@@ -1508,7 +1513,8 @@ public partial class Administracion_de_Usuarios : System.Web.UI.Page
                         if (CheckBox163.Checked == true) { ACCESO_15 = 1; } else { ACCESO_15 = 0; };
                         if (CheckBox164.Checked == true) { ACCESO_16 = 1; } else { ACCESO_16 = 0; };
                         if (CheckBox196.Checked == true) { ACCESO_17 = 1; } else { ACCESO_17 = 0; };
-                        
+                        if (CheckBox206.Checked == true) { ACCESO_18 = 1; } else { ACCESO_18 = 0; };
+
                     };
 
                     Obj_Entidad_Usuarios.Cedula = Convert.ToDouble(rows.Cells[0].Text);

@@ -47,6 +47,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         if (Session["Acceso_15"].ToString() == "1") { } else { Logistica_div.Style.Add("Display", " none"); }
         if (Session["Acceso_16"].ToString() == "1") { } else { Fraudes_div.Style.Add("Display", " none"); }
         if (Session["Acceso_17"].ToString() == "1") { } else { Claro_Video_div.Style.Add("Display", " none"); }
+        if (Session["Acceso_18"].ToString() == "1") { } else { Docsis_Overlap_div.Style.Add("Display", " none"); }
     }
     protected void CE_Guardar_Click(object sender, EventArgs e)
     {
