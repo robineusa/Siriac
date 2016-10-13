@@ -294,8 +294,76 @@
             <hr />
             <asp:UpdatePanel ID="UpdatePanel20" runat="server">
                 <ContentTemplate>
-                    <p class="etiquetas">Este formulario se encuentra en construcción:</p>
-                    <hr />
+                     <asp:Panel CssClass="panel_informativo" ID="Panel22" runat="server" GroupingText="Datos del Cliente">
+                         <table class="tabla">
+                             <tr>
+                                 <td>
+                                  <p class="etiquetas">Cuenta del Cliente:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox1" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Nombre del Cliente:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox2" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Apellido del Cliente:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox3" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Dirección:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox4" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Teléfono 1:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox5" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Teléfono 2:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox6" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Celular 1:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox7" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                  <p class="etiquetas">Celular 2:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox8" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Teléfono Telmex:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox9" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Ciudad:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox10" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Correo Actual:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox11" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Estrato:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox12" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Tipo de Cliente:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox13" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                  <p class="etiquetas">Paquete Actual:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox14" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Móvil Postpago:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox15" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                 </td>
+                             </tr>
+                         </table>
+                     </asp:Panel>
                     
                 </ContentTemplate>
             </asp:UpdatePanel>
