@@ -129,6 +129,9 @@
                                             <td>
                                                 <div id="Claro_Video_div" class="referencia" runat="server"><a href="#Claro_Video">Claro Video</a></div>
                                             </td>
+                                            <td>
+                                                <div id="Docsis_Overlap_div" class="referencia" runat="server"><a href="#Docsis_Overlap">Docsis y Overlap</a></div>
+                                            </td>
                                         </tr>
                                     </table>
                                 </asp:Panel>
@@ -283,6 +286,22 @@
             </asp:UpdatePanel>
         </div>
     </div>
+ <!-- NUEVO SCRIP DE DISEÑO-->
+    <div class="modal-wrapper" id="Docsis_Overlap">
+        <div class="Docsis_Overlap-contenedor">
+            <a class="Docsis_Overlap-cerrar" href="#">X</a>
+            <h2>FORMULARIO OUTBOUND DOCSIS Y OVERLAP</h2>
+            <hr />
+            <asp:UpdatePanel ID="UpdatePanel20" runat="server">
+                <ContentTemplate>
+                    <p class="etiquetas">Este formulario se encuentra en construcción:</p>
+                    <hr />
+                    
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
     <!-- NUEVO SCRIP DE DISEÑO-->
     <div class="modal-wrapper" id="Reincidencia">
         <div class="Reincidencia-contenedor">

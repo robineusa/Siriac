@@ -3971,4 +3971,83 @@ font-family: Arial;
 /*margin-left: -40px*/
 }
 
+/*A PARTIR DE ESTE MOMENTO ES UN NUEVO SCRIP*/
+#Docsis_Overlap {
+  visibility: hidden;
+   opacity: 0;
+   margin-top: -300px;
+}
+
+#Docsis_Overlap:target {
+    visibility:visible;
+   opacity: 1;
+   background-color: rgba(0,0,0,0.8);
+   position: fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   margin:0;
+
+   -webkit-transition:all 1s;
+   -moz-transition:all 1s;
+   transition:all 1s;
+   font-size: 12px;
+   overflow-x: hidden;
+  overflow-y: auto;
+}
+.Docsis_Overlap-contenedor {
+   position: relative;
+   margin:7% auto;
+   padding:30px 50px;
+   background-color: #fafafa;
+   color:#333;
+   border-radius: 3px;
+   width:950px;
+   font-size: 11px;
+}
+a.Docsis_Overlap-cerrar {
+  -moz-transition:1s;
+   position: absolute;
+   top:3px;
+   right:3px;
+   background-color: #333;
+   padding:7px 10px;
+   font-size: 18px;
+   text-decoration: none;
+   line-height: 1;
+   color:#fff;
+   border-radius: 45px;
+   margin-top: -20px;
+   margin-right: -15px;
+   border-style: solid;
+   border-color: white;
+   border-width: 1px;
+   font-family: sans-serif;
+   font-weight: 400;
+}
+a.Docsis_Overlap-cerrar:hover{
+  -moz-transition:1s;
+  color: red;
+  font-weight: 700;
+  background-color: white;
+  border-color: red;
+}
+.Docsis_Overlap-contenedor p{
+font-size: 12px;
+
+}
+.Docsis_Overlap-contenedor h2{
+font-family: sans-serif;
+text-align: center;
+background-color: rgba(121, 99, 40, 1);
+border-style: solid;
+border-radius: 5px;
+border-width: 1px;
+border-color: rgba(121, 99, 40, 1);
+font-style: normal;
+font-weight: 400;
+color: white;
+font-size: 18px;
+}
 
