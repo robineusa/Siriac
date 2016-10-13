@@ -299,72 +299,102 @@
                              <tr>
                                  <td>
                                   <p class="etiquetas">Cuenta del Cliente:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox1" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Cuenta_Cliente" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Nombre del Cliente:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox2" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Nombre_Cliente" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Apellido del Cliente:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox3" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Apellido_Cliente" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Dirección:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox4" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Direccion" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Teléfono 1:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox5" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_1" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Teléfono 2:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox6" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_2" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Celular 1:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox7" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Celular_1" runat="server"></asp:TextBox>
                                  </td>
                              </tr>
                              <tr>
                                  <td>
                                   <p class="etiquetas">Celular 2:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox8" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Celular_2" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Teléfono Telmex:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox9" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_Telmex" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Ciudad:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox10" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Ciudad" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Correo Actual:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox11" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Correo_Actual" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Estrato:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox12" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Estrato" runat="server"></asp:TextBox>
                                  </td>
                                  <td>
                                   <p class="etiquetas">Tipo de Cliente:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox13" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Tipo_Cliente" runat="server"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                  <p class="etiquetas">Paquete Actual:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Paquete_Actual" runat="server"></asp:TextBox>
                                  </td>
                              </tr>
                              <tr>
                                  <td>
-                                  <p class="etiquetas">Paquete Actual:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox14" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
-                                 </td>
-                                 <td>
                                   <p class="etiquetas">Móvil Postpago:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TextBox15" runat="server" Placeholder="Ingrese la Cuenta"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Movil_Pospago" runat="server"></asp:TextBox>
                                  </td>
                              </tr>
                          </table>
                      </asp:Panel>
-                    
+                    <asp:Panel CssClass="panel_informativo" ID="Panel23" runat="server" GroupingText="Árbol de Tipificación">
+                        <table class="tabla">
+                            <tr>
+                                <td>
+                                    <p class="etiquetas">Tipo de Contacto:</p>
+                                    <asp:DropDownList CssClass="dropdown2" ID="D_Tipo_Contacto" runat="server"></asp:DropDownList>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Tipo de Gestión:</p>
+                                    <asp:DropDownList CssClass="dropdown2" ID="D_Tipo_Gestion" runat="server"></asp:DropDownList>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Cierre:</p>
+                                    <asp:DropDownList CssClass="dropdown4" ID="D_Cierre" runat="server"></asp:DropDownList>
+                                </td>
+                                <td>
+                                    <p class="etiquetas">Razón:</p>
+                                    <asp:DropDownList CssClass="dropdown3" ID="D_Razon" runat="server"></asp:DropDownList>
+                                </td>
+                            </tr>
+                        </table>
+                    <table class="tabla">
+                            <tr>
+                                <td colspan="7">
+                                    <p class="etiquetas">Observaciones:</p>
+                                    <asp:TextBox CssClass="notas_casos" ID="D_Observaciones" runat="server" autocomplete="off"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        </asp:Panel>
+                    <asp:Button CssClass="button" ID="D_Guardar" runat="server" Text="Guardar"/>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
