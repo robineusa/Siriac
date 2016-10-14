@@ -292,7 +292,6 @@
             <a class="Docsis_Overlap-cerrar" href="#">X</a>
             <h2>FORMULARIO OUTBOUND DOCSIS Y OVERLAP</h2>
             <hr />
-
             <asp:Panel CssClass="panel_informativo" ID="Panel22" runat="server" GroupingText="Datos del Cliente">
                 <asp:UpdatePanel ID="UpdatePanel20" runat="server">
                     <ContentTemplate>
@@ -315,6 +314,10 @@
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Direccion" runat="server"></asp:TextBox>
                                 </td>
                                 <td>
+                                    <p class="etiquetas">Dirección de correspondencia:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Direccion_Corres" runat="server"></asp:TextBox>
+                                </td>
+                                <td>
                                     <p class="etiquetas">Teléfono 1:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_1" runat="server"></asp:TextBox>
                                 </td>
@@ -322,12 +325,13 @@
                                     <p class="etiquetas">Teléfono 2:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Telefono_2" runat="server"></asp:TextBox>
                                 </td>
+                                
+                            </tr>
+                            <tr>
                                 <td>
                                     <p class="etiquetas">Celular 1:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Celular_1" runat="server"></asp:TextBox>
                                 </td>
-                            </tr>
-                            <tr>
                                 <td>
                                     <p class="etiquetas">Celular 2:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Celular_2" runat="server"></asp:TextBox>
@@ -352,12 +356,12 @@
                                     <p class="etiquetas">Tipo de Cliente:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Tipo_Cliente" runat="server"></asp:TextBox>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <p class="etiquetas">Paquete Actual:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Paquete_Actual" runat="server"></asp:TextBox>
                                 </td>
-                            </tr>
-                            <tr>
                                 <td>
                                     <p class="etiquetas">Móvil Postpago:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Movil_Pospago" runat="server"></asp:TextBox>
@@ -365,10 +369,11 @@
                             </tr>
                         </table>
                         <asp:Label ID="D_Operacion" runat="server" Visible="false"></asp:Label>
-                        <asp:Label ID="Label3" runat="server" Visible="true"></asp:Label>
+                        <asp:Label ID="D_Base" runat="server" Visible="false"></asp:Label>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </asp:Panel>
+            <hr />
             <asp:Panel CssClass="panel_informativo" ID="Panel23" runat="server" GroupingText="Árbol de Tipificación">
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
@@ -390,24 +395,43 @@
                         </table>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                <asp:UpdatePanel runat="server">
-                    <ContentTemplate></ContentTemplate></asp:UpdatePanel>
-                
             </asp:Panel>
-
-
-
+            <hr />
             <asp:Panel CssClass="panel_informativo" ID="Panel24" runat="server" GroupingText="Datos Actualizables">
-                <asp:Panel ID="D_Tabla_Fecha_Seguimiento" runat="server" >
+                <asp:Panel ID="D_Tabla_Fecha_Seguimiento" runat="server" Style="display: none">
                     <table class="tabla">
                         <tr>
                             <td>
                                 <p class="etiquetas">Seleccione fecha y hora del seguimiento:</p>
-                                <input type="Text" class="caja_de_texto" id="D_Fecha_Seguimiento" />
+                                <%--<input type="Text" class="caja_de_texto" id="D_Fecha_Seguimiento" />--%>
+                                <asp:TextBox runat="server" CssClass="caja_de_texto" ID="D_Fecha_Seguimiento" Placeholder="Select Date"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
                 </asp:Panel>
+                <script type="text/javascript">
+                    $('#<%=D_Fecha_Seguimiento.ClientID%>').datetimepicker({
+                        minDate: '0',
+                        dateformat: 'd/m/Y 00:00',
+                        timepicker: true,
+                        step: 1
+                    });
+
+                    function Mostra_Div() {
+                        document.getElementById("<%=D_Tabla_Fecha_Seguimiento.ClientID%>").style.display = 'block';
+                    }
+                    function No_Mostra_Div() {
+                        document.getElementById("<%=D_Tabla_Fecha_Seguimiento.ClientID%>").style.display = 'none';
+                    }
+                    function Casos_Seguimiento() {
+                        document.getElementById("hrg").style.display = 'block';
+                        document.getElementById("<%=Panel25.ClientID%>").style.display = 'block';
+                    }
+                    function No_Casos_Seguimiento() {
+                        document.getElementById("hrg").style.display = 'block';
+                        document.getElementById("<%=Panel25.ClientID%>").style.display = 'block';
+                    }
+                </script>
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
                         <table class="tabla">
@@ -418,19 +442,33 @@
                                 </td>
                             </tr>
                         </table>
-
-                        <asp:Button CssClass="button" ID="D_Guardar" runat="server" Text="Guardar" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </asp:Panel>
-            <script type="text/javascript">
-                var x = document.getElementById("<%=D_Cierre.ClientID%>").value;
-                alert(x);
-
-                $('#D_Fecha_Seguimiento').datetimepicker({
-                    //minDate: '0'
-                });
-            </script>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:Button CssClass="button" ID="D_Guardar" runat="server" Text="Guardar" OnClick="D_Guardar_Click"/>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <hr id="hrg" style="display:none"/>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:Panel CssClass="panel_informativo" ID="Panel25" runat="server" GroupingText="Historico de Casos" style="display:none" >
+                        <asp:GridView CssClass="mGrid" ID="GV_Seguimientos" runat="server" AutoGenerateColumns="False" Style="max-width: 100%; margin-left: 10px; margin-top: 10px;" Autopostback="true" >
+                            <Columns>
+                                <asp:BoundField DataField="FECHA_GESTION" HeaderText="FECHA DE GESTION" />
+                                <asp:BoundField DataField="NOMBRE_USUARIO_GESTION" HeaderText="NOMBRE ASESOR" />
+                                <asp:BoundField DataField="ALIADO_GESTION" HeaderText="ALIADO" />
+                                <asp:BoundField DataField="TIPO_DE_CONTACTO" HeaderText="TIPO DE CONTACTO" />
+                                <asp:BoundField DataField="CIERRE" HeaderText="CIERRE" />
+                                <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                                <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIONES" />
+                                 <asp:BoundField DataField="FECHA_SEGUIMIENTO" HeaderText="FECHA DE SEGUIMIENTO" />
+                            </Columns>
+                        </asp:GridView>
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </div>
 

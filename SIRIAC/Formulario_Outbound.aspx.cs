@@ -124,26 +124,26 @@ public partial class Formulario_Outbound : System.Web.UI.Page
     }
     private void Controles_a_Objeto()
     {
-        var Atributo_1 = 0;
-        var Atributo_2 = 0;
-        var Atributo_3 = 0;
-        var Atributo_4 = 0;
-        var Atributo_5 = 0;
-        var Atributo_6 = 0;
-        var Atributo_7 = 0;
-        var Atributo_8 = 0;
-        var Atributo_9 = 0;
-        var Atributo_10 = 0;
-        var Ofrecimiento_1 = 0;
-        var Ofrecimiento_2 = 0;
-        var Ofrecimiento_3 = 0;
-        var Ofrecimiento_4 = 0;
-        var Ofrecimiento_5 = 0;
-        var Ofrecimiento_6 = 0;
-        var Ofrecimiento_7 = 0;
-        var Ofrecimiento_8 = 0;
-        var Ofrecimiento_9 = 0;
-        var Ofrecimiento_10 = 0;
+        //var Atributo_1 = 0;
+        //var Atributo_2 = 0;
+        //var Atributo_3 = 0;
+        //var Atributo_4 = 0;
+        //var Atributo_5 = 0;
+        //var Atributo_6 = 0;
+        //var Atributo_7 = 0;
+        //var Atributo_8 = 0;
+        //var Atributo_9 = 0;
+        //var Atributo_10 = 0;
+        //var Ofrecimiento_1 = 0;
+        //var Ofrecimiento_2 = 0;
+        //var Ofrecimiento_3 = 0;
+        //var Ofrecimiento_4 = 0;
+        //var Ofrecimiento_5 = 0;
+        //var Ofrecimiento_6 = 0;
+        //var Ofrecimiento_7 = 0;
+        //var Ofrecimiento_8 = 0;
+        //var Ofrecimiento_9 = 0;
+        //var Ofrecimiento_10 = 0;
 
         //if (CheckBox1.Checked == true) { Atributo_1 = 1; } else { Atributo_1 = 0; };
         //if (CheckBox2.Checked == true) { Atributo_2 = 1; } else { Atributo_2 = 0; };
