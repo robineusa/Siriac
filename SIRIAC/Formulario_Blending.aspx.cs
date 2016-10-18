@@ -1799,7 +1799,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         }
         else
         {
-            string script1 = "Casos_Seguimiento();";
+            string script1 = "No_Casos_Seguimiento();";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "Casos_Seguimiento", script1, true);
 
         }
@@ -1903,6 +1903,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
     {
         Cierre_Docsis_Overlap();
         Razon_Docsis_Overlap();
+        D_ConsultarSeguimientos();
     }
 
     protected void D_Cierre_SelectedIndexChanged(object sender, EventArgs e)
@@ -1919,6 +1920,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Mostra_Div", script2, true);
         }
         Razon_Docsis_Overlap();
+        D_ConsultarSeguimientos();
     }
     protected void Limpiar_Docsis_Overlap()
     {
@@ -1947,6 +1949,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         D_Razon.ClearSelection();
         D_Observaciones.Text = LIMPIAR;
         D_Guardar.Enabled = true;
+        D_Fecha_Seguimiento.Text = LIMPIAR;
     }
 
     protected void D_Guardar_Click(object sender, EventArgs e)

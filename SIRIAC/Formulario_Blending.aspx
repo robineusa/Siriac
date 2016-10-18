@@ -314,7 +314,7 @@
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Direccion" runat="server"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <p class="etiquetas">Dirección de correspondencia:</p>
+                                    <p class="etiquetas">Dir. Correspondencia:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Direccion_Corres" runat="server"></asp:TextBox>
                                 </td>
                                 <td>
@@ -412,9 +412,9 @@
                 <script type="text/javascript">
                     $('#<%=D_Fecha_Seguimiento.ClientID%>').datetimepicker({
                         minDate: '0',
-                        dateformat: 'd/m/Y 00:00',
+                        dateFormat: 'yy.mm.dd 00:00',
                         timepicker: true,
-                        step: 1
+                        //step: 1
                     });
 
                     function Mostra_Div() {
@@ -428,8 +428,8 @@
                         document.getElementById("<%=Panel25.ClientID%>").style.display = 'block';
                     }
                     function No_Casos_Seguimiento() {
-                        document.getElementById("hrg").style.display = 'block';
-                        document.getElementById("<%=Panel25.ClientID%>").style.display = 'block';
+                        document.getElementById("hrg").style.display = 'none';
+                        document.getElementById("<%=Panel25.ClientID%>").style.display = 'none';
                     }
                 </script>
                 <asp:UpdatePanel runat="server">

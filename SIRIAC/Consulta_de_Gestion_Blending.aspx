@@ -225,7 +225,7 @@
                         <asp:BoundField DataField="CIERRE" HeaderText="CIERRE" />
                         <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
                         <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIÓNES" />
-                        <asp:BoundField DataField="FECHA_AGENDA" HeaderText="FECHA DE SEGUIMIENTO" />
+                        <asp:BoundField DataField="FECHA_SEGUIMIENTO" HeaderText="FECHA DE SEGUIMIENTO" />
                     </Columns>
                 </asp:GridView>
 
