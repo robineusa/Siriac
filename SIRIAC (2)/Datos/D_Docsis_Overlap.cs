@@ -21,7 +21,7 @@ namespace Datos
                 Abrir_Conexion();
                 cmd.Connection = Conexion;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "[dbo].[Consulta_Cliente_Temporal_Claro_Video]";
+                cmd.CommandText = "[dbo].[Consulta_Cliente_Temporal_Docsis]";
                 cmd.Parameters.AddWithValue("@Cuenta_Cliente", pCuenta_Cliente);
                 dt.SelectCommand = cmd;
                 dt.Fill(ds);

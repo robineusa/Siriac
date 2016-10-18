@@ -431,6 +431,9 @@
                         document.getElementById("hrg").style.display = 'none';
                         document.getElementById("<%=Panel25.ClientID%>").style.display = 'none';
                     }
+                    function Borrar_fecha() {
+                        $('#<%=D_Fecha_Seguimiento.ClientID%>').val('');
+                    }
                 </script>
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
@@ -453,10 +456,11 @@
             <hr id="hrg" style="display:none"/>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                    <asp:Panel CssClass="panel_informativo" ID="Panel25" runat="server" GroupingText="Historico de Casos" style="display:none" >
+                    <asp:Panel CssClass="panel_informativo" ID="Panel25" runat="server" GroupingText="Histórico de Seguimientos" style="display:none" >
                         <asp:GridView CssClass="mGrid" ID="GV_Seguimientos" runat="server" AutoGenerateColumns="False" Style="max-width: 100%; margin-left: 10px; margin-top: 10px;" Autopostback="true" >
                             <Columns>
                                 <asp:BoundField DataField="FECHA_GESTION" HeaderText="FECHA DE GESTION" />
+                                <asp:BoundField DataField="USUARIO_GESTION" HeaderText="USUARIO_RR" />
                                 <asp:BoundField DataField="NOMBRE_USUARIO_GESTION" HeaderText="NOMBRE ASESOR" />
                                 <asp:BoundField DataField="ALIADO_GESTION" HeaderText="ALIADO" />
                                 <asp:BoundField DataField="TIPO_DE_CONTACTO" HeaderText="TIPO DE CONTACTO" />

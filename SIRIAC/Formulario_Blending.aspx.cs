@@ -1770,6 +1770,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
                 if (dt.Tables[0].Rows[0]["MOVIL_2"].ToString() == "") { D_Celular_2.Text = "0"; } else { D_Celular_2.Text = dt.Tables[0].Rows[0]["MOVIL_2"].ToString(); }
                 D_Paquete_Actual.Text = dt.Tables[0].Rows[0]["PAQUETE_ACTUAL"].ToString();
                 D_Operacion.Text = dt.Tables[0].Rows[0]["OPERACION"].ToString();
+                D_Base.Text = dt.Tables[0].Rows[0]["BASE"].ToString();
                 D_Consultar_Datos_Cliente();
                 D_ConsultarSeguimientos();
             }
@@ -1901,6 +1902,9 @@ public partial class Formulario_Blendign : System.Web.UI.Page
 
     protected void D_Tipo_Contacto_SelectedIndexChanged(object sender, EventArgs e)
     {
+        string script2 = "No_Mostra_Div();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Mostra_Div", script2, true);
+        
         Cierre_Docsis_Overlap();
         Razon_Docsis_Overlap();
         D_ConsultarSeguimientos();
@@ -1950,6 +1954,11 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         D_Observaciones.Text = LIMPIAR;
         D_Guardar.Enabled = true;
         D_Fecha_Seguimiento.Text = LIMPIAR;
+        D_Operacion.Text = LIMPIAR;
+        D_Base.Text = LIMPIAR;
+        string script1 = "Borrar_fecha();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "Borrar_fecha", script1, true);
+        
     }
 
     protected void D_Guardar_Click(object sender, EventArgs e)
