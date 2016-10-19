@@ -64,3 +64,14 @@ C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Datos\
 C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
 C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Datos\obj\Release\Datos.dll
 C:\Users\robin\Google Drive\02_Desarrollos\Siriac\Siriac_Capas\SIRIAC (2)\Datos\obj\Release\Datos.pdb
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Datos.dll
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Datos.pdb
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Entidades.dll
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Newtonsoft.Json.dll
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Entidades.pdb
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Newtonsoft.Json.xml
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.dll
+C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.pdb

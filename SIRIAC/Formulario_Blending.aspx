@@ -412,9 +412,9 @@
                 <script type="text/javascript">
                     $('#<%=D_Fecha_Seguimiento.ClientID%>').datetimepicker({
                         minDate: '0',
-                        dateFormat: 'yy.mm.dd 00:00',
+                        dateFormat: 'd-m-Y 00:00',
                         timepicker: true,
-                        //step: 1
+                        step: 1
                     });
 
                     function Mostra_Div() {

@@ -1958,7 +1958,10 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         D_Base.Text = LIMPIAR;
         string script1 = "Borrar_fecha();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "Borrar_fecha", script1, true);
-        
+        string script2 = " No_Mostra_Div();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Mostra_Div", script2, true);
+        string script3 = " No_Casos_Seguimiento();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Casos_Seguimiento", script3, true);
     }
 
     protected void D_Guardar_Click(object sender, EventArgs e)
