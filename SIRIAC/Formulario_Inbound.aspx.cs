@@ -271,12 +271,33 @@ public partial class Formulario_Inbound : System.Web.UI.Page
                 {
                     throw new Exception("Error al Consultar la cuenta del cliente Siguiente Mejor Oferta", esc);
                 }
-
                 SMO_Tipo_Contacto();
                 SMO_Gestion();
                 SMO_Cierre();
                 SMO_Razon();
-            }
+
+                //ESTA CONSULTA CARGA LA INFORMACION DE CLARO VIDEO//
+                try
+                {
+                    string script1 = "CV_Activar();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "CV_Activar()", script1, true);
+                }
+                catch (Exception esc)
+                {
+                    throw new Exception("Error al Consultar la cuenta del cliente beneficios claro video", esc);
+                }
+
+                //ESTA CONSULTA CARGA LA INFORMACION DE SIEMBRA HD//
+                try
+                {
+                    string script1 = "HD_Activar();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "HD_Activar()", script1, true);
+                }
+                catch (Exception esc)
+                {
+                    throw new Exception("Error al Consultar la cuenta del cliente siembra HD", esc);
+                }
+        }
             else
             {
                 this.Carga_Casos_Abiertos(sender, e);

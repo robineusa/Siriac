@@ -249,7 +249,7 @@ z-index: 999;
  animation: 1s infinite ;
 }
 #Icono_3:hover:after{
- content: 'Activar Claro Video'; 
+ content: 'Beneficios Claro Video'; 
     position: absolute;
     z-index: 98;
   margin-left: -15px;
@@ -292,6 +292,48 @@ z-index: 999;
 }
 #Icono_4:hover:after{
  content: 'Siguiente Mejor Oferta'; 
+    position: absolute;
+    z-index: 98;
+  margin-left: -25px;
+    margin-top: 45px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 15px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+   
+}
+#Icono_5{
+  position: relative;
+  float: left;
+  content: "";
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 8px;
+  background:url(hd2.png) center no-repeat;
+  background-size: 50px 50px;
+  -moz-transition: 0.5s;
+  animation: 1s infinite Sombras;
+}
+#Icono_5:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_5:hover:after{
+ content: 'Siembra HD'; 
     position: absolute;
     z-index: 98;
   margin-left: -25px;

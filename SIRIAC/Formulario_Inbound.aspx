@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <link href="Estilos/Style_Perfil_Asesor.css?1.0.9" rel="stylesheet" />
+    <link href="Estilos/Style_Perfil_Asesor.css?1.1.0" rel="stylesheet" />
     <link href="Estilos/Style_Ingreso_Casos.css?1.0.9" rel="stylesheet" />
     <link href="Estilos/Menu.css?1.0.6" rel="stylesheet" />
-    <link href="Estilos/Banner_Alertas_Asesor_In.css" rel="stylesheet" />
+    <link href="Estilos/Banner_Alertas_Asesor_In.css?1.0.1" rel="stylesheet" />
     <script src="jquery/jquery.datetimepicker.js?1.0.9"></script>
     <link href="Estilos/jquery.datetimepicker.css?1.0.9" rel="stylesheet" />
     <script src="Js/jquery.datetimepicker.full.js?1.0.9"></script>
@@ -200,6 +200,7 @@
             document.getElementById('Icono_2').style.display = 'none';
             document.getElementById('Icono_3').style.display = 'none';
             document.getElementById('Icono_4').style.display = 'none';
+            document.getElementById('Icono_5').style.display = 'none';
             document.getElementById('SMO_Ofrecimiento_2').style.display = 'none';
             document.getElementById('SMO_Ofrecimiento_3').style.display = 'none';
             document.getElementById('SMO_Paleta_de_Servicios').style.display = 'none';
@@ -225,6 +226,28 @@
     <script type="text/javascript">
         function SMO_Desactivar() {
             document.getElementById('Icono_4').style.display = 'none';
+        }
+    </script>
+    <script type="text/javascript">
+        function CV_Activar() {
+            document.getElementById('Menu_Opciones').style.display = 'block';
+            document.getElementById('Icono_3').style.display = 'block';
+        }
+    </script>
+    <script type="text/javascript">
+        function CV_Desactivar() {
+            document.getElementById('Icono_3').style.display = 'none';
+        }
+    </script>
+    <script type="text/javascript">
+        function HD_Activar() {
+            document.getElementById('Menu_Opciones').style.display = 'block';
+            document.getElementById('Icono_5').style.display = 'block';
+        }
+    </script>
+    <script type="text/javascript">
+        function HD_Desactivar() {
+            document.getElementById('Icono_5').style.display = 'none';
         }
     </script>
 
@@ -305,7 +328,7 @@
 
 
 
-        </div>
+        </div>  
     </div>
 
 
@@ -315,9 +338,14 @@
                 <div id="Icono_1" style="display: none"></div>
             </a>
             <div id="Icono_2" style="display: none"></div>
-            <div id="Icono_3" style="display: none"></div>
+            <a href="#Iframe_CV" onclick="document.getElementById('Iframe_CV').style.display = 'block';">
+                <div id="Icono_3" style="display: none"></div>
+            </a>
             <a href="#Iframe_SMO" onclick="return Cargar_Datos_SMO()">
                 <div id="Icono_4" style="display: none"></div>
+            </a>
+            <a href="#Iframe_HD" onclick="document.getElementById('Iframe_HD').style.display = 'block';">
+                <div id="Icono_5" style="display: none"></div>
             </a>
         </div>
     </div>
@@ -3704,6 +3732,18 @@
 
         </div>
     </div>
+    <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE CLARO VIDEO-->
+    <div class="modal-wrapper" id="Iframe_CV" style="display: none">
+        <div class="Iframe_CV-contenedor">
+            <a class="Iframe_CV-cerrar" href="#">X</a>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                <h2>FORMULARIO BENEFICIOS CLARO VIDEO</h2>
+                <hr />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>            
     <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE SIGUIENTE MEJOR OFERTA-->
     <div class="modal-wrapper" id="Iframe_SMO" style="display: none">
         <div class="Iframe_SMO-contenedor">
@@ -4227,4 +4267,16 @@
 
         </div>
     </div>
+    <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE SIEMBRA HD-->
+    <div class="modal-wrapper" id="Iframe_HD" style="display: none">
+        <div class="Iframe_HD-contenedor">
+            <a class="Iframe_HD-cerrar" href="#">X</a>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                <h2>FORMULARIO SIEMBRA HD</h2>
+                <hr />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div> 
 </asp:Content>
