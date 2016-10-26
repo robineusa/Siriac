@@ -79,6 +79,7 @@
     <Compile Include="E_Reportes.cs" />
     <Compile Include="E_Seguimientos_Midas.cs" />
     <Compile Include="E_Servicios.cs" />
+    <Compile Include="E_Siembra_HD.cs" />
     <Compile Include="E_Usuarios.cs" />
     <Compile Include="E_Estado_Casos.cs" />
     <Compile Include="E_Regleta_Adicionales.cs" />

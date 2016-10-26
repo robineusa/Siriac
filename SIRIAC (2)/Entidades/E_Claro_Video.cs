@@ -42,6 +42,9 @@ namespace Entidades
         private string _Observaciones;
         private string _Fecha_Inicial;
         private string _Fecha_Final;
+        private string _Aceptacion_Claro_Video;
+
+
 
         #endregion
         #region Constructor
@@ -81,7 +84,9 @@ namespace Entidades
             _Observaciones = string.Empty;
             _Fecha_Inicial = string.Empty;
             _Fecha_Final = string.Empty;
-            
+            _Aceptacion_Claro_Video = string.Empty;
+
+
         }
         #endregion
         #region Encapsulamientos
@@ -269,6 +274,19 @@ namespace Entidades
             set
             {
                 _Fecha_Final = value;
+            }
+        }
+
+        public string Aceptacion_Claro_Video
+        {
+            get
+            {
+                return _Aceptacion_Claro_Video;
+            }
+
+            set
+            {
+                _Aceptacion_Claro_Video = value;
             }
         }
         #endregion

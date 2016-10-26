@@ -31,5 +31,17 @@ namespace Negocios
         {
             return Consultas_Claro_Video.Consulta_Admin_Claro_Video(pFecha_Inicial, pFecha_Final);
         }
+        public int abc_Activacion_Claro_Video(string pAccion, E_Claro_Video Obj_Claro_Video)
+        {
+            return Consultas_Claro_Video.abc_Activacion_Claro_Video(pAccion, Obj_Claro_Video);
+        }
+        public DataSet Consulta_Cliente_Activacion_Claro_Video(double pCuenta_Cliente)
+        {
+            return Consultas_Claro_Video.Consulta_Cliente_Activacion_Claro_Video(pCuenta_Cliente);
+        }
+        public DataSet Consulta_Falta_Activacion_Claro_Video(double pCuenta)
+        {
+            return Consultas_Claro_Video.Consulta_Falta_Activacion_Claro_Video(pCuenta);
+        }
     }
 }

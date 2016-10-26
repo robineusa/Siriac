@@ -52,6 +52,10 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     public E_Mejor_Oferta obj_Entidad_Mejor_Oferta = new E_Mejor_Oferta();
     public E_Arbol_Outbound Obj_Entidad_Arbol_Outbound = new E_Arbol_Outbound();
     public N_Arbol_Outbound Obj_Neg_Arbol_Outbound = new N_Arbol_Outbound();
+    public N_Claro_Video Obj_Neg_Claro_Video = new N_Claro_Video();
+    public E_Claro_Video Obj_Entidad_Claro_Video = new E_Claro_Video();
+    public N_Siembra_HD Obj_Neg_Siembra_HD = new N_Siembra_HD();
+    public E_Siembra_HD Obj_Entidad_Siembra_HD = new E_Siembra_HD();
     public int sw1 = 0;
     public int sw2 = 0;
     public int sw3 = 0;
@@ -103,218 +107,242 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         SMO_Limpiar_Controles();
         string script10 = "Banner_Alertas_Inicio();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "Banner_Alertas_Inicio()", script10, true);
-        
-            DataSet dt = new DataSet();
-            Obj_Entidad_Clientes.Cuenta_Cliente = Cuenta_Cliente.Text;
-            dt = Obj_Neg_Clientes.Consulta_Cliente(Obj_Entidad_Clientes.Cuenta_Cliente);
 
-            if (dt.Tables[0].Rows.Count > 0)
+        DataSet dt = new DataSet();
+        Obj_Entidad_Clientes.Cuenta_Cliente = Cuenta_Cliente.Text;
+        dt = Obj_Neg_Clientes.Consulta_Cliente(Obj_Entidad_Clientes.Cuenta_Cliente);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            Nombre_Cliente.Text = dt.Tables[0].Rows[0]["NOMBRE"].ToString();
+            Apellido_Cliente.Text = dt.Tables[0].Rows[0]["APELLIDO"].ToString();
+            Cedula_Cliente.Text = dt.Tables[0].Rows[0]["CEDULA"].ToString();
+            Telefono_Telmex.Text = dt.Tables[0].Rows[0]["TELEFONO_TELMEX"].ToString();
+            Telefono_1.Text = dt.Tables[0].Rows[0]["TELEFONO_1"].ToString();
+            Telefono_2.Text = dt.Tables[0].Rows[0]["TELEFONO_2"].ToString();
+            Telefono_3.Text = dt.Tables[0].Rows[0]["TELEFONO_3"].ToString();
+            Direccion_Instalacion.Text = dt.Tables[0].Rows[0]["DIR_INSTALACION"].ToString();
+            Direccion_Correspondencia.Text = dt.Tables[0].Rows[0]["DIR_CORRESPONDENCIA"].ToString();
+            Nodo.Text = dt.Tables[0].Rows[0]["NODO"].ToString();
+            Red.Text = dt.Tables[0].Rows[0]["RED"].ToString();
+            Division.Text = dt.Tables[0].Rows[0]["DIVISION"].ToString();
+            Area.Text = dt.Tables[0].Rows[0]["AREA"].ToString();
+            Zona.Text = dt.Tables[0].Rows[0]["ZONA"].ToString();
+            Distrito.Text = dt.Tables[0].Rows[0]["DISTRITO"].ToString();
+            Nombre_Comunidad.Text = dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString();
+            Estrato.Text = dt.Tables[0].Rows[0]["ESTRATO"].ToString();
+            Tipo_Cliente.Text = dt.Tables[0].Rows[0]["TIPO_CLIENTE"].ToString();
+            Descripcion.Text = dt.Tables[0].Rows[0]["DESCRIPCION"].ToString();
+
+            R_Ciudad_Cliente.Items.Clear();
+            R_Ciudad_Cliente.Items.Add(dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString());
+            R_Estrato_Cliente.Items.Clear();
+            R_Estrato_Cliente.Items.Add(dt.Tables[0].Rows[0]["ESTRATO"].ToString());
+
+
+
+            DataSet dt2 = new DataSet();
+            Obj_Entidad_Incremento.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
+            dt2 = Obj_Neg_Incremento.Consulta_Incremento(Obj_Entidad_Incremento.Cuenta_Cliente);
+            if (dt2.Tables[0].Rows.Count > 0)
             {
-                Nombre_Cliente.Text = dt.Tables[0].Rows[0]["NOMBRE"].ToString();
-                Apellido_Cliente.Text = dt.Tables[0].Rows[0]["APELLIDO"].ToString();
-                Cedula_Cliente.Text = dt.Tables[0].Rows[0]["CEDULA"].ToString();
-                Telefono_Telmex.Text = dt.Tables[0].Rows[0]["TELEFONO_TELMEX"].ToString();
-                Telefono_1.Text = dt.Tables[0].Rows[0]["TELEFONO_1"].ToString();
-                Telefono_2.Text = dt.Tables[0].Rows[0]["TELEFONO_2"].ToString();
-                Telefono_3.Text = dt.Tables[0].Rows[0]["TELEFONO_3"].ToString();
-                Direccion_Instalacion.Text = dt.Tables[0].Rows[0]["DIR_INSTALACION"].ToString();
-                Direccion_Correspondencia.Text = dt.Tables[0].Rows[0]["DIR_CORRESPONDENCIA"].ToString();
-                Nodo.Text = dt.Tables[0].Rows[0]["NODO"].ToString();
-                Red.Text = dt.Tables[0].Rows[0]["RED"].ToString();
-                Division.Text = dt.Tables[0].Rows[0]["DIVISION"].ToString();
-                Area.Text = dt.Tables[0].Rows[0]["AREA"].ToString();
-                Zona.Text = dt.Tables[0].Rows[0]["ZONA"].ToString();
-                Distrito.Text = dt.Tables[0].Rows[0]["DISTRITO"].ToString();
-                Nombre_Comunidad.Text = dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString();
-                Estrato.Text = dt.Tables[0].Rows[0]["ESTRATO"].ToString();
-                Tipo_Cliente.Text = dt.Tables[0].Rows[0]["TIPO_CLIENTE"].ToString();
-                Descripcion.Text = dt.Tables[0].Rows[0]["DESCRIPCION"].ToString();
+                Incremento_Cuenta_Cliente.Text = Cuenta_Cliente.Text;
+                Incremento_Nombre_Cliente.Text = dt.Tables[0].Rows[0]["NOMBRE"].ToString();
+                Incremento_Apellido_Cliente.Text = dt.Tables[0].Rows[0]["APELLIDO"].ToString();
+                Incremento_Ciudad_Residencia.Text = dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString();
+                Incremento_Estrato.Text = dt.Tables[0].Rows[0]["ESTRATO"].ToString();
+                Incremento_Tipo_Cliente.Text = dt.Tables[0].Rows[0]["DESCRIPCION"].ToString();
+                Incremento_Tarifa_Anterior.Text = dt2.Tables[0].Rows[0]["TARIFA_ANTERIOR"].ToString();
+                Incremento_Tarifa_Nueva.Text = dt2.Tables[0].Rows[0]["TARIFA_NUEVA"].ToString();
+                Incremento_Incrmento_Real.Text = dt2.Tables[0].Rows[0]["INCREMENTO_REAL"].ToString();
+                Incremento_Renta_Sin_Incrmento.Text = dt2.Tables[0].Rows[0]["RENTA_SIN_INCREMENTO"].ToString();
+                Incremento_Nueva_Renta.Text = dt2.Tables[0].Rows[0]["NUEVA_RENTA"].ToString();
+                Incremento_Direfencia.Text = dt2.Tables[0].Rows[0]["DIFERENCIA"].ToString();
+                Incremento_Paquete_Actual.Text = dt2.Tables[0].Rows[0]["PRODUCTOS"].ToString();
+                Incremento_Velocidad_Internet.Text = dt2.Tables[0].Rows[0]["VELOCIDAD_INTERNET"].ToString();
+                Incremento_Tipo_Television.Text = dt2.Tables[0].Rows[0]["TIPO_TELEVISION"].ToString();
+                Incremento_Servicio_Hd.Text = dt2.Tables[0].Rows[0]["SERVICIO_HD"].ToString();
+                Incremento_Elegido_Movil.Text = dt2.Tables[0].Rows[0]["ELEGIDO_FIJO_MOVIL"].ToString();
+                Incremento_Claro_Video.Text = dt2.Tables[0].Rows[0]["CLARO_VIDEO"].ToString();
+                Incremento_Postpago_Movil.Text = dt2.Tables[0].Rows[0]["POSPAGO_MOVIL"].ToString();
+                Incremento_Plan_Ld30.Text = dt2.Tables[0].Rows[0]["LD_30"].ToString();
+                Incremento_Apto_Tecnologia.Text = dt2.Tables[0].Rows[0]["TECNOLOGIA"].ToString();
+                Incremento_Llamadas_Moviles.Text = dt2.Tables[0].Rows[0]["VALOR_LLAMADAS_COMCEL"].ToString();
+                Incremento_Otros_Operadores.Text = dt2.Tables[0].Rows[0]["MINUTOS_LD_OTROS_OPERADORES"].ToString();
+                Incremento_Primer_Oprecimiento.Text = dt2.Tables[0].Rows[0]["PRIMER_OFRECIMIENTO"].ToString();
+                Incremento_Segundo_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["SEGUNDO_OFRECIMIENTO"].ToString();
+                Incremento_Tercer_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["TERCER_OFRECIMIENTO"].ToString();
+                Incremento_Cuarto_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["CUARTO_OFRECIMIENTO"].ToString();
+                Incremento_Quinto_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["QUINTO_OFRECIMIENTO"].ToString();
+                Incremento_Sexto_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["SEXTO_OFRECIMIENTO"].ToString();
+                Incremento_Periodo_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["PERIODO_INCREMENTO"].ToString();
 
-                R_Ciudad_Cliente.Items.Clear();
-                R_Ciudad_Cliente.Items.Add(dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString());
-                R_Estrato_Cliente.Items.Clear();
-                R_Estrato_Cliente.Items.Add(dt.Tables[0].Rows[0]["ESTRATO"].ToString());
-
-                
-
-                DataSet dt2 = new DataSet();
-                Obj_Entidad_Incremento.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
-                dt2 = Obj_Neg_Incremento.Consulta_Incremento(Obj_Entidad_Incremento.Cuenta_Cliente);
-                if (dt2.Tables[0].Rows.Count > 0)
+            }
+            else
+            {
+                Limpiar_Incremento();
+                Guardar_Ofrecimiento.Enabled = false;
+            }
+            this.Datos_Adicionales_Cliente(sender, e);
+            Hobbies();
+            this.Carga_Tipo_Regleta(sender, e);
+            Nombre_Linea();
+            Estado_Casos();
+            Lista_Servicios();
+            if (Session["Acceso_6"].ToString() == "1")
+            {
+                this.Carga_Casos_Abiertos(sender, e);
+                this.Carga_Casos_Cerrados(sender, e);
+            }
+            else
+            {
+                Panel15.Visible = false;
+            }
+            this.Paquetes_Triples(sender, e);
+            this.Paquetes_Dobles(sender, e);
+            this.Paquetes_Sencillos(sender, e);
+            //ESTA CONSULTA VERIFICA SI EL CLIENTE TIENE ACTIVO O NO EL CONVENIO ELECTRONICO//
+            try
+            {
+                DataSet dt3 = new DataSet();
+                obj_Entidad_Convenio_Electronico.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
+                dt3 = obj_neg_Convenio_Electronico.Consulta_Falta_Convenio(Obj_Entidad_Clientes.Cuenta_Cliente);
+                if (dt3.Tables[0].Rows.Count > 0)
                 {
-                    Incremento_Cuenta_Cliente.Text = Cuenta_Cliente.Text;
-                    Incremento_Nombre_Cliente.Text = dt.Tables[0].Rows[0]["NOMBRE"].ToString();
-                    Incremento_Apellido_Cliente.Text = dt.Tables[0].Rows[0]["APELLIDO"].ToString();
-                    Incremento_Ciudad_Residencia.Text = dt.Tables[0].Rows[0]["NOMBRE_COMUNIDAD"].ToString();
-                    Incremento_Estrato.Text = dt.Tables[0].Rows[0]["ESTRATO"].ToString();
-                    Incremento_Tipo_Cliente.Text = dt.Tables[0].Rows[0]["DESCRIPCION"].ToString();
-                    Incremento_Tarifa_Anterior.Text = dt2.Tables[0].Rows[0]["TARIFA_ANTERIOR"].ToString();
-                    Incremento_Tarifa_Nueva.Text = dt2.Tables[0].Rows[0]["TARIFA_NUEVA"].ToString();
-                    Incremento_Incrmento_Real.Text = dt2.Tables[0].Rows[0]["INCREMENTO_REAL"].ToString();
-                    Incremento_Renta_Sin_Incrmento.Text = dt2.Tables[0].Rows[0]["RENTA_SIN_INCREMENTO"].ToString();
-                    Incremento_Nueva_Renta.Text = dt2.Tables[0].Rows[0]["NUEVA_RENTA"].ToString();
-                    Incremento_Direfencia.Text = dt2.Tables[0].Rows[0]["DIFERENCIA"].ToString();
-                    Incremento_Paquete_Actual.Text = dt2.Tables[0].Rows[0]["PRODUCTOS"].ToString();
-                    Incremento_Velocidad_Internet.Text = dt2.Tables[0].Rows[0]["VELOCIDAD_INTERNET"].ToString();
-                    Incremento_Tipo_Television.Text = dt2.Tables[0].Rows[0]["TIPO_TELEVISION"].ToString();
-                    Incremento_Servicio_Hd.Text = dt2.Tables[0].Rows[0]["SERVICIO_HD"].ToString();
-                    Incremento_Elegido_Movil.Text = dt2.Tables[0].Rows[0]["ELEGIDO_FIJO_MOVIL"].ToString();
-                    Incremento_Claro_Video.Text = dt2.Tables[0].Rows[0]["CLARO_VIDEO"].ToString();
-                    Incremento_Postpago_Movil.Text = dt2.Tables[0].Rows[0]["POSPAGO_MOVIL"].ToString();
-                    Incremento_Plan_Ld30.Text = dt2.Tables[0].Rows[0]["LD_30"].ToString();
-                    Incremento_Apto_Tecnologia.Text = dt2.Tables[0].Rows[0]["TECNOLOGIA"].ToString();
-                    Incremento_Llamadas_Moviles.Text = dt2.Tables[0].Rows[0]["VALOR_LLAMADAS_COMCEL"].ToString();
-                    Incremento_Otros_Operadores.Text = dt2.Tables[0].Rows[0]["MINUTOS_LD_OTROS_OPERADORES"].ToString();
-                    Incremento_Primer_Oprecimiento.Text = dt2.Tables[0].Rows[0]["PRIMER_OFRECIMIENTO"].ToString();
-                    Incremento_Segundo_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["SEGUNDO_OFRECIMIENTO"].ToString();
-                    Incremento_Tercer_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["TERCER_OFRECIMIENTO"].ToString();
-                    Incremento_Cuarto_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["CUARTO_OFRECIMIENTO"].ToString();
-                    Incremento_Quinto_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["QUINTO_OFRECIMIENTO"].ToString();
-                    Incremento_Sexto_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["SEXTO_OFRECIMIENTO"].ToString();
-                    Incremento_Periodo_Ofrecimiento.Text = dt2.Tables[0].Rows[0]["PERIODO_INCREMENTO"].ToString();
-
+                    string script1 = "Activar_Conveio();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Activar_Conveio()", script1, true);
+                    sw1 = 1;
                 }
                 else
                 {
-                    Limpiar_Incremento();
-                    Guardar_Ofrecimiento.Enabled = false;
+                    string script1 = "No_Activar_Conveio();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Activar_Conveio()", script1, true);
+                    sw1 = 0;
                 }
-                this.Datos_Adicionales_Cliente(sender, e);
-                Hobbies();
-                this.Carga_Tipo_Regleta(sender, e);
-                Nombre_Linea();
-                Estado_Casos();
-                Lista_Servicios();
-                if (Session["Acceso_6"].ToString() == "1")
+            }
+            catch (Exception esc)
+            { throw new Exception("Error al Consultar la cuenta del cliente", esc); }
+
+            //ESTA CONSULTA CARGA LA INFORMACION DE SIGUIENTE MEJOR OFERTA//
+            try
+            {
+                SMO_Cuenta_Cliente.Text = Cuenta_Cliente.Text;
+                SMO_Nombre_Cliente.Text = Nombre_Cliente.Text;
+                SMO_Apellido_Cliente.Text = Apellido_Cliente.Text;
+                SMO_Doc_Identidad.Text = Cedula_Cliente.Text;
+
+                DataSet dtSMO = new DataSet();
+                obj_Entidad_Mejor_Oferta.Cuenta = Convert.ToDouble(SMO_Cuenta_Cliente.Text);
+                dtSMO = obj_Neg_Mejor_Oferta.Consulta_Temporal_Cuentas(obj_Entidad_Mejor_Oferta.Cuenta);
+                if (dtSMO.Tables[0].Rows.Count > 0)
                 {
-                    this.Carga_Casos_Abiertos(sender, e);
-                    this.Carga_Casos_Cerrados(sender, e);
+                    SMO_Mix_Basico.Text = dtSMO.Tables[0].Rows[0]["MIX_BASICO"].ToString();
+                    SMO_Television.Text = dtSMO.Tables[0].Rows[0]["SERVICIO_TV"].ToString();
+                    SMO_Internet.Text = dtSMO.Tables[0].Rows[0]["SERVICIO_INTERNET"].ToString();
+                    SMO_Telefonia.Text = dtSMO.Tables[0].Rows[0]["SERVICIO_VOZ"].ToString();
+                    SMO_HD.Text = dtSMO.Tables[0].Rows[0]["HD"].ToString();
+                    SMO_HBO.Text = dtSMO.Tables[0].Rows[0]["HBO"].ToString();
+                    SMO_Fox.Text = dtSMO.Tables[0].Rows[0]["FOX"].ToString();
+                    SMO_Servicio_Adulto.Text = dtSMO.Tables[0].Rows[0]["ADULTO"].ToString();
+                    SMO_Servicio_Claro_Video.Text = dtSMO.Tables[0].Rows[0]["CLAROVIDEO"].ToString();
+                    SMO_Num_Decos.Text = dtSMO.Tables[0].Rows[0]["NUM_DECOS"].ToString();
+                    SMO_Revista.Text = dtSMO.Tables[0].Rows[0]["REVISTA"].ToString();
+                    SMO_Elegido_Fijo_Movil.Text = dtSMO.Tables[0].Rows[0]["ELEGIDO_FIJO_MOVIL"].ToString();
+                    SMO_Siembra_HD.Text = dtSMO.Tables[0].Rows[0]["SIEMBRA_HD"].ToString();
+                    SMO_Blindaje_Internet.Text = dtSMO.Tables[0].Rows[0]["BLINDAJE_INTERNET"].ToString();
+                    SMO_Siembra_Voz.Text = dtSMO.Tables[0].Rows[0]["SIEMBRA_VOZ"].ToString();
+                    SMO_Activacion_Claro_Video.Text = dtSMO.Tables[0].Rows[0]["ACTIVACION_CLAROVIDEO"].ToString();
+                    SMO_T_Ofrecimiento_1.Text = dtSMO.Tables[0].Rows[0]["OFRECIMIENTO_1"].ToString();
+                    SMO_T_Ofrecimiento_2.Text = dtSMO.Tables[0].Rows[0]["OFRECIMIENTO_2"].ToString();
+                    SMO_T_Ofrecimiento_3.Text = dtSMO.Tables[0].Rows[0]["OFRECIMIENTO_3"].ToString();
+                    SMO_Tipo_Contacto();
+                    SMO_Gestion();
+                    SMO_Cierre();
+                    SMO_Razon();
+
+                    string script1 = "SMO_Activar();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Activar()", script1, true);
+                    sw2 = 1;
                 }
                 else
                 {
-                    Panel15.Visible = false;
+                    string script1 = "SMO_Desactivar();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Desactivar()", script1, true);
+                    sw2 = 0;
                 }
-                this.Paquetes_Triples(sender, e);
-                this.Paquetes_Dobles(sender, e);
-                this.Paquetes_Sencillos(sender, e);
-                //ESTA CONSULTA VERIFICA SI EL CLIENTE TIENE ACTIVO O NO EL CONVENIO ELECTRONICO//
-                try
-                {
-                    DataSet dt3 = new DataSet();
-                    obj_Entidad_Convenio_Electronico.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
-                    dt3 = obj_neg_Convenio_Electronico.Consulta_Falta_Convenio(Obj_Entidad_Clientes.Cuenta_Cliente);
-                    if (dt3.Tables[0].Rows.Count > 0)
-                    {
-                        string script1 = "Activar_Conveio();";
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "Activar_Conveio()", script1, true);
-                        sw1 = 1;
-                    }
-                    else
-                    {
-                        string script1 = "No_Activar_Conveio();";
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Activar_Conveio()", script1, true);
-                        sw1 = 0;
-                    }
-                }
-                catch (Exception esc)
-                { throw new Exception("Error al Consultar la cuenta del cliente", esc); }
+            }
+            catch (Exception esc)
+            {
+                throw new Exception("Error al Consultar la cuenta del cliente Siguiente Mejor Oferta", esc);
+            }
+            SMO_Tipo_Contacto();
+            SMO_Gestion();
+            SMO_Cierre();
+            SMO_Razon();
 
-                //ESTA CONSULTA CARGA LA INFORMACION DE SIGUIENTE MEJOR OFERTA//
-                try
-                {
-                    SMO_Cuenta_Cliente.Text = Cuenta_Cliente.Text;
-                    SMO_Nombre_Cliente.Text = Nombre_Cliente.Text;
-                    SMO_Apellido_Cliente.Text = Apellido_Cliente.Text;
-                    SMO_Doc_Identidad.Text = Cedula_Cliente.Text;
-                    
-                    DataSet dtSMO = new DataSet();
-                    obj_Entidad_Mejor_Oferta.Cuenta = Convert.ToDouble(SMO_Cuenta_Cliente.Text);
-                    dtSMO = obj_Neg_Mejor_Oferta.Consulta_Temporal_Cuentas(obj_Entidad_Mejor_Oferta.Cuenta);
-                    if (dtSMO.Tables[0].Rows.Count > 0)
-                    {
-                        SMO_Mix_Basico.Text = dtSMO.Tables[0].Rows[0]["MIX_BASICO"].ToString();
-                        SMO_Television.Text = dtSMO.Tables[0].Rows[0]["SERVICIO_TV"].ToString();
-                        SMO_Internet.Text = dtSMO.Tables[0].Rows[0]["SERVICIO_INTERNET"].ToString();
-                        SMO_Telefonia.Text = dtSMO.Tables[0].Rows[0]["SERVICIO_VOZ"].ToString();
-                        SMO_HD.Text = dtSMO.Tables[0].Rows[0]["HD"].ToString();
-                        SMO_HBO.Text = dtSMO.Tables[0].Rows[0]["HBO"].ToString();
-                        SMO_Fox.Text = dtSMO.Tables[0].Rows[0]["FOX"].ToString();
-                        SMO_Servicio_Adulto.Text = dtSMO.Tables[0].Rows[0]["ADULTO"].ToString();
-                        SMO_Servicio_Claro_Video.Text = dtSMO.Tables[0].Rows[0]["CLAROVIDEO"].ToString();
-                        SMO_Num_Decos.Text = dtSMO.Tables[0].Rows[0]["NUM_DECOS"].ToString();
-                        SMO_Revista.Text = dtSMO.Tables[0].Rows[0]["REVISTA"].ToString();
-                        SMO_Elegido_Fijo_Movil.Text = dtSMO.Tables[0].Rows[0]["ELEGIDO_FIJO_MOVIL"].ToString();
-                        SMO_Siembra_HD.Text = dtSMO.Tables[0].Rows[0]["SIEMBRA_HD"].ToString();
-                        SMO_Blindaje_Internet.Text = dtSMO.Tables[0].Rows[0]["BLINDAJE_INTERNET"].ToString();
-                        SMO_Siembra_Voz.Text = dtSMO.Tables[0].Rows[0]["SIEMBRA_VOZ"].ToString();
-                        SMO_Activacion_Claro_Video.Text = dtSMO.Tables[0].Rows[0]["ACTIVACION_CLAROVIDEO"].ToString();
-                        SMO_T_Ofrecimiento_1.Text = dtSMO.Tables[0].Rows[0]["OFRECIMIENTO_1"].ToString();
-                        SMO_T_Ofrecimiento_2.Text = dtSMO.Tables[0].Rows[0]["OFRECIMIENTO_2"].ToString();
-                        SMO_T_Ofrecimiento_3.Text = dtSMO.Tables[0].Rows[0]["OFRECIMIENTO_3"].ToString();
-                        SMO_Tipo_Contacto();
-                        SMO_Gestion();
-                        SMO_Cierre();
-                        SMO_Razon();
-
-                        string script1 = "SMO_Activar();";
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Activar()", script1, true);
-                        sw2 = 1;
-                    }
-                    else
-                    {
-                        string script1 = "SMO_Desactivar();";
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Desactivar()", script1, true);
-                        sw2 = 0;
-                    }
-                }
-                catch (Exception esc)
-                {
-                    throw new Exception("Error al Consultar la cuenta del cliente Siguiente Mejor Oferta", esc);
-                }
-                SMO_Tipo_Contacto();
-                SMO_Gestion();
-                SMO_Cierre();
-                SMO_Razon();
-
-                //ESTA CONSULTA CARGA LA INFORMACION DE CLARO VIDEO//
-                try
+            //ESTA CONSULTA CARGA LA INFORMACION DE CLARO VIDEO//
+            try
+            {
+                DataSet CVdt = new DataSet();
+                Obj_Entidad_Claro_Video.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
+                CVdt = Obj_Neg_Claro_Video.Consulta_Falta_Activacion_Claro_Video(Obj_Entidad_Claro_Video.Cuenta_Cliente);
+                if (CVdt.Tables[0].Rows.Count > 0)
                 {
                     string script1 = "CV_Activar();";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "CV_Activar()", script1, true);
                 }
-                catch (Exception esc)
+                else
                 {
-                    throw new Exception("Error al Consultar la cuenta del cliente beneficios claro video", esc);
+                    string script1 = "CV_Desactivar();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "CV_Desactivar()", script1, true);
                 }
+            }
+            catch (Exception esc)
+            {
+                throw new Exception("Error al Consultar la cuenta del cliente beneficios claro video", esc);
+            }
 
-                //ESTA CONSULTA CARGA LA INFORMACION DE SIEMBRA HD//
-                try
+            //ESTA CONSULTA CARGA LA INFORMACION DE SIEMBRA HD//
+            try
+            {
+                DataSet SHDdt = new DataSet();
+                Obj_Entidad_Siembra_HD.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
+                SHDdt = Obj_Neg_Siembra_HD.Consulta_Falta_Siembra_HD(Obj_Entidad_Siembra_HD.Cuenta_Cliente);
+                if (SHDdt.Tables[0].Rows.Count > 0)
                 {
+                    S_HD_OFRECIMIENTO.Text = SHDdt.Tables[0].Rows[0]["OFRECIMIENTO"].ToString();
                     string script1 = "HD_Activar();";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "HD_Activar()", script1, true);
                 }
-                catch (Exception esc)
+                else
                 {
-                    throw new Exception("Error al Consultar la cuenta del cliente siembra HD", esc);
+                    string script1 = "HD_Desactivar();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "HD_Desactivar()", script1, true);
                 }
-        }
-            else
-            {
-                this.Carga_Casos_Abiertos(sender, e);
-                this.Carga_Casos_Cerrados(sender, e);
-                string script = "mensaje1();";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje1", script, true);
-
-                Limpiar();
-                Limpiar2();
-                Colores_Blanco();
-                Limpiar_General();
-                Limpiar_Incremento();
             }
+            catch (Exception esc)
+            {
+                throw new Exception("Error al Consultar la cuenta del cliente siembra HD", esc);
+            }
+        }
+        else
+        {
+            this.Carga_Casos_Abiertos(sender, e);
+            this.Carga_Casos_Cerrados(sender, e);
+            string script = "mensaje1();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje1", script, true);
 
-        
-        
-        if (sw1 == 1 || sw2 == 1) {
+            Limpiar();
+            Limpiar2();
+            Colores_Blanco();
+            Limpiar_General();
+            Limpiar_Incremento();
+        }
+
+
+
+        if (sw1 == 1 || sw2 == 1)
+        {
             string scriptMEC = "Activar_Envia_MEC();";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "Activar_Envia_MEC()", scriptMEC, true);
         }
@@ -893,31 +921,33 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     }
     protected void Guardar_Caso_Click(object sender, EventArgs e)
     {
-        if (Convert.ToString(Marcacion.SelectedItem)== "") {
+        if (Convert.ToString(Marcacion.SelectedItem) == "")
+        {
             string script9 = "mensaje11();";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje11", script9, true);
         }
-        else {
-        var Registrar_Transaccion = -1;
-        DataSet dt1 = new DataSet();
-        Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
-        dt1 = Obj_Neg_Cuentas_Genericas.Consultar_Cuenta_Generica(Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente);
-        if (dt1.Tables[0].Rows.Count > 0)
-        {
-            Guardar_Cliente_Generico();
-            Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
-            Limpiar_General();
-            Colores_Blanco();
-            Limpiar_Incremento();
-        }
         else
         {
-            Guardar_Cliente_Real();
-            Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
-            Limpiar_General();
-            Colores_Blanco();
-            Limpiar_Incremento();
-        }
+            var Registrar_Transaccion = -1;
+            DataSet dt1 = new DataSet();
+            Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
+            dt1 = Obj_Neg_Cuentas_Genericas.Consultar_Cuenta_Generica(Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente);
+            if (dt1.Tables[0].Rows.Count > 0)
+            {
+                Guardar_Cliente_Generico();
+                Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
+                Limpiar_General();
+                Colores_Blanco();
+                Limpiar_Incremento();
+            }
+            else
+            {
+                Guardar_Cliente_Real();
+                Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
+                Limpiar_General();
+                Colores_Blanco();
+                Limpiar_Incremento();
+            }
         }
     }
     protected void Guardar_Ofrecimiento_Click(object sender, EventArgs e)
@@ -1749,7 +1779,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         Int64 Valor_13 = Convert.ToInt64(ADT_VWIFI_VT.Text);
         Int64 Valor_14 = Convert.ToInt64(ADT_CLAROVIDEO_VT.Text);
 
-        Int64 Valor_Total = Convert.ToInt64(Valor_1 + Valor_2 + Valor_3 + Valor_4 + Valor_5 + Valor_6 + Valor_7 + Valor_8 + Valor_9 + Valor_10 + Valor_11 + Valor_12 + Valor_13+ Valor_14);
+        Int64 Valor_Total = Convert.ToInt64(Valor_1 + Valor_2 + Valor_3 + Valor_4 + Valor_5 + Valor_6 + Valor_7 + Valor_8 + Valor_9 + Valor_10 + Valor_11 + Valor_12 + Valor_13 + Valor_14);
         ADT_Valor_Total_Facturado.Text = Convert.ToString(Valor_Total);
 
     }
@@ -2198,7 +2228,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         //Datos CLAROVIDEO
         Int64 Valor_CLAROVIDEO_Con_Iva = Convert.ToInt64(ADT_CLAROVIDEO_VT.Text);
 
-        
+
 
         //Calculo CLARO VIDEO
 
@@ -2229,8 +2259,8 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         DateTime Fecha_Inicial = Convert.ToDateTime(ADT_Fecha_Inicial.Text);
         DateTime Fecha_Final = Convert.ToDateTime(ADT_Fecha_Final.Text);
         TimeSpan Dia_Inicial = Fecha_Final.Subtract(Fecha_Inicial);
-        int Dias_a_Calcular = Convert.ToInt16((Dia_Inicial.Days)+1);
-        ADT_Cantidad_de_Dias_Segundo_Periodo.Text = Dias_a_Calcular.ToString(); 
+        int Dias_a_Calcular = Convert.ToInt16((Dia_Inicial.Days) + 1);
+        ADT_Cantidad_de_Dias_Segundo_Periodo.Text = Dias_a_Calcular.ToString();
 
         DateTime Fecha_Seleccionada = Convert.ToDateTime(ADT_Fecha_Final.Text);
 
@@ -2521,11 +2551,11 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             string Final_Cantidad_Horas = "0";
             string Final_Minutos = "0";
             int Minutos = Dia_Inicial.Minutes;
-            if (Total_Horas < 10) {Final_Cantidad_Horas = "0" + Total_Horas; } else {  Final_Cantidad_Horas = Total_Horas.ToString(); }
-            if (Minutos < 10) { Final_Minutos = "0" + Minutos; } else {  Final_Minutos = Minutos.ToString(); }
+            if (Total_Horas < 10) { Final_Cantidad_Horas = "0" + Total_Horas; } else { Final_Cantidad_Horas = Total_Horas.ToString(); }
+            if (Minutos < 10) { Final_Minutos = "0" + Minutos; } else { Final_Minutos = Minutos.ToString(); }
 
 
-            AC_C1_Cantidad_Horas.Text = Convert.ToString(Final_Cantidad_Horas+":" + Final_Minutos);
+            AC_C1_Cantidad_Horas.Text = Convert.ToString(Final_Cantidad_Horas + ":" + Final_Minutos);
             //AC_C1_Cantidad_Horas.Text = Total_Horas.ToString();
             AC_C1_Cantidad_Das.Text = Cantidad_Dias.ToString();
 
@@ -2537,12 +2567,12 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             if (AC_Radio_1.Checked == true)
             {
                 Int64 _Calculo_Total_Horas = 0;
-                if (Minutos > 0) { _Calculo_Total_Horas = Total_Horas+1; } else { _Calculo_Total_Horas = Total_Horas; }
+                if (Minutos > 0) { _Calculo_Total_Horas = Total_Horas + 1; } else { _Calculo_Total_Horas = Total_Horas; }
                 if (_Calculo_Total_Horas > 7)
                 {
-                        string script = "Mostrar_Aviso_Rechazo_2();";
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "Mostrar_Aviso_Rechazo_2()", script, true);
-                   
+                    string script = "Mostrar_Aviso_Rechazo_2();";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Mostrar_Aviso_Rechazo_2()", script, true);
+
                 }
                 else
                 {
@@ -2663,7 +2693,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             int Cantidad_Horas = Dia_Inicial.Hours;
             Int64 Cantidad_Dias = Convert.ToInt64(Dia_Inicial.Days.ToString());
             Int64 Total_Horas = Convert.ToInt64((Cantidad_Dias * 24) + Cantidad_Horas);
-            int Minutos = Dia_Inicial.Minutes; 
+            int Minutos = Dia_Inicial.Minutes;
 
             float Cantidad_Horas_Falla = Total_Horas;
             float Valor_Renta = Convert.ToInt64(AC_Renta_Telefonia.Text);
@@ -2692,14 +2722,14 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         DateTime Fecha_Inicial = Convert.ToDateTime(AC_C1_Fecha_Inicial.Text);
         int Hora_Inicio = Fecha_Inicial.Hour;
         string Hora_Inicio_Nota = "";
-        if (Hora_Inicio < 10) { Hora_Inicio_Nota = "0" + Hora_Inicio; } else { Hora_Inicio_Nota = Hora_Inicio.ToString();}
+        if (Hora_Inicio < 10) { Hora_Inicio_Nota = "0" + Hora_Inicio; } else { Hora_Inicio_Nota = Hora_Inicio.ToString(); }
         int Minutos_Inicio = Fecha_Inicial.Minute;
         string Minuto_Inicio_Nota = "";
         if (Minutos_Inicio < 10) { Minuto_Inicio_Nota = "0" + Minutos_Inicio; } else { Minuto_Inicio_Nota = Minutos_Inicio.ToString(); }
         DateTime Fecha_Final = Convert.ToDateTime(AC_C1_Fecha_Final.Text);
         int Hora_Fin = Fecha_Final.Hour;
         string Hora_Fin_Nota = "";
-        if (Hora_Fin < 10) { Hora_Fin_Nota = "0" + Hora_Fin; } else { Hora_Fin_Nota = Hora_Fin.ToString();}
+        if (Hora_Fin < 10) { Hora_Fin_Nota = "0" + Hora_Fin; } else { Hora_Fin_Nota = Hora_Fin.ToString(); }
         int Minuto_Fin = Fecha_Final.Minute;
         string Minuto_Final_Nota = "";
         if (Minuto_Fin < 10) { Minuto_Final_Nota = "0" + Minuto_Fin; } else { Minuto_Final_Nota = Minuto_Fin.ToString(); }
@@ -2719,7 +2749,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         float Ajuste_Fallas = Valor_2 + Valor_4;
         float Ajuste_Compensacion = Valor_1 + Valor_3;
 
-        
+
         TimeSpan Dia_Inicial = Fecha_Final.Subtract(Fecha_Inicial);
         int Cantidad_Horas = Dia_Inicial.Hours;
         Int64 Cantidad_Dias = Convert.ToInt64(Dia_Inicial.Days.ToString());
@@ -2730,7 +2760,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         if (Total_Horas < 10) { Final_Cantidad_Horas = "0" + Total_Horas; } else { Final_Cantidad_Horas = Total_Horas.ToString(); }
         if (Minutos < 10) { Final_Minutos = "0" + Minutos; } else { Final_Minutos = Minutos.ToString(); }
 
-        
+
         if (AC_Radio_1.Checked == true)
         {
             Tipo_Ajuste = "DESCONEXION INJUSTIFICADA";
@@ -2752,7 +2782,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             {
                 Servicios = "INTERNET Y TELEFONIA";
 
-                var Notas_RR = "TIEMPO SIN SERVICIO DE " + Servicios + " POR " + Tipo_Ajuste + " ENTRE EL " + Fecha_Inicial + " Y EL " + Fecha_Final + " CON UNA HORA DE INICIO " + Hora_Inicial_Falla + " Y HORA FIN " + Hora_Final_Falla + ", PARA UN TOTAL DE " + Total_Horas + " HORAS Y "+ Final_Minutos +" MINUTOS, LO EQUIVALENTE A UN VALOR DE AJUSTE POR $ " + Ajuste_Fallas + " Y UN VALOR DE CONPENSACION DE $ " + Ajuste_Compensacion + " SIN IVA, SEGUN SOPORTE(S) (LLAMADA DE SERVICIO, OT, LOG, AVISOS FINALES), LO ANTERIOR DISCRIMINADO POR SERVICIO ASI: AJUSTE POR INTERNET DE $ " + Valor_2 + " Y COMPENSACION DE INTERNET POR $" + Valor_1 + ", AJUSTE POR TELEFONIA DE $" + Valor_4 + " Y COMPENSACION POR TELEFONIA DE $" + Valor_3;
+                var Notas_RR = "TIEMPO SIN SERVICIO DE " + Servicios + " POR " + Tipo_Ajuste + " ENTRE EL " + Fecha_Inicial + " Y EL " + Fecha_Final + " CON UNA HORA DE INICIO " + Hora_Inicial_Falla + " Y HORA FIN " + Hora_Final_Falla + ", PARA UN TOTAL DE " + Total_Horas + " HORAS Y " + Final_Minutos + " MINUTOS, LO EQUIVALENTE A UN VALOR DE AJUSTE POR $ " + Ajuste_Fallas + " Y UN VALOR DE CONPENSACION DE $ " + Ajuste_Compensacion + " SIN IVA, SEGUN SOPORTE(S) (LLAMADA DE SERVICIO, OT, LOG, AVISOS FINALES), LO ANTERIOR DISCRIMINADO POR SERVICIO ASI: AJUSTE POR INTERNET DE $ " + Valor_2 + " Y COMPENSACION DE INTERNET POR $" + Valor_1 + ", AJUSTE POR TELEFONIA DE $" + Valor_4 + " Y COMPENSACION POR TELEFONIA DE $" + Valor_3;
                 AC_Notas.Text = Notas_RR;
             }
             else
@@ -3650,7 +3680,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             DateTime Fecha_Inicial = Convert.ToDateTime(APC_Fecha_Inicial_T.Text);
             DateTime Fecha_Corte = Convert.ToDateTime(APC_Fecha_Final_T.Text);
             TimeSpan Dia_Inicial = Fecha_Corte.Subtract(Fecha_Inicial);
-            Int64 Total_Dias_1 = Convert.ToInt64((Dia_Inicial.Days)+1);
+            Int64 Total_Dias_1 = Convert.ToInt64((Dia_Inicial.Days) + 1);
 
             APC_Cantidad_de_Dias.Text = Total_Dias_1.ToString();
             this.APC_TV_SI_TextChanged(sender, e);
@@ -3689,7 +3719,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         this.APC_VENUS_SI_TextChanged(sender, e);
         this.APC_PVR_SI_TextChanged(sender, e);
         this.APC_WIFI_SI_TextChanged(sender, e);
-        this.APC_CLAROVIDEO_SI_TextChanged(sender,e);
+        this.APC_CLAROVIDEO_SI_TextChanged(sender, e);
         APC_Generar_Calculos_Valores();
     }
     protected void APC_TV_SI_TextChanged(object sender, EventArgs e)
@@ -4453,7 +4483,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             if (APC_Periodos.Text != "0")
             {
 
-                var Nota_Ajuste = "SE SOLICITA AJUSTE SEGUN OFRECIMIENTO REALIZADO AL CLIENTE CON CAMPAÑA DEL " + APC_Prcentaje_Descuento.Text + "% DE DESCUENTO SOBRE LOS SERVICIOS DE " + Servicios + "POR EL AREA DE "+ APC_Area_Ofrecimiento.Text +" EL DIA "+ APC_Fecha_Ofrecimiento.Text +", SE DEBE REALIZAR CORRECCION DESDE EL " + APC_Fecha_Inicial_T.Text + " HASTA EL " + APC_Fecha_Final_T.Text + " Y POR " + APC_Periodos.Text + " MESES YA CAUSADOS";
+                var Nota_Ajuste = "SE SOLICITA AJUSTE SEGUN OFRECIMIENTO REALIZADO AL CLIENTE CON CAMPAÑA DEL " + APC_Prcentaje_Descuento.Text + "% DE DESCUENTO SOBRE LOS SERVICIOS DE " + Servicios + "POR EL AREA DE " + APC_Area_Ofrecimiento.Text + " EL DIA " + APC_Fecha_Ofrecimiento.Text + ", SE DEBE REALIZAR CORRECCION DESDE EL " + APC_Fecha_Inicial_T.Text + " HASTA EL " + APC_Fecha_Final_T.Text + " Y POR " + APC_Periodos.Text + " MESES YA CAUSADOS";
                 APC_NOTAS_RR.Text = Nota_Ajuste;
             }
             else
@@ -4584,7 +4614,8 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         APC_Limpiar_Controles();
         this.APC_Cargar_Datos_Click(sender, e);
     }
-    protected void SMO_Controles_A_Objeto() {
+    protected void SMO_Controles_A_Objeto()
+    {
         int Ofrecimiento_1 = 0;
         int Ofrecimiento_2 = 0;
         int Ofrecimiento_3 = 0;
@@ -4626,7 +4657,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         if (SMO_Radio_3.Checked == true) { Ofrecimiento_2 = 1; } else { Ofrecimiento_2 = 0; }
         if (SMO_Radio_5.Checked == true) { Ofrecimiento_3 = 1; } else { Ofrecimiento_3 = 0; }
 
-        if (SMO_S_VOZ.Checked == true) { Servicio_1 = 1; } else { Servicio_1 = 0;}
+        if (SMO_S_VOZ.Checked == true) { Servicio_1 = 1; } else { Servicio_1 = 0; }
         if (SMO_S_ANALOGA.Checked == true) { Servicio_2 = 1; } else { Servicio_2 = 0; }
         if (SMO_S_AVANZADA.Checked == true) { Servicio_3 = 1; } else { Servicio_3 = 0; }
         if (SMO_S_BASICA.Checked == true) { Servicio_4 = 1; } else { Servicio_4 = 0; }
@@ -4664,7 +4695,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         obj_Entidad_Mejor_Oferta.Ofrecimiento_1_Envio = Ofrecimiento_1;
         obj_Entidad_Mejor_Oferta.Ofrecimiento_2_Envio = Ofrecimiento_2;
         obj_Entidad_Mejor_Oferta.Ofrecimiento_3_Envio = Ofrecimiento_3;
-        obj_Entidad_Mejor_Oferta.Servicio_1=Servicio_1;
+        obj_Entidad_Mejor_Oferta.Servicio_1 = Servicio_1;
         obj_Entidad_Mejor_Oferta.Servicio_2 = Servicio_2;
         obj_Entidad_Mejor_Oferta.Servicio_3 = Servicio_3;
         obj_Entidad_Mejor_Oferta.Servicio_4 = Servicio_4;
@@ -4727,27 +4758,28 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         }
         else { }
     }
-    protected void SMO_Guardar_Datos_Ofrecimiento() {
-        
+    protected void SMO_Guardar_Datos_Ofrecimiento()
+    {
 
-            SMO_Controles_A_Objeto();
-            var Guardar_Datos = -1;
-            Guardar_Datos = obj_Neg_Mejor_Oferta.abcVentas_Inbound("INSERTAR", obj_Entidad_Mejor_Oferta);
-            if (Guardar_Datos != -1)
-            {
-                SMO_Guardar_Datos_Log();
-                SMO_Limpiar_Controles();
+
+        SMO_Controles_A_Objeto();
+        var Guardar_Datos = -1;
+        Guardar_Datos = obj_Neg_Mejor_Oferta.abcVentas_Inbound("INSERTAR", obj_Entidad_Mejor_Oferta);
+        if (Guardar_Datos != -1)
+        {
+            SMO_Guardar_Datos_Log();
+            SMO_Limpiar_Controles();
             string script1 = "SMO_Guardado();";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Guardado", script1, true);
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Guardado", script1, true);
 
-            }
-            else
-            {
-            
-                string script = "SMO_No_Guardado();";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_No_Guardado", script, true);
-            }
-                
+        }
+        else
+        {
+
+            string script = "SMO_No_Guardado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_No_Guardado", script, true);
+        }
+
     }
     protected void SMO_Guardar_Datos_Log()
     {
@@ -4756,27 +4788,28 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         Guardar_Datos = obj_Neg_Mejor_Oferta.abc_LogVentas_Inbound("INSERTAR", obj_Entidad_Mejor_Oferta);
         SMO_Limpiar_Controles();
         SMO_Guardar_Datos.Enabled = true;
-        
-    }
-    protected void SMO_Actualizar_Datos() {
-        
-            SMO_Controles_A_Objeto();
-            var Guardar_Datos = -1;
-            Guardar_Datos = obj_Neg_Mejor_Oferta.abcVentas_Inbound("ACTUALIZAR", obj_Entidad_Mejor_Oferta);
-            if (Guardar_Datos != -1)
-            {
-                SMO_Guardar_Datos_Log();
-                SMO_Limpiar_Controles();
-            string script1 = "SMO_Actualizado();";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Actualizado", script1, true);
 
-            }
-            else
-            {
-                string script = "SMO_No_Actualizado();";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_No_Actualizado", script, true);
-            }
-        
+    }
+    protected void SMO_Actualizar_Datos()
+    {
+
+        SMO_Controles_A_Objeto();
+        var Guardar_Datos = -1;
+        Guardar_Datos = obj_Neg_Mejor_Oferta.abcVentas_Inbound("ACTUALIZAR", obj_Entidad_Mejor_Oferta);
+        if (Guardar_Datos != -1)
+        {
+            SMO_Guardar_Datos_Log();
+            SMO_Limpiar_Controles();
+            string script1 = "SMO_Actualizado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_Actualizado", script1, true);
+
+        }
+        else
+        {
+            string script = "SMO_No_Actualizado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "SMO_No_Actualizado", script, true);
+        }
+
     }
 
     protected void SMO_Tipo_Contacto()
@@ -4871,7 +4904,8 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     {
         SMO_Razon();
     }
-    protected void SMO_Limpiar_Controles() {
+    protected void SMO_Limpiar_Controles()
+    {
         var LIMPIAR_DATOS = "";
         SMO_Cuenta_Cliente.Text = LIMPIAR_DATOS;
         SMO_Nombre_Cliente.Text = LIMPIAR_DATOS;
@@ -4951,6 +4985,120 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         Generar_Nota_ADT();
     }
 
-    
+
+
+    protected void CV_Guarda_Click(object sender, EventArgs e)
+    {
+        CV_Guarda.Enabled = false;
+        DataSet dt = new DataSet();
+        Obj_Entidad_Claro_Video.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
+        dt = Obj_Neg_Claro_Video.Consulta_Cliente_Activacion_Claro_Video(Obj_Entidad_Claro_Video.Cuenta_Cliente);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            CV_Guardar_Datos_Ofrecimiento();
+            string script1 = "CV_Actualizado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "CV_Actualizado", script1, true);
+        }
+        else
+        {
+            CV_Guardar_Datos_Ofrecimiento();
+            string script1 = "CV_Guardado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "CV_Guardado", script1, true);
+        }
+    }
+    protected void CV_Guardar_Datos_Ofrecimiento()
+    {
+        CV_Controles_A_Objeto();
+        var Guardar_Datos = -1;
+        Guardar_Datos = Obj_Neg_Claro_Video.abc_Activacion_Claro_Video("INSERTAR", Obj_Entidad_Claro_Video);
+        if (Guardar_Datos != -1)
+        {
+            CV_Limpiar_Controles();
+        }
+        else
+        {
+            
+        }
+
+    }
+    protected void CV_Controles_A_Objeto()
+    {
+        string Aceptacion = string.Empty;
+        
+        if (RadioButton13.Checked == true) { Aceptacion = "SI"; }
+        if (RadioButton14.Checked == true) { Aceptacion = "NO"; } 
+
+        Obj_Entidad_Claro_Video.Fecha_Gestion = "";
+        Obj_Entidad_Claro_Video.Usuario_Gestion = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Claro_Video.Nombre_Usuario_Gestion = Session["Nombre_Usuario"].ToString();
+        Obj_Entidad_Claro_Video.Aliado_Gestion = Session["Aliado_Usuario"].ToString();
+        Obj_Entidad_Claro_Video.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
+        Obj_Entidad_Claro_Video.Aceptacion_Claro_Video = Aceptacion;
+    }
+    protected void CV_Limpiar_Controles()
+    {
+        RadioButton13.Checked = false;
+        RadioButton14.Checked = false;
+        CV_Guarda.Enabled = true;
+    }
+
+    protected void SHD_Guardar_Click(object sender, EventArgs e)
+    {
+        SHD_Guardar.Enabled = false;
+        DataSet dt = new DataSet();
+        Obj_Entidad_Siembra_HD.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
+        dt = Obj_Neg_Siembra_HD.Consulta_Cliente_Activacion_Siembra_HD(Obj_Entidad_Siembra_HD.Cuenta_Cliente);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            SHD_Guardar_Datos_Ofrecimiento();
+            string script1 = "SHD_Actualizado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "SHD_Actualizado", script1, true);
+        }
+        else
+        {
+            SHD_Guardar_Datos_Ofrecimiento();
+            string script1 = "SHD_Guardado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "SHD_Guardado", script1, true);
+        }
+    }
+    protected void SHD_Guardar_Datos_Ofrecimiento()
+    {
+        SHD_Controles_A_Objeto();
+        var Guardar_Datos = -1;
+        Guardar_Datos = Obj_Neg_Siembra_HD.abc_Activacion_Siembra_HD("INSERTAR", Obj_Entidad_Siembra_HD);
+        if (Guardar_Datos != -1)
+        {
+            SHD_Limpiar_Controles();
+        }
+        else
+        {
+
+        }
+
+    }
+    protected void SHD_Controles_A_Objeto()
+    {
+        string AceptacionSHD = string.Empty;
+
+        if (RadioButton15.Checked == true) { AceptacionSHD = "SI"; }
+        if (RadioButton16.Checked == true) { AceptacionSHD = "NO"; }
+
+        Obj_Entidad_Siembra_HD.Fecha_Gestion = "";
+        Obj_Entidad_Siembra_HD.Usuario_Gestion = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Siembra_HD.Nombre_Usuario_Gestion = Session["Nombre_Usuario"].ToString();
+        Obj_Entidad_Siembra_HD.Aliado_Gestion = Session["Aliado_Usuario"].ToString();
+        Obj_Entidad_Siembra_HD.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
+        Obj_Entidad_Siembra_HD.Ofrecimiento = S_HD_OFRECIMIENTO.Text;
+        Obj_Entidad_Siembra_HD.Aceptacion_Siembra_HD = AceptacionSHD;
+    }
+    protected void SHD_Limpiar_Controles()
+    {
+        RadioButton15.Checked = false;
+        RadioButton16.Checked = false;
+        S_HD_OFRECIMIENTO.Text = string.Empty;
+        SHD_Guardar.Enabled = true;
+    }
 }
 

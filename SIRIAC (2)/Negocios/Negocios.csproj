@@ -82,6 +82,7 @@
     <Compile Include="N_Reportes.cs" />
     <Compile Include="N_Seguimientos_Midas.cs" />
     <Compile Include="N_Servicios.cs" />
+    <Compile Include="N_Siembra_HD.cs" />
     <Compile Include="N_Usuarios.cs" />
     <Compile Include="N_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Estilos/Style_Perfil_Asesor.css?1.0.6" />
     <link rel="stylesheet" href="Estilos/Menu.css?1.0.6" />
     <link href="Estilos/Style_Ingreso_Casos.css?1.0.6" rel="stylesheet" />
-    <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&user=<%=Session["Usuario_Logueado"]%>"></script>
+    <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&nombre=<%=Session["Nombre_Usuario"]%>$cedula=<%=Session["Cedula"]%>&user=<%=Session["Usuario_Logueado"]%>&source=SIRIAC&operacion=<%=Session["Nombre_Linea_Usuario"]%>"></script>
     <link rel="stylesheet" href="assets/css/styles.css?1.0.5" />
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css?1.0.5" />
     <script src="Js/jquery-1.12.4.js"></script>

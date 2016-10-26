@@ -4083,7 +4083,7 @@ font-size: 18px;
    background-color: #fafafa;
    color:#333;
    border-radius: 3px;
-   width:950px;
+   width:1350px;
    font-size: 11px;
   background-image: url(Fondo_smo.jpg);
 }
@@ -4211,4 +4211,7 @@ font-style: normal;
 font-weight: 400;
 color: white;
 font-size: 18px;
+}
+.tabla_pdf_inbound {
+  width: 100%;
 }

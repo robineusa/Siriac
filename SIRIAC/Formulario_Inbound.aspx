@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <link href="Estilos/Style_Perfil_Asesor.css?1.1.0" rel="stylesheet" />
+    <link href="Estilos/Style_Perfil_Asesor.css?1.1.1" rel="stylesheet" />
     <link href="Estilos/Style_Ingreso_Casos.css?1.0.9" rel="stylesheet" />
     <link href="Estilos/Menu.css?1.0.6" rel="stylesheet" />
     <link href="Estilos/Banner_Alertas_Asesor_In.css?1.0.1" rel="stylesheet" />
@@ -20,15 +20,18 @@
         function Cargar_Datos_SMO() {
             document.getElementById('Iframe_SMO').style.display = 'block';
             document.getElementById('<%=SMO_Radio_1.ClientID%>').checked = false;
-             document.getElementById('<%=SMO_Radio_2.ClientID%>').checked = false;
-             document.getElementById('<%=SMO_Radio_3.ClientID%>').checked = false;
-             document.getElementById('<%=SMO_Radio_4.ClientID%>').checked = false;
-             document.getElementById('<%=SMO_Radio_5.ClientID%>').checked = false;
-             document.getElementById('<%=SMO_Radio_6.ClientID%>').checked = false;
-         }
+            document.getElementById('<%=SMO_Radio_2.ClientID%>').checked = false;
+            document.getElementById('<%=SMO_Radio_3.ClientID%>').checked = false;
+            document.getElementById('<%=SMO_Radio_4.ClientID%>').checked = false;
+            document.getElementById('<%=SMO_Radio_5.ClientID%>').checked = false;
+            document.getElementById('<%=SMO_Radio_6.ClientID%>').checked = false;
+        }
     </script>
     <script lang="ja">
+
         $(document).ready(function () {
+
+
             if ('<%=Session["Acceso_4"]%>' == "1") {
 
             } else {
@@ -279,12 +282,39 @@
         }
     </script>
     <script type="text/javascript">
+        function CV_Guardado() {
+            document.getElementById('Iframe_CV_Cerrar').click();
+            alert('¡Activacion Almacenada!');
+
+        }
+    </script>
+    <script type="text/javascript">
+        function CV_Actualizado() {
+            document.getElementById('Iframe_CV_Cerrar').click();
+            alert('¡Ya se habia guardado una activacion. Se generó una nueva interacción!');
+        }
+    </script>
+    <script type="text/javascript">
+        function SHD_Guardado() {
+            document.getElementById('Iframe_HD_Cerrar').click();
+            HD_Desactivar();
+            alert('¡Registro Almacenado!');
+
+        }
+    </script>
+    <script type="text/javascript">
+        function SHD_Actualizado() {
+            document.getElementById('Iframe_HD_Cerrar').click();
+            HD_Desactivar();
+            alert('¡Ya se habia guardado una activacion. Se generó una nueva interacción!');
+        }
+    </script>
+    <%--<script type="text/javascript">
         $(function Enviar_MEC() {
             var chat2 = $.connection.chatHub;
             $.connection.hub.start().done(function () {
                 Registra_Eventos2(chat2);
             });
-
         });
 
         function Registra_Eventos2(chat2) {
@@ -298,8 +328,8 @@
             var x = document.getElementById("Envia_MEC");
             x.click();
         }
-    </script>
-    <input type="button" id="Envia_MEC" style="display:none" />
+    </script>--%>
+    <input type="button" id="Envia_MEC" style="display: none" />
     <div id="footer" onmouseover="document.getElementById('carrete_de_iconos').style.display = 'block';" onmouseout="document.getElementById('carrete_de_iconos').style.display = 'none';">
         <div id="carrete_de_iconos" class="carrete_de_iconos">
             <a href="#Campanas" onclick="return Cargar_Datos_APC()">
@@ -328,8 +358,21 @@
 
 
 
-        </div>  
+        </div>
     </div>
+    <script type="text/javascript">
+        function Cargar_Iframe() {
+            document.getElementById('Iframe_CV').style.display = 'block';
+            var ruta = "https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c1136/index.html";
+            var iframe = document.getElementById('ContentPlaceHolder1_Iframe1');
+            iframe.setAttribute("src", ruta);
+        }
+        function Quitar_Iframe() {
+            var ruta = "";
+            var iframe = document.getElementById('ContentPlaceHolder1_Iframe1');
+            iframe.setAttribute("src", ruta);
+        }
+    </script>
 
 
     <div id="Menu_Opciones" style="display: none">
@@ -338,7 +381,7 @@
                 <div id="Icono_1" style="display: none"></div>
             </a>
             <div id="Icono_2" style="display: none"></div>
-            <a href="#Iframe_CV" onclick="document.getElementById('Iframe_CV').style.display = 'block';">
+            <a href="#Iframe_CV" onclick="return Cargar_Iframe();">
                 <div id="Icono_3" style="display: none"></div>
             </a>
             <a href="#Iframe_SMO" onclick="return Cargar_Datos_SMO()">
@@ -1486,7 +1529,9 @@
 
                     <asp:Button CssClass="button" ID="AC_Limpiar_Controles" runat="server" Text="Reiniciar Calculos" OnClick="AC_Limpiar_Controles_Click" />
                     <asp:Button ID="AC_Ejecutar_Aclculos" runat="server" Text="Button" OnClick="AC_Ejecutar_Aclculos_Click" Style="display: none" />
-                     <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank"> <div class="politicas"></div></a>
+                    <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank">
+                        <div class="politicas"></div>
+                    </a>
                 </ContentTemplate>
             </asp:UpdatePanel>
             <hr />
@@ -1627,7 +1672,8 @@
                                     </td>
                                     <td>
                                         <div class="Caja_de_Texto_Ajustes_Disputa_Compensacion">
-                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APCI" runat="server" Text="0" ForeColor="White"></asp:Label></div>
+                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APCI" runat="server" Text="0" ForeColor="White"></asp:Label>
+                                        </div>
                                     </td>
                                     <td colspan="5">
                                         <p class="Motivo_Ajuste2">&larr; VALOR A COMPENSAR - NO GENERA DISPUTA</p>
@@ -1639,7 +1685,8 @@
                                     </td>
                                     <td>
                                         <div class="Caja_de_Texto_Ajustes_Disputa_Compensacion">
-                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APCV" runat="server" Text="0" ForeColor="White"></asp:Label></div>
+                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APCV" runat="server" Text="0" ForeColor="White"></asp:Label>
+                                        </div>
                                     </td>
                                     <td colspan="5">
                                         <p class="Motivo_Ajuste2">&larr; VALOR A COMPENSAR - NO GENERA DISPUTA</p>
@@ -1651,7 +1698,8 @@
                                     </td>
                                     <td>
                                         <div class="Caja_de_Texto_Ajustes_Disputa_Compensacion">
-                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APFI" runat="server" Text="0" ForeColor="White"></asp:Label></div>
+                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APFI" runat="server" Text="0" ForeColor="White"></asp:Label>
+                                        </div>
                                     </td>
                                     <td colspan="5">
                                         <p class="Motivo_Ajuste2">&larr; VALOR A AJUSTAR - GENERA DISPUTA</p>
@@ -1663,7 +1711,8 @@
                                     </td>
                                     <td>
                                         <div class="Caja_de_Texto_Ajustes_Disputa_Compensacion">
-                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APFV" runat="server" Text="0" ForeColor="White"></asp:Label></div>
+                                            <asp:Label CssClass="Valor_Ajuste_Compensacion" ID="AC_APFV" runat="server" Text="0" ForeColor="White"></asp:Label>
+                                        </div>
                                     </td>
                                     <td colspan="5">
                                         <p class="Motivo_Ajuste2">&larr; VALOR A AJUSTAR - GENERA DISPUTA</p>
@@ -1910,7 +1959,9 @@
             <h2>CALCULADORA DE AJUSTES - DIFERENCIA DE TARIFAS</h2>
             <hr />
             <asp:Button CssClass="button" ID="Button1" runat="server" Text="Limpiar" OnClick="Button1_Click" />
-             <a  href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank"> <div class="politicas"></div></a>
+            <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank">
+                <div class="politicas"></div>
+            </a>
             <asp:UpdatePanel ID="UpdatePanel9" runat="server">
                 <ContentTemplate>
                     <asp:Button CssClass="button" ID="ADT_Cargar_Datos" runat="server" Text="Cargar_Datos" OnClick="ADT_Cargar_Datos_Click" Style="display: none" />
@@ -2315,7 +2366,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_IV_F" runat="server" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDV_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDV_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
                         </tr>
@@ -2329,7 +2381,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_IF_F" runat="server" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDF_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDF_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
                         </tr>
@@ -2343,7 +2396,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_II_F" runat="server" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDI_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDI_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
 
                             </td>
 
@@ -2358,7 +2412,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_ITV_F" runat="server" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDTV_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDTV_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
 
                             </td>
 
@@ -2373,7 +2428,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_IA_F" runat="server" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDA_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDA_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
                         </tr>
@@ -2387,7 +2443,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_ICLAROVIDEO_F" runat="server" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDCLAROVIDEO_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="ADT_VDCLAROVIDEO_F" runat="server" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
                         </tr>
@@ -2506,7 +2563,9 @@
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <asp:Button CssClass="button" ID="AP_Limpiar" runat="server" Text="Limpiar" OnClick="AP_Limpiar_Click" />
-                     <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank"> <div class="politicas"></div></a>
+                    <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank">
+                        <div class="politicas"></div>
+                    </a>
                 </ContentTemplate>
             </asp:UpdatePanel>
             <hr />
@@ -2805,7 +2864,7 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_WIFI_2P" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
 
                         </tr>
-                         <tr>
+                        <tr>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Titulo">CLARO VIDEO</div>
                             </td>
@@ -2845,7 +2904,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_TV_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_TV_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_TV_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -2858,7 +2918,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_IN_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_IN_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_IN_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -2871,7 +2932,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_VOZ_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_VOZ_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_VOZ_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2886,7 +2948,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_HBO_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_HBO_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_HBO_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2901,7 +2964,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_MPK_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_MPK_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_MPK_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2916,7 +2980,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_TVHD_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_TVHD_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_TVHD_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2931,7 +2996,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_SP_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_SP_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_SP_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2946,7 +3012,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_VENUS_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_VENUS_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_VENUS_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2961,7 +3028,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_PVR_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_PVR_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_PVR_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -2976,12 +3044,13 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_WIFI_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_WIFI_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_WIFI_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
                         </tr>
-                         </tr>
+                        </tr>
                         <tr>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Titulo">CLARO VIDEO</div>
@@ -2992,7 +3061,8 @@
                                 <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_CLAROVIDEO_NETO_IVA" runat="server" AutoCompleteType="None" Text="0" Enabled="false"></asp:TextBox></td>
                             <td>
                                 <div class="Caja_de_Texto_Ajustes_Disputa">
-                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_CLAROVIDEO_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox></div>
+                                    <asp:TextBox CssClass="Caja_de_Texto_Ajustes" ID="AP_CLAROVIDEO_NETO_DP" runat="server" AutoCompleteType="None" Text="0" Enabled="false" ForeColor="White"></asp:TextBox>
+                                </div>
                             </td>
 
 
@@ -3085,7 +3155,7 @@
             <a class="Compensacion-cerrar" href="#">X</a>
             <h2>CALCULADORA DE AJUSTES - RECONEXION</h2>
             <hr />
-             <an href="#"> <div class="politicas"></div></an>
+            <an href="#"> <div class="politicas"></div></an>
             <asp:UpdatePanel ID="Panel_Reconexion" runat="server">
                 <ContentTemplate>
                     <table class="Tabla_Ajuste">
@@ -3151,7 +3221,9 @@
             <asp:UpdatePanel ID="UpdatePanel18" runat="server">
                 <ContentTemplate>
                     <asp:Button CssClass="button" ID="APC_Limpiar" runat="server" Text="Reiniciar Calculos" OnClick="APC_Limpiar_Click" />
-                    <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank"> <div class="politicas"></div></a>
+                    <a href="https://comunidadvirtual.claro.com.co/www/lms/Biblioteca/Documentos/others/M_Servicio/Residencial/Boletines/Comunicados%20-%202016/c905/index.html" target="_blank">
+                        <div class="politicas"></div>
+                    </a>
                 </ContentTemplate>
             </asp:UpdatePanel>
             <hr />
@@ -3735,15 +3807,49 @@
     <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE CLARO VIDEO-->
     <div class="modal-wrapper" id="Iframe_CV" style="display: none">
         <div class="Iframe_CV-contenedor">
-            <a class="Iframe_CV-cerrar" href="#">X</a>
+            <a id="Iframe_CV_Cerrar" class="Iframe_CV-cerrar" href="#" onclick="return Quitar_Iframe();">X</a>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                <h2>FORMULARIO BENEFICIOS CLARO VIDEO</h2>
-                <hr />
+                    <h2>FORMULARIO ACTIVACIÓN CLARO VIDEO</h2>
+                    <hr />
+                    <div class="Texto_Informativo_SMO">Beneficios:</div>
+                    <div class="SMO_Contenedor">
+                        <table class="tabla_pdf_inbound">
+                            <tr>
+                                <td>
+                                    <iframe class="iframe" id="Iframe1" style="background-size: 100%; width: 100%;" src="#" runat="server"></iframe>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <hr />
+                    <div class="Texto_Informativo_SMO">Servicio:</div>
+                    <div class="SMO_Contenedor">
+                        <table class="tabla">
+                            <tr>
+                                <td colspan="6">
+                                    <p class="etiquetas_Ofrecimiento2">
+                                        El cliente acepto?
+                                    </p>
+                                    &nbsp;<asp:RadioButton ID="RadioButton13" runat="server" GroupName="1" Text="SI" Font-Names="Century Gothic" Font-Size="Small" />
+                                    &nbsp; &nbsp; 
+                                <asp:RadioButton ID="RadioButton14" runat="server" GroupName="1" Text="NO" Font-Names="Century Gothic" Font-Size="Small" />
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <hr />
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:Button CssClass="button" ID="CV_Guarda" runat="server" OnClick="CV_Guarda_Click" Text="Guardar" />
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
-    </div>            
+    </div>
     <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE SIGUIENTE MEJOR OFERTA-->
     <div class="modal-wrapper" id="Iframe_SMO" style="display: none">
         <div class="Iframe_SMO-contenedor">
@@ -3919,7 +4025,8 @@
                                 </div>
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:TextBox CssClass="ofrecimientos" ID="SMO_T_Ofrecimiento_2" runat="server" TextMode="MultiLine"></asp:TextBox></ContentTemplate>
+                                        <asp:TextBox CssClass="ofrecimientos" ID="SMO_T_Ofrecimiento_2" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    </ContentTemplate>
                                 </asp:UpdatePanel>
                             </td>
                         </tr>
@@ -3949,7 +4056,8 @@
                                 </div>
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:TextBox CssClass="ofrecimientos" ID="SMO_T_Ofrecimiento_3" runat="server" TextMode="MultiLine"></asp:TextBox></ContentTemplate>
+                                        <asp:TextBox CssClass="ofrecimientos" ID="SMO_T_Ofrecimiento_3" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    </ContentTemplate>
                                 </asp:UpdatePanel>
                             </td>
                         </tr>
@@ -4270,13 +4378,47 @@
     <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE SIEMBRA HD-->
     <div class="modal-wrapper" id="Iframe_HD" style="display: none">
         <div class="Iframe_HD-contenedor">
-            <a class="Iframe_HD-cerrar" href="#">X</a>
+            <a id="Iframe_HD_Cerrar" class="Iframe_HD-cerrar" href="#">X</a>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                <h2>FORMULARIO SIEMBRA HD</h2>
-                <hr />
+                    <h2>FORMULARIO SIEMBRA HD</h2>
+                    <hr />
+                    <div class="Texto_Informativo_SMO">Ofrecimiento</div>
+
+                    <div class="SMO_Contenedor" onmouseover="this.style.background-color=red;" >
+                        <table class="tabla">
+                            <tr>
+                                <td colspan="6">
+                                    
+                                    <asp:UpdatePanel runat="server">
+                                        <ContentTemplate>
+                                            <asp:TextBox CssClass="ofrecimientos" ID="S_HD_OFRECIMIENTO" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">
+                                    <p class="etiquetas_Ofrecimiento2">
+                                        El cliente acepto?
+                                    </p>
+                                    &nbsp;<asp:RadioButton ID="RadioButton15" runat="server" GroupName="1" Text="SI" Font-Names="Century Gothic" Font-Size="Small" />
+                                    &nbsp; &nbsp; 
+                         <asp:RadioButton ID="RadioButton16" runat="server" GroupName="1" Text="NO" Font-Names="Century Gothic" Font-Size="Small" />
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
+            <hr />
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:Button CssClass="button" ID="SHD_Guardar" runat="server" Text="Guardar" OnClick="SHD_Guardar_Click"/>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
         </div>
-    </div> 
+    </div>
 </asp:Content>

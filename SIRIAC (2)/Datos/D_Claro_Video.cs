@@ -194,5 +194,82 @@ namespace Datos
             }
             return ds;
         }
+        public int abc_Activacion_Claro_Video(string pAccion, E_Claro_Video Obj_Claro_Video)
+        {
+            int Resultado = 0;
+            SqlCommand cmd = new SqlCommand("Abc_Activacion_Claro_Video", Conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Accion", pAccion);
+            cmd.Parameters.AddWithValue("@Fecha_gestion", Obj_Claro_Video.Fecha_Gestion);
+            cmd.Parameters.AddWithValue("@Usuario_gestion", Obj_Claro_Video.Usuario_Gestion);
+            cmd.Parameters.AddWithValue("@Nombre_Usuario_gestion", Obj_Claro_Video.Nombre_Usuario_Gestion);
+            cmd.Parameters.AddWithValue("@Aliado_gestion", Obj_Claro_Video.Aliado_Gestion);
+            cmd.Parameters.AddWithValue("@Cuenta_cliente", Obj_Claro_Video.Cuenta_Cliente);
+            cmd.Parameters.AddWithValue("@Aceptacion_Claro_Video", Obj_Claro_Video.Aceptacion_Claro_Video);
+            try
+            {
+                Abrir_Conexion();
+                Resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de activacion claro video", e);
+            }
+            finally
+            {
+                Cerrar_Conexion();
+                cmd.Dispose();
+            }
+            return Resultado;
+        }
+        public DataSet Consulta_Cliente_Activacion_Claro_Video(double pCuenta_Cliente)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Cliente_Activacion_Claro_Video]";
+                cmd.Parameters.AddWithValue("@Cuenta", pCuenta_Cliente);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los datos del cliente", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public DataSet Consulta_Falta_Activacion_Claro_Video(double pCuenta)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Falta_Activacion_Claro_Video]";
+                cmd.Parameters.AddWithValue("@CUENTA", pCuenta);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al consultar el registro en base cuentas", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
     }
 }

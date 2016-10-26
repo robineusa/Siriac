@@ -249,7 +249,7 @@ z-index: 999;
  animation: 1s infinite ;
 }
 #Icono_3:hover:after{
- content: 'Beneficios Claro Video'; 
+ content: 'Activación Claro Video'; 
     position: absolute;
     z-index: 98;
   margin-left: -15px;
