@@ -629,25 +629,49 @@ public partial class Formulario_Outbound : System.Web.UI.Page
             CC_RAZON.Items.Clear();
         }
     }
+    protected void CC_Motivo()
+    {
+        DataSet dt = new DataSet();
+        Obj_Entidad_Arbol_Outbound.Id_Motivo = Convert.ToInt16(CC_RAZON.SelectedValue);
+        dt = Obj_Neg_Arbol_Outbound.Oubound_Motivo(Obj_Entidad_Arbol_Outbound.Id_Motivo);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            CC_MOTIVO.DataSource = dt;
+            CC_MOTIVO.DataTextField = "MOTIVO";
+            CC_MOTIVO.DataValueField = "ID_MOTIVO";
+            CC_MOTIVO.DataBind();
+        }
+        else
+        {
+            CC_RAZON.Items.Clear();
+        }
+    }
 
     protected void CC_TIPO_CONTACTO_SelectedIndexChanged(object sender, EventArgs e)
     {
         CC_Gestion();
         CC_Cierre();
         CC_Razon();
+        CC_Motivo();
     }
 
     protected void CC_GESTION_SelectedIndexChanged(object sender, EventArgs e)
     {
         CC_Cierre();
         CC_Razon();
+        CC_Motivo();
     }
 
     protected void CC_CIERRE_SelectedIndexChanged(object sender, EventArgs e)
     {
         CC_Razon();
+        CC_Motivo();
     }
-
+    protected void CC_RAZON_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        CC_Motivo();
+    }
     protected void CC_Cuenta_Cliente_TextChanged(object sender, EventArgs e)
     {
         //Limpiar_CC();
@@ -1048,4 +1072,6 @@ public partial class Formulario_Outbound : System.Web.UI.Page
         Obj_Entidad_Cierre_Ciclo.Operacion_Gestion = Operacion.Text;
     }
 
+
+    
 }

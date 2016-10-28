@@ -48,5 +48,9 @@ namespace Negocios
         {
             return Consultas_Arbol_Outbound.Oubound_Causa(p_Id_Razon);
         }
+        public DataSet Oubound_Motivo(int p_Id_Causa)
+        {
+            return Consultas_Arbol_Outbound.Oubound_Motivo(p_Id_Causa);
+        }
     }
 }

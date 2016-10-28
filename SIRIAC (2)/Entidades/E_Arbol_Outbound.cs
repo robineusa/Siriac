@@ -18,6 +18,8 @@ namespace Entidades
         private string _Razon;
         private int _Id_Causa;
         private string _Causa;
+        private int _Id_Motivo;
+        private string _Motivo;
         private string _Hipotesis;
         #endregion
         #region Constructor
@@ -33,6 +35,8 @@ namespace Entidades
             _Id_Causa = 0;
             _Causa = string.Empty;
             _Hipotesis = string.Empty;
+            _Id_Motivo = 0;
+            _Motivo = string.Empty;
         }
         #endregion
         #region Encapsulamientos
@@ -85,6 +89,32 @@ namespace Entidades
         {
             get { return _Hipotesis; }
             set { _Hipotesis = value; }
+        }
+
+        public int Id_Motivo
+        {
+            get
+            {
+                return _Id_Motivo;
+            }
+
+            set
+            {
+                _Id_Motivo = value;
+            }
+        }
+
+        public string Motivo
+        {
+            get
+            {
+                return _Motivo;
+            }
+
+            set
+            {
+                _Motivo = value;
+            }
         }
         #endregion
     }

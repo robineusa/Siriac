@@ -1588,11 +1588,15 @@
                                     </td>
                                     <td>
                                         <asp:Label CssClass="texto_informativo" ID="Label76" runat="server" Text="Cierre:"></asp:Label><br />
-                                        <asp:DropDownList CssClass="dropdown3" ID="CC_CIERRE" OnSelectedIndexChanged="CC_CIERRE_SelectedIndexChanged" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList CssClass="dropdown3" ID="CC_CIERRE" OnSelectedIndexChanged="CC_CIERRE_SelectedIndexChanged" runat="server" AutoPostBack="true" style="width:200px;"></asp:DropDownList>
                                     </td>
                                     <td>
                                         <asp:Label CssClass="texto_informativo" ID="Label77" runat="server" Text="Razón:"></asp:Label><br />
-                                        <asp:DropDownList CssClass="dropdown3" ID="CC_RAZON" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList CssClass="dropdown3" ID="CC_RAZON" runat="server" OnSelectedIndexChanged="CC_RAZON_SelectedIndexChanged" AutoPostBack="true" style="width:200px;"></asp:DropDownList>
+                                    </td>
+                                    <td>
+                                        <asp:Label CssClass="texto_informativo" ID="Label1" runat="server" Text="Motivo:"></asp:Label><br />
+                                        <asp:DropDownList CssClass="dropdown3" ID="CC_MOTIVO" runat="server" style="width:200px;"></asp:DropDownList>
                                     </td>
                                 </tr>
                             </table>

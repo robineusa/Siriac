@@ -227,5 +227,29 @@ namespace Datos
             }
             return ds;
         }
+        public DataSet Oubound_Motivo(int p_Id_Causa)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Arbol_Motivo_Out]";
+                cmd.Parameters.AddWithValue("@Id_Causa", p_Id_Causa);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar el tipo de motivo outbound", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
     }
 }
