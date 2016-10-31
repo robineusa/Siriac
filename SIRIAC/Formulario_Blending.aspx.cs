@@ -1827,6 +1827,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
                 D_Movil_Pospago.Text = dt.Tables[0].Rows[0]["TELEFONO_CONV"].ToString();
 
                 Tipo_Contacto_Docsis_Overlap();
+                Gestion_Docsis_Overlap();
                 Cierre_Docsis_Overlap();
                 Razon_Docsis_Overlap();
 
@@ -1862,7 +1863,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
             D_Tipo_Contacto.Items.Clear();
         }
     }
-    protected void Cierre_Docsis_Overlap()
+    protected void Gestion_Docsis_Overlap()
     {
         DataSet dt = new DataSet();
         Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto = Convert.ToInt16(D_Tipo_Contacto.SelectedValue);
@@ -1871,27 +1872,46 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         if (dt.Tables[0].Rows.Count > 0)
         {
 
+            D_Gestion.DataSource = dt;
+            D_Gestion.DataTextField = "CIERRE";
+            D_Gestion.DataValueField = "ID_CIERRE";
+            D_Gestion.DataBind();
+        }
+        else
+        {
+            D_Gestion.Items.Clear();
+        }
+    }
+    protected void Cierre_Docsis_Overlap()
+    {
+        DataSet dt = new DataSet();
+        Obj_Entidad_Arbol_Outbound.Id_Cierre = Convert.ToInt16(D_Gestion.SelectedValue);
+        dt = Obj_Neg_Arbol_Outbound.Oubound_Razon(Obj_Entidad_Arbol_Outbound.Id_Cierre);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
             D_Cierre.DataSource = dt;
-            D_Cierre.DataTextField = "CIERRE";
-            D_Cierre.DataValueField = "ID_CIERRE";
+            D_Cierre.DataTextField = "RAZON";
+            D_Cierre.DataValueField = "ID_RAZON";
             D_Cierre.DataBind();
         }
         else
         {
             D_Cierre.Items.Clear();
         }
+
     }
     protected void Razon_Docsis_Overlap()
     {
         DataSet dt = new DataSet();
-        Obj_Entidad_Arbol_Outbound.Id_Cierre = Convert.ToInt16(D_Cierre.SelectedValue);
-        dt = Obj_Neg_Arbol_Outbound.Oubound_Razon(Obj_Entidad_Arbol_Outbound.Id_Cierre);
+        Obj_Entidad_Arbol_Outbound.Id_Causa = Convert.ToInt16(D_Cierre.SelectedValue);
+        dt = Obj_Neg_Arbol_Outbound.Oubound_Causa(Obj_Entidad_Arbol_Outbound.Id_Causa);
 
         if (dt.Tables[0].Rows.Count > 0)
         {
             D_Razon.DataSource = dt;
-            D_Razon.DataTextField = "RAZON";
-            D_Razon.DataValueField = "ID_RAZON";
+            D_Razon.DataTextField = "CAUSA";
+            D_Razon.DataValueField = "ID_CAUSA";
             D_Razon.DataBind();
         }
         else
@@ -1904,12 +1924,20 @@ public partial class Formulario_Blendign : System.Web.UI.Page
     {
         string script2 = "No_Mostra_Div();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Mostra_Div", script2, true);
-        
+
+        Gestion_Docsis_Overlap();
         Cierre_Docsis_Overlap();
         Razon_Docsis_Overlap();
         D_ConsultarSeguimientos();
     }
+    protected void D_Gestion_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string script2 = "No_Mostra_Div();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "No_Mostra_Div", script2, true);
 
+        Cierre_Docsis_Overlap();
+        Razon_Docsis_Overlap();
+    }
     protected void D_Cierre_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (Convert.ToString(D_Cierre.SelectedItem) == "SEGUIMIENTO")
@@ -1947,6 +1975,8 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         D_Movil_Pospago.Text = LIMPIAR;
         D_Tipo_Contacto.Items.Clear();
         D_Tipo_Contacto.ClearSelection();
+        D_Gestion.Items.Clear();
+        D_Gestion.ClearSelection();
         D_Cierre.Items.Clear();
         D_Cierre.ClearSelection();
         D_Razon.Items.Clear();
@@ -2039,6 +2069,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         obj_Entidad_Docsis_Overlap.Movil_2 = Convert.ToDouble(D_Celular_2.Text);
         obj_Entidad_Docsis_Overlap.Paquete_Actual = D_Paquete_Actual.Text;
         obj_Entidad_Docsis_Overlap.Tipo_Contacto = Convert.ToString(D_Tipo_Contacto.SelectedItem);
+        obj_Entidad_Docsis_Overlap.Gestion = Convert.ToString(D_Gestion.SelectedItem);
         obj_Entidad_Docsis_Overlap.Cierre = Convert.ToString(D_Cierre.SelectedItem);
         obj_Entidad_Docsis_Overlap.Razon = Convert.ToString(D_Razon.SelectedItem);
         obj_Entidad_Docsis_Overlap.Observaciones = D_Observaciones.Text.ToUpper();
@@ -2063,6 +2094,8 @@ public partial class Formulario_Blendign : System.Web.UI.Page
 
         }
     }
+
+    
 }
 
 

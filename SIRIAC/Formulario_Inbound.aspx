@@ -186,6 +186,12 @@
         }
     </script>
     <script type="text/javascript">
+        function mensaje12() {
+
+            alert('Debe seleccionar Estado del caso y Área escalar');
+        }
+    </script>
+    <script type="text/javascript">
         function mensaje9() {
             window.location.href = '#';
         }

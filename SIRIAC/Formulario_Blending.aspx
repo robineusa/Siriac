@@ -384,12 +384,16 @@
                                     <asp:DropDownList CssClass="dropdown2" ID="D_Tipo_Contacto" runat="server" OnSelectedIndexChanged="D_Tipo_Contacto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                 </td>
                                 <td>
+                                    <p class="etiquetas">Gestión:</p>
+                                    <asp:DropDownList CssClass="dropdown2" ID="D_Gestion" runat="server" OnSelectedIndexChanged="D_Gestion_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                </td>
+                                <td>
                                     <p class="etiquetas">Cierre:</p>
                                     <asp:DropDownList CssClass="dropdown4" ID="D_Cierre" runat="server" OnSelectedIndexChanged="D_Cierre_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                 </td>
                                 <td>
                                     <p class="etiquetas">Razón:</p>
-                                    <asp:DropDownList CssClass="dropdown3" ID="D_Razon" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList CssClass="dropdown4" ID="D_Razon" runat="server"></asp:DropDownList>
                                 </td>
                             </tr>
                         </table>

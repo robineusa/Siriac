@@ -134,6 +134,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@Movil_2", Obj_Docsis_Overlap.Movil_2);
             cmd.Parameters.AddWithValue("@Paquete_actual", Obj_Docsis_Overlap.Paquete_Actual);
             cmd.Parameters.AddWithValue("@Tipo_de_contacto", Obj_Docsis_Overlap.Tipo_Contacto);
+            cmd.Parameters.AddWithValue("@Gestion", Obj_Docsis_Overlap.Gestion);
             cmd.Parameters.AddWithValue("@Cierre", Obj_Docsis_Overlap.Cierre);
             cmd.Parameters.AddWithValue("@Razon", Obj_Docsis_Overlap.Razon);
             cmd.Parameters.AddWithValue("@Observaciones", Obj_Docsis_Overlap.Observaciones);
@@ -145,7 +146,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de ventas", e);
+                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de Docsis Overlap", e);
             }
             finally
             {
@@ -180,6 +181,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@Movil_2", Obj_Docsis_Overlap.Movil_2);
             cmd.Parameters.AddWithValue("@Paquete_actual", Obj_Docsis_Overlap.Paquete_Actual);
             cmd.Parameters.AddWithValue("@Tipo_de_contacto", Obj_Docsis_Overlap.Tipo_Contacto);
+            cmd.Parameters.AddWithValue("@Gestion", Obj_Docsis_Overlap.Gestion);
             cmd.Parameters.AddWithValue("@Cierre", Obj_Docsis_Overlap.Cierre);
             cmd.Parameters.AddWithValue("@Razon", Obj_Docsis_Overlap.Razon);
             cmd.Parameters.AddWithValue("@Observaciones", Obj_Docsis_Overlap.Observaciones);
@@ -191,7 +193,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de ventas", e);
+                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de Docsis Overlap", e);
             }
             finally
             {

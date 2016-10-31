@@ -68,7 +68,8 @@ public partial class Consulta_de_Gestion_Admin : System.Web.UI.Page
         DataSet dt = new DataSet();
         Obj_Entidad_Gestion_General.Fecha_Interaccion = TextBox3.Text;
         Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = TextBox4.Text;
-        dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2);
+        Obj_Entidad_Gestion_General.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
+        dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2, Obj_Entidad_Gestion_General.Aliado_Apertura);
 
         GridView gv = new GridView();
         gv.DataSource = dt;
@@ -103,7 +104,8 @@ public partial class Consulta_de_Gestion_Admin : System.Web.UI.Page
         DataSet dt = new DataSet();
         Obj_Entidad_Gestion_General.Fecha_Interaccion = TextBox3.Text;
         Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = TextBox4.Text;
-        dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2);
+        Obj_Entidad_Gestion_General.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
+        dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2, Obj_Entidad_Gestion_General.Aliado_Apertura);
 
         if (dt.Tables[0].Rows.Count > 0)
         {

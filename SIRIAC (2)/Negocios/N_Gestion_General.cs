@@ -20,9 +20,9 @@ namespace Negocios
         {
             return Obj_Consultas_de_Gestion.Consulta_de_Gestion_Celula(pFecha_Inicial, pFecha_Final, pUsuario);
         }
-        public DataSet Consulta_de_Gestion_Admin(string pFecha_Inicial, string pFecha_Final)
+        public DataSet Consulta_de_Gestion_Admin(string pFecha_Inicial, string pFecha_Final, string pAliado)
         {
-            return Obj_Consultas_de_Gestion.Consulta_de_Gestion_Admin(pFecha_Inicial, pFecha_Final);
+            return Obj_Consultas_de_Gestion.Consulta_de_Gestion_Admin(pFecha_Inicial, pFecha_Final, pAliado);
         }
     }
 }

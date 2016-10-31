@@ -28,6 +28,7 @@ namespace Entidades
         private double _Movil_2;
         private string _Paquete_Actual;
         private string _Tipo_Contacto;
+        private string _Gestion;
         private string _Cierre;
         private string _Razon;
         private string _Observaciones;
@@ -59,6 +60,7 @@ namespace Entidades
             _Movil_1 = 0;
             _Paquete_Actual = string.Empty;
             _Tipo_Contacto = string.Empty;
+            _Gestion = string.Empty;
             _Cierre = string.Empty;
             _Razon = string.Empty;
             _Observaciones = string.Empty;
@@ -404,6 +406,19 @@ namespace Entidades
             set
             {
                 _Nombre_Usuario_Gestion = value;
+            }
+        }
+
+        public string Gestion
+        {
+            get
+            {
+                return _Gestion;
+            }
+
+            set
+            {
+                _Gestion = value;
             }
         }
         #endregion

@@ -64,7 +64,7 @@ namespace Datos
             }
             return ds;
         }
-        public DataSet Consulta_de_Gestion_Admin(string pFecha_Inicial, string pFecha_Final)
+        public DataSet Consulta_de_Gestion_Admin(string pFecha_Inicial, string pFecha_Final, string pAliado)
         {
             SqlCommand cmd = new SqlCommand();
             DataSet ds = new DataSet();
@@ -77,6 +77,7 @@ namespace Datos
                 cmd.CommandText = "[dbo].[Selecciona_Gestion_General_Admin]";
                 cmd.Parameters.AddWithValue("@Fecha_Apertura", pFecha_Inicial);
                 cmd.Parameters.AddWithValue("@Fecha_Apertura_2", pFecha_Final);
+                cmd.Parameters.AddWithValue("@Aliado", pAliado);
                 dt.SelectCommand = cmd;
                 dt.Fill(ds);
             }

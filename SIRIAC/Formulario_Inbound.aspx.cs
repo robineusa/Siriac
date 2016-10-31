@@ -611,6 +611,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             Estado_Caso.DataTextField = "DESCRIPCION";
             Estado_Caso.DataValueField = "ID_ESTADO";
             Estado_Caso.DataBind();
+            Estado_Caso.Items.Insert(0, "--SELECCIONE--");
         }
     }
     /* private void Nombre_Linea()
@@ -640,6 +641,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
             Area_Escalar.DataTextField = "NOMBRE_LINEA";
             Area_Escalar.DataValueField = "NOMBRE_LINEA";
             Area_Escalar.DataBind();
+            Area_Escalar.Items.Insert(0, "--SELECCIONE--");
         }
     }
     private void Hobbies()
@@ -921,32 +923,40 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     }
     protected void Guardar_Caso_Click(object sender, EventArgs e)
     {
-        if (Convert.ToString(Marcacion.SelectedItem) == "")
+        if ((Convert.ToString(Estado_Caso.SelectedItem) == "--SELECCIONE--") || (Convert.ToString(Area_Escalar.SelectedItem) == "--SELECCIONE--"))
         {
-            string script9 = "mensaje11();";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje11", script9, true);
+            string script10 = "mensaje12();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje12", script10, true);
         }
         else
         {
-            var Registrar_Transaccion = -1;
-            DataSet dt1 = new DataSet();
-            Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
-            dt1 = Obj_Neg_Cuentas_Genericas.Consultar_Cuenta_Generica(Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente);
-            if (dt1.Tables[0].Rows.Count > 0)
+            if (Convert.ToString(Marcacion.SelectedItem) == "")
             {
-                Guardar_Cliente_Generico();
-                Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
-                Limpiar_General();
-                Colores_Blanco();
-                Limpiar_Incremento();
+                string script9 = "mensaje11();";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje11", script9, true);
             }
             else
             {
-                Guardar_Cliente_Real();
-                Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
-                Limpiar_General();
-                Colores_Blanco();
-                Limpiar_Incremento();
+                var Registrar_Transaccion = -1;
+                DataSet dt1 = new DataSet();
+                Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente = Convert.ToInt64(Cuenta_Cliente.Text);
+                dt1 = Obj_Neg_Cuentas_Genericas.Consultar_Cuenta_Generica(Obj_Entidad_Cuentas_Genericas.Cuenta_Cliente);
+                if (dt1.Tables[0].Rows.Count > 0)
+                {
+                    Guardar_Cliente_Generico();
+                    Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
+                    Limpiar_General();
+                    Colores_Blanco();
+                    Limpiar_Incremento();
+                }
+                else
+                {
+                    Guardar_Cliente_Real();
+                    Registrar_Transaccion = Obj_Neg_Transacciones.acb_Log_Transacciones(Obj_Entidad_Transacciones);
+                    Limpiar_General();
+                    Colores_Blanco();
+                    Limpiar_Incremento();
+                }
             }
         }
     }
