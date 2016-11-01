@@ -17,58 +17,60 @@ public partial class Consulta_de_Gestion_Admin : System.Web.UI.Page
 {
     public E_Gestion_General Obj_Entidad_Gestion_General = new E_Gestion_General();
     public N_Gestion_General Obj_Neg_Gestion_General = new N_Gestion_General();
+    public N_Perfiles Obj_Neg_Perfiles = new N_Perfiles();
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["Acceso_6"].ToString() == "1") { } else { Response.Redirect("Bienvenida_Administrador.aspx?Acceso= " + Session["ACCESO_6"].ToString() + "--DENEGADO Consulta de Gestión"); }
+        Carga_Aliado();
         
     }
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-        Calendar1.SelectedDate = DateTime.Now;
-        if (Calendar1.Visible == true) { Calendar1.Visible = false; }
-        else
-        {
-            Calendar1.Visible = true;
+    //protected void Button2_Click(object sender, EventArgs e)
+    //{
+    //    Calendar1.SelectedDate = DateTime.Now;
+    //    if (Calendar1.Visible == true) { Calendar1.Visible = false; }
+    //    else
+    //    {
+    //        Calendar1.Visible = true;
 
-        }
-        Calendar1.VisibleDate = Calendar1.TodaysDate;
+    //    }
+    //    Calendar1.VisibleDate = Calendar1.TodaysDate;
 
-        Calendar1.SelectedDates.Clear();
-    }
+    //    Calendar1.SelectedDates.Clear();
+    //}
 
-    protected void Button3_Click(object sender, EventArgs e)
-    {
-        Calendar2.SelectedDate = DateTime.Now;
-        if (Calendar2.Visible == true) { Calendar2.Visible = false; }
-        else
-        {
-            Calendar2.Visible = true;
+    //protected void Button3_Click(object sender, EventArgs e)
+    //{
+    //    Calendar2.SelectedDate = DateTime.Now;
+    //    if (Calendar2.Visible == true) { Calendar2.Visible = false; }
+    //    else
+    //    {
+    //        Calendar2.Visible = true;
 
-        }
-        Calendar2.VisibleDate = Calendar2.TodaysDate;
+    //    }
+    //    Calendar2.VisibleDate = Calendar2.TodaysDate;
 
-        Calendar2.SelectedDates.Clear();
-    }
+    //    Calendar2.SelectedDates.Clear();
+    //}
 
-    protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-    {
-        TextBox3.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
-        Calendar1.Visible = false;
-    }
+    //protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+    //{
+    //    TextBox3.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
+    //    Calendar1.Visible = false;
+    //}
 
-    protected void Calendar2_SelectionChanged(object sender, EventArgs e)
-    {
-        TextBox4.Text = Calendar2.SelectedDate.ToString("yyyy-MM-dd");
-        Calendar2.Visible = false;
-        Consulta_De_Gestion();
-    }
+    //protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+    //{
+    //    TextBox4.Text = Calendar2.SelectedDate.ToString("yyyy-MM-dd");
+    //    Calendar2.Visible = false;
+    //    Consulta_De_Gestion();
+    //}
     protected void Button4_Click(object sender, EventArgs e)
     {
         DataSet dt = new DataSet();
-        Obj_Entidad_Gestion_General.Fecha_Interaccion = TextBox3.Text;
-        Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = TextBox4.Text;
-        Obj_Entidad_Gestion_General.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
+        Obj_Entidad_Gestion_General.Fecha_Interaccion = CG_Fecha_Inicial.Text;
+        Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = CG_Fecha_Final.Text;
+        Obj_Entidad_Gestion_General.Aliado_Apertura = Convert.ToString(Aliado_CG.SelectedItem);
         dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2, Obj_Entidad_Gestion_General.Aliado_Apertura);
 
         GridView gv = new GridView();
@@ -102,9 +104,9 @@ public partial class Consulta_de_Gestion_Admin : System.Web.UI.Page
     protected void Consulta_De_Gestion() {
 
         DataSet dt = new DataSet();
-        Obj_Entidad_Gestion_General.Fecha_Interaccion = TextBox3.Text;
-        Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = TextBox4.Text;
-        Obj_Entidad_Gestion_General.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
+        Obj_Entidad_Gestion_General.Fecha_Interaccion = CG_Fecha_Inicial.Text;
+        Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = CG_Fecha_Final.Text;
+        Obj_Entidad_Gestion_General.Aliado_Apertura = CG_Aliado_Oculto.Text;
         dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2, Obj_Entidad_Gestion_General.Aliado_Apertura);
 
         if (dt.Tables[0].Rows.Count > 0)
@@ -119,5 +121,24 @@ public partial class Consulta_de_Gestion_Admin : System.Web.UI.Page
             GVINGRESOS.DataSource = null;
             GVINGRESOS.DataBind();
         }
+    }
+    protected void Carga_Aliado()
+    {
+        DataSet dt = new DataSet();
+        dt = Obj_Neg_Perfiles.Aliado_Usuario();
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+
+            Aliado_CG.DataSource = dt;
+            Aliado_CG.DataTextField = "ALIADO";
+            Aliado_CG.DataValueField = "ALIADO";
+            Aliado_CG.DataBind();
+        }
+    }
+
+    protected void CG_Consulta_Click(object sender, EventArgs e)
+    {
+        Consulta_De_Gestion();
     }
 }

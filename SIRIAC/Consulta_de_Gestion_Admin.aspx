@@ -3,10 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="Estilos/Style_Perfil_Asesor.css?1.0.0" rel="stylesheet" />
     <link href="Estilos/Style_Ingreso_Casos.css?1.0.0" rel="stylesheet" />
+    <script src="jquery/jquery-1.11.1.js"></script>
+    <script src="jquery/jquery.datetimepicker.full.js"></script>
+    <link href="Estilos/jquery.datetimepicker.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Panel CssClass="panel4" ID="Panel1" runat="server">
-
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
         <div id="tab-container2">
             <ul class="tab-menu2">
                 <li id="html" class="active" onclick="otorgar_permisos()">CONSULTA DE GESTION</li>
@@ -21,12 +24,21 @@
 
 
                 <asp:Panel CssClass="panel_informativo" ID="Panel3" runat="server" GroupingText="Ventana de tiempo para la consulta">
+                    <%--<asp:UpdatePanel runat="server"><ContentTemplate> 
                     <table class="tabla">
                         <tr>
+                             
                             <td>
-                                <asp:Label CssClass="texto_informativo" ID="Label5" runat="server" Text="Seleccione la fecha inicial:"></asp:Label><br />
-                                <asp:TextBox CssClass="caja_de_texto" ID="TextBox3" runat="server" AutoPostBack="true"></asp:TextBox>
+                                <asp:Label CssClass="texto_informativo" ID="Label282" runat="server" Text="Seleccione aliado:"></asp:Label><br />
+                                <asp:DropDownList CssClass="dropdown2" ID="Aliado_CG" runat="server" ></asp:DropDownList>
                             </td>
+                            
+                            <td>
+
+                                <asp:Label CssClass="texto_informativo" ID="Label5" runat="server" Text="Seleccione la fecha inicial:" Style="margin-left:10px;"></asp:Label><br />
+                                <asp:TextBox CssClass="caja_de_texto" ID="TextBox3" runat="server" AutoPostBack="true" Style="margin-left:10px;"></asp:TextBox>
+                            </td>
+                           
                             <td>
                                 <asp:Button CssClass="bt_calendario" ID="Button2" runat="server" Text="" OnClick="Button2_Click" />
                                 <asp:Calendar CssClass="calendario_fecha" ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" Visible="false">
@@ -41,9 +53,10 @@
                                     <TodayDayStyle CssClass="TodayDayStyle" />
                                 </asp:Calendar>
                             </td>
+                            
                             <td class="auto-style21">
-                                <p class="texto_informativo">Seleccione fecha final</p>
-                                <asp:TextBox CssClass="caja_de_texto" ID="TextBox4" runat="server" AutoPostBack="true"></asp:TextBox>
+                                <p class="texto_informativo" Style="margin-left:10px;">Seleccione fecha final</p>
+                                <asp:TextBox CssClass="caja_de_texto" ID="TextBox4" runat="server" AutoPostBack="true" Style="margin-left:10px;"></asp:TextBox>
                             </td>
                             <td>
                                 <asp:Button CssClass="bt_calendario" ID="Button3" runat="server" Text="" OnClick="Button3_Click" />
@@ -59,12 +72,71 @@
                                     <TodayDayStyle CssClass="TodayDayStyle" />
                                 </asp:Calendar>
                             </td>
-
+                            
                             <asp:Label ID="Label1" runat="server" Text="Label" Style="display: none"></asp:Label>
 
                         </tr>
 
                     </table>
+                    </ContentTemplate></asp:UpdatePanel>--%>
+
+                    <table class="tabla">
+                        <tr>
+                            <td>
+                                <asp:Label CssClass="texto_informativo" ID="Label282" runat="server" Text="Seleccione aliado:"></asp:Label><br />
+                                <asp:DropDownList CssClass="dropdown2" ID="Aliado_CG" runat="server" ></asp:DropDownList>
+                            </td>
+                            <td>
+                                <p class="etiquetas">Fecha Inicial:</p>
+                                <asp:TextBox ID="CG_Fecha_Inicial" runat="server" Text="2016-01-01 00:00" Style="display: none"></asp:TextBox>
+                                <input class="caja_de_texto" type="text" value="" id="CGH_Fecha_Inicial" autocomplete="off" onchange="return Traer_Fecha()" placeholder="Select date" />
+                            </td>
+                            <td class="auto-style21">
+                                <p class="etiquetas">Fecha Final:</p>
+                                <asp:TextBox ID="CG_Fecha_Final" runat="server" Text="2016-01-01 00:00" Style="display: none"></asp:TextBox>
+                                <input class="caja_de_texto" type="text" value="" id="CGH_Fecha_Final" autocomplete="off" onchange="return Traer_Fecha_Final()" placeholder="Select date" />
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:TextBox runat="server" ID="CG_Aliado_Oculto"  Style="display: none"></asp:TextBox>
+                    <asp:Button ID="CG_Consulta" runat="server" OnClick="CG_Consulta_Click" Style="display: none" />
+
+                    <script>
+                        $('#CGH_Fecha_Inicial').datetimepicker({
+                            format: 'Y-m-d',
+                            //minDate: '2016-09/01',
+                            maxDate: '+0d',
+                            timepicker: false
+                        });
+
+                        $('#CGH_Fecha_Final').datetimepicker({
+                            format: 'Y-m-d',
+                            onShow: function (ct) {
+                                this.setOptions({
+                                    minDate: $('#CGH_Fecha_Inicial').val() ? $('#CGH_Fecha_Inicial').val() : false
+                                })
+                            },
+                            maxDate: '+0d',
+                            timepicker: false
+                        });
+                    </script>
+                    <script>
+                        function Traer_Fecha_Final() {
+                            var fecha = document.getElementById('CGH_Fecha_Final').value;
+                            document.getElementById("<%= CG_Fecha_Final.ClientID %>").value = fecha;
+                            var Aliado = document.getElementById("<%=Aliado_CG.ClientID%>").value;
+                            alert(Aliado);
+                            document.getElementById("<%= CG_Aliado_Oculto.ClientID %>").value = Aliado;
+                            var click = document.getElementById("<%=CG_Consulta.ClientID %>");
+                            click.click();
+                        }
+                    </script>
+                    <script>
+                        function Traer_Fecha() {
+                            var fecha = document.getElementById('CGH_Fecha_Inicial').value;
+                            document.getElementById("<%= CG_Fecha_Inicial.ClientID %>").value = fecha;
+                        }
+                    </script>
                 </asp:Panel>
                 <asp:GridView CssClass="mGrid" ID="GVINGRESOS" runat="server" AutoGenerateColumns="False" OnRowDataBound="GINGRESOS_RowDataBound" AllowPaging="True">
                     <Columns>
