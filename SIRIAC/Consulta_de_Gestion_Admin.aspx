@@ -117,6 +117,7 @@
                                 })
                             },
                             maxDate: '+0d',
+                            
                             timepicker: false
                         });
                     </script>
@@ -125,7 +126,6 @@
                             var fecha = document.getElementById('CGH_Fecha_Final').value;
                             document.getElementById("<%= CG_Fecha_Final.ClientID %>").value = fecha;
                             var Aliado = document.getElementById("<%=Aliado_CG.ClientID%>").value;
-                            alert(Aliado);
                             document.getElementById("<%= CG_Aliado_Oculto.ClientID %>").value = Aliado;
                             var click = document.getElementById("<%=CG_Consulta.ClientID %>");
                             click.click();

@@ -25,52 +25,13 @@ public partial class Consulta_de_Gestion_Admin : System.Web.UI.Page
         Carga_Aliado();
         
     }
-    //protected void Button2_Click(object sender, EventArgs e)
-    //{
-    //    Calendar1.SelectedDate = DateTime.Now;
-    //    if (Calendar1.Visible == true) { Calendar1.Visible = false; }
-    //    else
-    //    {
-    //        Calendar1.Visible = true;
-
-    //    }
-    //    Calendar1.VisibleDate = Calendar1.TodaysDate;
-
-    //    Calendar1.SelectedDates.Clear();
-    //}
-
-    //protected void Button3_Click(object sender, EventArgs e)
-    //{
-    //    Calendar2.SelectedDate = DateTime.Now;
-    //    if (Calendar2.Visible == true) { Calendar2.Visible = false; }
-    //    else
-    //    {
-    //        Calendar2.Visible = true;
-
-    //    }
-    //    Calendar2.VisibleDate = Calendar2.TodaysDate;
-
-    //    Calendar2.SelectedDates.Clear();
-    //}
-
-    //protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-    //{
-    //    TextBox3.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
-    //    Calendar1.Visible = false;
-    //}
-
-    //protected void Calendar2_SelectionChanged(object sender, EventArgs e)
-    //{
-    //    TextBox4.Text = Calendar2.SelectedDate.ToString("yyyy-MM-dd");
-    //    Calendar2.Visible = false;
-    //    Consulta_De_Gestion();
-    //}
+    
     protected void Button4_Click(object sender, EventArgs e)
     {
         DataSet dt = new DataSet();
         Obj_Entidad_Gestion_General.Fecha_Interaccion = CG_Fecha_Inicial.Text;
         Obj_Entidad_Gestion_General.Fecha_Interaccion_2 = CG_Fecha_Final.Text;
-        Obj_Entidad_Gestion_General.Aliado_Apertura = Convert.ToString(Aliado_CG.SelectedItem);
+        Obj_Entidad_Gestion_General.Aliado_Apertura = CG_Aliado_Oculto.Text;
         dt = Obj_Neg_Gestion_General.Consulta_de_Gestion_Admin(Obj_Entidad_Gestion_General.Fecha_Interaccion, Obj_Entidad_Gestion_General.Fecha_Interaccion_2, Obj_Entidad_Gestion_General.Aliado_Apertura);
 
         GridView gv = new GridView();
