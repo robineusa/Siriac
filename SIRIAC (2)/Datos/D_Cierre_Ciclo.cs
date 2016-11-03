@@ -116,6 +116,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@OBERVACIONES", Obj_Cierre_Ciclo.Observaciones);
             cmd.Parameters.AddWithValue("@BASE", Obj_Cierre_Ciclo.Base);
             cmd.Parameters.AddWithValue("@OPERACION_GESTION", Obj_Cierre_Ciclo.Operacion_Gestion);
+            cmd.Parameters.AddWithValue("@MOTIVO", Obj_Cierre_Ciclo.Motivo);
             try
             {
                 Abrir_Conexion();
@@ -123,7 +124,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de ventas inbound", e);
+                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de ventas OUTbound", e);
             }
             finally
             {
@@ -190,6 +191,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@OBERVACIONES", Obj_Cierre_Ciclo.Observaciones);
             cmd.Parameters.AddWithValue("@BASE", Obj_Cierre_Ciclo.Base);
             cmd.Parameters.AddWithValue("@OPERACION_GESTION", Obj_Cierre_Ciclo.Operacion_Gestion);
+            cmd.Parameters.AddWithValue("@MOTIVO", Obj_Cierre_Ciclo.Motivo);
             try
             {
                 Abrir_Conexion();
@@ -197,7 +199,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de Log ventas inbound", e);
+                throw new Exception("Error al intentar almacenar,modificar o eliminar datos de la tabla de Log ventas outbound", e);
             }
             finally
             {

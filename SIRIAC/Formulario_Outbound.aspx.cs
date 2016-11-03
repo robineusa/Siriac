@@ -937,6 +937,8 @@ public partial class Formulario_Outbound : System.Web.UI.Page
         Base.Text = LIMPIAR_DATOS;
         Operacion.Text = LIMPIAR_DATOS;
         CC_Guardar_Datos.Enabled = true;
+        CC_MOTIVO.ClearSelection();
+        CC_MOTIVO.Items.Clear();
     }
     protected void CC_Controles_A_Objeto()
     {
@@ -1070,6 +1072,7 @@ public partial class Formulario_Outbound : System.Web.UI.Page
         Obj_Entidad_Cierre_Ciclo.Observaciones = CC_Observaciones.Text.ToUpper();
         Obj_Entidad_Cierre_Ciclo.Base = Base.Text;
         Obj_Entidad_Cierre_Ciclo.Operacion_Gestion = Operacion.Text;
+        Obj_Entidad_Cierre_Ciclo.Motivo = Convert.ToString(CC_MOTIVO.SelectedItem);
     }
 
 

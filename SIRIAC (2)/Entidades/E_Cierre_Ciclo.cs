@@ -80,6 +80,7 @@ namespace Entidades
         private string _Fecha_Inicial;
         private string _Fecha_Final;
         private string _Operacion_Gestion;
+        private string _Motivo;
 
 
         //private string _
@@ -158,6 +159,7 @@ namespace Entidades
             _Fecha_Inicial = string.Empty;
             _Fecha_Final = string.Empty;
             _Operacion_Gestion = string.Empty;
+            _Motivo = string.Empty;
         }
         #endregion
         #region Encapsulamientos
@@ -1081,6 +1083,19 @@ namespace Entidades
             set
             {
                 _Operacion_Gestion = value;
+            }
+        }
+
+        public string Motivo
+        {
+            get
+            {
+                return _Motivo;
+            }
+
+            set
+            {
+                _Motivo = value;
             }
         }
         #endregion

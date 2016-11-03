@@ -124,6 +124,7 @@
                             <asp:BoundField DataField="GESTION" HeaderText="Gestión" />
                             <asp:BoundField DataField="CIERRE" HeaderText="Cierre" />
                             <asp:BoundField DataField="RAZON" HeaderText="Razon"/>
+                            <asp:BoundField DataField="MOTIVO" HeaderText="Motivo" />
                             <asp:BoundField DataField="OBERVACIONES" HeaderText="Observaciones" />
                             <asp:BoundField DataField="BASE" HeaderText="Base" />
                             <asp:BoundField DataField="OPERACION_GESTION" HeaderText="Operacion de Gestion" />
