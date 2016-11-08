@@ -139,6 +139,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@Razon", Obj_Docsis_Overlap.Razon);
             cmd.Parameters.AddWithValue("@Observaciones", Obj_Docsis_Overlap.Observaciones);
             cmd.Parameters.AddWithValue("@Fecha_Agenda", Obj_Docsis_Overlap.Fecha_Seguimiento);
+            cmd.Parameters.AddWithValue("@Aliado", Obj_Docsis_Overlap.Aliado);
             try
             {
                 Abrir_Conexion();
@@ -186,6 +187,7 @@ namespace Datos
             cmd.Parameters.AddWithValue("@Razon", Obj_Docsis_Overlap.Razon);
             cmd.Parameters.AddWithValue("@Observaciones", Obj_Docsis_Overlap.Observaciones);
             cmd.Parameters.AddWithValue("@Fecha_Agenda", Obj_Docsis_Overlap.Fecha_Seguimiento);
+            cmd.Parameters.AddWithValue("@Aliado", Obj_Docsis_Overlap.Aliado);
             try
             {
                 Abrir_Conexion();

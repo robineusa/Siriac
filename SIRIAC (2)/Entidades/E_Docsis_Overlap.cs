@@ -35,6 +35,7 @@ namespace Entidades
         private string _Fecha_Seguimiento;
         private string _Fecha_Inicial;
         private string _Fecha_Final;
+        private string _Aliado;
         
         #endregion
         #region Constructor
@@ -67,6 +68,7 @@ namespace Entidades
             _Fecha_Seguimiento = string.Empty;
             _Fecha_Inicial = string.Empty;
             _Fecha_Final = string.Empty;
+            _Aliado = string.Empty;
             
         }
         #endregion
@@ -419,6 +421,19 @@ namespace Entidades
             set
             {
                 _Gestion = value;
+            }
+        }
+
+        public string Aliado
+        {
+            get
+            {
+                return _Aliado;
+            }
+
+            set
+            {
+                _Aliado = value;
             }
         }
         #endregion

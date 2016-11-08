@@ -366,6 +366,10 @@
                                     <p class="etiquetas">Móvil Postpago:</p>
                                     <asp:TextBox CssClass="caja_de_texto" ID="D_Movil_Pospago" runat="server"></asp:TextBox>
                                 </td>
+                                <td>
+                                    <p class="etiquetas">Aliado:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="D_Aliado" runat="server"></asp:TextBox>
+                                </td>
                             </tr>
                         </table>
                         <asp:Label ID="D_Operacion" runat="server" Visible="false"></asp:Label>

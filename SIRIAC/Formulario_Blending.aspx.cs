@@ -1771,6 +1771,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
                 D_Paquete_Actual.Text = dt.Tables[0].Rows[0]["PAQUETE_ACTUAL"].ToString();
                 D_Operacion.Text = dt.Tables[0].Rows[0]["OPERACION"].ToString();
                 D_Base.Text = dt.Tables[0].Rows[0]["BASE"].ToString();
+                D_Aliado.Text = dt.Tables[0].Rows[0]["ALIADO"].ToString();
                 D_Consultar_Datos_Cliente();
                 D_ConsultarSeguimientos();
             }
@@ -1825,6 +1826,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
                 D_Estrato.Text = dt.Tables[0].Rows[0]["ESTRATO"].ToString();
                 D_Tipo_Cliente.Text = dt.Tables[0].Rows[0]["DESCRIPCION"].ToString();
                 D_Movil_Pospago.Text = dt.Tables[0].Rows[0]["TELEFONO_CONV"].ToString();
+                
 
                 Tipo_Contacto_Docsis_Overlap();
                 Gestion_Docsis_Overlap();
@@ -1986,6 +1988,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         D_Fecha_Seguimiento.Text = LIMPIAR;
         D_Operacion.Text = LIMPIAR;
         D_Base.Text = LIMPIAR;
+        D_Aliado.Text = LIMPIAR;
         string script1 = "Borrar_fecha();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "Borrar_fecha", script1, true);
         string script2 = " No_Mostra_Div();";
@@ -2074,6 +2077,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
         obj_Entidad_Docsis_Overlap.Razon = Convert.ToString(D_Razon.SelectedItem);
         obj_Entidad_Docsis_Overlap.Observaciones = D_Observaciones.Text.ToUpper();
         obj_Entidad_Docsis_Overlap.Fecha_Seguimiento = D_Fecha_Seguimiento.Text;
+        obj_Entidad_Docsis_Overlap.Aliado = D_Aliado.Text;
 
     }
     protected void Registrar_Transaccion_Docsis_Overlap()
