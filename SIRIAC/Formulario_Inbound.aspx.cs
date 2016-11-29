@@ -5110,5 +5110,10 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         S_HD_OFRECIMIENTO.Text = string.Empty;
         SHD_Guardar.Enabled = true;
     }
-}
+    protected void BE_Cargar_Datos_Click(object sender, EventArgs e)
+    {
+        BE_Cuenta.Text = Cuenta_Cliente.Text;
+        BE_Nodo.Text = Nodo.Text;
+    }
+    }
 

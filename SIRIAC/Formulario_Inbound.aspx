@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Perfil_Asesor.master" AutoEventWireup="true" CodeFile="Formulario_Inbound.aspx.cs" Inherits="Formulario_Inbound" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link href="Estilos/Style_Perfil_Asesor.css?1.1.1" rel="stylesheet" />
@@ -361,7 +360,9 @@
                     <div class="icono_carrete_4" id="Div4"></div>
                 </a>
             </div>
-
+            <a href="#Iframe_Back_Elite" onclick="return Abrir_Ventana_BackElite()">
+                <div id="BackElite" class="icono_carrete_9"></div>
+            </a>
 
 
         </div>
@@ -3113,6 +3114,20 @@
 
             }
         </script>
+         <script>
+            function Abrir_Ventana_BackElite() {
+                document.getElementById('Iframe_Back_Elite').style.display = 'block';
+                var bt1 = document.getElementById("<%= BE_Cargar_Datos.ClientID %>");
+                bt1.click();
+            }
+        </script>
+        <script>
+            function Cerrar_Ventana_BackElite() {
+                document.getElementById('Iframe_Back_Elite').style.display = 'none';
+               
+
+            }
+        </script>
         <script>
             function Cerrar_Ventana_Prorrateos() {
 
@@ -4423,6 +4438,58 @@
                 <ContentTemplate>
                     <asp:Button CssClass="button" ID="SHD_Guardar" runat="server" Text="Guardar" OnClick="SHD_Guardar_Click"/>
                 </ContentTemplate>
+            </asp:UpdatePanel>
+
+        </div>
+    </div>
+    <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE SIEMBRA HD-->
+    <div class="modal-wrapper" id="Iframe_Back_Elite" style="display: none">
+        <div class="Iframe_Back_Elite-contenedor">
+            <a id="Iframe_Back_Elite_Cerrar" class="Iframe_Back_Elite-cerrar" href="#" onclick="return Cerrar_Ventana_BackElite()">X</a>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <h2>FORMULARIO PARA ESCALAMIENTOS AL BACK ELITE</h2>
+                    <hr />
+                    <div class="contenido">
+                        <asp:Button CssClass="button" ID="BE_Cargar_Datos" runat="server" Text="Cargar_Datos" Style="display: none" OnClick="BE_Cargar_Datos_Click" />
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Cuenta Cliente:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="BE_Cuenta" runat="server" Enabled="false"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Lls/Ots:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="BE_LlsOt" runat="server" Placeholder="Ingre Lls/Ots"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Tipo de Escalamiento:</p>
+                                        <asp:DropDownList CssClass="dropdown2" ID="BE_Tipo_Escalamiento"  runat="server" AutoPostBack="true"></asp:DropDownList>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Detalle Escalamiento:</p>
+                                        <asp:DropDownList CssClass="dropdown3" ID="BE_Detalle_Escalamiento" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Nodo:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="BE_Nodo" runat="server" Enabled="false"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <td colspan="5">
+                                    <p class="etiquetas_Ofrecimiento2">Observaciones:</p>
+                                       <asp:TextBox CssClass="ofrecimientos" ID="BE_Observaciones" runat="server" TextMode="MultiLine" autocomplete="off"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr />
+                         <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:Button CssClass="button" ID="Button2" runat="server" Text="Guardar"/>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+                    </div>
+                        </ContentTemplate>
             </asp:UpdatePanel>
 
         </div>
