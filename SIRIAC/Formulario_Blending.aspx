@@ -79,7 +79,11 @@
             alert('¡Debe Seleccionar una opción en Inscripcion del Convenio Electronico!');
         }
     </script>
-
+    <script type="text/javascript">
+        function mensaje11() {
+            alert('Debe Seleccionar el Árbol de Tipificacion');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 

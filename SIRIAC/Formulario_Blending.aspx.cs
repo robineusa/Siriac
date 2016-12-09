@@ -1829,9 +1829,9 @@ public partial class Formulario_Blendign : System.Web.UI.Page
                 
 
                 Tipo_Contacto_Docsis_Overlap();
-                Gestion_Docsis_Overlap();
-                Cierre_Docsis_Overlap();
-                Razon_Docsis_Overlap();
+                //Gestion_Docsis_Overlap();
+                //Cierre_Docsis_Overlap();
+                //Razon_Docsis_Overlap();
 
             }
             else
@@ -1859,6 +1859,7 @@ public partial class Formulario_Blendign : System.Web.UI.Page
             D_Tipo_Contacto.DataTextField = "TIPO_CONTACTO";
             D_Tipo_Contacto.DataValueField = "ID_TIPO_CONTACTO";
             D_Tipo_Contacto.DataBind();
+            D_Tipo_Contacto.Items.Insert(0, "");
         }
         else
         {
@@ -1867,54 +1868,77 @@ public partial class Formulario_Blendign : System.Web.UI.Page
     }
     protected void Gestion_Docsis_Overlap()
     {
-        DataSet dt = new DataSet();
-        Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto = Convert.ToInt16(D_Tipo_Contacto.SelectedValue);
-        dt = Obj_Neg_Arbol_Outbound.Oubound_Cierre(Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto);
-
-        if (dt.Tables[0].Rows.Count > 0)
+        if (D_Tipo_Contacto.SelectedValue != "")
         {
+            DataSet dt = new DataSet();
+            Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto = Convert.ToInt16(D_Tipo_Contacto.SelectedValue);
+            dt = Obj_Neg_Arbol_Outbound.Oubound_Cierre(Obj_Entidad_Arbol_Outbound.Id_Tipo_Contacto);
+            if (dt.Tables[0].Rows.Count > 0)
+            {
 
-            D_Gestion.DataSource = dt;
-            D_Gestion.DataTextField = "CIERRE";
-            D_Gestion.DataValueField = "ID_CIERRE";
-            D_Gestion.DataBind();
+                D_Gestion.DataSource = dt;
+                D_Gestion.DataTextField = "CIERRE";
+                D_Gestion.DataValueField = "ID_CIERRE";
+                D_Gestion.DataBind();
+                //D_Gestion.Items.Insert(0, "");
+            }
+            else
+            {
+                D_Gestion.Items.Clear();
+            }
         }
         else
         {
             D_Gestion.Items.Clear();
         }
+        
     }
     protected void Cierre_Docsis_Overlap()
     {
-        DataSet dt = new DataSet();
-        Obj_Entidad_Arbol_Outbound.Id_Cierre = Convert.ToInt16(D_Gestion.SelectedValue);
-        dt = Obj_Neg_Arbol_Outbound.Oubound_Razon(Obj_Entidad_Arbol_Outbound.Id_Cierre);
-
-        if (dt.Tables[0].Rows.Count > 0)
+        if (D_Gestion.SelectedValue != "")
         {
-            D_Cierre.DataSource = dt;
-            D_Cierre.DataTextField = "RAZON";
-            D_Cierre.DataValueField = "ID_RAZON";
-            D_Cierre.DataBind();
+            DataSet dt = new DataSet();
+            Obj_Entidad_Arbol_Outbound.Id_Cierre = Convert.ToInt16(D_Gestion.SelectedValue);
+            dt = Obj_Neg_Arbol_Outbound.Oubound_Razon(Obj_Entidad_Arbol_Outbound.Id_Cierre);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                D_Cierre.DataSource = dt;
+                D_Cierre.DataTextField = "RAZON";
+                D_Cierre.DataValueField = "ID_RAZON";
+                D_Cierre.DataBind();
+                //D_Cierre.Items.Insert(0, "");
+            }
+            else
+            {
+                D_Cierre.Items.Clear();
+            }
         }
         else
         {
             D_Cierre.Items.Clear();
         }
-
     }
     protected void Razon_Docsis_Overlap()
     {
-        DataSet dt = new DataSet();
-        Obj_Entidad_Arbol_Outbound.Id_Causa = Convert.ToInt16(D_Cierre.SelectedValue);
-        dt = Obj_Neg_Arbol_Outbound.Oubound_Causa(Obj_Entidad_Arbol_Outbound.Id_Causa);
-
-        if (dt.Tables[0].Rows.Count > 0)
+        if (D_Cierre.SelectedValue != "")
         {
-            D_Razon.DataSource = dt;
-            D_Razon.DataTextField = "CAUSA";
-            D_Razon.DataValueField = "ID_CAUSA";
-            D_Razon.DataBind();
+            DataSet dt = new DataSet();
+            Obj_Entidad_Arbol_Outbound.Id_Causa = Convert.ToInt16(D_Cierre.SelectedValue);
+            dt = Obj_Neg_Arbol_Outbound.Oubound_Causa(Obj_Entidad_Arbol_Outbound.Id_Causa);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                D_Razon.DataSource = dt;
+                D_Razon.DataTextField = "CAUSA";
+                D_Razon.DataValueField = "ID_CAUSA";
+                D_Razon.DataBind();
+                //D_Razon.Items.Insert(0, "");
+            }
+            else
+            {
+                D_Razon.Items.Clear();
+            }
         }
         else
         {
@@ -1999,18 +2023,26 @@ public partial class Formulario_Blendign : System.Web.UI.Page
 
     protected void D_Guardar_Click(object sender, EventArgs e)
     {
-        D_Guardar.Enabled = false;
-        DataSet dt = new DataSet();
-        obj_Entidad_Docsis_Overlap.Cuenta_Cliente = Convert.ToDouble(D_Cuenta_Cliente.Text);
-        dt = Obj_Neg_Docsis_Overlap.Consulta_Cliente_Docsis_Gestionado(obj_Entidad_Docsis_Overlap.Cuenta_Cliente);
-
-        if (dt.Tables[0].Rows.Count > 0)
+        if (D_Cierre.SelectedValue != "" && D_Tipo_Contacto.SelectedValue != "" && D_Gestion.SelectedValue != "" && D_Razon.SelectedValue != "")
         {
-            Actualizar_Cliente_Docsis();
+            D_Guardar.Enabled = false;
+            DataSet dt = new DataSet();
+            obj_Entidad_Docsis_Overlap.Cuenta_Cliente = Convert.ToDouble(D_Cuenta_Cliente.Text);
+            dt = Obj_Neg_Docsis_Overlap.Consulta_Cliente_Docsis_Gestionado(obj_Entidad_Docsis_Overlap.Cuenta_Cliente);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                Actualizar_Cliente_Docsis();
+            }
+            else
+            {
+                Guardar_Cliente_Docsis();
+            }
         }
         else
         {
-            Guardar_Cliente_Docsis();
+            string script1 = "mensaje11();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "mensaje11", script1, true);
         }
     }
     protected void Actualizar_Cliente_Docsis()
