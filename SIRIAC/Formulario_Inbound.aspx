@@ -363,7 +363,9 @@
             <a href="#Iframe_Back_Elite" onclick="return Abrir_Ventana_BackElite()">
                 <div id="BackElite" class="icono_carrete_9"></div>
             </a>
-
+            <a href="#Iframe_T_Crear_Direccion" onclick="return Abrir_Ventana_T_Crear_Direccion()">
+                <div id="T_Crear_Direccion" class="icono_carrete_10"></div>
+            </a>
 
         </div>
     </div>
@@ -3128,6 +3130,19 @@
 
             }
         </script>
+         <script>
+            function Abrir_Ventana_T_Crear_Direccion() {
+                document.getElementById('Iframe_T_Crear_Direccion').style.display = 'block';
+                
+            }
+        </script>
+        <script>
+            function Cerrar_Ventana_T_Crear_Direccion() {
+                document.getElementById('Iframe_T_Crear_Direccion').style.display = 'none';
+               
+
+            }
+        </script>
         <script>
             function Cerrar_Ventana_Prorrateos() {
 
@@ -4442,7 +4457,7 @@
 
         </div>
     </div>
-    <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE SIEMBRA HD-->
+    <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE ESCALAMIENTOS AL BACK ELITE-->
     <div class="modal-wrapper" id="Iframe_Back_Elite" style="display: none">
         <div class="Iframe_Back_Elite-contenedor">
             <a id="Iframe_Back_Elite_Cerrar" class="Iframe_Back_Elite-cerrar" href="#" onclick="return Cerrar_Ventana_BackElite()">X</a>
@@ -4488,6 +4503,50 @@
                     <asp:Button CssClass="button" ID="Button2" runat="server" Text="Guardar"/>
                 </ContentTemplate>
             </asp:UpdatePanel>
+                    </div>
+                        </ContentTemplate>
+            </asp:UpdatePanel>
+
+        </div>
+    </div>
+    <!-- ESTA PARTE ES PARA MOSTRAR EL IFRAME DE ESCALAMIENTOS A TRASLADOS PARA CREAR DIRECCION-->
+    <div class="modal-wrapper" id="Iframe_T_Crear_Direccion" style="display: none">
+        <div class="Iframe_T_Crear_Direccion-contenedor">
+            <a id="Iframe_T_Crear_Direccion_Cerrar" class="Iframe_T_Crear_Direccion-cerrar" href="#" onclick="return Cerrar_Ventana_T_Crear_Direccion()">X</a>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <h2>ESCALAMIENTO A TRASLADOS - SOLICITUD DE CREACION DE DIRECCION</h2>
+                    <hr />
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+                            <table><tr>
+                                <td>
+                                        <p class="etiquetas_Ofrecimiento2">Tipo de Dirección:</p>
+                                        <asp:DropDownList CssClass="dropdown1" ID="TCD_Tipo_de_Direccion" runat="server" AutoPostBack="true">
+                                            <asp:ListItem>Básica</asp:ListItem>
+                                            <asp:ListItem>Barrio Manzana</asp:ListItem>
+                                            <asp:ListItem>Intraducible</asp:ListItem>
+                                            <asp:ListItem>Multiorigen</asp:ListItem>
+                                        </asp:DropDownList>
+                                </td>
+
+                                   </tr></table>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <div class="Dir_Basica">
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Tipo de Dirección:</p>
+                                        <asp:DropDownList CssClass="dropdown1" ID="DropDownList1" runat="server" AutoPostBack="true">
+                                            <asp:ListItem>Básica</asp:ListItem>
+                                            <asp:ListItem>Barrio Manzana</asp:ListItem>
+                                            <asp:ListItem>Intraducible</asp:ListItem>
+                                            <asp:ListItem>Multiorigen</asp:ListItem>
+                                        </asp:DropDownList>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                         </ContentTemplate>
             </asp:UpdatePanel>

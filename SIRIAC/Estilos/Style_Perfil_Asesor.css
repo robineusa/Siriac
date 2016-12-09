@@ -3190,6 +3190,39 @@ transform:scale(1.5);
     width: 100px;
 
 }
+.icono_carrete_10{
+  width: 50px;
+  height: 50px;
+  background-color: transparent; 
+  background:url(Dir.png) center no-repeat;
+  background-size: 50px 50px;
+-moz-transition: 1s;
+}
+.icono_carrete_10:hover{
+   -webkit-transform:scale(1.5);
+-moz-transform:scale(1.5);
+-ms-transform:scale(1.5);
+-o-transform:scale(1.5);
+transform:scale(1.5);
+   -moz-transition: 0.5s;
+}
+.icono_carrete_10:hover:after{
+    content: 'Traslados - Crear Dirección'; 
+    position: absolute;
+    z-index: 98;
+    margin-left: -125px;
+    margin-top: 11px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 11px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+
+}
  .Tabla_Buen_Servicio{
  
  }
@@ -4317,6 +4350,87 @@ font-size: 12px;
 
 }
 .Iframe_Back_Elite-contenedor h2{
+font-family: sans-serif;
+text-align: center;
+background-color: rgba(0, 99, 135, 0.9);
+border-style: solid;
+border-radius: 5px;
+border-width: 1px;
+border-color: rgba(0, 99, 135, 0.9);
+font-style: normal;
+font-weight: 400;
+color: white;
+font-size: 18px;
+}
+/*A PARTIR DE ESTE MOMENTO ES UN NUEVO SCRIP*/
+#Iframe_T_Crear_Direccion {
+   visibility: hidden;
+   opacity: 0;
+   margin-top: -300px;
+}
+#Iframe_T_Crear_Direccion:target {
+   visibility:visible;
+   opacity: 1;
+   background-color: rgba(0,0,0,0.8);
+   position: fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   margin:0;
+   z-index: 999;
+   -webkit-transition:all 1s;
+   -moz-transition:all 1s;
+   transition:all 1s;
+   height: auto;      
+   max-height: 100%;  
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+.Iframe_T_Crear_Direccion-contenedor {
+   position: relative;
+   margin:7% auto;
+   padding:30px 50px;
+   background-color: #fafafa;
+   color:#333;
+   border-radius: 3px;
+   width:950px;
+   font-size: 11px;
+  background-image: url(Fondo_smo.jpg);
+}
+a.Iframe_T_Crear_Direccion-cerrar {
+  -moz-transition:1s;
+   position: absolute;
+   top:3px;
+   right:3px;
+   background-color: #333;
+   padding:7px 10px;
+   font-size: 18px;
+   text-decoration: none;
+   line-height: 1;
+   color:#fff;
+   border-radius: 45px;
+   margin-top: -20px;
+   margin-right: -15px;
+   border-style: solid;
+   border-color: white;
+   border-width: 1px;
+   font-family: sans-serif;
+   font-weight: 400;
+}
+a.Iframe_T_Crear_Direccion-cerrar:hover{
+  -moz-transition:1s;
+  color: red;
+  font-weight: 700;
+  background-color: white;
+  border-color: red;
+}
+.Iframe_T_Crear_Direccion-contenedor p{
+font-size: 12px;
+
+}
+.Iframe_T_Crear_Direccion-contenedor h2{
 font-family: sans-serif;
 text-align: center;
 background-color: rgba(0, 99, 135, 0.9);
