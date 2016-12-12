@@ -106,4 +106,3 @@ C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\
 C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Newtonsoft.Json.xml
 C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.dll
 C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.pdb
-C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache

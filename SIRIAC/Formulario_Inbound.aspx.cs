@@ -5115,5 +5115,193 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         BE_Cuenta.Text = Cuenta_Cliente.Text;
         BE_Nodo.Text = Nodo.Text;
     }
+
+    protected void TCD_Tipo_de_Direccion_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string script1 = "Reset_valores();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "Reset_valores", script1, true);
+       
+
     }
+    protected void Llenar_Direccion_Final()
+    {
+        var Seleccion = Convert.ToString(TCD_Tipo_de_Direccion.SelectedItem);
+
+        if (Seleccion == "--SELECCIONE--")
+        {
+
+        }
+        else if (Seleccion == "Basica")
+        {
+            Llenar_Direccion_Basica();
+        }
+        else if (Seleccion == "Barrio Manzana")
+        {
+            Llenar_Direccion_Barrio_Manzana();
+        }
+        else if (Seleccion == "Multiorigen")
+        {
+            Llenar_Direccion_Multiorigen();
+        }
+        else if (Seleccion == "Intraducible")
+        {
+            Llenar_Direccion_Intraducible();
+        }
+    }
+    protected void Llenar_Direccion_Basica()
+    {
+        Limpiar_Direcciones_Traslados();
+        var valor1 =Convert.ToString(TCDB_Tipo_de_Via.SelectedItem);
+        var valor2 = TCDB_Via_Principal.Text;
+        var valor3 = TCDB_Cuadrante.Text;
+        var valor4 = TCDB_Placa.Text;
+        var valor5 = TCDB_Complemento.Text;
+        var Dir_Total = valor1 +" "+ valor2 +" "+ valor3 +" "+ valor4 +" "+ valor5;
+        TCDB_Direccion.Text = Dir_Total.ToString();
+    }
+    protected void Llenar_Direccion_Barrio_Manzana()
+    {
+        Limpiar_Direcciones_Traslados();
+        var valor1 = TCDBM_Barrio.Text;
+        var valor2 = TCDBM_Placa.Text;
+        var valor3 = TCDBM_Complemento.Text;
+        var Dir_Total = valor1 + " " + valor2 + " " + valor3;
+        TCDBM_Direccion_Final.Text = Dir_Total.ToString();
+    }
+    protected void Llenar_Direccion_Multiorigen()
+    {
+        Limpiar_Direcciones_Traslados();
+        var valor1 = Convert.ToString(TCDM_Tipo_de_via.SelectedItem);
+        var valor2 = TCDM_Via_Principal.Text;
+        var valor3 = TCDM_Cuadrante.Text;
+        var valor4 = TCDM_Barrio.Text;
+        var valor5 = TCDM_Placa.Text;
+        var valor6 = TCDM_Complemento.Text;
+        var Dir_Total = valor1 + " " + valor2 + " " + valor3 + " " + valor4 + " " + valor5 +" "+ valor6;
+        TCDM_Direccion_Final.Text = Dir_Total.ToString();
+
+    }
+    protected void Llenar_Direccion_Intraducible()
+    {
+        Limpiar_Direcciones_Traslados();
+        var valor1 = TCDI_Via_Vereda.Text;
+        var valor2 = TCDI_Nombre_Via.Text;
+        var valor3 = TCDI_Kilometro.Text;
+        var valor4 = TCDI_Sector.Text;
+        var valor5 = TCDI_Nombre_Sector.Text;
+        var valor6 = TCDI_Urb_O_Finca.Text;
+        var valor7 = TCDI_Placa.Text;
+        var valor8 = TCDI_Complemento.Text;
+        var Dir_Total = valor1 + " " + valor2 + " " + valor3 + " " + valor4 + " " + valor5 + " " + valor6+" "+valor7+" "+valor8;
+        TCDI_Direccion_Final.Text = Dir_Total.ToString();
+    }
+    protected void Limpiar_Direcciones_Traslados()
+    {
+        var limpiar = "";
+        TCDI_Direccion_Final.Text = limpiar;
+        TCDM_Direccion_Final.Text = limpiar;
+        TCDBM_Direccion_Final.Text = limpiar;
+        TCDB_Direccion.Text = limpiar;
+    }
+
+    protected void TCDB_Via_Principal_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDB_Cuadrante_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDB_Placa_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDB_Complemento_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDM_Via_Principal_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDM_Cuadrante_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDM_Barrio_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDM_Placa_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDM_Complemento_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDBM_Barrio_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDBM_Placa_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDBM_Complemento_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Via_Vereda_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Nombre_Via_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Kilometro_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Sector_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Nombre_Sector_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Urb_O_Finca_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Placa_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+
+    protected void TCDI_Complemento_TextChanged(object sender, EventArgs e)
+    {
+        Llenar_Direccion_Final();
+    }
+}
 

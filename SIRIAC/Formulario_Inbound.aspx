@@ -4513,44 +4513,315 @@
     <div class="modal-wrapper" id="Iframe_T_Crear_Direccion" style="display: none">
         <div class="Iframe_T_Crear_Direccion-contenedor">
             <a id="Iframe_T_Crear_Direccion_Cerrar" class="Iframe_T_Crear_Direccion-cerrar" href="#" onclick="return Cerrar_Ventana_T_Crear_Direccion()">X</a>
-            <asp:UpdatePanel runat="server">
-                <ContentTemplate>
+            
                     <h2>ESCALAMIENTO A TRASLADOS - SOLICITUD DE CREACION DE DIRECCION</h2>
                     <hr />
-                    <asp:UpdatePanel runat="server">
-                        <ContentTemplate>
+                   <asp:UpdatePanel runat="server"><ContentTemplate>
                             <table><tr>
                                 <td>
                                         <p class="etiquetas_Ofrecimiento2">Tipo de Dirección:</p>
-                                        <asp:DropDownList CssClass="dropdown1" ID="TCD_Tipo_de_Direccion" runat="server" AutoPostBack="true">
-                                            <asp:ListItem>Básica</asp:ListItem>
-                                            <asp:ListItem>Barrio Manzana</asp:ListItem>
-                                            <asp:ListItem>Intraducible</asp:ListItem>
-                                            <asp:ListItem>Multiorigen</asp:ListItem>
+                                        <asp:DropDownList CssClass="dropdown1" ID="TCD_Tipo_de_Direccion" runat="server" AutoPostBack="true" OnSelectedIndexChanged="TCD_Tipo_de_Direccion_SelectedIndexChanged" style="width:180px;">
+                                           <asp:ListItem Text="--SELECCIONE--" Value="SELECCIONE"></asp:ListItem>
+                                             <asp:ListItem Text="Basica" Value="Basica"></asp:ListItem>
+                                            <asp:ListItem Text="Barrio Manzana" Value="Barrio Manzana"></asp:ListItem>
+                                            <asp:ListItem Text="Intraducible" Value="Intraducible"></asp:ListItem>
+                                            <asp:ListItem Text="Multiorigen" Value="Multiorigen"></asp:ListItem>
                                         </asp:DropDownList>
                                 </td>
 
                                    </tr></table>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                    <div class="Dir_Basica">
+                        </ContentTemplate></asp:UpdatePanel>
+                    <div id="Dir_Basica" style="display:none">
+                        <asp:UpdatePanel runat="server"><ContentTemplate>
                         <table>
                             <tr>
                                 <td>
-                                    <p class="etiquetas_Ofrecimiento2">Tipo de Dirección:</p>
-                                        <asp:DropDownList CssClass="dropdown1" ID="DropDownList1" runat="server" AutoPostBack="true">
-                                            <asp:ListItem>Básica</asp:ListItem>
-                                            <asp:ListItem>Barrio Manzana</asp:ListItem>
-                                            <asp:ListItem>Intraducible</asp:ListItem>
-                                            <asp:ListItem>Multiorigen</asp:ListItem>
+                                    <p class="etiquetas_Ofrecimiento2">Tipo de Vía:</p>
+                                        <asp:DropDownList CssClass="dropdown1" ID="TCDB_Tipo_de_Via" runat="server" style="width:180px;">
+                                            <asp:ListItem>--SELECCIONE--</asp:ListItem>
+                                            <asp:ListItem>ANILLO</asp:ListItem>
+                                            <asp:ListItem>AUTOPISTA</asp:ListItem>
+                                            <asp:ListItem>AV</asp:ListItem>
+                                            <asp:ListItem>AVCL</asp:ListItem>
+                                            <asp:ListItem>AVCR</asp:ListItem>
+                                            <asp:ListItem>BARIO</asp:ListItem>
+                                            <asp:ListItem>CARRETERA</asp:ListItem>
+                                            <asp:ListItem>CIR</asp:ListItem>
+                                            <asp:ListItem>CIRCUNVALAR</asp:ListItem>
+                                            <asp:ListItem>CL</asp:ListItem>
+                                            <asp:ListItem>CR</asp:ListItem>
+                                            <asp:ListItem>DG</asp:ListItem>
+                                            <asp:ListItem>TR</asp:ListItem>
                                         </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Vía Principal:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDB_Via_Principal" runat="server" Placeholder="Ingrese via" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDB_Via_Principal_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Cuadrante:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDB_Cuadrante" runat="server" Placeholder="Ingrese cuadrante" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDB_Cuadrante_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Placa:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDB_Placa" runat="server" Placeholder="Ingrese Placa" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDB_Placa_TextChanged"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Complemento:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDB_Complemento" runat="server" Placeholder="Ingrese complemento" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDB_Complemento_TextChanged"></asp:TextBox>
+                                </td>
+                                </tr>
+                            <tr>
+                                <td colspan="5">
+                                 <p class="etiquetas_Ofrecimiento2">Dirección Final:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDB_Direccion" runat="server" style="width:580px;" Enabled="false"></asp:TextBox>
+                            </td>
+                                    </tr>
+                            <tr>
+                                 <td colspan="5">
+                                    <p class="etiquetas_Ofrecimiento2">Observaciones:</p>
+                                    <asp:TextBox CssClass="notas_casos" ID="TCDB_Observaciones" runat="server" Placeholder="Ingrese una observacion"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                            </ContentTemplate></asp:UpdatePanel>
+                    </div>
+                                 <div id="Dir_Multiorigen" style="display:none">
+                                      <asp:UpdatePanel runat="server"><ContentTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Tipo de Vía:</p>
+                                        <asp:DropDownList CssClass="dropdown1" ID="TCDM_Tipo_de_via" runat="server" style="width:150px;">
+                                            <asp:ListItem>--SELECCIONE--</asp:ListItem>
+                                            <asp:ListItem>ANILLO</asp:ListItem>
+                                            <asp:ListItem>AUTOPISTA</asp:ListItem>
+                                            <asp:ListItem>AV</asp:ListItem>
+                                            <asp:ListItem>AVCL</asp:ListItem>
+                                            <asp:ListItem>AVCR</asp:ListItem>
+                                            <asp:ListItem>BARIO</asp:ListItem>
+                                            <asp:ListItem>CARRETERA</asp:ListItem>
+                                            <asp:ListItem>CIR</asp:ListItem>
+                                            <asp:ListItem>CIRCUNVALAR</asp:ListItem>
+                                            <asp:ListItem>CL</asp:ListItem>
+                                            <asp:ListItem>CR</asp:ListItem>
+                                            <asp:ListItem>DG</asp:ListItem>
+                                            <asp:ListItem>TR</asp:ListItem>
+                                        </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Vía Principal:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDM_Via_Principal" runat="server" Placeholder="Ingrese via" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDM_Via_Principal_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Cuadrante:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDM_Cuadrante" runat="server" Placeholder="Ingrese cuadrante" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDM_Cuadrante_TextChanged"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Barrio:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDM_Barrio" runat="server" Placeholder="Ingrese Barrio" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDM_Barrio_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Placa:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDM_Placa" runat="server" Placeholder="Ingrese Placa" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDM_Placa_TextChanged"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Complemento:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDM_Complemento" runat="server" Placeholder="Ingrese complemento" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDM_Complemento_TextChanged"></asp:TextBox>
+                                </td>
+                                </tr>
+                             <tr><td colspan="6">
+                                 <p class="etiquetas_Ofrecimiento2">Dirección Final:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDM_Direccion_Final" runat="server" style="width:580px;" Enabled="false"></asp:TextBox>
+                            </td>
+                                 </tr>
+                            <tr>
+                                 <td colspan="6">
+                                    <p class="etiquetas_Ofrecimiento2">Observaciones:</p>
+                                    <asp:TextBox CssClass="notas_casos" ID="TCDM_Observaciones" runat="server" Placeholder="Ingrese una observacion"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                                          </ContentTemplate></asp:UpdatePanel>
+                    </div>
+                      <div id="Dir_Barrio_Manzana" style="display:none">
+                           <asp:UpdatePanel runat="server"><ContentTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Barrio:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDBM_Barrio" runat="server" Placeholder="Ingrese Barrio" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDBM_Barrio_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Placa:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDBM_Placa" runat="server" Placeholder="Ingrese Placa" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDBM_Placa_TextChanged"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Complemento:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDBM_Complemento" runat="server" Placeholder="Ingrese complemento" style="width:180px;" AutoPostBack="true" OnTextChanged="TCDBM_Complemento_TextChanged"></asp:TextBox>
+                                </td>
+                                </tr>
+                            </table>
+                             <table>
+                            <tr>
+                                <td>
+                                 <p class="etiquetas_Ofrecimiento2">Dirección Final:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDBM_Direccion_Final" runat="server" style="width:580px;" Enabled="false"></asp:TextBox>
+                            </td>
+                                </tr>
+                           
+                                </table>
+                                <table>
+                                    <tr>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Observaciones:</p>
+                                    <asp:TextBox CssClass="notas_casos" ID="TCDBM_Observaciones" runat="server" Placeholder="Ingrese una observacion"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                               </ContentTemplate></asp:UpdatePanel>
+                    </div>
+                     <div id="Dir_Intraducible" style="display:none">
+                          <asp:UpdatePanel runat="server"><ContentTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Vía o Vereda:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Via_Vereda" runat="server" Placeholder="Ingrese via o vereda" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Via_Vereda_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Nombre Vereda o Via:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Nombre_Via" runat="server" Placeholder="Ingrese nombre via" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Nombre_Via_TextChanged"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">KM:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Kilometro" runat="server" Placeholder="Ingrese kilometro" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Kilometro_TextChanged"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <p class="etiquetas_Ofrecimiento2">Sector:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Sector" runat="server" Placeholder="Ingrese sector" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Sector_TextChanged"></asp:TextBox>
+                                </td>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Nombre del Sector:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Nombre_Sector" runat="server" Placeholder="Ingrese nombre sector" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Nombre_Sector_TextChanged"></asp:TextBox>
+                                </td>
+                                
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Urb o Finca:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Urb_O_Finca" runat="server" Placeholder="Ingrese urb o finca" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Urb_O_Finca_TextChanged"></asp:TextBox>
+                                </td>
+                                </tr>
+                            <tr>
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Placa:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Placa" runat="server" Placeholder="Ingrese placa" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Placa_TextChanged"></asp:TextBox>
+                                </td>
+                                
+                                 <td>
+                                    <p class="etiquetas_Ofrecimiento2">Complemento:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Complemento" runat="server" Placeholder="Ingrese complemento" style="width:150px;" AutoPostBack="true" OnTextChanged="TCDI_Complemento_TextChanged"></asp:TextBox>
+                                </td>
+                            </tr>
+                             <tr><td colspan="6">
+                                 <p class="etiquetas_Ofrecimiento2">Dirección Final:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCDI_Direccion_Final" runat="server" style="width:580px;" Enabled="false"></asp:TextBox>
+                            </td>
+                                 </tr>
+                            <tr>
+                                 <td colspan="6">
+                                    <p class="etiquetas_Ofrecimiento2">Observaciones:</p>
+                                    <asp:TextBox CssClass="notas_casos" ID="TCDI_Observaciones" runat="server" Placeholder="Ingrese una observacion"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                              </ContentTemplate></asp:UpdatePanel>
+                    </div>
+                      
+                    <div id="Datos_Adicionales_de_Captura">
+                        <table>
+                            <tr>
+                                  <td>
+                                    <p class="etiquetas_Ofrecimiento2">Estrato:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Estrato" runat="server" Placeholder="Ingrese el estrato" style="width:150px;"></asp:TextBox>
+                                </td>
+                                  <td>
+                                    <p class="etiquetas_Ofrecimiento2">Cuenta:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Cuenta" runat="server" Placeholder="Ingrese la cuenta" style="width:150px;"></asp:TextBox>
+                                </td>
+                                  <td>
+                                    <p class="etiquetas_Ofrecimiento2">Nodo:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Nodo" runat="server" Placeholder="Ingrese el nodo" style="width:150px;"></asp:TextBox>
+                                </td>
+                                  <td>
+                                    <p class="etiquetas_Ofrecimiento2">Red:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Red" runat="server" Placeholder="Ingrese el tipo de red" style="width:150px;"></asp:TextBox>
+                                </td>
+                                  <td>
+                                    <p class="etiquetas_Ofrecimiento2">Teléfono Fijo:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Telefono_Fijo" runat="server" Placeholder="Ingrese telefono" style="width:150px;"></asp:TextBox>
+                                </td>
+                                  <td>
+                                    <p class="etiquetas_Ofrecimiento2">Teléfono Celular:</p>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Telefono_Celular" runat="server" Placeholder="Ingrese celular" style="width:150px;"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
                     </div>
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+                             <asp:Button CssClass="button" ID="TCD_Guardar" runat="server" Text="Guardar"/>
                         </ContentTemplate>
-            </asp:UpdatePanel>
+                    </asp:UpdatePanel>
 
+                      
+            <script type="text/javascript">
+                function Reset_valores() {
+                    Validar_Seleccion();
+                }
+                function Validar_Seleccion() {
+                    var Seleccion = document.getElementById('<%=TCD_Tipo_de_Direccion.ClientID%>');
+                    
+                    if (Seleccion.value == 'Basica') {
+                        Ocultar_Div();
+                        document.getElementById('Dir_Basica').style.display = 'block';
+                    }
+                    else 
+                        if (Seleccion.value == 'Barrio Manzana') {
+                            Ocultar_Div();
+                            document.getElementById('Dir_Barrio_Manzana').style.display = 'block';
+                        }
+                        else 
+                            if (Seleccion.value == 'Multiorigen') {
+                                Ocultar_Div();
+                                document.getElementById('Dir_Multiorigen').style.display = 'block';
+                            }
+                            else
+                                if (Seleccion.value == 'Intraducible') {
+                                    Ocultar_Div();
+                                    document.getElementById('Dir_Intraducible').style.display = 'block';
+                                }
+                }
+                function Ocultar_Div() {
+                   
+                    document.getElementById('Dir_Basica').style.display = 'none';
+                    document.getElementById('Dir_Multiorigen').style.display = 'none';
+                    document.getElementById('Dir_Barrio_Manzana').style.display = 'none';
+                    document.getElementById('Dir_Intraducible').style.display = 'none';
+                    
+                }
+                function Llenar_Direccion_Basica() {
+                    alert('Basica');                   
+                }
+                function Llenar_Direccion_Barrio_Manzana() {
+                    alert('Barrio Manzana');
+                }
+                function Llenar_Direccion_Multiorigen() {
+                    alert('Multiorigen');
+                }
+                function Llenar_Direccion_Intraducible() {
+                    alert('Intraducible');
+                }
+            </script>
         </div>
     </div>
 </asp:Content>
