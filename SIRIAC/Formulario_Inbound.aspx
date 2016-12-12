@@ -4769,7 +4769,7 @@
                     </div>
                     <asp:UpdatePanel runat="server">
                         <ContentTemplate>
-                             <asp:Button CssClass="button" ID="TCD_Guardar" runat="server" Text="Guardar"/>
+                             <asp:Button CssClass="button" ID="TCD_Guardar" runat="server" Text="Guardar" OnClick="TCD_Guardar_Click"/>
                         </ContentTemplate>
                     </asp:UpdatePanel>
 
@@ -4809,17 +4809,9 @@
                     document.getElementById('Dir_Intraducible').style.display = 'none';
                     
                 }
-                function Llenar_Direccion_Basica() {
-                    alert('Basica');                   
-                }
-                function Llenar_Direccion_Barrio_Manzana() {
-                    alert('Barrio Manzana');
-                }
-                function Llenar_Direccion_Multiorigen() {
-                    alert('Multiorigen');
-                }
-                function Llenar_Direccion_Intraducible() {
-                    alert('Intraducible');
+                
+                function Registro_CD_NO_Almacenado() {
+                    alert('Escalamiento no realizado, revisa la informacion suministrada y guarda el registro nuevamente');
                 }
             </script>
         </div>

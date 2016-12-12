@@ -85,6 +85,7 @@
     <Compile Include="D_Seguimientos_Midas.cs" />
     <Compile Include="D_Servicios.cs" />
     <Compile Include="D_Siembra_HD.cs" />
+    <Compile Include="D_Traslados.cs" />
     <Compile Include="D_Usuarios.cs" />
     <Compile Include="D_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

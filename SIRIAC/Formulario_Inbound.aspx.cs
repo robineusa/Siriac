@@ -56,6 +56,9 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     public E_Claro_Video Obj_Entidad_Claro_Video = new E_Claro_Video();
     public N_Siembra_HD Obj_Neg_Siembra_HD = new N_Siembra_HD();
     public E_Siembra_HD Obj_Entidad_Siembra_HD = new E_Siembra_HD();
+    public E_Traslados Obj_Entidad_Traslados_CD = new E_Traslados();
+    public N_Traslados Obj_Negocios_Traslados_CD = new N_Traslados();
+
     public int sw1 = 0;
     public int sw2 = 0;
     public int sw3 = 0;
@@ -5302,6 +5305,104 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     protected void TCDI_Complemento_TextChanged(object sender, EventArgs e)
     {
         Llenar_Direccion_Final();
+    }
+    protected void Controles_A_Objeto_CD_Traslados()
+    {
+        var Seleccion = Convert.ToString(TCD_Tipo_de_Direccion.SelectedItem);
+
+        if (Seleccion == "--SELECCIONE--"){}
+        else if (Seleccion == "Basica")
+        {
+            Obj_Entidad_Traslados_CD.Direccion = TCDB_Direccion.Text.Trim().ToUpper();
+        }
+        else if (Seleccion == "Barrio Manzana")
+        {
+            Obj_Entidad_Traslados_CD.Direccion = TCDBM_Direccion_Final.Text.Trim().ToUpper();
+        }
+        else if (Seleccion == "Multiorigen")
+        {
+            Obj_Entidad_Traslados_CD.Direccion = TCDM_Direccion_Final.Text.Trim().ToUpper();
+        }
+        else if (Seleccion == "Intraducible")
+        {
+            Obj_Entidad_Traslados_CD.Direccion = TCDI_Direccion_Final.Text.Trim().ToUpper();
+        }
+        Obj_Entidad_Traslados_CD.Cuenta_Cliente =Convert.ToInt64(TCD_Cuenta.Text);
+        Obj_Entidad_Traslados_CD.Estrato = TCD_Estrato.Text.ToUpper();
+        Obj_Entidad_Traslados_CD.Nodo = TCD_Nodo.Text.Trim().ToUpper();
+        Obj_Entidad_Traslados_CD.Red = TCD_Red.Text.Trim().ToUpper();
+        Obj_Entidad_Traslados_CD.Telefono_Fijo = TCD_Telefono_Fijo.Text;
+        Obj_Entidad_Traslados_CD.Telefono_Celular = TCD_Telefono_Celular.Text;
+        Obj_Entidad_Traslados_CD.Usuario_Apertura = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Traslados_CD.Usuario_Ultima_Actualizacion = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Traslados_CD.Razon = "SOLICITUD";
+        Obj_Entidad_Traslados_CD.Subrazon = "CREACION DE DIRECCION";
+        Obj_Entidad_Traslados_CD.Usuario_Backoffice = "";
+        Obj_Entidad_Traslados_CD.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
+        Obj_Entidad_Traslados_CD.Nombre_Linea_Ingreso = Session["Nombre_Linea_Usuario"].ToString();
+        Obj_Entidad_Traslados_CD.Estado = "PENDIENTE POR CREAR ";
+        Obj_Entidad_Traslados_CD.Nombre_Linea_Escalado = "CELULA CREACION DIRECCION";
+    }
+    protected void TCD_Guardar_Click(object sender, EventArgs e)
+    {
+        Controles_A_Objeto_CD_Traslados();
+        var Guardar_Datos = -1;
+        Guardar_Datos = Obj_Negocios_Traslados_CD.abcIngresos("INSERTAR", Obj_Entidad_Traslados_CD);
+        if (Guardar_Datos != -1)
+        {
+            string script1 = "Registro_CD_Almacenado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro_CD_Almacenado", script1, true);
+            Limpiar_Controles_Traslados_CD();
+        }
+        else
+        {
+            string script1 = "Registro_CD_NO_Almacenado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro_CD_NO_Almacenado", script1, true);
+
+        }
+    }
+    protected void Limpiar_Controles_Traslados_CD()
+    {
+        var limpiar = "";
+        TCD_Tipo_de_Direccion.ClearSelection();
+        TCD_Cuenta.Text = limpiar;
+        TCD_Estrato.Text = limpiar;
+        TCD_Nodo.Text = limpiar;
+        TCD_Red.Text = limpiar;
+        TCD_Telefono_Celular.Text = limpiar;
+        TCD_Telefono_Fijo.Text = limpiar;
+        TCDB_Tipo_de_Via.ClearSelection();
+        TCDB_Via_Principal.Text = limpiar;
+        TCDB_Cuadrante.Text = limpiar;
+        TCDB_Placa.Text = limpiar;
+        TCDB_Complemento.Text = limpiar;
+        TCDB_Direccion.Text = limpiar;
+        TCDB_Observaciones.Text = limpiar;
+        TCDM_Tipo_de_via.ClearSelection();
+        TCDM_Via_Principal.Text = limpiar;
+        TCDM_Cuadrante.Text = limpiar;
+        TCDM_Barrio.Text = limpiar;
+        TCDM_Placa.Text = limpiar;
+        TCDM_Complemento.Text = limpiar;
+        TCDM_Direccion_Final.Text = limpiar;
+        TCDM_Observaciones.Text = limpiar;
+        TCDBM_Barrio.Text = limpiar;
+        TCDBM_Placa.Text = limpiar;
+        TCDBM_Complemento.Text = limpiar;
+        TCDBM_Direccion_Final.Text = limpiar;
+        TCDBM_Observaciones.Text = limpiar;
+        TCDI_Via_Vereda.Text = limpiar;
+        TCDI_Nombre_Via.Text = limpiar;
+        TCDI_Kilometro.Text = limpiar;
+        TCDI_Sector.Text = limpiar;
+        TCDI_Nombre_Sector.Text = limpiar;
+        TCDI_Urb_O_Finca.Text = limpiar;
+        TCDI_Placa.Text = limpiar;
+        TCDI_Complemento.Text = limpiar;
+        TCDI_Direccion_Final.Text = limpiar;
+        TCDI_Observaciones.Text = limpiar;
+        string script1 = "Ocultar_Div();";
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "Ocultar_Div", script1, true);
     }
 }
 
