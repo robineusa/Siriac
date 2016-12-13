@@ -5157,10 +5157,15 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     {
         Limpiar_Direcciones_Traslados();
         var valor1 =Convert.ToString(TCDB_Tipo_de_Via.SelectedItem);
-        var valor2 = TCDB_Via_Principal.Text;
+        if (Convert.ToString(TCDB_Tipo_de_Via.SelectedItem) != "--SELECCIONE--") { valor1 = "TIPO DE VIA: " + valor1; } else { }
+        var valor2 = TCDB_Via_Principal.Text; ;
+        if (TCDB_Via_Principal.Text != "") { valor2 = "VIA PRINCIPAL: " + valor2; } else { }
         var valor3 = TCDB_Cuadrante.Text;
+        if (TCDB_Cuadrante.Text != "") { valor3 = "CUADRANTE: " + valor3; } else { }
         var valor4 = TCDB_Placa.Text;
+        if (TCDB_Placa.Text != "") { valor4 = "PLACA: " + valor4; } else { }
         var valor5 = TCDB_Complemento.Text;
+        if (TCDB_Complemento.Text != "") { valor5 = "COMPLEMENTO: " + valor5; } else { }
         var Dir_Total = valor1 +" "+ valor2 +" "+ valor3 +" "+ valor4 +" "+ valor5;
         TCDB_Direccion.Text = Dir_Total.ToString();
     }
@@ -5168,8 +5173,11 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     {
         Limpiar_Direcciones_Traslados();
         var valor1 = TCDBM_Barrio.Text;
+        if (TCDBM_Barrio.Text != "") { valor1 = "BARRIO: " + valor1; } else { }
         var valor2 = TCDBM_Placa.Text;
+        if (TCDBM_Placa.Text != "") { valor2 = "PLACA: " + valor2; } else { }
         var valor3 = TCDBM_Complemento.Text;
+        if (TCDBM_Complemento.Text != "") { valor3 = "COMPLEMENTO: " + valor3; } else { }
         var Dir_Total = valor1 + " " + valor2 + " " + valor3;
         TCDBM_Direccion_Final.Text = Dir_Total.ToString();
     }
@@ -5177,11 +5185,17 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     {
         Limpiar_Direcciones_Traslados();
         var valor1 = Convert.ToString(TCDM_Tipo_de_via.SelectedItem);
+        if (Convert.ToString(TCDM_Tipo_de_via.SelectedItem) != "--SELECCIONE--") { valor1 = "TIPO DE VIA: " + valor1; } else { }
         var valor2 = TCDM_Via_Principal.Text;
+        if (TCDM_Via_Principal.Text != "") { valor2 = "VIA PRINCIPAL: " + valor2; } else { }
         var valor3 = TCDM_Cuadrante.Text;
+        if (TCDM_Cuadrante.Text != "") { valor3 = "CUADRANTE: " + valor3; } else { }
         var valor4 = TCDM_Barrio.Text;
+        if (TCDM_Barrio.Text != "") { valor4 = "BARRIO: " + valor4; } else { }
         var valor5 = TCDM_Placa.Text;
+        if (TCDM_Placa.Text != "") { valor5 = "PLACA: " + valor5; } else { }
         var valor6 = TCDM_Complemento.Text;
+        if (TCDM_Complemento.Text != "") { valor6 = "COMPLEMENTO: " + valor6; } else { }
         var Dir_Total = valor1 + " " + valor2 + " " + valor3 + " " + valor4 + " " + valor5 +" "+ valor6;
         TCDM_Direccion_Final.Text = Dir_Total.ToString();
 
@@ -5190,13 +5204,21 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     {
         Limpiar_Direcciones_Traslados();
         var valor1 = TCDI_Via_Vereda.Text;
+        if (TCDI_Via_Vereda.Text != "") { valor1 = "VIA O VEREDA: " + valor1; } else { }
         var valor2 = TCDI_Nombre_Via.Text;
+        if (TCDI_Nombre_Via.Text != "") { valor2 = "NOMBRE VIA: " + valor2; } else { }
         var valor3 = TCDI_Kilometro.Text;
+        if (TCDI_Kilometro.Text != "") { valor3 = "KM: " + valor3; } else { }
         var valor4 = TCDI_Sector.Text;
+        if (TCDI_Sector.Text != "") { valor4 = "SECTOR: " + valor4; } else { }
         var valor5 = TCDI_Nombre_Sector.Text;
+        if (TCDI_Nombre_Sector.Text != "") { valor5 = "NOMBRE DEL SECTOR: " + valor5; } else { }
         var valor6 = TCDI_Urb_O_Finca.Text;
+        if (TCDI_Urb_O_Finca.Text != "") { valor6 = "URB O FINCA: " + valor6; } else { }
         var valor7 = TCDI_Placa.Text;
+        if (TCDI_Placa.Text != "") { valor7 = "PLACA: " + valor7; } else { }
         var valor8 = TCDI_Complemento.Text;
+        if (TCDI_Complemento.Text != "") { valor8 = "COMPLEMENTO: " + valor8; } else { }
         var Dir_Total = valor1 + " " + valor2 + " " + valor3 + " " + valor4 + " " + valor5 + " " + valor6+" "+valor7+" "+valor8;
         TCDI_Direccion_Final.Text = Dir_Total.ToString();
     }
@@ -5303,7 +5325,6 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     {
         Llenar_Direccion_Final();
     }
-
     protected void TCDI_Complemento_TextChanged(object sender, EventArgs e)
     {
         Llenar_Direccion_Final();
@@ -5471,8 +5492,6 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         }
 
     }
-
-
     protected void TCD_Cuenta_TextChanged(object sender, EventArgs e)
     {
         Obj_Entidad_Traslados_CD.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
