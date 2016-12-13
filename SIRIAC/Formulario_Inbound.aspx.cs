@@ -5399,6 +5399,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         TCDI_Complemento.Text = limpiar;
         TCDI_Direccion_Final.Text = limpiar;
         TCDI_Observaciones.Text = limpiar;
+        Alerta_Cuenta_CD_Traslados.Visible = false;
         string script1 = "Ocultar_Div();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "Ocultar_Div", script1, true);
     }
@@ -5471,5 +5472,26 @@ public partial class Formulario_Inbound : System.Web.UI.Page
 
     }
 
+
+    protected void TCD_Cuenta_TextChanged(object sender, EventArgs e)
+    {
+        Obj_Entidad_Traslados_CD.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
+       
+        DataSet dt = new DataSet();
+
+            Obj_Entidad_Traslados_CD.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
+            dt = Obj_Negocios_Traslados_CD.Consulta_Cuenta_Traslados(Obj_Entidad_Traslados_CD.Cuenta_Cliente);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                //Alerta_Cuenta_CD_Traslados.Visible = true;
+                Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
+            }
+            else {
+            //Alerta_Cuenta_CD_Traslados.Visible = false;
+            Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:none;color :red; font-size:16px;font-family:'Century Gothic';");
+        }
+        
+    }
 }
 

@@ -360,9 +360,9 @@
                     <div class="icono_carrete_4" id="Div4"></div>
                 </a>
             </div>
-            <a href="#Iframe_Back_Elite" onclick="return Abrir_Ventana_BackElite()">
+           <%-- <a href="#Iframe_Back_Elite" onclick="return Abrir_Ventana_BackElite()">
                 <div id="BackElite" class="icono_carrete_9"></div>
-            </a>
+            </a>--%>
             <a href="#Iframe_T_Crear_Direccion" onclick="return Abrir_Ventana_T_Crear_Direccion()">
                 <div id="T_Crear_Direccion" class="icono_carrete_10"></div>
             </a>
@@ -4736,7 +4736,7 @@
                         </table>
                               </ContentTemplate></asp:UpdatePanel>
                     </div>
-                      
+                      <asp:UpdatePanel runat="server"><ContentTemplate>
                     <div id="Datos_Adicionales_de_Captura">
                         <table>
                             <tr>
@@ -4746,7 +4746,8 @@
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Cuenta:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Cuenta" runat="server" Placeholder="Ingrese la cuenta" style="width:150px;"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Cuenta" runat="server" Placeholder="Ingrese la cuenta" AutoPostBack="true" OnTextChanged="TCD_Cuenta_TextChanged" style="width:150px;"></asp:TextBox>
+                                     
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Nodo:</p>
@@ -4766,6 +4767,8 @@
                                 </td>
                             </tr>
                         </table>
+                        <asp:Label ID="Alerta_Cuenta_CD_Traslados" runat="server" Style="display:none;color :red; font-size:16px;font-family:'Century Gothic';">Esta cuenta ya tiene un caso para crear dirección escalado, revise la lista de casos para validar el estado del tramite</asp:Label>
+                        </ContentTemplate></asp:UpdatePanel>
                     </div>
                     <asp:UpdatePanel runat="server">
                         <ContentTemplate>

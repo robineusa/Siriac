@@ -83,5 +83,29 @@ namespace Datos
             }
             return ds;
         }
+        public DataSet Consulta_Cuenta_Traslados(double p_Cuenta)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consultar_Cuenta_Traslado_En_Gestion]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", p_Cuenta);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al Seleccionar la cuenta de Ingreso de traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
     }
 }

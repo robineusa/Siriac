@@ -19,5 +19,9 @@ namespace Negocios
         {
             return objTraslados.Selecciona_Maximo_Ingreso_Traslados(p_Cuenta);
         }
+        public DataSet Consulta_Cuenta_Traslados(double p_Cuenta)
+        {
+            return objTraslados.Consulta_Cuenta_Traslados(p_Cuenta);
+        }
     }
 }
