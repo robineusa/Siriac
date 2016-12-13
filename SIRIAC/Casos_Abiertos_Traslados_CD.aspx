@@ -44,9 +44,15 @@
 
         }
     </script>
+    <script type="text/javascript">
+        function editar(obj) {
 
-    <asp:Panel CssClass="panel" ID="Panel1" runat="server">
-        <div id="tab-container">
+            var imageID = document.getElementById('imagen' + obj);
+            window.location.href = 'Depuracion_de_Casos.aspx?id=' + obj;
+        };
+    </script>
+    <asp:Panel CssClass="panel" ID="Panel1" runat="server" style="width:1060px;">
+        <div id="tab-container" style="width:1040px;">
             <ul class="tab-menu">
                 <li id="html" class="active" onclick="otorgar_permisos()">CASOS ABIERTOS</li>
                 <li id="css" onclick="otorgar_permisos()">CONSULTA DE CASOS</li>
@@ -56,7 +62,46 @@
             <div id="Primer_div">
                 <div id="html-tab" class="tab-content active">
                     <h3 class="Titulos">BOLSA DE CASOS ABIERTOS ESCALADOS A LA CÉLULA PARA LA CREACIÓN DE DIRECCIONES</h3>
-                  
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:Label ID="Label1" runat="server" Text="Label" Style="display: none"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="Label" Style="display: none"></asp:Label>
+                            <asp:GridView CssClass="mGrid" ID="CASOS_ESCALADOS_TRASLADOS" runat="server" AutoGenerateColumns="False" AllowPaging="true" >
+                                <Columns>
+                                    <asp:TemplateField ShowHeader="False" HeaderText="EDITAR">
+                                        <ItemTemplate>
+                                            <a href='javascript:editar("<%# Eval("ID_TRASLADO") %>");'>
+                                                <img class="c1" id='imageningreso_<%# Eval("ID_TRASLADO") %>' alt="Clic para mostrar u ocultar" src="Estilos/Imagenes/edita.png" />
+                                            </a>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID TRASLADO" />
+                                    <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
+                                    <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" />
+                                    <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
+                                    <asp:BoundField DataField="NODO" HeaderText="NODO" />
+                                    <asp:BoundField DataField="RED" HeaderText="RED" />
+                                    <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
+                                    <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
+                                    <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
+                                    <asp:BoundField DataField="HORA_APERTURA" HeaderText="HORA DE APERTURA" />
+                                    <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
+                                    <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                                    <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
+                                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                    <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
+                                    <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
+                                    <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
+                                    <asp:TemplateField Visible="False"></asp:TemplateField>
+                                    
+                                    
+                                </Columns>
+                            </asp:GridView>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <%--<asp:Button CssClass="button" ID="Exportar" runat="server" Text="Exportar" OnClick="Exportar_Click" />--%>
                 </div>
             </div>
 

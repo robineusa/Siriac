@@ -59,5 +59,31 @@ namespace Datos
             }
             return Resultado;
         }
+
+        public DataSet Consulta_Casos_Abiertos_Traslados(string pAliado, string pNombre_Linea)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Casos_Abiertos_Traslados]";
+                cmd.Parameters.AddWithValue("@Aliado_Apertura", pAliado);
+                cmd.Parameters.AddWithValue("@Nombre_Linea_Escalado", pNombre_Linea);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los casos abiertos para los traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
     }
 }
