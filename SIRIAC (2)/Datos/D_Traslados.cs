@@ -154,5 +154,53 @@ namespace Datos
             }
             return ds;
         }
+        public DataSet Consulta_Casos_Abiertos_Id(double pId_Traslado)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Traslados_Id]";
+                cmd.Parameters.AddWithValue("@Id_Traslado", pId_Traslado);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los casos abiertos por Id", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public DataSet Consulta_Casos_Abiertos_Cuenta(double pCuenta)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Traslados_Cuenta]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", pCuenta);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los casos abiertos por Cuenta", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
     }
 }

@@ -36,10 +36,8 @@ public partial class Casos_Abiertos_Traslados_CD : System.Web.UI.Page
     protected void Cuenta_Cliente_TextChanged(object sender, EventArgs e)
     {
         DataSet dt = new DataSet();
-        //Obj_Entidad_Ingresos.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
-        //dt = Obj_Neg_Ingresos.Consulta_Casos_Abiertos_Cuenta(Obj_Entidad_Ingresos.Cuenta_Cliente);
         Obj_Entidad_Traslados.Cuenta_Cliente = Convert.ToDouble(Cuenta_Cliente.Text);
-
+        dt = Obj_Neg_Traslados.Consulta_Casos_Abiertos_Cuenta(Obj_Entidad_Traslados.Cuenta_Cliente);
 
         if (dt.Tables[0].Rows.Count > 0)
         {
@@ -56,8 +54,8 @@ public partial class Casos_Abiertos_Traslados_CD : System.Web.UI.Page
     protected void Id_Ingreso_TextChanged(object sender, EventArgs e)
     {
         DataSet dt = new DataSet();
-        //Obj_Entidad_Ingresos.Id_Ingreso = Convert.ToDouble(Id_Ingreso.Text);
-        //dt = Obj_Neg_Ingresos.Consulta_Casos_Abiertos_Id(Obj_Entidad_Ingresos.Id_Ingreso);
+        Obj_Entidad_Traslados.Id_Traslado = Convert.ToDouble(Id_Traslado.Text);
+        dt = Obj_Neg_Traslados.Consulta_Casos_Abiertos_Id(Obj_Entidad_Traslados.Id_Traslado);
 
         if (dt.Tables[0].Rows.Count > 0)
         {

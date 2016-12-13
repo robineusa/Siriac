@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Perfil_Celula.master" AutoEventWireup="true" CodeFile="Casos_Abiertos_Traslados_CD.aspx.cs" Inherits="Casos_Abiertos_Traslados_CD" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-      <script type="text/javascript">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script type="text/javascript">
         $(document).ready(function () {
             if ('<%=Session["Acceso_1"]%>' == "1") {
 
@@ -51,8 +51,8 @@
             window.location.href = 'Depuracion_de_Casos.aspx?id=' + obj;
         };
     </script>
-    <asp:Panel CssClass="panel" ID="Panel1" runat="server" style="width:1060px;">
-        <div id="tab-container" style="width:1040px;">
+    <asp:Panel CssClass="panel" ID="Panel1" runat="server" Style="width: 1060px;">
+        <div id="tab-container" style="width: 1040px;">
             <ul class="tab-menu">
                 <li id="html" class="active" onclick="otorgar_permisos()">CASOS ABIERTOS</li>
                 <li id="css" onclick="otorgar_permisos()">CONSULTA DE CASOS</li>
@@ -68,7 +68,7 @@
                         <ContentTemplate>
                             <asp:Label ID="Label1" runat="server" Text="Label" Style="display: none"></asp:Label>
                             <asp:Label ID="Label2" runat="server" Text="Label" Style="display: none"></asp:Label>
-                            <asp:GridView CssClass="mGrid" ID="CASOS_ESCALADOS_TRASLADOS" runat="server" AutoGenerateColumns="False" AllowPaging="true" >
+                            <asp:GridView CssClass="mGrid" ID="CASOS_ESCALADOS_TRASLADOS" runat="server" AutoGenerateColumns="False" AllowPaging="true">
                                 <Columns>
                                     <asp:TemplateField ShowHeader="False" HeaderText="EDITAR">
                                         <ItemTemplate>
@@ -94,9 +94,6 @@
                                     <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
-                                    <asp:TemplateField Visible="False"></asp:TemplateField>
-                                    
-                                    
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -122,8 +119,8 @@
                                             </asp:UpdatePanel>
                                         </td>
                                         <td>
-                                            <p class="texto_informativo">Id de Ingreso:</p>
-                                            <asp:TextBox CssClass="caja_de_texto" ID="Id_Ingreso" runat="server" OnTextChanged="Id_Ingreso_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                            <p class="texto_informativo">Id de Traslado:</p>
+                                            <asp:TextBox CssClass="caja_de_texto" ID="Id_Traslado" runat="server" OnTextChanged="Id_Ingreso_TextChanged" AutoPostBack="true"></asp:TextBox>
                                         </td>
                                     </tr>
                                 </table>
@@ -132,34 +129,29 @@
                                 <asp:GridView CssClass="mGrid" ID="CONSULTA_CASOS" runat="server" AutoGenerateColumns="False">
                                     <Columns>
                                         <asp:TemplateField ShowHeader="False" HeaderText="EDITAR">
-                                            <ItemTemplate>
-                                                <a href='javascript:editar("<%# Eval("ID_INGRESO") %>");'>
-                                                    <img class="c1" id='imageningreso_<%# Eval("ID_INGRESO") %>' alt="Clic para mostrar u ocultar" src="Estilos/Imagenes/edita.png" />
-                                                </a>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="ID_INGRESO" HeaderText="ID INGRESO" />
-                                        <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
-                                        <asp:BoundField DataField="TICKET" HeaderText="TICKET" />
-                                        <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
-                                        <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
-                                        <asp:BoundField DataField="MACROPROCESO" HeaderText="MACROPROCESO" />
-                                        <asp:BoundField DataField="PROCESO" HeaderText="PROCESO" />
-                                        <asp:BoundField DataField="SUBPROCESO" HeaderText="SUBPROCESO" />
-                                        <asp:BoundField DataField="MARCACION" HeaderText="MARCACION" />
-                                        <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO APERTURA" />
-                                        <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
-                                        <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
-                                        <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
-                                        <asp:BoundField DataField="SEMAFORO" HeaderText="SEMAFORO" Visible="False" />
-
-                                        <asp:TemplateField Visible="False"></asp:TemplateField>
-                                        <asp:ImageField DataImageUrlField="SEMAFORO" DataImageUrlFormatString="~/Estilos/Imagenes/{0}" HeaderText="SEMAFORO" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="20px">
-                                            <ControlStyle Width="20px"></ControlStyle>
-
-                                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                        </asp:ImageField>
-                                        <asp:TemplateField></asp:TemplateField>
+                                        <ItemTemplate>
+                                            <a href='javascript:editar("<%# Eval("ID_TRASLADO") %>");'>
+                                                <img class="c1" id='imageningreso_<%# Eval("ID_TRASLADO") %>' alt="Clic para mostrar u ocultar" src="Estilos/Imagenes/edita.png" />
+                                            </a>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID TRASLADO" />
+                                    <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
+                                    <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" />
+                                    <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
+                                    <asp:BoundField DataField="NODO" HeaderText="NODO" />
+                                    <asp:BoundField DataField="RED" HeaderText="RED" />
+                                    <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
+                                    <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
+                                    <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
+                                    <asp:BoundField DataField="HORA_APERTURA" HeaderText="HORA DE APERTURA" />
+                                    <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
+                                    <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                                    <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
+                                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                    <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
+                                    <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
+                                    <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
                                     </Columns>
                                 </asp:GridView>
                             </asp:Panel>
