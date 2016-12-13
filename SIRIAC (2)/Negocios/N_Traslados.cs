@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -13,6 +14,10 @@ namespace Negocios
         public int abcIngresos(string pAccion, E_Traslados objE_Traslados)
         {
             return objTraslados.abcTraslados(pAccion, objE_Traslados);
+        }
+        public DataSet Selecciona_Maximo_Ingreso_Traslados(double p_Cuenta)
+        {
+            return objTraslados.Selecciona_Maximo_Ingreso_Traslados(p_Cuenta);
         }
     }
 }

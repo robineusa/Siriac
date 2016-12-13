@@ -59,5 +59,29 @@ namespace Datos
             }
             return Resultado;
         }
+        public DataSet Selecciona_Maximo_Ingreso_Traslados(double p_Cuenta)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Selecciona_Maximo_Id_Ingreso_Traslados]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", p_Cuenta);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al Seleccionar Maximo Id de Ingreso de traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
     }
 }
