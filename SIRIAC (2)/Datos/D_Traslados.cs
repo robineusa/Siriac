@@ -59,7 +59,7 @@ namespace Datos
             }
             return Resultado;
         }
-        public DataSet Consulta_Casos_Abiertos_Traslados(string pAliado, string pNombre_Linea)
+        public DataSet Consulta_Casos_Abiertos_Traslados(string pNombre_Linea)
         {
             SqlCommand cmd = new SqlCommand();
             DataSet ds = new DataSet();
@@ -70,7 +70,6 @@ namespace Datos
                 cmd.Connection = Conexion;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "[dbo].[Casos_Abiertos_Traslados]";
-                cmd.Parameters.AddWithValue("@Aliado_Apertura", pAliado);
                 cmd.Parameters.AddWithValue("@Nombre_Linea_Escalado", pNombre_Linea);
                 dt.SelectCommand = cmd;
                 dt.Fill(ds);
@@ -125,6 +124,29 @@ namespace Datos
             }
             catch (Exception e)
             { throw new Exception("Error al Seleccionar Maximo Id de Ingreso de traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public DataSet Consulta_Casos_Escalados_Traslados()
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Casos_Escalados_Traslados]"
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los casos escalados para los traslados", e); }
             finally
             {
                 Conexion.Close();

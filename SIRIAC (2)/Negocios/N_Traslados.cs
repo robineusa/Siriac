@@ -16,9 +16,9 @@ namespace Negocios
             return objTraslados.abcTraslados(pAccion, objE_Traslados);
         }
 
-        public DataSet Consulta_Casos_Abiertos_Traslados(string pAliado, string pNombre_Linea)
+        public DataSet Consulta_Casos_Abiertos_Traslados(string pNombre_Linea)
         {
-            return objTraslados.Consulta_Casos_Abiertos_Traslados(pAliado, pNombre_Linea);
+            return objTraslados.Consulta_Casos_Abiertos_Traslados(pNombre_Linea);
         }
         public DataSet Selecciona_Maximo_Ingreso_Traslados(double p_Cuenta)
         {
@@ -28,5 +28,8 @@ namespace Negocios
         {
             return objTraslados.Consulta_Cuenta_Traslados(p_Cuenta);
         }
-    }
+        public DataSet Consulta_Casos_Escalados_Traslados()
+        {
+            return objTraslados.Consulta_Casos_Escalados_Traslados();
+        }
 }

@@ -108,7 +108,63 @@
             <div id="Segundo_div">
                 <div id="css-tab" class="tab-content">
                     <h3 class="Titulos">FORMULARIO PARA LA CONSULTA DE CASOS ESCALADOS</h3>
-                
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:Panel CssClass="panel_informativo" ID="Panel3" runat="server" GroupingText="Datos del Escalamiento">
+                                <table class="tabla">
+                                    <tr>
+                                        <td>
+                                            <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                                <ContentTemplate>
+                                                    <p class="texto_informativo">Cuenta Cliente:</p>
+                                                    <asp:TextBox CssClass="caja_de_texto" ID="Cuenta_Cliente" runat="server" OnTextChanged="Cuenta_Cliente_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                        <td>
+                                            <p class="texto_informativo">Id de Ingreso:</p>
+                                            <asp:TextBox CssClass="caja_de_texto" ID="Id_Ingreso" runat="server" OnTextChanged="Id_Ingreso_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                            <asp:Panel CssClass="panel_informativo" ID="Panel2" runat="server" GroupingText="Resultado de la Consulta">
+                                <asp:GridView CssClass="mGrid" ID="CONSULTA_CASOS" runat="server" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:TemplateField ShowHeader="False" HeaderText="EDITAR">
+                                            <ItemTemplate>
+                                                <a href='javascript:editar("<%# Eval("ID_INGRESO") %>");'>
+                                                    <img class="c1" id='imageningreso_<%# Eval("ID_INGRESO") %>' alt="Clic para mostrar u ocultar" src="Estilos/Imagenes/edita.png" />
+                                                </a>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="ID_INGRESO" HeaderText="ID INGRESO" />
+                                        <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
+                                        <asp:BoundField DataField="TICKET" HeaderText="TICKET" />
+                                        <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
+                                        <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
+                                        <asp:BoundField DataField="MACROPROCESO" HeaderText="MACROPROCESO" />
+                                        <asp:BoundField DataField="PROCESO" HeaderText="PROCESO" />
+                                        <asp:BoundField DataField="SUBPROCESO" HeaderText="SUBPROCESO" />
+                                        <asp:BoundField DataField="MARCACION" HeaderText="MARCACION" />
+                                        <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO APERTURA" />
+                                        <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
+                                        <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
+                                        <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                        <asp:BoundField DataField="SEMAFORO" HeaderText="SEMAFORO" Visible="False" />
+
+                                        <asp:TemplateField Visible="False"></asp:TemplateField>
+                                        <asp:ImageField DataImageUrlField="SEMAFORO" DataImageUrlFormatString="~/Estilos/Imagenes/{0}" HeaderText="SEMAFORO" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="20px">
+                                            <ControlStyle Width="20px"></ControlStyle>
+
+                                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                        </asp:ImageField>
+                                        <asp:TemplateField></asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                            </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
         </div>
