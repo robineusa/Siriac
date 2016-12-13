@@ -58,6 +58,8 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     public E_Siembra_HD Obj_Entidad_Siembra_HD = new E_Siembra_HD();
     public E_Traslados Obj_Entidad_Traslados_CD = new E_Traslados();
     public N_Traslados Obj_Negocios_Traslados_CD = new N_Traslados();
+    public E_Notas_Traslados Obj_Entidad_Notas_Traslados = new E_Notas_Traslados();
+    public N_Notas_Traslados Obj_Negocios_Notas_Traslados = new N_Notas_Traslados();
 
     public int sw1 = 0;
     public int sw2 = 0;
@@ -5340,7 +5342,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         Obj_Entidad_Traslados_CD.Usuario_Backoffice = "";
         Obj_Entidad_Traslados_CD.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
         Obj_Entidad_Traslados_CD.Nombre_Linea_Ingreso = Session["Nombre_Linea_Usuario"].ToString();
-        Obj_Entidad_Traslados_CD.Estado = "PENDIENTE POR CREAR ";
+        Obj_Entidad_Traslados_CD.Estado = "PENDIENTE POR CREAR";
         Obj_Entidad_Traslados_CD.Nombre_Linea_Escalado = "CELULA CREACION DIRECCION";
     }
     protected void TCD_Guardar_Click(object sender, EventArgs e)
@@ -5350,15 +5352,11 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         Guardar_Datos = Obj_Negocios_Traslados_CD.abcIngresos("INSERTAR", Obj_Entidad_Traslados_CD);
         if (Guardar_Datos != -1)
         {
-            string script1 = "Registro_CD_Almacenado();";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro_CD_Almacenado", script1, true);
-            Limpiar_Controles_Traslados_CD();
+            Insertar_Notas_Traslados();
         }
         else
         {
-            string script1 = "Registro_CD_NO_Almacenado();";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro_CD_NO_Almacenado", script1, true);
-
+            
         }
     }
     protected void Limpiar_Controles_Traslados_CD()
@@ -5401,8 +5399,99 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         TCDI_Complemento.Text = limpiar;
         TCDI_Direccion_Final.Text = limpiar;
         TCDI_Observaciones.Text = limpiar;
+        Alerta_Cuenta_CD_Traslados.Visible = false;
         string script1 = "Ocultar_Div();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "Ocultar_Div", script1, true);
+    }
+    protected void Maximo_Ingreso_Crear_Direccion_T()
+    {
+        try
+        {
+            DataSet dt = new DataSet();
+
+            Obj_Entidad_Traslados_CD.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
+            dt = Obj_Negocios_Traslados_CD.Selecciona_Maximo_Ingreso_Traslados(Obj_Entidad_Traslados_CD.Cuenta_Cliente);
+            
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                Obj_Entidad_Notas_Traslados.Id_Traslado= Convert.ToInt64(dt.Tables[0].Rows[0]["ID_TRASLADO"].ToString());
+            }
+        }
+        catch (Exception exb)
+        {
+            throw new Exception("Error al Seleccionar el maximo id de Ingreso", exb);
+        }
+
+    }
+    protected void Controles_A_Objeto_Notas_Traslados()
+    {
+        Obj_Entidad_Notas_Traslados.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
+        Obj_Entidad_Notas_Traslados.Usuario = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Notas_Traslados.Nombre_Linea_Nota = Session["Nombre_Linea_Usuario"].ToString();
+        var Seleccion = Convert.ToString(TCD_Tipo_de_Direccion.SelectedItem);
+
+        if (Seleccion == "--SELECCIONE--") { }
+        else if (Seleccion == "Basica")
+        {
+            Obj_Entidad_Notas_Traslados.Nota = TCDB_Observaciones.Text.ToUpper();
+        }
+        else if (Seleccion == "Barrio Manzana")
+        {
+            Obj_Entidad_Notas_Traslados.Nota = TCDBM_Observaciones.Text.ToUpper();
+        }
+        else if (Seleccion == "Multiorigen")
+        {
+            Obj_Entidad_Notas_Traslados.Nota = TCDM_Observaciones.Text.ToUpper();
+        }
+        else if (Seleccion == "Intraducible")
+        {
+            Obj_Entidad_Notas_Traslados.Nota = TCDI_Observaciones.Text.ToUpper();
+        }
+       Obj_Entidad_Notas_Traslados.Razon = "SOLICITUD";
+       Obj_Entidad_Notas_Traslados.Subrazon = "CREACION DE DIRECCION";
+       Obj_Entidad_Notas_Traslados.Estado = "PENDIENTE POR CREAR";
+    }
+    protected void Insertar_Notas_Traslados()
+    {
+        Maximo_Ingreso_Crear_Direccion_T();
+        Controles_A_Objeto_Notas_Traslados();
+        var Guardar_Datos = -1;
+        Guardar_Datos = Obj_Negocios_Notas_Traslados.Inserta_Nota_Traslados("INSERTAR", Obj_Entidad_Notas_Traslados);
+        if (Guardar_Datos != -1)
+        {
+            string script1 = "Registro_CD_Almacenado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro_CD_Almacenado", script1, true);
+            Limpiar_Controles_Traslados_CD();
+        }
+        else
+        {
+            string script1 = "Registro_CD_NO_Almacenado();";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro_CD_NO_Almacenado", script1, true);
+
+        }
+
+    }
+
+
+    protected void TCD_Cuenta_TextChanged(object sender, EventArgs e)
+    {
+        Obj_Entidad_Traslados_CD.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
+       
+        DataSet dt = new DataSet();
+
+            Obj_Entidad_Traslados_CD.Cuenta_Cliente = Convert.ToInt64(TCD_Cuenta.Text);
+            dt = Obj_Negocios_Traslados_CD.Consulta_Cuenta_Traslados(Obj_Entidad_Traslados_CD.Cuenta_Cliente);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                //Alerta_Cuenta_CD_Traslados.Visible = true;
+                Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
+            }
+            else {
+            //Alerta_Cuenta_CD_Traslados.Visible = false;
+            Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:none;color :red; font-size:16px;font-family:'Century Gothic';");
+        }
+        
     }
 }
 

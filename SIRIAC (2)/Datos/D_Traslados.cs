@@ -59,8 +59,12 @@ namespace Datos
             }
             return Resultado;
         }
+<<<<<<< HEAD
 
         public DataSet Consulta_Casos_Abiertos_Traslados(string pAliado, string pNombre_Linea)
+=======
+        public DataSet Selecciona_Maximo_Ingreso_Traslados(double p_Cuenta)
+>>>>>>> origin/master
         {
             SqlCommand cmd = new SqlCommand();
             DataSet ds = new DataSet();
@@ -70,14 +74,47 @@ namespace Datos
                 Abrir_Conexion();
                 cmd.Connection = Conexion;
                 cmd.CommandType = CommandType.StoredProcedure;
+<<<<<<< HEAD
                 cmd.CommandText = "[dbo].[Casos_Abiertos_Traslados]";
                 cmd.Parameters.AddWithValue("@Aliado_Apertura", pAliado);
                 cmd.Parameters.AddWithValue("@Nombre_Linea_Escalado", pNombre_Linea);
+=======
+                cmd.CommandText = "[dbo].[Selecciona_Maximo_Id_Ingreso_Traslados]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", p_Cuenta);
+>>>>>>> origin/master
                 dt.SelectCommand = cmd;
                 dt.Fill(ds);
             }
             catch (Exception e)
+<<<<<<< HEAD
             { throw new Exception("Error al seleccionar los casos abiertos para los traslados", e); }
+=======
+            { throw new Exception("Error al Seleccionar Maximo Id de Ingreso de traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public DataSet Consulta_Cuenta_Traslados(double p_Cuenta)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consultar_Cuenta_Traslado_En_Gestion]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", p_Cuenta);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al Seleccionar la cuenta de Ingreso de traslados", e); }
+>>>>>>> origin/master
             finally
             {
                 Conexion.Close();

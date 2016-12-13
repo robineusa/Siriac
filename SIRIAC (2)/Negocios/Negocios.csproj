@@ -57,6 +57,7 @@
     <Compile Include="N_Clientes.cs" />
     <Compile Include="N_Docsis_Overlap.cs" />
     <Compile Include="N_Mejor_Oferta.cs" />
+    <Compile Include="N_Notas_Traslados.cs" />
     <Compile Include="N_Reincidencias.cs" />
     <Compile Include="N_Convenio_Electronico.cs" />
     <Compile Include="N_Cuentas_Genericas.cs" />
