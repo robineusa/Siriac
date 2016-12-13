@@ -152,3 +152,19 @@ C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Newto
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+<<<<<<< HEAD
+=======
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Negocios.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Datos.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Entidades.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Datos.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Entidades.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Debug\Negocios.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Debug\Negocios.pdb
+>>>>>>> origin/master

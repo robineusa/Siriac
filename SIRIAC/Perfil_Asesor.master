@@ -334,6 +334,7 @@ function showTimer() {
 						<li><a href="Formulario_Inbound.aspx">Gestión Inbound</a></li>
 						<li><a href="Formulario_Outbound.aspx">Gestión Outbound</a></li>
                         <li><a href="Formulario_Blending.aspx">Gestión Blending</a></li>
+                        <li><a href="Lista_Creacion_Direcciones.aspx">Direcciones Creadas</a></li>
 						</ul>
 				</li>
 				<li class="blue">
