@@ -19,9 +19,8 @@ public partial class Lista_Creaciojn_Direcciones : System.Web.UI.Page
     protected void Cargar_Casos_Traslados()
     {
         DataSet dt = new DataSet();
-        Obj_Entidad_Traslados.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
-        Obj_Entidad_Traslados.Nombre_Linea_Escalado = "CELULA CREACION DIRECCION";
-        dt = Obj_Neg_Traslados.Consulta_Casos_Abiertos_Traslados(Obj_Entidad_Traslados.Aliado_Apertura, Obj_Entidad_Traslados.Nombre_Linea_Escalado);
+       
+        dt = Obj_Neg_Traslados.Consulta_Casos_Escalados_Traslados();
 
         if (dt.Tables[0].Rows.Count > 0)
         {
