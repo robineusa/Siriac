@@ -32,4 +32,5 @@ namespace Negocios
         {
             return objTraslados.Consulta_Casos_Escalados_Traslados();
         }
+    }
 }

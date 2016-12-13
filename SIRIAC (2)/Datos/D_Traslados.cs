@@ -141,7 +141,7 @@ namespace Datos
                 Abrir_Conexion();
                 cmd.Connection = Conexion;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "[dbo].[Casos_Escalados_Traslados]"
+                cmd.CommandText = "[dbo].[Casos_Escalados_Traslados]";
                 dt.SelectCommand = cmd;
                 dt.Fill(ds);
             }
