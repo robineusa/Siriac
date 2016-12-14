@@ -9,8 +9,9 @@ public partial class Perfil_Administrador : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-      
-    Response.AddHeader("cache-control", "private");
+        if (Session["Acceso_20"].ToString() == "1") { Consulta_Solicitudes.Attributes.CssStyle.Add("Display", "block"); } else { Consulta_Solicitudes.Attributes.CssStyle.Add("Display", "none"); }
+        if (Session["Acceso_21"].ToString() == "1") { Consulta_Interac.Attributes.CssStyle.Add("Display", "block"); } else { Consulta_Interac.Attributes.CssStyle.Add("Display", "none"); }
+        Response.AddHeader("cache-control", "private");
         Response.AddHeader("pragma", "no-cache");
         Response.AddHeader("Cache-Control", "must-revalidate");
         Response.AddHeader("Cache-Control", "no-cache");
