@@ -305,6 +305,93 @@ namespace Datos
             }
             return ds;
         }
+        public DataSet Consulta_Traslados_PorID(double pId_Traslado)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Caso_PorId_Traslados]";
+                cmd.Parameters.AddWithValue("@Id_Traslado", pId_Traslado);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al consultar la tabla de traslados por Id", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public int Actualizar_Traslado_Cierre(string pAccion, E_Traslados objE_Traslados)
+        {
+            int Resultado = 0;
+            SqlCommand cmd = new SqlCommand("Actualizar_Caso_Cierre_Back_Traslados", Conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Accion", pAccion);
+            cmd.Parameters.AddWithValue("@Id_Traslado", objE_Traslados.Id_Traslado);
+            cmd.Parameters.AddWithValue("@Fecha_Cierre", objE_Traslados.Fecha_Cierre);
+            cmd.Parameters.AddWithValue("@Hora_Cierre", objE_Traslados.Hora_Cierre);
+            cmd.Parameters.AddWithValue("@Usuario_Cierre", objE_Traslados.Usuario_Cierre);
+            cmd.Parameters.AddWithValue("@Fecha_Ultima_Actualizacion", objE_Traslados.Fecha_Ultima_Actualizacion);
+            cmd.Parameters.AddWithValue("@Usuario_Ultima_Actualizacion", objE_Traslados.Usuario_Ultima_Actualizacion);
+            cmd.Parameters.AddWithValue("@Hora_Ultima_Actualizacion", objE_Traslados.Hora_Ultima_Actualizacion);
+            cmd.Parameters.AddWithValue("@Razon", objE_Traslados.Razon);
+            cmd.Parameters.AddWithValue("@Subrazon", objE_Traslados.Subrazon);
+            cmd.Parameters.AddWithValue("@Estado", objE_Traslados.Estado);
+            try
+            {
+                Abrir_Conexion();
+                Resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al intentar actualizar la tabla de Traslados", e);
+            }
+            finally
+            {
+                Cerrar_Conexion();
+                cmd.Dispose();
+            }
+            return Resultado;
+        }
+        public int Actualizar_Traslado_Gestion(string pAccion, E_Traslados objE_Traslados)
+        {
+            int Resultado = 0;
+            SqlCommand cmd = new SqlCommand("Actualizar_Caso_Gestion_Back_Traslados", Conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Accion", pAccion);
+            cmd.Parameters.AddWithValue("@Id_Traslado", objE_Traslados.Id_Traslado);
+            cmd.Parameters.AddWithValue("@Fecha_Ultima_Actualizacion", objE_Traslados.Fecha_Ultima_Actualizacion);
+            cmd.Parameters.AddWithValue("@Usuario_Ultima_Actualizacion", objE_Traslados.Usuario_Ultima_Actualizacion);
+            cmd.Parameters.AddWithValue("@Hora_Ultima_Actualizacion", objE_Traslados.Hora_Ultima_Actualizacion);
+            cmd.Parameters.AddWithValue("@Razon", objE_Traslados.Razon);
+            cmd.Parameters.AddWithValue("@Subrazon", objE_Traslados.Subrazon);
+            cmd.Parameters.AddWithValue("@Estado", objE_Traslados.Estado);
+            try
+            {
+                Abrir_Conexion();
+                Resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al intentar actualizar la tabla de Traslados", e);
+            }
+            finally
+            {
+                Cerrar_Conexion();
+                cmd.Dispose();
+            }
+            return Resultado;
+        }
 
     }
 }

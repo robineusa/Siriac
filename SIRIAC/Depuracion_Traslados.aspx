@@ -1,18 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Perfil_Celula.master" AutoEventWireup="true" CodeFile="Depuracion_Traslados.aspx.cs" Inherits="Depuracion_Traslados" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script>
+        function Aviso1() {
+            alert('Este caso ya se encuentra en gestion por otro usuario, por favor seleccionar otro de la lista');
+        }
+        function Aviso2() {
+            alert('Ocurrio un problema al cargar la información, intente nuevamente por favor dando clic en gestionar.');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <asp:Panel CssClass="panel" ID="Panel1" runat="server">
         <div id="tab-container">
             <ul class="tab-menu">
-                <li id="html" class="active" onclick="otorgar_permisos()">DEPURACIÓN DE Traslados</li>
+                <li id="html" class="active" onclick="otorgar_permisos()">DEPURACIÓN DE SOLICITUDES</li>
             </ul>
             <div class="clear"></div>
             <div class="tab-top-border"></div>
             <div id="html-tab" class="tab-content active">
-                <h3 class="Titulos">FORMULARIO DE GESTIÓN Y DEPURACIÓN DE TRASLADOS</h3>
+                <h3 class="Titulos">FORMULARIO DE GESTIÓN Y DEPURACIÓN SOLICITUDES CREACION DE DIRECCION</h3>
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                 </asp:ScriptManager>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -30,14 +38,13 @@
                                     <td colspan="8">
                                         <asp:GridView CssClass="mGrid2" ID="GVNOTAS" runat="server" AutoGenerateColumns="False" GridLines="None">
                                             <Columns>
-                                                <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID DE INGRESO" />
+                                                <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID TRASLADO" />
                                                 <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />                                                
-                                                <asp:BoundField DataField="USUARIO" HeaderText="USUARIO"/>
-                                                <asp:BoundField DataField="NOMBRE_LINEA_NOTA" HeaderText="NOMBRE LINEA NOTA"></asp:BoundField>
-                                                <asp:BoundField DataField="FECHA_NOTA" HeaderText="FECHA NOTA" />
-                                                <asp:BoundField DataField="HORA_NOTA" HeaderText="HORA NOTA" />
-                                                <asp:BoundField DataField="NOTA" HeaderText="NOTA"></asp:BoundField>
-                                                <asp:BoundField DataField="RAZON" HeaderText="SUBRAZON" />
+                                                <asp:BoundField DataField="USUARIO" HeaderText="USUARIO INTERACCION"/>
+                                                <asp:BoundField DataField="NOMBRE_LINEA_NOTA" HeaderText="NOMBRE LINEA INTERACCION"></asp:BoundField>
+                                                <asp:BoundField DataField="FECHA_NOTA" HeaderText="FECHA INTERACCION" />
+                                                <asp:BoundField DataField="HORA_NOTA" HeaderText="HORA INTERACCION" />
+                                                <asp:BoundField DataField="NOTA" HeaderText="OBSERVACIONES"></asp:BoundField>
                                                 <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
                                             </Columns>
                                         </asp:GridView>
@@ -63,255 +70,173 @@
                             <table class="tabla">
                                 <tr>
                                     <td>
-                                        <p class="texto_informativo">Id de traslado:</p>
+                                        <p class="texto_informativo">Id de Traslado:</p>
                                         <asp:TextBox CssClass="caja_de_texto" ID="Id_Traslado" runat="server" AutoPostBack="true" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Cuenta del cliente:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Cuenta_Cliente" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Fecha Creación:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Creacion" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Número Ticket RR:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Ticket" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Hora Creación:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Creacion" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Fecha de apertura:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Apertura" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Usuario Creación:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Creacion" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Hora de apertura:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Apertura" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Aliado Creación:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Aliado_Creacion" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Usuario de apertura:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Apertura" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Aliado de apertura:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Aliado_Apertura" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="texto_informativo">Fecha actualización:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Ult_Actualizacion" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Usuario actualización:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Ult_Actualizacion" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Hora actualización:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Actualizacion" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Nombre Linea Ingreso:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Linea_Ingreso" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
 
                                 </tr>
+                               
                             </table>
                         </asp:Panel>
-                        <asp:Panel CssClass="panel_informativo" ID="Panel2" runat="server" GroupingText="Información del Cliente">
+                         <asp:Panel CssClass="panel_informativo" ID="Panel8" runat="server" GroupingText="Información de la Solicitud">
+                             <table class="tabla">
+                                <tr>
+                                    <td>
+                                        <p class="texto_informativo">Cuenta del Cliente:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Cuenta_Cliente" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Teléfono Celular:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Celular" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Teléfono Fijo:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Fijo" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Fecha Actualización:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Actualizacion" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Usuario Actualización:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Actualizacion" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Hora Actualización:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Actualizacion" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Estado del Caso:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Estado_Actual_del_Caso" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                </table>
+                         </asp:Panel>
+                        <asp:Panel CssClass="panel_informativo" ID="Panel2" runat="server" GroupingText="Información de la Dirección">
                             <table class="tabla">
                                 <tr>
-                                    <td>
-                                        <p class="texto_informativo">Nombre del cliente:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Cliente" runat="server"></asp:TextBox>
+                                    <td colspan="7">
+                                        <p class="texto_informativo">Dirección a Crear:</p>
+                                        <asp:TextBox CssClass="textbox_buscar" ID="Direccion" runat="server" Width="900px" Enabled="false"></asp:TextBox>
                                     </td>
-                                    <td>
-                                        <p class="texto_informativo">Apellido del cliente:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Apellido_Cliente" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Documento de identidad:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Doc_Identidad" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Teléfono telmex:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Telmex" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Teléfono 1:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_1" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Teléfono 2:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_2" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Teléfono 3:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_3" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
+                                    </tr>
                                 <tr>
-
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">Teléfono personal:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Personal" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">Dirección de instalación:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Dir_Instalacion" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">Correspondencia:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Dir_Correspondencia" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">Correo electrónico:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Correo_Electronico" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">Red:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Red" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">División:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Division" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style19">
-                                        <p class="texto_informativo">Área:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Area" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="texto_informativo">Zona:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Zona" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Distrito:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Distrito" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Nombre comunidad:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Comunidad" runat="server"></asp:TextBox>
-                                    </td>
                                     <td>
                                         <p class="texto_informativo">Estrato:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Estrato" runat="server"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Estrato" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Tipo Cliente:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Tipo_Cliente" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Nodo:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Nodo" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <p class="texto_informativo">Descripción:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Descripcion" runat="server"></asp:TextBox>
+                                        <p class="texto_informativo">Nombre del Nodo:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Nodo" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Código División:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="DIV" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Código Comunidad:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="COM" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Divisional:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Divisional" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                     <td>
+                                        <p class="texto_informativo">Área:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Area" runat="server" Enabled="false"></asp:TextBox>
                                     </td>
                                 </tr>
+                                <tr>
+                                   
+                                    <td>
+                                        <p class="texto_informativo">Distrito:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Distrito" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Unidad de Gestión:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Unidad_Gestion" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Estado del Nodo:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Estado_Nodo" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <p class="texto_informativo">Red:</p>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Red" runat="server" Enabled="false"></asp:TextBox>
+                                    </td>
+                                </tr>
+                               
                             </table>
                         </asp:Panel>
 
-                        <asp:Panel CssClass="panel_informativo" ID="Panel4" runat="server" GroupingText="Árbol de Escalamiento">
-                            <table class="tabla">
-                                <tr>
-                                    <td>
-                                        <p class="texto_informativo">Macroproceso:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Macroproceso" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Proceso:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Proceso" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Sub proceso:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Subproceso" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Marcación:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Marcacion" runat="server"></asp:TextBox>
-                                    </td>
-                                    <td>
-                                        <p class="texto_informativo">Servicios afectados:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Servicios" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table class="tabla">
-                                <tr>
-                                    <td>
-                                        <div class="Titulo_Usuarios6">
-                                            <p class="etiquetas5">Posible causa:</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6">
-                                        <div class="Que_Hacer">
-                                            <asp:Label ID="Posible_Causa" runat="server" Text=""></asp:Label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="Titulo_Usuarios6">
-                                            <p class="etiquetas5">¿Que hacer?:</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6">
-                                        <div class="Que_Hacer">
-                                            <asp:Label ID="Que_Hacer" runat="server" Text=""></asp:Label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6">
-                                        <div class="Titulo_Usuarios6">
-                                            <p class="etiquetas5">Codigos de cierre:</p>
-                                        </div>
-                                        <div class="Que_Hacer">
-                                            <asp:Label ID="Codigos_Cierre" runat="server" Text=""></asp:Label>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </asp:Panel>
 
                         <asp:Panel CssClass="panel_informativo" ID="Panel5" runat="server" GroupingText="Gestión Célula o Back">
-
-                            <table class="tabla">
-                                <tr>
-                                    <td colspan="6"></td>
-                                </tr>
+                            <table style="margin-left:5px;">
                                 <tr>
                                     <td>
-                                        <h4 class="Titulo_Informativo2">ESTADO CASO:</h4>
-                                        <%--<asp:DropDownList CssClass="dropdown1" ID="Estado_Caso" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Estado_Caso_SelectedIndexChanged">
-                                        </asp:DropDownList>--%>
-
+                                     <p class="texto_informativo">Gestión Realizada:</p>
+                                        <asp:DropDownList ID="Gestion_Realizada" CssClass="dropdown3" runat="server">
+                                            <asp:ListItem>--SELECCIONE--</asp:ListItem>
+                                            <asp:ListItem>CIUDAD NO ESTA EN POLITICAS ACTUALES DTH</asp:ListItem>
+                                            <asp:ListItem>CUENTA PYMES</asp:ListItem>
+                                            <asp:ListItem>DIRECCION ESTA ASOCIADA A UNA MATRIZ</asp:ListItem>
+                                            <asp:ListItem>DIRECCION ESTABA CREADA EN EL SISTEMA</asp:ListItem>
+                                            <asp:ListItem>DIRECCION FUERA DE COBERTURA</asp:ListItem>
+                                            <asp:ListItem>DIRECCION INCOMPLETA</asp:ListItem>
+                                            <asp:ListItem>HHPP REQUIERE CREACION DE MATRIZ</asp:ListItem>
+                                            <asp:ListItem>MIGRACION</asp:ListItem>
+                                            <asp:ListItem>NO COINCIDE COM Y DIV CON LA RED</asp:ListItem>
+                                            <asp:ListItem>NO INFORMA SI EL HHPP ES CASA O PISO</asp:ListItem>
+                                            <asp:ListItem>SE CREA DIRECCION CORRECTAMENTE</asp:ListItem>
+                                            <asp:ListItem>VENTA NUEVA</asp:ListItem>
+                                        </asp:DropDownList>
                                     </td>
-                                    <td>
-                                        <h4 class="Titulo_Informativo2">ÁREA A ESCALAR:</h4>
-                                        <asp:DropDownList CssClass="dropdown1" ID="Area_Escalar" runat="server"></asp:DropDownList>
-
+                                     <td>
+                                     <p class="texto_informativo">Estado del Caso:</p>
+                                         <asp:DropDownList ID="Estado_del_Caso" CssClass="dropdown1" runat="server">
+                                             <asp:ListItem>--SELECCIONE--</asp:ListItem>
+                                             <asp:ListItem>EN GESTION</asp:ListItem>
+                                             <asp:ListItem>FINALIZADO</asp:ListItem>
+                                         </asp:DropDownList>
                                     </td>
-
-                                    <td>
-                                        <h4 class="Titulo_Informativo2">¿APLICA RECHAZO?:</h4>
-                                        <%--<asp:DropDownList CssClass="dropdown1" ID="Rechazo" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Rechazo_SelectedIndexChanged">
-                                            <asp:ListItem>NO</asp:ListItem>
-                                            <asp:ListItem>SI</asp:ListItem>
-                                        </asp:DropDownList>--%>
-                                    </td>
-                                    <td colspan="4">
-                                        <h4 class="Titulo_Informativo2">¿PORQUE LO RECHAZA?:</h4>
-                                        <asp:TextBox CssClass="notas_casos3" ID="Motivo_Rechazo" runat="server" TextMode="MultiLine" Enabled="false"></asp:TextBox>
-                                    </td>
-
                                 </tr>
-                            </table>
-
+                            </table><br />
                             <table class="tabla">
                                 <tr>
                                     <td colspan="6">
                                         <h4 class="Titulo_Informativo2">NOTAS:</h4>
-                                        <asp:TextBox CssClass="notas_casos" ID="Notas" runat="server" TextMode="MultiLine" Required="true"></asp:TextBox>
+                                        <asp:TextBox CssClass="notas_casos" ID="Observaciones" runat="server" TextMode="MultiLine"></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
                         </asp:Panel>
-                        <%--<asp:Button CssClass="button" ID="Button3" runat="server" OnClick="Button3_Click" Text="Guardar" Enabled="false" />--%>
-                        <asp:Label ID="Label3" runat="server" Text="Label" Style="display: none"></asp:Label>
+                        <asp:Button CssClass="button" ID="Guardar_Interaccion" runat="server" Text="Guardar" OnClick="Guardar_Interaccion_Click" />
+                        <asp:Label ID="Label3" runat="server" Text="Label" Style="display: none"></asp:Label><hr />
+                        <asp:Label ID="Alerta" runat="server" Text="Label" Style="display:none;color :red; font-size:16px;font-family:'Century Gothic';"></asp:Label>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>

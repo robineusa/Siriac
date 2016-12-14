@@ -56,5 +56,18 @@ namespace Negocios
         {
             return objTraslados.Consulta_Admin_Gestion_Crear_Direccion(pFecha_Inicial, pFecha_Final);
         }
+        public DataSet Consulta_Traslados_PorID(double pId_Traslado)
+        {
+            return objTraslados.Consulta_Traslados_PorID(pId_Traslado);
+        }
+        public int Actualizar_Traslado_Cierre(string pAccion, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualizar_Traslado_Cierre(pAccion, objE_Traslados);
+        }
+        public int Actualizar_Traslado_Gestion(string pAccion, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualizar_Traslado_Gestion(pAccion, objE_Traslados);
+        }
+
     }
 }
