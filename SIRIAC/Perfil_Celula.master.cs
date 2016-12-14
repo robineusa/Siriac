@@ -19,7 +19,8 @@ public partial class Perfil_Celula : System.Web.UI.MasterPage
         Response.AddHeader("Cache-Control", "must-revalidate");
         Response.AddHeader("Cache-Control", "no-cache");
 
-
+        if (Session["Acceso_5"].ToString() == "1") { Crear_Direcciones.Attributes.CssStyle.Add("Display", "block"); } else { Crear_Direcciones.Attributes.CssStyle.Add("Display", "none"); }
+        if (Session["Acceso_6"].ToString() == "1") { Seg_Traslados.Attributes.CssStyle.Add("Display", "block"); } else { Seg_Traslados.Attributes.CssStyle.Add("Display", "none"); }
         if (Session["Rol_Usuario"].ToString() == "2") { } else { Response.Redirect("Inicio_de_Sesion.aspx?id=" + Session["Rol_Usuario"].ToString() + ""); };
         Nombre_Usuario.Text = Session["Nombre_Usuario"].ToString();
        

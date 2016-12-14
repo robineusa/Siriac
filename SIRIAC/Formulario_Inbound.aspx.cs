@@ -68,8 +68,10 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["Acceso_1"].ToString() == "1") { } else { Response.Redirect("Bienvenida_Asesor.aspx?Acceso= " + Session["ACCESO_1"].ToString() + "--DENEGADO Gestión Inbound"); }
+        if (Session["Acceso_19"].ToString() == "1") { Icono_Crear_Direccion.Attributes.CssStyle.Add("Display", "block"); } else { Icono_Crear_Direccion.Attributes.CssStyle.Add("Display", "none"); }
         if (Session["Rol_Usuario"].ToString() == "3") { }
         else { Response.Redirect("Inicio_de_Sesion.aspx?id=" + Session["Rol_Usuario"].ToString() + ""); }
+        
         this.RadioButton1.Attributes.Add("OnClick", "javascript:return Ofrecimiento1SI();");
         this.RadioButton2.Attributes.Add("OnClick", "javascript:return Ofrecimiento1NO();");
         this.RadioButton3.Attributes.Add("OnClick", "javascript:return Ofrecimiento2SI();");

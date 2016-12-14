@@ -221,8 +221,8 @@ function showTimer() {
                                     <li><a href="Consulta_Outbound_Admin.aspx">Consulta Oubound</a></li>
                                     <li><a href="Consulta_Cierre_Ciclo_Admin.aspx">Consulta Cierre Ciclo</a></li>
                                     <li><a href="Consulta_de_Gestion_Blending.aspx">Consulta Blending</a></li>
-                                     <li><a href="Consulta_Creacion_Dr_Admin.aspx">Consulta Solicitudes Creacion de Direccion</a></li>
-                                     <li><a href="Consulta_Gestion_Crear_Direccion.aspx">Consulta Interacciones Creacion de Direccion</a></li>
+                                     <li runat="server" id="Consulta_Solicitudes"><a href="Consulta_Creacion_Dr_Admin.aspx">Consulta Solicitudes Creacion de Direccion</a></li>
+                                     <li runat="server" id="Consulta_Interac"><a href="Consulta_Gestion_Crear_Direccion.aspx">Consulta Interacciones Creacion de Direccion</a></li>
                                 </ul>
                             </li>
                             <li class="yellow">

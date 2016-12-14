@@ -207,7 +207,7 @@
                                             <asp:TextBox CssClass="caja_de_texto" ID="Usuario_RR" runat="server"></asp:TextBox>
                                         </td>
                                         <td>
-                                            <asp:Label CssClass="texto_informativo" ID="Label6" runat="server" Text="Usuario Agendamiento:"></asp:Label><br/>
+                                            <asp:Label CssClass="texto_informativo" ID="Label6" runat="server" Text="Usuario Agendamiento:"></asp:Label><br />
                                             <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Agendamiento" runat="server"></asp:TextBox>
                                         </td>
                                         <td>
@@ -408,6 +408,22 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox207" runat="server" />
+                                                <asp:Label ID="Label289" AssociatedControlID="CheckBox207" runat="server"
+                                                    Text="Traslados - Crear Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox208" runat="server" />
+                                                <asp:Label ID="Label290" AssociatedControlID="CheckBox208" runat="server"
+                                                    Text="Direcciones Creadas" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </table>
                             </asp:Panel>
                             <asp:Panel CssClass="panel_informativo" ID="Panel7" runat="server" GroupingText="Accesos y Privilegios a Otorgar" Visible="false">
@@ -439,6 +455,20 @@
                                                 <asp:CheckBox ID="CheckBox12" runat="server" />
                                                 <asp:Label ID="Label28" AssociatedControlID="CheckBox12" runat="server"
                                                     Text="Gestión Inbound" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox209" runat="server" />
+                                                <asp:Label ID="Label291" AssociatedControlID="CheckBox209" runat="server"
+                                                    Text="Crear Direcciones" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox210" runat="server" />
+                                                <asp:Label ID="Label292" AssociatedControlID="CheckBox210" runat="server"
+                                                    Text="Seguimientos Traslados" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -586,6 +616,20 @@
                                                 <asp:CheckBox ID="CheckBox189" runat="server" />
                                                 <asp:Label ID="Label231" AssociatedControlID="CheckBox189" runat="server"
                                                     Text="Pieza Buen Servicio" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox211" runat="server" />
+                                                <asp:Label ID="Label293" AssociatedControlID="CheckBox211" runat="server"
+                                                    Text="Consulta Solicitudes Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox212" runat="server" />
+                                                <asp:Label ID="Label294" AssociatedControlID="CheckBox212" runat="server"
+                                                    Text="Consulta Interacciones Direccion" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -817,7 +861,22 @@
                                             </div>
                                         </td>
                                     </tr>
-
+                                    <tr>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox213" runat="server" />
+                                                <asp:Label ID="Label295" AssociatedControlID="CheckBox213" runat="server"
+                                                    Text="Traslados - Crear Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox214" runat="server" />
+                                                <asp:Label ID="Label296" AssociatedControlID="CheckBox214" runat="server"
+                                                    Text="Direcciones Creadas" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </table>
                             </asp:Panel>
                             <asp:Panel CssClass="panel_informativo" ID="Panel11" runat="server" GroupingText="Accesos y Privilegios a Otorgar" Visible="false">
@@ -849,6 +908,20 @@
                                                 <asp:CheckBox ID="CheckBox39" runat="server" />
                                                 <asp:Label ID="Label70" AssociatedControlID="CheckBox39" runat="server"
                                                     Text="Gestión Inbound" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox215" runat="server" />
+                                                <asp:Label ID="Label297" AssociatedControlID="CheckBox215" runat="server"
+                                                    Text="Crear Direcciones" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox216" runat="server" />
+                                                <asp:Label ID="Label298" AssociatedControlID="CheckBox216" runat="server"
+                                                    Text="Seguimientos Traslados" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -996,6 +1069,20 @@
                                                 <asp:CheckBox ID="CheckBox192" runat="server" />
                                                 <asp:Label ID="Label234" AssociatedControlID="CheckBox192" runat="server"
                                                     Text="Pieza Buen Servicio" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox217" runat="server" />
+                                                <asp:Label ID="Label299" AssociatedControlID="CheckBox217" runat="server"
+                                                    Text="Consulta Solicitudes Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox218" runat="server" />
+                                                <asp:Label ID="Label300" AssociatedControlID="CheckBox218" runat="server"
+                                                    Text="Consulta Interacciones Direccion" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -1267,7 +1354,22 @@
                                             </div>
                                         </td>
                                     </tr>
-
+                                    <tr>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox219" runat="server" />
+                                                <asp:Label ID="Label301" AssociatedControlID="CheckBox219" runat="server"
+                                                    Text="Traslados - Crear Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox220" runat="server" />
+                                                <asp:Label ID="Label302" AssociatedControlID="CheckBox220" runat="server"
+                                                    Text="Direcciones Creadas" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </table>
                             </asp:Panel>
                             <asp:Panel CssClass="panel_informativo" ID="Panel15" runat="server" GroupingText="Accesos y Privilegios a Otorgar" Visible="false">
@@ -1299,6 +1401,20 @@
                                                 <asp:CheckBox ID="CheckBox66" runat="server" />
                                                 <asp:Label ID="Label143" AssociatedControlID="CheckBox66" runat="server"
                                                     Text="Gestión Inbound" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox221" runat="server" />
+                                                <asp:Label ID="Label303" AssociatedControlID="CheckBox221" runat="server"
+                                                    Text="Crear Direcciones" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox222" runat="server" />
+                                                <asp:Label ID="Label304" AssociatedControlID="CheckBox222" runat="server"
+                                                    Text="Seguimientos Traslados" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -1446,6 +1562,20 @@
                                                 <asp:CheckBox ID="CheckBox195" runat="server" />
                                                 <asp:Label ID="Label237" AssociatedControlID="CheckBox195" runat="server"
                                                     Text="Pieza Buen Servicio" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox223" runat="server" />
+                                                <asp:Label ID="Label305" AssociatedControlID="CheckBox223" runat="server"
+                                                    Text="Consulta Solicitudes Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox224" runat="server" />
+                                                <asp:Label ID="Label306" AssociatedControlID="CheckBox224" runat="server"
+                                                    Text="Consulta Interacciones Direccion" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -1661,6 +1791,22 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox225" runat="server" />
+                                                <asp:Label ID="Label307" AssociatedControlID="CheckBox225" runat="server"
+                                                    Text="Traslados - Crear Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox226" runat="server" />
+                                                <asp:Label ID="Label308" AssociatedControlID="CheckBox226" runat="server"
+                                                    Text="Direcciones Creadas" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                    </tr>
 
                                 </table>
                             </asp:Panel>
@@ -1693,6 +1839,20 @@
                                                 <asp:CheckBox ID="CheckBox168" runat="server" />
                                                 <asp:Label ID="Label264" AssociatedControlID="CheckBox168" runat="server"
                                                     Text="Gestión Inbound" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox227" runat="server" />
+                                                <asp:Label ID="Label309" AssociatedControlID="CheckBox227" runat="server"
+                                                    Text="Crear Direcciones" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox228" runat="server" />
+                                                <asp:Label ID="Label310" AssociatedControlID="CheckBox228" runat="server"
+                                                    Text="Seguimientos Traslados" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -1840,6 +2000,20 @@
                                                 <asp:CheckBox ID="CheckBox198" runat="server" />
                                                 <asp:Label ID="Label240" AssociatedControlID="CheckBox198" runat="server"
                                                     Text="Pieza Buen Servicio" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox229" runat="server" />
+                                                <asp:Label ID="Label311" AssociatedControlID="CheckBox229" runat="server"
+                                                    Text="Consulta Solicitudes Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="SingleCheckbox">
+                                                <asp:CheckBox ID="CheckBox230" runat="server" />
+                                                <asp:Label ID="Label312" AssociatedControlID="CheckBox230" runat="server"
+                                                    Text="Consulta Interacciones Direccion" CssClass="CheckBoxLabel"></asp:Label>
                                             </div>
                                         </td>
                                     </tr>
@@ -2059,14 +2233,30 @@
                                     <div class="SingleCheckbox">
                                         <asp:CheckBox ID="CheckBox199" runat="server" />
                                         <asp:Label ID="Label241" AssociatedControlID="CheckBox199" runat="server"
-                                                    Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
+                                            Text="Claro Video" CssClass="CheckBoxLabel"></asp:Label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="SingleCheckbox">
                                         <asp:CheckBox ID="CheckBox205" runat="server" />
                                         <asp:Label ID="Label287" AssociatedControlID="CheckBox205" runat="server"
-                                                    Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
+                                            Text="Docsis y Overlap" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox231" runat="server" />
+                                        <asp:Label ID="Label313" AssociatedControlID="CheckBox231" runat="server"
+                                            Text="Traslados - Crear Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox232" runat="server" />
+                                        <asp:Label ID="Label314" AssociatedControlID="CheckBox232" runat="server"
+                                            Text="Direcciones Creadas" CssClass="CheckBoxLabel"></asp:Label>
                                     </div>
                                 </td>
                             </tr>
@@ -2101,6 +2291,20 @@
                                         <asp:CheckBox ID="CheckBox131" runat="server" />
                                         <asp:Label ID="Label211" AssociatedControlID="CheckBox131" runat="server"
                                             Text="Gestión Inbound" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox233" runat="server" />
+                                        <asp:Label ID="Label315" AssociatedControlID="CheckBox233" runat="server"
+                                            Text="Crear Direcciones" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox234" runat="server" />
+                                        <asp:Label ID="Label316" AssociatedControlID="CheckBox234" runat="server"
+                                            Text="Seguimientos Traslados" CssClass="CheckBoxLabel"></asp:Label>
                                     </div>
                                 </td>
                             </tr>
@@ -2234,23 +2438,37 @@
                                             Text="Reporte Ventas" CssClass="CheckBoxLabel"></asp:Label>
                                     </div>
                                 </td>
-                            <td>
-                                            <div class="SingleCheckbox">
-                                                <asp:CheckBox ID="CheckBox200" runat="server" />
-                                                <asp:Label ID="Label243" AssociatedControlID="CheckBox200" runat="server"
-                                                    Text="Actualizacion Usuarios Masivo" CssClass="CheckBoxLabel"></asp:Label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="SingleCheckbox">
-                                                <asp:CheckBox ID="CheckBox201" runat="server" />
-                                                <asp:Label ID="Label244" AssociatedControlID="CheckBox201" runat="server"
-                                                    Text="Pieza Buen Servicio" CssClass="CheckBoxLabel"></asp:Label>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox200" runat="server" />
+                                        <asp:Label ID="Label243" AssociatedControlID="CheckBox200" runat="server"
+                                            Text="Actualizacion Usuarios Masivo" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox201" runat="server" />
+                                        <asp:Label ID="Label244" AssociatedControlID="CheckBox201" runat="server"
+                                            Text="Pieza Buen Servicio" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox235" runat="server" />
+                                        <asp:Label ID="Label317" AssociatedControlID="CheckBox235" runat="server"
+                                            Text="Consulta Solicitudes Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="SingleCheckbox">
+                                        <asp:CheckBox ID="CheckBox236" runat="server" />
+                                        <asp:Label ID="Label318" AssociatedControlID="CheckBox236" runat="server"
+                                            Text="Consulta Interacciones Direccion" CssClass="CheckBoxLabel"></asp:Label>
+                                    </div>
+                                </td>
+                            </tr>
                         </table>
                     </asp:Panel>
                     <asp:Button CssClass="button" ID="Button1" runat="server" Text="Crear Usuario" OnClick="Crear_Usuario_Masivo_Click" />
