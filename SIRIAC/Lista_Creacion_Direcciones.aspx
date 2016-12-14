@@ -48,7 +48,7 @@
         function editar(obj) {
 
             var imageID = document.getElementById('imagen' + obj);
-            window.location.href = 'Depuracion_de_Casos.aspx?id=' + obj;
+            window.location.href = 'Actualizar_Casos_Traslados.aspx?id=' + obj;
         };
     </script>
     <asp:Panel CssClass="panel4" ID="Panel1" runat="server">
