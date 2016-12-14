@@ -33,6 +33,8 @@ namespace Entidades
         private string _Aliado_Apertura;
         private string _Nombre_Linea_Ingreso;
         private string _Nombre_Linea_Escalado;
+        private string _Fecha_Inicial;
+        private string _Fecha_Final;
 
         #endregion
         #region Constructor
@@ -62,6 +64,8 @@ namespace Entidades
             _Aliado_Apertura = string.Empty;
             _Nombre_Linea_Ingreso = string.Empty;
             _Nombre_Linea_Escalado = string.Empty;
+            Fecha_Inicial = string.Empty;
+            Fecha_Final = string.Empty;
         }
         #endregion
         #region Encapsulamientos
@@ -374,6 +378,32 @@ namespace Entidades
             set
             {
                 _Nombre_Linea_Escalado = value;
+            }
+        }
+
+        public string Fecha_Inicial
+        {
+            get
+            {
+                return _Fecha_Inicial;
+            }
+
+            set
+            {
+                _Fecha_Inicial = value;
+            }
+        }
+
+        public string Fecha_Final
+        {
+            get
+            {
+                return _Fecha_Final;
+            }
+
+            set
+            {
+                _Fecha_Final = value;
             }
         }
         #endregion

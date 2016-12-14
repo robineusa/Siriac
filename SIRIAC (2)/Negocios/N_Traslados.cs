@@ -39,5 +39,39 @@ namespace Negocios
         {
             return objTraslados.Consulta_Casos_Abiertos_Cuenta(pCuenta);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public DataSet Consulta_Admin_Solicitudes_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
+        {
+            return objTraslados.Consulta_Admin_Solicitudes_Crear_Direccion(pFecha_Inicial, pFecha_Final);
+        }
     }
 }
