@@ -335,5 +335,31 @@ namespace Datos
             return ds;
         }
 
+        public DataSet Consulta_Admin_Gestion_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Consulta_Admin_Gestion_Crear_Direccion]";
+                cmd.Parameters.AddWithValue("@Fecha_Inicial", pFecha_Inicial);
+                cmd.Parameters.AddWithValue("@Fecha_Final", pFecha_Final);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al consultar la gestion de creacion de direccion en la tabla de traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+
     }
 }

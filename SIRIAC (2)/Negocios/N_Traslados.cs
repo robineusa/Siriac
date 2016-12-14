@@ -73,5 +73,9 @@ namespace Negocios
         {
             return objTraslados.Consulta_Admin_Solicitudes_Crear_Direccion(pFecha_Inicial, pFecha_Final);
         }
+        public DataSet Consulta_Admin_Gestion_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
+        {
+            return objTraslados.Consulta_Admin_Gestion_Crear_Direccion(pFecha_Inicial, pFecha_Final);
+        }
     }
 }

@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Perfil_Administrador.master" AutoEventWireup="true" CodeFile="Consulta_Creacion_Dr_Admin.aspx.cs" Inherits="Consulta_Creacion_Dr_Admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Perfil_Administrador.master" AutoEventWireup="true" CodeFile="Consulta_Gestion_Crear_Direccion.aspx.cs" Inherits="Consulta_Gestion_Crear_Direccion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <script src="jquery/jquery-1.11.1.js"></script>
+      <script src="jquery/jquery-1.11.1.js"></script>
     <link href="Estilos/Style_Perfil_Asesor.css?1.0.0" rel="stylesheet" />
     <link href="Estilos/Style_Ingreso_Casos.css?1.0.0" rel="stylesheet" />
     <script src="Js/jquery.datetimepicker.full.js?1.0.0"></script>
     <link href="Estilos/jquery.datetimepicker.css?1.0.0" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <script type="text/javascript">
+     <script type="text/javascript">
         function si1() {
             alert('si');
         }
@@ -17,12 +17,12 @@
     <asp:Panel CssClass="panel4" ID="Panel1" runat="server">
         <div id="tab-container2">
             <ul class="tab-menu2">
-                <li id="html" class="active" onclick="otorgar_permisos()">CREACION DE DIRECCION</li>
+                <li id="html" class="active" onclick="otorgar_permisos()">INTERACCIONES CREACION DE DIRECCION</li>
             </ul>
             <div class="clear"></div>
             <div class="tab-top-border"></div>
             <div id="html-tab" class="tab-content active">
-                <h3 class="Titulos">CONSULTA SOLICITUDES CREACION DE DIRECCION</h3>
+                <h3 class="Titulos">CONSULTA INTERACCIONES CREACION DE DIRECCION</h3>
 
                 <asp:Panel CssClass="panel_informativo" ID="Panel3" runat="server" GroupingText="Ventana de tiempo para la consulta">
                     <table class="tabla">
@@ -77,8 +77,16 @@
                 <asp:GridView CssClass="mGrid" ID="CONSULTA_CIERRE_CICLO" runat="server" AutoGenerateColumns="False" AllowPaging="True"  OnPageIndexChanging="CONSULTA_CIERRE_CICLO_PageIndexChanging">
 
                         <Columns>
+                            <asp:BoundField DataField="ID_INTERACCION" HeaderText="ID INTERACCION" />
                             <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID TRASLADO" />
                             <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
+                            <asp:BoundField DataField="USUARIO_INTERACCION" HeaderText="USUARIO INTERACCION" />
+                            <asp:BoundField DataField="NOMBRE_LINEA_NOTA" HeaderText="NOMBRE LINEA_NOTA" />
+                            <asp:BoundField DataField="FECHA_INTERACCION" HeaderText="FECHA INTERACCION" />
+                            <asp:BoundField DataField="HORA_INTERACCION" HeaderText="HORA INTERACCION" />
+                            <asp:BoundField DataField="OBSERVACIONES" HeaderText="OBSERVACIONES" />
+                            <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
+                            <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
                             <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" />
                             <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
                             <asp:BoundField DataField="NODO" HeaderText="NODO" />
@@ -95,22 +103,18 @@
                             <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
                             <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA APERTURA" />
                             <asp:BoundField DataField="HORA_APERTURA" HeaderText="HORA APERTURA" />
+                            <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO APERTURA" />
+                            <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO APERTURA" />
                             <asp:BoundField DataField="FECHA_CIERRE" HeaderText="FECHA CIERRE" />
                             <asp:BoundField DataField="HORA_CIERRE" HeaderText="HORA CIERRE" />
-                            <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO APERTURA" />
                             <asp:BoundField DataField="USUARIO_CIERRE" HeaderText="USUARIO CIERRE" />
                             <asp:BoundField DataField="FECHA_ULTIMA_ACTUALIZACION" HeaderText="FECHA ULTIMA ACTUALIZACION" />
-                            <asp:BoundField DataField="USUARIO_ULTIMA_ACTUALIZACION" HeaderText="USUARIO ULTIMA ACTUALIZACION" />
                             <asp:BoundField DataField="HORA_ULTIMA_ACTUALIZACION" HeaderText="HORA ULTIMA ACTUALIZACION" />
-                            <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
-                            <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
-                            <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
+                            <asp:BoundField DataField="USUARIO_ULTIMA_ACTUALIZACION" HeaderText="USUARIO ULTIMA ACTUALIZACION" />
                             <asp:BoundField DataField="USUARIO_BACKOFFICE" HeaderText="USUARIO BACKOFFICE" />
-                            <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO APERTURA" />
                             <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                             <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
-                            
-                        </Columns>
+                            </Columns>
                     </asp:GridView>
                 <asp:TextBox ID="Fecha_Inicial" runat="server" Style="display: none"></asp:TextBox>
                 <asp:TextBox ID="Fecha_Final" runat="server" Style="display: none"></asp:TextBox>
@@ -126,6 +130,5 @@
             </div>
         </div>
     </asp:Panel>
-
 </asp:Content>
 
