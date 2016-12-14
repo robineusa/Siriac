@@ -46,6 +46,30 @@ namespace Datos
             }
             return Resultado;
         }
+        public DataSet Consultar_Traslados_Id(Int64 pId_Traslado)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Selecciona_Notas_Traslado]";
+                cmd.Parameters.AddWithValue("@Id_TRASLADO", pId_Traslado);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar las interacciones del caso", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
 
     }
 }

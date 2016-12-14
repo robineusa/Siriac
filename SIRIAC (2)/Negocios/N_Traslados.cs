@@ -39,5 +39,13 @@ namespace Negocios
         {
             return objTraslados.Consulta_Casos_Abiertos_Cuenta(pCuenta);
         }
+        public DataSet Consulta_Usuario_Back(double pId_Traslado)
+        {
+            return objTraslados.Consulta_Usuario_Back(pId_Traslado);
+        }
+        public int Actualiza_Usuario_Back(double Id_Ingreso, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualiza_Usuario_Back(Id_Ingreso, objE_Traslados);
+        }
     }
 }

@@ -202,5 +202,52 @@ namespace Datos
             }
             return ds;
         }
+        public DataSet Consulta_Usuario_Back(double pId_Traslado)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Usuario_Back_Traslados]";
+                cmd.Parameters.AddWithValue("@Id_Traslado", pId_Traslado);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar el backoficce del caso", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public int Actualiza_Usuario_Back(double Id_Ingreso, E_Traslados objE_Traslados)
+        {
+            int Resultado = 0;
+            SqlCommand cmd = new SqlCommand("Actualizar_Usuario_Back_Traslados", Conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id_Traslado", objE_Traslados.Id_Traslado);
+            cmd.Parameters.AddWithValue("@Usuario_Backoffice", objE_Traslados.Usuario_Backoffice);
+            try
+            {
+                Abrir_Conexion();
+                Resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al intentar actualizar el usuario del back", e);
+            }
+            finally
+            {
+                Cerrar_Conexion();
+                cmd.Dispose();
+            }
+            return Resultado;
+        }
     }
 }
