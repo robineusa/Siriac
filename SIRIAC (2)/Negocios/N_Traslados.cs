@@ -39,7 +39,7 @@ namespace Negocios
         {
             return objTraslados.Consulta_Casos_Abiertos_Cuenta(pCuenta);
         }
-<<<<<<< HEAD
+
         public DataSet Consulta_Usuario_Back(double pId_Traslado)
         {
             return objTraslados.Consulta_Usuario_Back(pId_Traslado);
@@ -47,37 +47,7 @@ namespace Negocios
         public int Actualiza_Usuario_Back(double Id_Ingreso, E_Traslados objE_Traslados)
         {
             return objTraslados.Actualiza_Usuario_Back(Id_Ingreso, objE_Traslados);
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
         public DataSet Consulta_Admin_Solicitudes_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
         {
             return objTraslados.Consulta_Admin_Solicitudes_Crear_Direccion(pFecha_Inicial, pFecha_Final);
@@ -85,7 +55,6 @@ namespace Negocios
         public DataSet Consulta_Admin_Gestion_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
         {
             return objTraslados.Consulta_Admin_Gestion_Crear_Direccion(pFecha_Inicial, pFecha_Final);
->>>>>>> origin/master
         }
     }
 }

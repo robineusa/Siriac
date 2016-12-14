@@ -202,119 +202,9 @@ namespace Datos
             }
             return ds;
         }
-<<<<<<< HEAD
+
         public DataSet Consulta_Usuario_Back(double pId_Traslado)
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public DataSet Consulta_Admin_Solicitudes_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
->>>>>>> origin/master
-        {
+            {
             SqlCommand cmd = new SqlCommand();
             DataSet ds = new DataSet();
             SqlDataAdapter dt = new SqlDataAdapter();
@@ -323,23 +213,15 @@ namespace Datos
                 Abrir_Conexion();
                 cmd.Connection = Conexion;
                 cmd.CommandType = CommandType.StoredProcedure;
-<<<<<<< HEAD
+
                 cmd.CommandText = "[dbo].[Usuario_Back_Traslados]";
                 cmd.Parameters.AddWithValue("@Id_Traslado", pId_Traslado);
-=======
-                cmd.CommandText = "[dbo].[Consulta_Admin_Solicitud_Crear_Direccion]";
-                cmd.Parameters.AddWithValue("@Fecha_Inicial", pFecha_Inicial);
-                cmd.Parameters.AddWithValue("@Fecha_Final", pFecha_Final);
->>>>>>> origin/master
                 dt.SelectCommand = cmd;
                 dt.Fill(ds);
             }
             catch (Exception e)
-<<<<<<< HEAD
+
             { throw new Exception("Error al seleccionar el backoficce del caso", e); }
-=======
-            { throw new Exception("Error al consultar las solicitudes de creacion de direccion en la tabla de traslados", e); }
->>>>>>> origin/master
             finally
             {
                 Conexion.Close();
@@ -347,7 +229,7 @@ namespace Datos
             }
             return ds;
         }
-<<<<<<< HEAD
+
         public int Actualiza_Usuario_Back(double Id_Ingreso, E_Traslados objE_Traslados)
         {
             int Resultado = 0;
@@ -371,7 +253,7 @@ namespace Datos
             }
             return Resultado;
         }
-=======
+
 
         public DataSet Consulta_Admin_Gestion_Crear_Direccion(string pFecha_Inicial, string pFecha_Final)
         {
@@ -399,6 +281,5 @@ namespace Datos
             return ds;
         }
 
->>>>>>> origin/master
     }
 }
