@@ -62,6 +62,23 @@
             <div id="Primer_div">
                 <div id="html-tab" class="tab-content active">
                     <h3 class="Titulos">BOLSA DE CASOS ESCALADOS A LA CÉLULA PARA LA CREACIÓN DE DIRECCIONES</h3>
+                    <table>
+                       <tr>
+                           <td>
+                               <p class="etiquetas">Seleccione Estado para el filtro:</p>
+                               <asp:DropDownList ID="Estado_para_Buscar" runat="server" CssClass="dropdown2">
+                                   <asp:ListItem>--SELECCIONE--</asp:ListItem>
+                                   <asp:ListItem>EN GESTION</asp:ListItem>
+                                   <asp:ListItem>FINALIZADA</asp:ListItem>
+                                   <asp:ListItem>INGRESADA</asp:ListItem>
+                                   <asp:ListItem>NO INGRESADA</asp:ListItem>
+                                   <asp:ListItem>PENDIENTE CONTACTO</asp:ListItem>
+                                   <asp:ListItem>PENDIENTE POR CREAR</asp:ListItem>
+                               </asp:DropDownList>
+                           </td>
+                           <td><asp:Button runat="server" CssClass="button" Text="Buscar" id="Buscar_Estados" OnClick="Buscar_Estados_Click"/></td>
+                       </tr>
+                    </table>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Label ID="Label1" runat="server" Text="Label" Style="display: none"></asp:Label>
@@ -80,7 +97,6 @@
                                     <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" ItemStyle-Width="500" ControlStyle-Width="500" ControlStyle-CssClass="textbox3"/>
                                     <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
                                     <asp:BoundField DataField="NODO" HeaderText="NODO" />
-                                    <asp:BoundField DataField="RED" HeaderText="RED" />
                                     <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
                                     <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
                                     <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
@@ -88,7 +104,9 @@
                                     <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
                                     <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
                                     <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
-                                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                    <asp:BoundField DataField="USUARIO_BACKOFFICE" HeaderText="USUARIO BACKOFFICE" />
+                                    <asp:BoundField DataField="ESTADO_BACKOFFICE" HeaderText="ESTADO BACKOFFICE" />
+                                    <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
                                     <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
@@ -133,23 +151,24 @@
                                                 </a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID TRASLADO" />
-                                        <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
-                                        <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" />
-                                        <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
-                                        <asp:BoundField DataField="NODO" HeaderText="NODO" />
-                                        <asp:BoundField DataField="RED" HeaderText="RED" />
-                                        <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
-                                        <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
-                                        <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
-                                        <asp:BoundField DataField="HORA_APERTURA" HeaderText="HORA DE APERTURA" />
-                                        <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
-                                        <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
-                                        <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
-                                        <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
-                                        <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
-                                        <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
-                                        <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
+                                    <asp:BoundField DataField="ID_TRASLADO" HeaderText="ID TRASLADO" />
+                                    <asp:BoundField DataField="CUENTA_CLIENTE" HeaderText="CUENTA CLIENTE" />
+                                    <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" ItemStyle-Width="500" ControlStyle-Width="500" ControlStyle-CssClass="textbox3"/>
+                                    <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
+                                    <asp:BoundField DataField="NODO" HeaderText="NODO" />
+                                    <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
+                                    <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
+                                    <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
+                                    <asp:BoundField DataField="HORA_APERTURA" HeaderText="HORA DE APERTURA" />
+                                    <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
+                                    <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                                    <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
+                                    <asp:BoundField DataField="USUARIO_BACKOFFICE" HeaderText="USUARIO BACKOFFICE" />
+                                    <asp:BoundField DataField="ESTADO_BACKOFFICE" HeaderText="ESTADO BACKOFFICE" />
+                                    <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
+                                    <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
+                                    <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
+                                    <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
                                     </Columns>
                                 </asp:GridView>
                             </asp:Panel>

@@ -112,6 +112,10 @@
                             <asp:BoundField DataField="HORA_ULTIMA_ACTUALIZACION" HeaderText="HORA ULTIMA ACTUALIZACION" />
                             <asp:BoundField DataField="USUARIO_ULTIMA_ACTUALIZACION" HeaderText="USUARIO ULTIMA ACTUALIZACION" />
                             <asp:BoundField DataField="USUARIO_BACKOFFICE" HeaderText="USUARIO BACKOFFICE" />
+                            <asp:BoundField DataField="FECHA_INICIO_GESTION_BACKOFFICE" HeaderText="FECHA INICIO GESTION BACKOFFICE" />
+                            <asp:BoundField DataField="ESTADO_BACKOFFICE" HeaderText="ESTADO BACKOFFICE" />
+                            <asp:BoundField DataField="USUARIO_GESTION_OUTBOUND" HeaderText="USUARIO GESTION OUTBOUND" />
+                            <asp:BoundField DataField="FECHA_INICIO_GESTION_OUTBOUND" HeaderText="FECHA INICIO GESTION OUTBOUND" />
                             <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                             <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
                             </Columns>

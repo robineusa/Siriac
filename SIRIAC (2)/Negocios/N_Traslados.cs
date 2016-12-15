@@ -68,6 +68,33 @@ namespace Negocios
         {
             return objTraslados.Actualizar_Traslado_Gestion(pAccion, objE_Traslados);
         }
-
-    }
+        public DataSet Consultar_Nodo_Existente(string pNodo)
+        {
+            return objTraslados.Consultar_Nodo_Existente(pNodo);
+        }
+        public int Actualiza_Usuario_Back_Gestion(double Id_Ingreso, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualiza_Usuario_Back_Gestion(Id_Ingreso, objE_Traslados);
+        }
+        public DataSet Consulta_Casos_Escalados_Traslados_Por_Estado(string pEstado)
+        {
+            return objTraslados.Consulta_Casos_Escalados_Traslados_Por_Estado(pEstado);
+        }
+        public int Actualiza_Usuario_Outbound_Inicio(double Id_Ingreso, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualiza_Usuario_Outbound_Inicio(Id_Ingreso, objE_Traslados);
+        }
+        public int Actualiza_Usuario_Outbound_Gestion(double Id_Ingreso, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualiza_Usuario_Outbound_Gestion(Id_Ingreso, objE_Traslados);
+        }
+        public DataSet Consulta_Usuario_Outbound(double pId_Traslado)
+        {
+            return objTraslados.Consulta_Usuario_Outbound(pId_Traslado);
+        }
+        public int Actualizar_Traslado_Gestion_Outbound(string pAccion, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualizar_Traslado_Gestion_Outbound(pAccion, objE_Traslados);
+        }
+        }
 }

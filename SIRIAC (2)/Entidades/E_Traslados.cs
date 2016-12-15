@@ -14,7 +14,6 @@ namespace Entidades
         private string _Direccion;
         private string _Estrato;
         private string _Nodo;
-        private string _Red;
         private string _Telefono_Celular;
         private string _Telefono_Fijo;
         private string _Fecha_Apertura;
@@ -29,7 +28,11 @@ namespace Entidades
         private string _Razon;
         private string _Subrazon;
         private string _Estado;
+        private string _Estado_Backoffice;
         private string _Usuario_Backoffice;
+        private string _Fecha_Inicio_Gestion_Back;
+        private string _Usuario_Gestion_Outbound;
+        private string _Inicio_Gestion_Outbound;
         private string _Aliado_Apertura;
         private string _Nombre_Linea_Ingreso;
         private string _Nombre_Linea_Escalado;
@@ -45,7 +48,6 @@ namespace Entidades
             _Direccion = string.Empty;
             _Estrato = string.Empty;
             _Nodo = string.Empty;
-            _Red = string.Empty;
             _Telefono_Celular = string.Empty;
             _Telefono_Fijo = string.Empty;
             _Fecha_Apertura = string.Empty;
@@ -60,7 +62,11 @@ namespace Entidades
             _Razon = string.Empty;
             _Subrazon = string.Empty;
             _Estado = string.Empty;
+            Estado_Backoffice = string.Empty;
             _Usuario_Backoffice = string.Empty;
+            Fecha_Inicio_Gestion_Back = string.Empty;
+            Usuario_Gestion_Outbound = string.Empty;
+            Inicio_Gestion_Outbound = string.Empty;
             _Aliado_Apertura = string.Empty;
             _Nombre_Linea_Ingreso = string.Empty;
             _Nombre_Linea_Escalado = string.Empty;
@@ -134,19 +140,7 @@ namespace Entidades
             }
         }
 
-        public string Red
-        {
-            get
-            {
-                return _Red;
-            }
-
-            set
-            {
-                _Red = value;
-            }
-        }
-
+     
         public string Telefono_Celular
         {
             get
@@ -404,6 +398,58 @@ namespace Entidades
             set
             {
                 _Fecha_Final = value;
+            }
+        }
+
+        public string Estado_Backoffice
+        {
+            get
+            {
+                return _Estado_Backoffice;
+            }
+
+            set
+            {
+                _Estado_Backoffice = value;
+            }
+        }
+
+        public string Fecha_Inicio_Gestion_Back
+        {
+            get
+            {
+                return _Fecha_Inicio_Gestion_Back;
+            }
+
+            set
+            {
+                _Fecha_Inicio_Gestion_Back = value;
+            }
+        }
+
+        public string Usuario_Gestion_Outbound
+        {
+            get
+            {
+                return _Usuario_Gestion_Outbound;
+            }
+
+            set
+            {
+                _Usuario_Gestion_Outbound = value;
+            }
+        }
+
+        public string Inicio_Gestion_Outbound
+        {
+            get
+            {
+                return _Inicio_Gestion_Outbound;
+            }
+
+            set
+            {
+                _Inicio_Gestion_Outbound = value;
             }
         }
         #endregion

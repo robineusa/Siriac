@@ -46,9 +46,13 @@ public partial class Depuracion_Traslados : System.Web.UI.Page
         {
             var USUARIORR = dt.Tables[0].Rows[0]["USUARIO_BACKOFFICE"].ToString();
             var USUARIO_LOGUEADO = Session["Usuario_Logueado"].ToString();
-            if (USUARIORR == "" || USUARIORR == USUARIO_LOGUEADO)
+            if (USUARIORR == "")
             {
-                Actualiza_Usuario_Back(); 
+                Actualiza_Usuario_Back_Inicio();
+            }
+            else if (USUARIORR == USUARIO_LOGUEADO)
+            {
+                Actualiza_Usuario_Back_Gestion();
             }
             else
             {
@@ -62,12 +66,27 @@ public partial class Depuracion_Traslados : System.Web.UI.Page
 
         }
     }
-    protected void Actualiza_Usuario_Back()
+    protected void Actualiza_Usuario_Back_Inicio()
     {
         var Guardar_Datos = -1;
         Obj_Entidad_Traslados.Id_Traslado = Convert.ToDouble(Id_Traslado.Text);
         Obj_Entidad_Traslados.Usuario_Backoffice = Session["Usuario_Logueado"].ToString();
         Guardar_Datos = Obj_Neg_Traslados.Actualiza_Usuario_Back(Obj_Entidad_Traslados.Id_Traslado, Obj_Entidad_Traslados);
+        if (Guardar_Datos != -1)
+        {
+            Cargar_Informacion_del_Caso();
+        }
+        else
+        {
+
+        }
+    }
+    protected void Actualiza_Usuario_Back_Gestion()
+    {
+        var Guardar_Datos = -1;
+        Obj_Entidad_Traslados.Id_Traslado = Convert.ToDouble(Id_Traslado.Text);
+        Obj_Entidad_Traslados.Usuario_Backoffice = Session["Usuario_Logueado"].ToString();
+        Guardar_Datos = Obj_Neg_Traslados.Actualiza_Usuario_Back_Gestion(Obj_Entidad_Traslados.Id_Traslado, Obj_Entidad_Traslados);
         if (Guardar_Datos != -1)
         {
             Cargar_Informacion_del_Caso();
@@ -126,7 +145,7 @@ public partial class Depuracion_Traslados : System.Web.UI.Page
         Obj_Entidad_Notas_Traslados.Usuario = Session["Usuario_Logueado"].ToString();
         Obj_Entidad_Notas_Traslados.Nombre_Linea_Nota = Session["Nombre_Linea_Usuario"].ToString();
         Obj_Entidad_Notas_Traslados.Nota = Observaciones.Text.ToUpper();
-        Obj_Entidad_Notas_Traslados.Razon = "GESTION";
+        Obj_Entidad_Notas_Traslados.Razon = "GESTION BACKOFFICE";
         Obj_Entidad_Notas_Traslados.Subrazon = Convert.ToString(Gestion_Realizada.SelectedItem);
         Obj_Entidad_Notas_Traslados.Estado = Convert.ToString(Estado_del_Caso.SelectedItem);
     }
@@ -181,23 +200,7 @@ public partial class Depuracion_Traslados : System.Web.UI.Page
             Alerta.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
         }
     }
-    protected void Actualizar_Caso_Cierre()
-    {
-        Controles_A_Objeto_Actualizar_Caso();
-        Obj_Entidad_Traslados.Id_Traslado = Convert.ToInt64(Id_Traslado.Text);
-        var Guardar_Datos = -1;
-        Guardar_Datos = Obj_Neg_Traslados.Actualizar_Traslado_Cierre("ACTUALIZAR", Obj_Entidad_Traslados);
-        if (Guardar_Datos != -1)
-        {
-            Guardar_Nota_Caso();
-        }
-        else
-        {
-            Guardar_Interaccion.Enabled = true;
-            Alerta.Text = "No se pudo insertar la transaccion, por favor intentelo nuevamente";
-            Alerta.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
-        }
-        }
+    
     protected void Actualizar_Caso_Gestion()
     {
 
@@ -218,29 +221,18 @@ public partial class Depuracion_Traslados : System.Web.UI.Page
     }
     protected void Generar_Transaccion()
     {
-        if (Convert.ToString(Estado_del_Caso.SelectedItem) == "EN GESTION")
-        {
+       
             Actualizar_Caso_Gestion();
            
 
-        }
-        else
-            if (Convert.ToString(Estado_del_Caso.SelectedItem) == "FINALIZADO")
-        {
-            Actualizar_Caso_Cierre();
-           
-        }
-        else
-        {
-
-        }
+       
     }
     protected void Controles_A_Objeto_Actualizar_Caso()
     {
         Obj_Entidad_Traslados.Id_Traslado = Convert.ToInt64(Id_Traslado.Text);
         Obj_Entidad_Traslados.Usuario_Cierre = Session["Usuario_Logueado"].ToString();
         Obj_Entidad_Traslados.Usuario_Ultima_Actualizacion = Session["Usuario_Logueado"].ToString();
-        Obj_Entidad_Traslados.Razon = "GESTION";
+        Obj_Entidad_Traslados.Razon = "GESTION BACKOFFICE";
         Obj_Entidad_Traslados.Subrazon = Convert.ToString(Gestion_Realizada.SelectedItem);
         Obj_Entidad_Traslados.Estado = Convert.ToString(Estado_del_Caso.SelectedItem);
 

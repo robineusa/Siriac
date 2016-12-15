@@ -82,7 +82,6 @@
                                     <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" />
                                     <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
                                     <asp:BoundField DataField="NODO" HeaderText="NODO" />
-                                    <asp:BoundField DataField="RED" HeaderText="RED" />
                                     <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
                                     <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
                                     <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
@@ -90,7 +89,7 @@
                                     <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
                                     <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
                                     <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
-                                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                    <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
                                     <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />
@@ -140,7 +139,6 @@
                                     <asp:BoundField DataField="DIRECCION" HeaderText="DIRECCION" />
                                     <asp:BoundField DataField="ESTRATO" HeaderText="ESTRATO" />
                                     <asp:BoundField DataField="NODO" HeaderText="NODO" />
-                                    <asp:BoundField DataField="RED" HeaderText="RED" />
                                     <asp:BoundField DataField="TELEFONO_CELULAR" HeaderText="TELEFONO CELULAR" />
                                     <asp:BoundField DataField="TELEFONO_FIJO" HeaderText="TELEFONO FIJO" />
                                     <asp:BoundField DataField="FECHA_APERTURA" HeaderText="FECHA DE APERTURA" />
@@ -148,7 +146,7 @@
                                     <asp:BoundField DataField="USUARIO_APERTURA" HeaderText="USUARIO DE APERTURA" />
                                     <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
                                     <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
-                                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                    <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
                                     <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO DE APERTURA" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                                     <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />

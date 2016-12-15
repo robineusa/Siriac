@@ -43,6 +43,8 @@
                                                 <asp:BoundField DataField="NOMBRE_LINEA_NOTA" HeaderText="NOMBRE LINEA INTERACCION"></asp:BoundField>
                                                 <asp:BoundField DataField="FECHA_NOTA" HeaderText="FECHA INTERACCION" />
                                                 <asp:BoundField DataField="HORA_NOTA" HeaderText="HORA INTERACCION" />
+                                                <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                                                <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
                                                 <asp:BoundField DataField="NOTA" HeaderText="OBSERVACIONES"></asp:BoundField>
                                                 <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
                                             </Columns>
@@ -200,28 +202,15 @@
                                      <p class="texto_informativo">Gestión Realizada:</p>
                                         <asp:DropDownList ID="Gestion_Realizada" CssClass="dropdown3" runat="server">
                                             <asp:ListItem>--SELECCIONE--</asp:ListItem>
-                                            <asp:ListItem>CIUDAD NO ESTA EN POLITICAS ACTUALES DTH</asp:ListItem>
-                                            <asp:ListItem>CUENTA PYMES</asp:ListItem>
-                                            <asp:ListItem>DIRECCION ESTA ASOCIADA A UNA MATRIZ</asp:ListItem>
-                                            <asp:ListItem>DIRECCION ESTABA CREADA EN EL SISTEMA</asp:ListItem>
-                                            <asp:ListItem>DIRECCION FUERA DE COBERTURA</asp:ListItem>
-                                            <asp:ListItem>DIRECCION INCOMPLETA</asp:ListItem>
-                                            <asp:ListItem>HHPP REQUIERE CREACION DE MATRIZ</asp:ListItem>
-                                            <asp:ListItem>INTERACCION INBOUND</asp:ListItem>
-                                            <asp:ListItem>MIGRACION</asp:ListItem>
-                                            <asp:ListItem>NO COINCIDE COM Y DIV CON LA RED</asp:ListItem>
-                                            <asp:ListItem>NO INFORMA SI EL HHPP ES CASA O PISO</asp:ListItem>
-                                            <asp:ListItem>SE CREA DIRECCION CORRECTAMENTE</asp:ListItem>
-                                            <asp:ListItem>VENTA NUEVA</asp:ListItem>
+                                           
                                             </asp:DropDownList>
                                     </td>
                                      <td>
                                      <p class="texto_informativo">Estado del Caso:</p>
                                          <asp:DropDownList ID="Estado_del_Caso" CssClass="dropdown1" runat="server">
                                              <asp:ListItem>--SELECCIONE--</asp:ListItem>
-                                             <asp:ListItem>EN GESTION</asp:ListItem>
+                                             <asp:ListItem>PENDIENTE CONTACTO</asp:ListItem>
                                              <asp:ListItem>FINALIZADO</asp:ListItem>
-                                             <asp:ListItem>PENDIENTE POR CREAR</asp:ListItem>
                                          </asp:DropDownList>
                                     </td>
                                 </tr>

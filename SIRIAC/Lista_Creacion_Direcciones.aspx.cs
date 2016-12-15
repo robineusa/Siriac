@@ -76,4 +76,22 @@ public partial class Lista_Creaciojn_Direcciones : System.Web.UI.Page
         }
         else { }
     }
+
+    protected void Buscar_Estados_Click(object sender, EventArgs e)
+    {
+        DataSet dt = new DataSet();
+        Obj_Entidad_Traslados.Estado = Convert.ToString(Estado_para_Buscar.SelectedItem);
+        dt = Obj_Neg_Traslados.Consulta_Casos_Escalados_Traslados_Por_Estado(Obj_Entidad_Traslados.Estado);
+
+        if (dt.Tables[0].Rows.Count > 0)
+        {
+            CASOS_ESCALADOS_TRASLADOS.DataSource = dt.Tables[0];
+            CASOS_ESCALADOS_TRASLADOS.DataBind();
+        }
+        else
+        {
+            CASOS_ESCALADOS_TRASLADOS.DataSource = null;
+            CASOS_ESCALADOS_TRASLADOS.DataBind();
+        }
+    }
 }

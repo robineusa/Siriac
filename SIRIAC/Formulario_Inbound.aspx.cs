@@ -5355,12 +5355,11 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         Obj_Entidad_Traslados_CD.Cuenta_Cliente =Convert.ToInt64(TCD_Cuenta.Text);
         Obj_Entidad_Traslados_CD.Estrato = TCD_Estrato.Text.ToUpper();
         Obj_Entidad_Traslados_CD.Nodo = TCD_Nodo.Text.Trim().ToUpper();
-        Obj_Entidad_Traslados_CD.Red = TCD_Red.Text.Trim().ToUpper();
         Obj_Entidad_Traslados_CD.Telefono_Fijo = TCD_Telefono_Fijo.Text;
         Obj_Entidad_Traslados_CD.Telefono_Celular = TCD_Telefono_Celular.Text;
         Obj_Entidad_Traslados_CD.Usuario_Apertura = Session["Usuario_Logueado"].ToString();
         Obj_Entidad_Traslados_CD.Usuario_Ultima_Actualizacion = Session["Usuario_Logueado"].ToString();
-        Obj_Entidad_Traslados_CD.Razon = "SOLICITUD";
+        Obj_Entidad_Traslados_CD.Razon = "SOLICITUD INBOUND";
         Obj_Entidad_Traslados_CD.Subrazon = "CREACION DE DIRECCION";
         Obj_Entidad_Traslados_CD.Usuario_Backoffice = "";
         Obj_Entidad_Traslados_CD.Aliado_Apertura = Session["Aliado_Usuario"].ToString();
@@ -5389,7 +5388,6 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         TCD_Cuenta.Text = limpiar;
         TCD_Estrato.Text = limpiar;
         TCD_Nodo.Text = limpiar;
-        TCD_Red.Text = limpiar;
         TCD_Telefono_Celular.Text = limpiar;
         TCD_Telefono_Fijo.Text = limpiar;
         TCDB_Tipo_de_Via.ClearSelection();
@@ -5470,7 +5468,7 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         {
             Obj_Entidad_Notas_Traslados.Nota = TCDI_Observaciones.Text.ToUpper();
         }
-       Obj_Entidad_Notas_Traslados.Razon = "SOLICITUD";
+       Obj_Entidad_Notas_Traslados.Razon = "SOLICITUD INBOUND";
        Obj_Entidad_Notas_Traslados.Subrazon = "CREACION DE DIRECCION";
        Obj_Entidad_Notas_Traslados.Estado = "PENDIENTE POR CREAR";
     }
@@ -5505,14 +5503,44 @@ public partial class Formulario_Inbound : System.Web.UI.Page
 
             if (dt.Tables[0].Rows.Count > 0)
             {
-                //Alerta_Cuenta_CD_Traslados.Visible = true;
-                Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
+            //Alerta_Cuenta_CD_Traslados.Visible = true;
+            Alerta_Cuenta_CD_Traslados.Text = "Esta cuenta ya tiene un caso para crear dirección escalado, revise la lista de casos para validar el estado del tramite";
+            Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
             }
             else {
             //Alerta_Cuenta_CD_Traslados.Visible = false;
             Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:none;color :red; font-size:16px;font-family:'Century Gothic';");
         }
         
+    }
+
+    protected void TCD_Nodo_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            DataSet dt = new DataSet();
+
+            Obj_Entidad_Traslados_CD.Nodo = TCD_Nodo.Text.Trim();
+            dt = Obj_Negocios_Traslados_CD.Consultar_Nodo_Existente(Obj_Entidad_Traslados_CD.Nodo);
+
+            if (dt.Tables[0].Rows.Count > 0)
+            {
+                Alerta_Cuenta_CD_Traslados.Text = "";
+                //Alerta_Cuenta_CD_Traslados.Visible = false;
+                Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:none;color :red; font-size:16px;font-family:'Century Gothic';");
+            }
+            else
+            {
+                Alerta_Cuenta_CD_Traslados.Text = "El nodo ingresado no se encuentra creado en la base de datos, por favor verifíquelo o reporte su creación.";
+                //Alerta_Cuenta_CD_Traslados.Visible = false;
+                Alerta_Cuenta_CD_Traslados.Attributes.Add("Style", "display:block;color :red; font-size:16px;font-family:'Century Gothic';");
+
+            }
+        }
+        catch (Exception exb)
+        {
+            throw new Exception("Error al Seleccionar el nodo existente", exb);
+        }
     }
 }
 

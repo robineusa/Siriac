@@ -105,7 +105,12 @@
                             <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
                             <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
                             <asp:BoundField DataField="ESTADO_CASO" HeaderText="ESTADO CASO" />
+                            <asp:BoundField DataField="ESTADO_BACKOFFICE" HeaderText="ESTADO BACKOFFICE" />
                             <asp:BoundField DataField="USUARIO_BACKOFFICE" HeaderText="USUARIO BACKOFFICE" />
+                            <asp:BoundField DataField="ESTADO_BACKOFFICE" HeaderText="ESTADO BACKOFFICE" />
+                            <asp:BoundField DataField="FECHA_INICIO_GESTION_BACKOFFICE" HeaderText="FECHA INICIO GESTION BACKOFFICE" />
+                             <asp:BoundField DataField="USUARIO_GESTION_OUTBOUND" HeaderText="USUARIO GESTION OUTBOUND" />
+                             <asp:BoundField DataField="FECHA_INICIO_GESTION_OUTBOUND" HeaderText="FECHA INICIO GESTION OUTBOUND" />
                             <asp:BoundField DataField="ALIADO_APERTURA" HeaderText="ALIADO APERTURA" />
                             <asp:BoundField DataField="NOMBRE_LINEA_INGRESO" HeaderText="NOMBRE LINEA INGRESO" />
                             <asp:BoundField DataField="NOMBRE_LINEA_ESCALADO" HeaderText="NOMBRE LINEA ESCALADO" />

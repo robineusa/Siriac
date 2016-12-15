@@ -4751,11 +4751,7 @@
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Nodo:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Nodo" runat="server" Placeholder="Ingrese el nodo" style="width:150px;"></asp:TextBox>
-                                </td>
-                                  <td>
-                                    <p class="etiquetas_Ofrecimiento2">Red:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Red" runat="server" Placeholder="Ingrese el tipo de red" style="width:150px;"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Nodo" runat="server" Placeholder="Ingrese el nodo" style="width:150px;" AutoPostBack="true" OnTextChanged="TCD_Nodo_TextChanged"></asp:TextBox>
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Teléfono Fijo:</p>
@@ -4767,7 +4763,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <asp:Label ID="Alerta_Cuenta_CD_Traslados" runat="server" Style="display:none;color :red; font-size:16px;font-family:'Century Gothic';">Esta cuenta ya tiene un caso para crear dirección escalado, revise la lista de casos para validar el estado del tramite</asp:Label>
+                        <asp:Label ID="Alerta_Cuenta_CD_Traslados" runat="server" Style="display:none;color :red; font-size:16px;font-family:'Century Gothic';"></asp:Label>
                         </ContentTemplate></asp:UpdatePanel>
                     </div>
                     <asp:UpdatePanel runat="server">

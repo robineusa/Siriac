@@ -44,6 +44,8 @@
                                                 <asp:BoundField DataField="NOMBRE_LINEA_NOTA" HeaderText="NOMBRE LINEA INTERACCION"></asp:BoundField>
                                                 <asp:BoundField DataField="FECHA_NOTA" HeaderText="FECHA INTERACCION" />
                                                 <asp:BoundField DataField="HORA_NOTA" HeaderText="HORA INTERACCION" />
+                                                <asp:BoundField DataField="RAZON" HeaderText="RAZON" />
+                                                <asp:BoundField DataField="SUBRAZON" HeaderText="SUBRAZON" />
                                                 <asp:BoundField DataField="NOTA" HeaderText="OBSERVACIONES"></asp:BoundField>
                                                 <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
                                             </Columns>
@@ -75,23 +77,23 @@
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Fecha Creación:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Creacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Creacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Hora Creación:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Creacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Creacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Usuario Creación:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Creacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Creacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Aliado Creación:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Aliado_Creacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Aliado_Creacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Nombre Linea Ingreso:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Linea_Ingreso" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Linea_Ingreso" runat="server"></asp:TextBox>
                                     </td>
 
                                 </tr>
@@ -103,31 +105,31 @@
                                 <tr>
                                     <td>
                                         <p class="texto_informativo">Cuenta del Cliente:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Cuenta_Cliente" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Cuenta_Cliente" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Teléfono Celular:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Celular" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Celular" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Teléfono Fijo:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Fijo" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Telefono_Fijo" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Fecha Actualización:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Actualizacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Fecha_Actualizacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Usuario Actualización:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Actualizacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Usuario_Actualizacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Hora Actualización:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Actualizacion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Hora_Actualizacion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Estado del Caso:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Estado_Actual_del_Caso" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Estado_Actual_del_Caso" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                 </table>
@@ -137,56 +139,56 @@
                                 <tr>
                                     <td colspan="7">
                                         <p class="texto_informativo">Dirección a Crear:</p>
-                                        <asp:TextBox CssClass="textbox_buscar" ID="Direccion" runat="server" Width="900px" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="textbox_buscar" ID="Direccion" runat="server" Width="900px" Style="font-size:10px;font-family:'Century Gothic';padding-left:5px;"></asp:TextBox>
                                     </td>
                                     </tr>
                                 <tr>
                                     <td>
                                         <p class="texto_informativo">Estrato:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Estrato" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Estrato" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Nodo:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Nodo" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Nodo" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Nombre del Nodo:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Nodo" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Nombre_Nodo" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Código División:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="DIV" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="DIV" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Código Comunidad:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="COM" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="COM" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Divisional:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Divisional" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Divisional" runat="server"></asp:TextBox>
                                     </td>
                                      <td>
                                         <p class="texto_informativo">Área:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Area" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Area" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                    
                                     <td>
                                         <p class="texto_informativo">Distrito:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Distrito" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Distrito" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Unidad de Gestión:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Unidad_Gestion" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Unidad_Gestion" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Estado del Nodo:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Estado_Nodo" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Estado_Nodo" runat="server"></asp:TextBox>
                                     </td>
                                     <td>
                                         <p class="texto_informativo">Red:</p>
-                                        <asp:TextBox CssClass="caja_de_texto" ID="Red" runat="server" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox CssClass="caja_de_texto" ID="Red" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                
@@ -220,7 +222,8 @@
                                          <asp:DropDownList ID="Estado_del_Caso" CssClass="dropdown1" runat="server">
                                              <asp:ListItem>--SELECCIONE--</asp:ListItem>
                                              <asp:ListItem>EN GESTION</asp:ListItem>
-                                             <asp:ListItem>FINALIZADO</asp:ListItem>
+                                             <asp:ListItem>NO INGRESADA</asp:ListItem>
+                                             <asp:ListItem>INGRESADA</asp:ListItem>
                                          </asp:DropDownList>
                                     </td>
                                 </tr>
