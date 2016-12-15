@@ -226,7 +226,7 @@ public partial class Actualizar_Casos_Traslados : System.Web.UI.Page
         Controles_A_Objeto_Actualizar_Caso();
         Obj_Entidad_Traslados.Id_Traslado = Convert.ToInt64(Id_Traslado.Text);
         var Guardar_Datos = -1;
-        Guardar_Datos = Obj_Neg_Traslados.Actualizar_Traslado_Gestion("ACTUALIZAR", Obj_Entidad_Traslados);
+        Guardar_Datos = Obj_Neg_Traslados.Actualizar_Traslado_Gestion_Outbound("ACTUALIZAR", Obj_Entidad_Traslados);
         if (Guardar_Datos != -1)
         {
             Guardar_Nota_Caso();
@@ -240,7 +240,7 @@ public partial class Actualizar_Casos_Traslados : System.Web.UI.Page
     }
     protected void Generar_Transaccion()
     {
-        if (Convert.ToString(Estado_del_Caso.SelectedItem) == "PENDIENTE CONTACTO")
+        if (Convert.ToString(Estado_del_Caso.SelectedItem) == "SEGUIMIENTO")
         {
             Actualizar_Caso_Gestion();
 

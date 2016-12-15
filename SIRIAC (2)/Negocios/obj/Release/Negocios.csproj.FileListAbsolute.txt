@@ -89,3 +89,16 @@ C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\New
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Release\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Release\Negocios.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Release\Negocios.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Negocios.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Negocios.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Datos.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Entidades.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Newtonsoft.Json.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Datos.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Entidades.pdb
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Newtonsoft.Json.xml
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Release\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Release\Negocios.dll
+C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Negocios\obj\Release\Negocios.pdb

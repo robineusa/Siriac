@@ -5420,7 +5420,6 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         TCDI_Complemento.Text = limpiar;
         TCDI_Direccion_Final.Text = limpiar;
         TCDI_Observaciones.Text = limpiar;
-        Alerta_Cuenta_CD_Traslados.Visible = false;
         string script1 = "Ocultar_Div();";
         ScriptManager.RegisterStartupScript(this, typeof(Page), "Ocultar_Div", script1, true);
     }

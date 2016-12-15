@@ -72,7 +72,7 @@
                                    <asp:ListItem>FINALIZADA</asp:ListItem>
                                    <asp:ListItem>INGRESADA</asp:ListItem>
                                    <asp:ListItem>NO INGRESADA</asp:ListItem>
-                                   <asp:ListItem>PENDIENTE CONTACTO</asp:ListItem>
+                                   <asp:ListItem>SEGUIMIENTO</asp:ListItem>
                                    <asp:ListItem>PENDIENTE POR CREAR</asp:ListItem>
                                </asp:DropDownList>
                            </td>

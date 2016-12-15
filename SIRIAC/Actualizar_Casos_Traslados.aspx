@@ -202,14 +202,21 @@
                                      <p class="texto_informativo">Gestión Realizada:</p>
                                         <asp:DropDownList ID="Gestion_Realizada" CssClass="dropdown3" runat="server">
                                             <asp:ListItem>--SELECCIONE--</asp:ListItem>
-                                           
+                                           <asp:ListItem>AGENDADO</asp:ListItem>
+                                            <asp:ListItem>DESISTE DE TRASLADO</asp:ListItem>
+                                            <asp:ListItem>ESCALADO A BACK</asp:ListItem>
+                                            <asp:ListItem>NO CONTACTO</asp:ListItem>
+                                            <asp:ListItem>OTRA</asp:ListItem>
+                                            <asp:ListItem>SOLICITA A OTRA DIRECCION</asp:ListItem>
+                                            <asp:ListItem>SOLICITA CANCELACION</asp:ListItem>
+                                            <asp:ListItem>SOLICITUD MAL ESCALADA</asp:ListItem>
                                             </asp:DropDownList>
                                     </td>
                                      <td>
                                      <p class="texto_informativo">Estado del Caso:</p>
                                          <asp:DropDownList ID="Estado_del_Caso" CssClass="dropdown1" runat="server">
                                              <asp:ListItem>--SELECCIONE--</asp:ListItem>
-                                             <asp:ListItem>PENDIENTE CONTACTO</asp:ListItem>
+                                             <asp:ListItem>SEGUIMIENTO</asp:ListItem>
                                              <asp:ListItem>FINALIZADO</asp:ListItem>
                                          </asp:DropDownList>
                                     </td>
