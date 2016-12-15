@@ -337,7 +337,7 @@ function showTimer() {
 						<li><a href="Gestion_Casos_Celula.aspx">Casos Abiertos</a></li>
                         <li runat="server" id="Crear_Direcciones"><a href="Casos_Abiertos_Traslados_CD.aspx">Crear Direcciones</a></li>
 						<li><a href="Seguimientos_Celula.aspx">Seguimientos</a></li>
-                        <li runat="server" id="Seg_Traslados"><a href="Seguimientos_Celula.aspx">Seguimientos Traslados</a></li>
+                        <li runat="server" id="Seg_Traslados"><a href="Seguimiento_Celula_Traslados.aspx">Seguimientos Traslados</a></li>
 						</ul>
 				</li>
 				<li class="blue">
