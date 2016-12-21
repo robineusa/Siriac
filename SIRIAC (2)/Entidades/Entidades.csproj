@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="E_Arbol_Outbound.cs" />
     <Compile Include="E_Atributos.cs" />
+    <Compile Include="E_Back_Elite.cs" />
     <Compile Include="E_Base_Personal.cs" />
     <Compile Include="E_Buen_Servicio.cs" />
     <Compile Include="E_Cierre_Ciclo.cs" />
