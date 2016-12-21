@@ -4,25 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
-        $(document).ready(function () {
-            if ('<%=Session["Acceso_1"]%>' == "1") {
-
-            } else {
-                $("#Primer_div").hide();
-                $("#html").hide();
-            }
-            if ('<%=Session["Acceso_3"]%>' == "1") {
-                if ('<%=Session["Acceso_1"]%>' == "1") {
-
-                } else {
-                    $("#css").addClass("active");
-                    $("#css-tab").addClass("tab-content active");
-                }
-            } else {
-                $("#Segundo_div").hide();
-                $("#css").hide();
-            }
-        });
+        
 
         function otorgar_permisos() {
 
@@ -59,7 +41,7 @@
             </ul>
             <div class="clear"></div>
             <div class="tab-top-border"></div>
-            <div id="Primer_div">
+            
                 <div id="html-tab" class="tab-content active">
                     <h3 class="Titulos">BOLSA DE CASOS ABIERTOS ESCALADOS A LA CÉLULA PARA LA CREACIÓN DE DIRECCIONES</h3>
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -99,9 +81,7 @@
                     </asp:UpdatePanel>
                     <%--<asp:Button CssClass="button" ID="Exportar" runat="server" Text="Exportar" OnClick="Exportar_Click" />--%>
                 </div>
-            </div>
-
-            <div id="Segundo_div">
+            
                 <div id="css-tab" class="tab-content">
                     <h3 class="Titulos">FORMULARIO PARA LA CONSULTA DE CASOS ESCALADOS</h3>
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
@@ -156,7 +136,7 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
-            </div>
+            
         </div>
 
     </asp:Panel>

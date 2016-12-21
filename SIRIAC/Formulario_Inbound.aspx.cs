@@ -60,6 +60,8 @@ public partial class Formulario_Inbound : System.Web.UI.Page
     public N_Traslados Obj_Negocios_Traslados_CD = new N_Traslados();
     public E_Notas_Traslados Obj_Entidad_Notas_Traslados = new E_Notas_Traslados();
     public N_Notas_Traslados Obj_Negocios_Notas_Traslados = new N_Notas_Traslados();
+    public E_Back_Elite Obj_Entidad_Back_Elite = new E_Back_Elite();
+    public N_Back_Elite Obj_Negocios_Back_Elite = new N_Back_Elite();
 
     public int sw1 = 0;
     public int sw2 = 0;
@@ -5540,6 +5542,114 @@ public partial class Formulario_Inbound : System.Web.UI.Page
         catch (Exception exb)
         {
             throw new Exception("Error al Seleccionar el nodo existente", exb);
+        }
+    }
+
+
+    protected void Guardar_Back_Elite(object sender, EventArgs e)
+    {
+        Controles_A_Objeto_Back_Elite();
+        var Guardar_Datos = -1;
+        Guardar_Datos = Obj_Negocios_Back_Elite.abc_Back_Elite("INSERTAR", Obj_Entidad_Back_Elite);
+        if (Guardar_Datos != -1)
+        {
+            
+        }
+        else
+        {
+
+        }
+    }
+    protected void Controles_A_Objeto_Back_Elite() {
+        Obj_Entidad_Back_Elite.Cuenta = Convert.ToInt32(BE_Cuenta.Text);
+        Obj_Entidad_Back_Elite.LLSOT = Convert.ToInt32(BE_LlsOt.Text);
+        Obj_Entidad_Back_Elite.Tipo = BE_Tipo_Escalamiento.Text;
+        Obj_Entidad_Back_Elite.Detalle = BE_Detalle_Escalamiento.Text;
+        Obj_Entidad_Back_Elite.Fecha_Inicio = "";
+        Obj_Entidad_Back_Elite.Hora_Inicio = "";
+        Obj_Entidad_Back_Elite.Usuario = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Back_Elite.Notas = BE_Observaciones.Text;
+        Obj_Entidad_Back_Elite.Nodo = BE_Nodo.Text;
+        Obj_Entidad_Back_Elite.Aliado_Tec = "";
+        Obj_Entidad_Back_Elite.Divisional = "";
+        Obj_Entidad_Back_Elite.Red = "";
+        Obj_Entidad_Back_Elite.Cedula =Convert.ToInt32(Session["Cedula"].ToString());
+        Obj_Entidad_Back_Elite.Nombre = Session["Nombre_Usuario"].ToString();
+        Obj_Entidad_Back_Elite.Cargo = Session["Cargo"].ToString();
+        Obj_Entidad_Back_Elite.Estado = Session["Estado"].ToString();
+        Obj_Entidad_Back_Elite.Aliado_Call = Session["Aliado_Usuario"].ToString();
+        Obj_Entidad_Back_Elite.Operacion = Session["Nombre_Linea_Usuario"].ToString();
+        Obj_Entidad_Back_Elite.Mal_Escalado = "N/A";
+        Obj_Entidad_Back_Elite.Error_Marcacion = "N/A";
+        Obj_Entidad_Back_Elite.Notas_Incompletas = "N/A";
+        Obj_Entidad_Back_Elite.Gestion = "N/A";
+        Obj_Entidad_Back_Elite.Observacion = "N/A";
+        Obj_Entidad_Back_Elite.Estado_Ticket = "SIN GESTION";
+        Obj_Entidad_Back_Elite.Tiempo_Horas = 0;
+        Obj_Entidad_Back_Elite.Fecha_Final = "";
+        Obj_Entidad_Back_Elite.Hora_Final = "";
+        Obj_Entidad_Back_Elite.ModMejoram = "N/A";
+        Obj_Entidad_Back_Elite.Notas_Seg = "N/A";
+        Obj_Entidad_Back_Elite.Usuario_Ult_Gest = Session["Usuario_Logueado"].ToString();
+        Obj_Entidad_Back_Elite.Fecha_Ult_Gest = "";
+        Obj_Entidad_Back_Elite.Hora_Ult_Gest = "";
+        Obj_Entidad_Back_Elite.Tipo_Trabajo = "N/A";
+        Obj_Entidad_Back_Elite.Fecha_Agenda = "";
+    }
+    protected void BE_Tipo_Escalamiento_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+        if (BE_Tipo_Escalamiento.SelectedValue == "Incumplimiento")
+        {
+            BE_Detalle_Escalamiento.Items.Clear();
+            BE_Detalle_Escalamiento.Items.Insert(0, "--Seleccione--");
+            BE_Detalle_Escalamiento.Items.Insert(1, "Antes de 1 Hora");
+        }
+        else
+        {
+            if (BE_Tipo_Escalamiento.SelectedValue == "Recomendación Casos Especiales")
+            {
+                BE_Detalle_Escalamiento.Items.Clear();
+                BE_Detalle_Escalamiento.Items.Insert(0, "--Seleccione--");
+                BE_Detalle_Escalamiento.Items.Insert(1, "Móvil doble tripulación");
+                BE_Detalle_Escalamiento.Items.Insert(2, "Visita con apoyo supervisor");
+                BE_Detalle_Escalamiento.Items.Insert(3, "Replanteamiento de visita");
+                BE_Detalle_Escalamiento.Items.Insert(4, "Amplicación Taps");
+                BE_Detalle_Escalamiento.Items.Insert(5, "Cliente reincidente");
+            }
+            else
+            {
+                if (BE_Tipo_Escalamiento.SelectedValue == "Sin Capacidad")
+                {
+                    BE_Detalle_Escalamiento.Items.Clear();
+                    BE_Detalle_Escalamiento.Items.Insert(0, "--Seleccione--");
+                    BE_Detalle_Escalamiento.Items.Insert(1, "Visita DTH");
+                    BE_Detalle_Escalamiento.Items.Insert(2, "Contingencia occidente");
+                    BE_Detalle_Escalamiento.Items.Insert(3, "No hay aliados disponibles");
+                    BE_Detalle_Escalamiento.Items.Insert(4, "No hay capacidad programada");
+                }
+                else
+                {
+                    if (BE_Tipo_Escalamiento.SelectedValue == "Casos CGO")
+                    {
+                        BE_Detalle_Escalamiento.Items.Clear();
+                        BE_Detalle_Escalamiento.Items.Insert(0, "--Seleccione--");
+                        BE_Detalle_Escalamiento.Items.Insert(1, "Orden sin completar");
+                        BE_Detalle_Escalamiento.Items.Insert(2, "Cuenta relacionada con CGO");
+                        BE_Detalle_Escalamiento.Items.Insert(3, "Visita cancelada CGO");
+                    }
+                    else
+                    {
+                        if (BE_Tipo_Escalamiento.SelectedValue == "Falla Modulo Gestión")
+                        {
+                            BE_Detalle_Escalamiento.Items.Clear();
+                            BE_Detalle_Escalamiento.Items.Insert(0, "--Seleccione--");
+                            BE_Detalle_Escalamiento.Items.Insert(1, "Actualización RR");
+                            BE_Detalle_Escalamiento.Items.Insert(2, "Agendar WFM");
+                            BE_Detalle_Escalamiento.Items.Insert(3, "Todo el modulo (MG/WFM)");
+                        }
+                    }
+                }
+            }
         }
     }
 }

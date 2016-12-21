@@ -39,6 +39,8 @@ public partial class Inicio_de_Sesion : System.Web.UI.Page
             Session["Rol_Usuario"] = ds.Tables[0].Rows[0]["Id_Rol"].ToString();
             Session["Aliado_Usuario"] = ds.Tables[0].Rows[0]["Aliado"].ToString();
             Session["Nombre_Linea_Usuario"] = ds.Tables[0].Rows[0]["Nombre_Linea"].ToString();
+            Session["Cargo"] = ds.Tables[0].Rows[0]["Cargo"].ToString();
+            Session["Estado"] = ds.Tables[0].Rows[0]["Estado"].ToString();
             Session["Nombre_Usuario"] = ds.Tables[0].Rows[0]["Nombre"].ToString();
             Session["Acceso_1"] = ds.Tables[0].Rows[0]["Acceso_1"].ToString();
             Session["Acceso_2"] = ds.Tables[0].Rows[0]["Acceso_2"].ToString();
