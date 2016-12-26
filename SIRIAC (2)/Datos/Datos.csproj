@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="D_Arbol_Outbound.cs" />
     <Compile Include="D_Atributos.cs" />
+    <Compile Include="D_Back_Elite.cs" />
     <Compile Include="D_Base_Clientes.cs" />
     <Compile Include="D_Base_Personal.cs" />
     <Compile Include="D_Buen_Servicio.cs" />

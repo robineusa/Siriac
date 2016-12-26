@@ -1,4 +1,13 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Perfil_Asesor.master" AutoEventWireup="true" CodeFile="Formulario_Inbound.aspx.cs" Inherits="Formulario_Inbound" %>
+
+<script runat="server">
+
+    protected void BE_Tipo_Escalamiento_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link href="Estilos/Style_Perfil_Asesor.css?1.1.1" rel="stylesheet" />
@@ -360,9 +369,9 @@
                     <div class="icono_carrete_4" id="Div4"></div>
                 </a>
             </div>
-           <%-- <a href="#Iframe_Back_Elite" onclick="return Abrir_Ventana_BackElite()">
+            <a href="#Iframe_Back_Elite" onclick="return Abrir_Ventana_BackElite()">
                 <div id="BackElite" class="icono_carrete_9"></div>
-            </a>--%>
+            </a>
             <a id="Icono_Crear_Direccion" runat="server" href="#Iframe_T_Crear_Direccion" onclick="return Abrir_Ventana_T_Crear_Direccion()">
                 <div id="T_Crear_Direccion" class="icono_carrete_10"></div>
             </a>
@@ -4479,11 +4488,20 @@
                                 </td>
                                  <td>
                                     <p class="etiquetas_Ofrecimiento2">Tipo de Escalamiento:</p>
-                                        <asp:DropDownList CssClass="dropdown2" ID="BE_Tipo_Escalamiento"  runat="server" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList CssClass="dropdown2" ID="BE_Tipo_Escalamiento" OnSelectedIndexChanged="BE_Tipo_Escalamiento_SelectedIndexChanged1" runat ="server" AutoPostBack="true">
+                                            <asp:ListItem>--SELECCIONE--</asp:ListItem>
+                                            <asp:ListItem>Incumplimiento</asp:ListItem>
+                                            <asp:ListItem>Recomendación Casos Especiales</asp:ListItem>
+                                            <asp:ListItem>Sin Capacidad</asp:ListItem>
+                                            <asp:ListItem>Casos CGO</asp:ListItem>
+                                            <asp:ListItem>Falla Modulo Gestión</asp:ListItem>
+                                        </asp:DropDownList>
                                 </td>
                                  <td>
                                     <p class="etiquetas_Ofrecimiento2">Detalle Escalamiento:</p>
-                                        <asp:DropDownList CssClass="dropdown3" ID="BE_Detalle_Escalamiento" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList CssClass="dropdown3" ID="BE_Detalle_Escalamiento" runat="server" AutoPostBack="true">
+                                            
+                                        </asp:DropDownList>
                                 </td>
                                  <td>
                                     <p class="etiquetas_Ofrecimiento2">Nodo:</p>
@@ -4500,7 +4518,7 @@
                         <hr />
                          <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                    <asp:Button CssClass="button" ID="Button2" runat="server" Text="Guardar"/>
+                    <asp:Button CssClass="button" ID="Button2" runat="server" OnClick="Guardar_Back_Elite" Text="Guardar"/>
                 </ContentTemplate>
             </asp:UpdatePanel>
                     </div>
