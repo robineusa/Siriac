@@ -96,5 +96,9 @@ namespace Negocios
         {
             return objTraslados.Actualizar_Traslado_Gestion_Outbound(pAccion, objE_Traslados);
         }
+        public DataSet Consulta_Casos_Escalados_Traslados_Por_Estado_Celula(string pBack)
+        {
+            return objTraslados.Consulta_Casos_Escalados_Traslados_Por_Estado_Celula(pBack);
         }
+    }
 }

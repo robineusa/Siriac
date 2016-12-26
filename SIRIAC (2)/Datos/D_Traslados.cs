@@ -551,6 +551,30 @@ namespace Datos
             }
             return ds;
         }
+        public DataSet Consulta_Casos_Escalados_Traslados_Por_Estado_Celula(string pBack)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Casos_Escalados_Traslados_Por_Estado_Celula]";
+                cmd.Parameters.AddWithValue("@Usuario_Back", pBack);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al seleccionar los casos escalados para los traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
 
     }
 }

@@ -4,26 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
-        $(document).ready(function () {
-            if ('<%=Session["Acceso_1"]%>' == "1") {
-
-            } else {
-                $("#Primer_div").hide();
-                $("#html").hide();
-            }
-            if ('<%=Session["Acceso_3"]%>' == "1") {
-                if ('<%=Session["Acceso_1"]%>' == "1") {
-
-                } else {
-                    $("#css").addClass("active");
-                    $("#css-tab").addClass("tab-content active");
-                }
-            } else {
-                $("#Segundo_div").hide();
-                $("#css").hide();
-            }
-        });
-
+        
         function otorgar_permisos() {
 
             var activeTabIndex = -1;
