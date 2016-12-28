@@ -209,6 +209,7 @@ function showTimer() {
                                 <ul>
                                     <li><a href="Administracion_de_Usuarios.aspx">Administración de Usuarios</a></li>
                                     <li><a href="Administracion_de_Casos.aspx">Administración de Casos</a></li>
+                                    <li><a href="Administracion_de_Casos_Traslados.aspx">Casos Traslados</a></li>
                                 </ul>
                             </li>
                             <li class="blue">
