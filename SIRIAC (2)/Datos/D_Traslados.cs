@@ -533,7 +533,7 @@ namespace Datos
             DataSet ds = new DataSet();
             SqlDataAdapter dt = new SqlDataAdapter();
             try
-            {
+            { 
                 Abrir_Conexion();
                 cmd.Connection = Conexion;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -575,6 +575,101 @@ namespace Datos
             }
             return ds;
         }
-
+        public DataSet Consulta_Admin_Casos_Traslados_Cuenta(double pCuenta)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Selecciona_Traslado_Admin_Cuenta]";
+                cmd.Parameters.AddWithValue("@Cuenta_Cliente", pCuenta);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al consultar caso por cuenta dce traslados", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public DataSet Consulta_Admin_Casos_Traslados_Usuario(string pUsuario)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Selecciona_Traslado_Admin_Usuario]";
+                cmd.Parameters.AddWithValue("@Usuario_Apertura", pUsuario);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al consultar caso por usuario", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public DataSet Consulta_Admin_Casos_Traslados_Id(double pId_Traslado)
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dt = new SqlDataAdapter();
+            try
+            {
+                Abrir_Conexion();
+                cmd.Connection = Conexion;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[Selecciona_Traslado_Admin_Id]";
+                cmd.Parameters.AddWithValue("@Id_Traslado", pId_Traslado);
+                dt.SelectCommand = cmd;
+                dt.Fill(ds);
+            }
+            catch (Exception e)
+            { throw new Exception("Error al consultar caso por id de traslado", e); }
+            finally
+            {
+                Conexion.Close();
+                cmd.Dispose();
+            }
+            return ds;
+        }
+        public int Actualiza_Ingreso_Back_Traslados(double Id_Traslado, E_Traslados objE_Traslados)
+        {
+            int Resultado = 0;
+            SqlCommand cmd = new SqlCommand("Actualizar_Caso_Back_Traslados", Conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id_Traslado", objE_Traslados.Id_Traslado);
+            cmd.Parameters.AddWithValue("@Usuario_Backoffice", objE_Traslados.Usuario_Backoffice);
+            cmd.Parameters.AddWithValue("@Usuario_Actualizacion", objE_Traslados.Usuario_Ultima_Actualizacion);
+            try
+            {
+                Abrir_Conexion();
+                Resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al intentar actualizar el usuario del back", e);
+            }
+            finally
+            {
+                Cerrar_Conexion();
+                cmd.Dispose();
+            }
+            return Resultado;
+        }
     }
 }

@@ -100,5 +100,21 @@ namespace Negocios
         {
             return objTraslados.Consulta_Casos_Escalados_Traslados_Por_Estado_Celula(pBack);
         }
+        public DataSet Consulta_Admin_Casos_Traslados_Cuenta(double pCuenta)
+        {
+            return objTraslados.Consulta_Admin_Casos_Traslados_Cuenta(pCuenta);
+        }
+        public DataSet Consulta_Admin_Casos_Traslados_Usuario(string pUsuario)
+        {
+            return objTraslados.Consulta_Admin_Casos_Traslados_Usuario(pUsuario);
+        }
+        public DataSet Consulta_Admin_Casos_Traslados_Id(double pId_Traslado)
+        {
+            return objTraslados.Consulta_Admin_Casos_Traslados_Id(pId_Traslado);
+        }
+        public int Actualiza_Ingreso_Back_Traslados(double Id_Traslado, E_Traslados objE_Traslados)
+        {
+            return objTraslados.Actualiza_Ingreso_Back_Traslados(Id_Traslado, objE_Traslados);
+        }
     }
 }

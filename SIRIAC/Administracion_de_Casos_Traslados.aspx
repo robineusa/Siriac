@@ -4,7 +4,7 @@
     <script type="text/javascript">
         function editar(obj) {
             var imageID = document.getElementById('imagen' + obj);
-            window.location.href = 'Modificacion_Casos_Admin.aspx?id=' + obj;
+            window.location.href = 'Modificacion_Traslados_Admin.aspx?id=' + obj;
         };
     </script>
     <script type="text/javascript">
@@ -33,9 +33,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <asp:Panel CssClass="panel" ID="Panel1" runat="server">
+    <asp:Panel CssClass="panel" ID="Panel1" runat="server"  Style="width: 1130px;">
 
-        <div id="tab-container">
+        <div id="tab-container" style="width: 1110px;">
             <ul class="tab-menu">
                 <li id="css" class="active" onclick="otorgar_permisos()">ACTUALIZACIÓN DE CASOS</li>
 
@@ -66,7 +66,7 @@
                             </table>
                         </asp:Panel>
                         <asp:Panel CssClass="panel_informativo" ID="Panel5" runat="server" GroupingText="Resultado de la Consulta">
-                            <asp:GridView CssClass="mGrid" ID="A_CONSULTA_CASOS" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_INGRESO">
+                            <asp:GridView CssClass="mGrid" ID="A_CONSULTA_CASOS" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_TRASLADO">
                                 <Columns>
                                     <asp:TemplateField ShowHeader="False" HeaderText="EDITAR">
                                         <ItemTemplate>
