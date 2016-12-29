@@ -24,6 +24,15 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        function justNumbers(e) {
+            var keynum = window.event ? window.event.keyCode : e.which;
+            if ((keynum == 8) || (keynum == 46))
+                return true;
+            return /\d/.test(String.fromCharCode(keynum));
+        }
+
+    </script>
     <script>
         function Cargar_Datos_SMO() {
             document.getElementById('Iframe_SMO').style.display = 'block';
@@ -4769,15 +4778,15 @@
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Nodo:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Nodo" runat="server" Placeholder="Ingrese el nodo" style="width:150px;" AutoPostBack="true" OnTextChanged="TCD_Nodo_TextChanged"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Nodo" runat="server" Placeholder="Ingrese el nodo" style="width:150px;" AutoPostBack="true" OnTextChanged="TCD_Nodo_TextChanged" Required="true" ></asp:TextBox>
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Teléfono Fijo:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Telefono_Fijo" runat="server" Placeholder="Ingrese telefono" style="width:150px;"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Telefono_Fijo" runat="server" onkeypress="return justNumbers(event);" MaxLength="10" Placeholder="Ingrese telefono" style="width:150px;"></asp:TextBox>
                                 </td>
                                   <td>
                                     <p class="etiquetas_Ofrecimiento2">Teléfono Celular:</p>
-                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Telefono_Celular" runat="server" Placeholder="Ingrese celular" style="width:150px;"></asp:TextBox>
+                                    <asp:TextBox CssClass="caja_de_texto" ID="TCD_Telefono_Celular" runat="server" onkeypress="return justNumbers(event);" Placeholder="Ingrese celular" style="width:150px;"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
