@@ -3151,7 +3151,18 @@
          <script>
             function Abrir_Ventana_T_Crear_Direccion() {
                 document.getElementById('Iframe_T_Crear_Direccion').style.display = 'block';
-                
+                var f = new Date();
+                var dd = f.getDay();
+                var mm = f.getMonth()+1;
+                var yy = f.getFullYear();
+                var hour = f.getHours();
+                var min = f.getMinutes();
+                var sec = f.getSeconds();
+                var milsec = f.getMilliseconds();
+                var Fecha_Final = yy + '-' + mm + '-' + dd + ' ' + hour + ':' + min + ':' + sec + '.' + milsec;
+                alert(Fecha_Final);
+                $("#<%=Tiempo_Inicio.ClientID %>").val(Fecha_Final);
+                alert('si');
             }
         </script>
         <script>
@@ -4543,7 +4554,9 @@
             
                     <h2>ESCALAMIENTO A TRASLADOS - SOLICITUD DE CREACION DE DIRECCION</h2>
                     <hr />
+                <asp:TextBox runat="server" ID="Tiempo_Inicio" style="display:none"></asp:TextBox>
                    <asp:UpdatePanel runat="server"><ContentTemplate>
+                       
                             <table><tr>
                                 <td>
                                         <p class="etiquetas_Ofrecimiento2">Tipo de Dirección:</p>
