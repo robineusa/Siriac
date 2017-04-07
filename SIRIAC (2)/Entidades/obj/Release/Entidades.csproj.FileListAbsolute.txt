@@ -45,8 +45,6 @@ C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Entidades\obj\R
 C:\Users\David Gomez\Google Drive\Siriac\Siriac_Capas\SIRIAC (2)\Entidades\obj\Release\Entidades.pdb
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Release\Entidades.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Release\Entidades.pdb
-C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Release\Microsoft.AspNet.SignalR.Client.dll
-C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Release\Newtonsoft.Json.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Release\Microsoft.AspNet.SignalR.Client.xml
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Release\Newtonsoft.Json.xml
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Release\Entidades.csprojResolveAssemblyReference.cache

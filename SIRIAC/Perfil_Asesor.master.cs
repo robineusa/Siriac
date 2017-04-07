@@ -20,7 +20,7 @@ public partial class Perfil_Asesor : System.Web.UI.MasterPage
         Response.AddHeader("Cache-Control", "must-revalidate");
         Response.AddHeader("Cache-Control", "no-cache");
         
-        if (Session["Acceso_20"].ToString() == "1") { Dir_Creadas.Attributes.CssStyle.Add("Display", "block"); } else { Dir_Creadas.Attributes.CssStyle.Add("Display", "none"); }
+        //if (Session["Acceso_20"].ToString() == "1") { Dir_Creadas.Attributes.CssStyle.Add("Display", "block"); } else { Dir_Creadas.Attributes.CssStyle.Add("Display", "none"); }
         if (Session["Rol_Usuario"].ToString() == "3") { } else { Response.Redirect("Inicio_de_Sesion.aspx?id=" + Session["Rol_Usuario"].ToString() + ""); };
         Nombre_Usuario.Text = Session["Nombre_Usuario"].ToString();
     }

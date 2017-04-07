@@ -91,7 +91,42 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\desktop.ini" />
+    <None Include="bin\Release\desktop.ini" />
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput %281%29.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\desktop.ini" />
+    <None Include="obj\Debug\TempPE\desktop.ini" />
+    <None Include="obj\desktop.ini" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\desktop.ini" />
+    <None Include="obj\Release\Entidades.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\TempPE\desktop.ini" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Entidades.dll" />
+    <Content Include="bin\Debug\Entidades.pdb" />
+    <Content Include="bin\Release\Entidades.dll" />
+    <Content Include="bin\Release\Entidades.pdb" />
+    <Content Include="bin\Release\Microsoft.AspNet.SignalR.Client.dll" />
+    <Content Include="bin\Release\Microsoft.AspNet.SignalR.Client.xml" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="obj\Debug\Entidades %281%29.dll" />
+    <Content Include="obj\Debug\Entidades %281%29.pdb" />
+    <Content Include="obj\Debug\Entidades.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Entidades.csproj.FileListAbsolute[Conflicto].txt" />
+    <Content Include="obj\Debug\Entidades.dll" />
+    <Content Include="obj\Debug\Entidades.pdb" />
+    <Content Include="obj\Debug\Entidades[Conflicto 1].dll" />
+    <Content Include="obj\Debug\Entidades[Conflicto 1].pdb" />
+    <Content Include="obj\Debug\Entidades[Conflicto].dll" />
+    <Content Include="obj\Debug\Entidades[Conflicto].pdb" />
+    <Content Include="obj\Release\Entidades.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\Entidades.dll" />
+    <Content Include="obj\Release\Entidades.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -325,32 +325,32 @@ function showTimer() {
                          <asp:UpdatePanel runat="server"><ContentTemplate>
                         <nav id="colorNav">
                             <ul>
-				<li class="green">
+				<%--<li class="green">
 					<a href="Bienvenida_Asesor.aspx"><img class="icon" src="Estilos/pictures/icon1.png"1/></a>
-					</li>
+					</li>--%>
 				<li class="red">
 					<a><img class="icon" src="Estilos/pictures/icon2.png"/></a>
 					<ul>
-						<li><a href="Formulario_Inbound.aspx">Gestión Inbound</a></li>
+						<%--<li><a href="Formulario_Inbound.aspx">Gestión Inbound</a></li>--%>
 						<li><a href="Formulario_Outbound.aspx">Gestión Outbound</a></li>
                         <li><a href="Formulario_Blending.aspx">Gestión Blending</a></li>
-                        <li runat="server" id="Dir_Creadas" ><a href="Lista_Creacion_Direcciones.aspx">Direcciones Creadas</a></li>
+                       <%-- <li runat="server" id="Dir_Creadas" ><a href="Lista_Creacion_Direcciones.aspx">Direcciones Creadas</a></li>--%>
 						</ul>
 				</li>
-				<li class="blue">
+				<%--<li class="blue">
 					<a><img class="icon" src="Estilos/pictures/icon13.png"/></a>
 					<ul>
 						<li><a href="Consulta_Gestion_Asesor_Inbound.aspx">Consulta de Gestión</a></li>
 						<li><a href="Consulta_Rechazos_Asesor_Inbound.aspx">Consulta de Rechazos</a></li>
                         <li><a href="Seguimientos_Asesor_Inbound.aspx">Consulta de Seguimientos</a></li>
 					</ul>
-				</li>
-				<li class="yellow">
+				</li>--%>
+				<%--<li class="yellow">
 					<a><img class="icon" src="Estilos/pictures/icon7.png"/></a>
 					<ul>
 						<li><a href="#">Reportes</a></li>
 						</ul>
-				</li>
+				</li>--%>
 				<%--<li class="purple2">
 					<a><img class="icon" src="Estilos/pictures/icon99.png"/></a>
 					<ul>
@@ -360,8 +360,8 @@ function showTimer() {
                 <li class="purple">
 					<a><img class="icon" src="Estilos/pictures/icon6.png"1/></a>
 					<ul>
-						<li><a href="Cambio_Contrasena_Inbound.aspx">Cambio de Contraseña</a></li>
-                        <li><a href="Manual_de_Usuario_Asesor.aspx">Manual de Usuario</a></li>
+						<%--<li><a href="Cambio_Contrasena_Inbound.aspx">Cambio de Contraseña</a></li>
+                        <li><a href="Manual_de_Usuario_Asesor.aspx">Manual de Usuario</a></li>--%>
                         <li><a onclick="salir()">Cerrar Sesión</a></li>
 					</ul>
 				</li>

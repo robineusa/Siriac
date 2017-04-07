@@ -106,7 +106,56 @@
   <ItemGroup>
     <None Include="App_Data\PublishProfiles\Robin.pubxml" />
     <None Include="App_Data\PublishProfiles\Siriac.pubxml" />
+    <None Include="bin\desktop.ini" />
+    <None Include="bin\Release\desktop.ini" />
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput %281%29.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\desktop.ini" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference %281%29.cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference[Conflicto 1].cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference[Conflicto 2].cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference[Conflicto 3].cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference[Conflicto 4].cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference[Conflicto 5].cache" />
+    <None Include="obj\Debug\Negocios.csprojResolveAssemblyReference[Conflicto].cache" />
+    <None Include="obj\Debug\TempPE\desktop.ini" />
+    <None Include="obj\desktop.ini" />
+    <None Include="obj\Release\build.force" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\desktop.ini" />
+    <None Include="obj\Release\Negocios.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\TempPE\desktop.ini" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Negocios.dll" />
+    <Content Include="bin\Debug\Negocios.pdb" />
+    <Content Include="bin\Release\Datos.dll" />
+    <Content Include="bin\Release\Datos.pdb" />
+    <Content Include="bin\Release\Entidades.dll" />
+    <Content Include="bin\Release\Entidades.pdb" />
+    <Content Include="bin\Release\Microsoft.AspNet.SignalR.Client.dll" />
+    <Content Include="bin\Release\Microsoft.AspNet.SignalR.Client.xml" />
+    <Content Include="bin\Release\Negocios.dll" />
+    <Content Include="bin\Release\Negocios.pdb" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="obj\Debug\Negocios.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Negocios.dll" />
+    <Content Include="obj\Debug\Negocios.pdb" />
+    <Content Include="obj\Debug\Negocios[Conflicto 1].dll" />
+    <Content Include="obj\Debug\Negocios[Conflicto 1].pdb" />
+    <Content Include="obj\Debug\Negocios[Conflicto 2].dll" />
+    <Content Include="obj\Debug\Negocios[Conflicto 2].pdb" />
+    <Content Include="obj\Debug\Negocios[Conflicto 3].dll" />
+    <Content Include="obj\Debug\Negocios[Conflicto 3].pdb" />
+    <Content Include="obj\Debug\Negocios[Conflicto].dll" />
+    <Content Include="obj\Debug\Negocios[Conflicto].pdb" />
+    <Content Include="obj\Release\Negocios.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\Negocios.dll" />
+    <Content Include="obj\Release\Negocios.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

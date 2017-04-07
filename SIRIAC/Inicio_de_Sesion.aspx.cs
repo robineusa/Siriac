@@ -73,17 +73,23 @@ public partial class Inicio_de_Sesion : System.Web.UI.Page
             Session["Acceso_29"] = ds.Tables[0].Rows[0]["Acceso_29"].ToString();
             Session["Acceso_30"] = ds.Tables[0].Rows[0]["Acceso_30"].ToString();
 
-            if (Session["Rol_Usuario"].ToString() == "1") { Response.Redirect("Bienvenida_Administrador.aspx"); }
+            if (Session["Rol_Usuario"].ToString() == "1") {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script> alert('El Acceso del perfil Administrador en Siriac ya no esta habilitado, utilice la plataforma Dime por favor');</script>");
+                /*Response.Redirect("Bienvenida_Administrador.aspx"); */
+            }
             else
-                if (Session["Rol_Usuario"].ToString() == "2") { Response.Redirect("Bienvenida_Celula.aspx"); }
+                if (Session["Rol_Usuario"].ToString() == "2") {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script> alert('El Acceso del perfil Célula en Siriac ya no esta habilitado, utilice la plataforma Dime por favor');</script>");
+                /*Response.Redirect("Bienvenida_Celula.aspx");*/
+            }
                 else
                     if (Session["Rol_Usuario"].ToString() == "3") { Response.Redirect("Bienvenida_Asesor.aspx"); }
                     else
-                        if (Session["Rol_Usuario"].ToString() == "6") { Response.Redirect("Bienvenida_Lider.aspx"); }
+                        if (Session["Rol_Usuario"].ToString() == "6") { /*Response.Redirect("Bienvenida_Lider.aspx");*/ }
                         else
-                            if (Session["Rol_Usuario"].ToString() == "5") { Response.Redirect("Bienvenida_Jefe.aspx"); }
+                            if (Session["Rol_Usuario"].ToString() == "5") { /*Response.Redirect("Bienvenida_Jefe.aspx");*/ }
                             else
-                                if (Session["Rol_Usuario"].ToString() == "4") { Response.Redirect("Bienvenida_MEC.aspx"); }
+                                if (Session["Rol_Usuario"].ToString() == "4") { /*Response.Redirect("Bienvenida_MEC.aspx"); */}
         }
         else
         {

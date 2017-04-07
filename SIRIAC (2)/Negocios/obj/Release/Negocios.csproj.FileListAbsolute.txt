@@ -80,8 +80,6 @@ C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Neg
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Negocios.pdb
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Datos.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Entidades.dll
-C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Microsoft.AspNet.SignalR.Client.dll
-C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Newtonsoft.Json.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Datos.pdb
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Entidades.pdb
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Negocios\bin\Release\Microsoft.AspNet.SignalR.Client.xml
