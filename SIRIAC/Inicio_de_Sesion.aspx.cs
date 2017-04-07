@@ -74,8 +74,7 @@ public partial class Inicio_de_Sesion : System.Web.UI.Page
             Session["Acceso_30"] = ds.Tables[0].Rows[0]["Acceso_30"].ToString();
 
             if (Session["Rol_Usuario"].ToString() == "1") {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script> alert('El Acceso del perfil Administrador en Siriac ya no esta habilitado, utilice la plataforma Dime por favor');</script>");
-                /*Response.Redirect("Bienvenida_Administrador.aspx"); */
+                Response.Redirect("Bienvenida_Administrador.aspx");
             }
             else
                 if (Session["Rol_Usuario"].ToString() == "2") {

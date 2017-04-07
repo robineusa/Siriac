@@ -199,11 +199,11 @@ function showTimer() {
                 <td class="auto-style16">
                     <nav id="colorNav">
                         <ul>
-                            <li class="green">
+                            <%--<li class="green">
                                 <a href="Bienvenida_Administrador.aspx">
                                     <img class="icon" src="Estilos/pictures/icon1.png" /></a>
-                            </li>
-                            <li class="red">
+                            </li>--%>
+                            <%--<li class="red">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon2.png" /></a>
                                 <ul>
@@ -211,22 +211,22 @@ function showTimer() {
                                     <li><a href="Administracion_de_Casos.aspx">Administración de Casos</a></li>
                                     <li><a href="Administracion_de_Casos_Traslados.aspx">Casos Traslados</a></li>
                                 </ul>
-                            </li>
+                            </li>--%>
                             <li class="blue">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon13.png" /></a>
                                 <ul>
-                                    <li><a href="Consulta_Paloteo_Admin.aspx">Consulta de Paloteo</a></li>
+                                <%--    <li><a href="Consulta_Paloteo_Admin.aspx">Consulta de Paloteo</a></li>
                                     <li><a href="Consulta_de_Gestion_Admin.aspx">Consulta de Gestión</a></li>
                                     <li><a href="Consulta_Rechazos_Admin.aspx">Consulta de Rechazos</a></li>
-                                    <li><a href="Consulta_Outbound_Admin.aspx">Consulta Oubound</a></li>
+                                    <li><a href="Consulta_Outbound_Admin.aspx">Consulta Oubound</a></li>--%>
                                     <li><a href="Consulta_Cierre_Ciclo_Admin.aspx">Consulta Cierre Ciclo</a></li>
                                     <li><a href="Consulta_de_Gestion_Blending.aspx">Consulta Blending</a></li>
-                                     <li runat="server" id="Consulta_Solicitudes"><a href="Consulta_Creacion_Dr_Admin.aspx">Consulta Solicitudes Creacion de Direccion</a></li>
-                                     <li runat="server" id="Consulta_Interac"><a href="Consulta_Gestion_Crear_Direccion.aspx">Consulta Interacciones Creacion de Direccion</a></li>
+                                   <%--  <li runat="server" id="Consulta_Solicitudes"><a href="Consulta_Creacion_Dr_Admin.aspx">Consulta Solicitudes Creacion de Direccion</a></li>
+                                     <li runat="server" id="Consulta_Interac"><a href="Consulta_Gestion_Crear_Direccion.aspx">Consulta Interacciones Creacion de Direccion</a></li>--%>
                                 </ul>
                             </li>
-                            <li class="yellow">
+                           <%-- <li class="yellow">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon7.png" /></a>
                                 <ul>
@@ -234,21 +234,21 @@ function showTimer() {
                                     <li><a href="Reporte_Convenio_Electronico.aspx">Convenio Electrónico</a></li>
                                     <li><a href="Reporte_Ventas.aspx">Ventas</a></li>
                                 </ul>
-                            </li>
-                            <li class="purple">
+                            </li>--%>
+                           <%-- <li class="purple">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/Mensajes.png" /></a>
                                 <ul>
                                     <li><a href="Administracion_Buenservicio.aspx">Pieza Buen Servicio</a></li>
                                     <li><a onclick="document.getElementById('Chat_Completo').style.display = 'block';">Comunicación Global</a></li>
                                 </ul>
-                            </li>
+                            </li>--%>
                             <li class="purple">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon6.png" /></a>
                                 <ul>
-                                    <li><a href="Cambio_Contrasena_Admin.aspx">Cambio de Contraseña</a></li>
-                                    <li><a href="Manual_de_Usuario_Admin.aspx">Manual de Usuario</a></li>
+                                   <%-- <li><a href="Cambio_Contrasena_Admin.aspx">Cambio de Contraseña</a></li>
+                                    <li><a href="Manual_de_Usuario_Admin.aspx">Manual de Usuario</a></li>--%>
                                     <li><a onclick="return salir()">Cerrar Sesión</a></li>
                                 </ul>
                             </li>
