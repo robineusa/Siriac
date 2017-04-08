@@ -113,3 +113,12 @@ C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Micr
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Newtonsoft.Json.xml
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.dll
 C:\Users\David Gomez\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.pdb
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Entidades.dll
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Entidades.pdb
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.dll
+C:\Users\dagom\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.pdb

@@ -78,8 +78,8 @@ public partial class Inicio_de_Sesion : System.Web.UI.Page
             }
             else
                 if (Session["Rol_Usuario"].ToString() == "2") {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script> alert('El Acceso del perfil Célula en Siriac ya no esta habilitado, utilice la plataforma Dime por favor');</script>");
-                /*Response.Redirect("Bienvenida_Celula.aspx");*/
+
+                Response.Redirect("Bienvenida_Celula.aspx");
             }
                 else
                     if (Session["Rol_Usuario"].ToString() == "3") { Response.Redirect("Bienvenida_Asesor.aspx"); }

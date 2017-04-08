@@ -334,19 +334,19 @@ function showTimer() {
 				<li class="red">
 					<a><img class="icon" src="Estilos/pictures/icon2.png"1/></a>
 					<ul>
-						<li><a href="Gestion_Casos_Celula.aspx">Casos Abiertos</a></li>
+						<%--<li><a href="Gestion_Casos_Celula.aspx">Casos Abiertos</a></li>--%>
                         <li runat="server" id="Crear_Direcciones"><a href="Casos_Abiertos_Traslados_CD.aspx">Crear Direcciones</a></li>
-						<li><a href="Seguimientos_Celula.aspx">Seguimientos</a></li>
+						<%--<li><a href="Seguimientos_Celula.aspx">Seguimientos</a></li>--%>
                         <li runat="server" id="Seg_Traslados"><a href="Seguimiento_Celula_Traslados.aspx">Seguimientos Traslados</a></li>
 						</ul>
 				</li>
-				<li class="blue">
+				<%--<li class="blue">
 					<a><img class="icon" src="Estilos/pictures/icon13.png"1/></a>
 					<ul>
 						<li><a href="Consulta_Gestion_Celula.aspx">Consulta de Gestión</a></li>
 						</ul>
-				</li>
-                <li class="purple2">
+				</li>--%>
+                <%--<li class="purple2">
 					<a><img class="icon" src="Estilos/pictures/icon99.png"/></a>
 					<ul>
 						<li><a class="openAssistant" href="#">
@@ -361,12 +361,12 @@ function showTimer() {
 					<ul>
 						<li><a href="#">Reportes</a></li>
 						</ul>
-				</li>
+				</li>--%>
 				<li class="purple">
 					<a><img class="icon" src="Estilos/pictures/icon6.png"1/></a>
 					<ul>
-						<li><a href="Cambio_Contrasena_Celula.aspx">Cambio de Contraseña</a></li>
-                        <li><a href="Manual_de_Usuario_Celula.aspx">Manual de Usuario</a></li>
+						<%--<li><a href="Cambio_Contrasena_Celula.aspx">Cambio de Contraseña</a></li>
+                        <li><a href="Manual_de_Usuario_Celula.aspx">Manual de Usuario</a></li>--%>
                         <li><a onclick="salir()">Cerrar Sesión</a></li>
 					</ul>
 				</li>
