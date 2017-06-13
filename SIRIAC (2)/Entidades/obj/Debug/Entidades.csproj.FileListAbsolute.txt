@@ -128,6 +128,5 @@ C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Microso
 C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
 C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.dll
 C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Entidades\obj\Debug\Entidades.pdb

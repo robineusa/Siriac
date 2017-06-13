@@ -84,3 +84,12 @@ C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Ne
 C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
 C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.dll
 C:\Users\robin\OneDrive\Documentos\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.pdb
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Datos.dll
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Datos.pdb
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Entidades.dll
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Entidades.pdb
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\bin\Release\Newtonsoft.Json.xml
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.dll
+C:\Users\Robinson\Documents\GitHub\Siriac\SIRIAC (2)\Datos\obj\Release\Datos.pdb

@@ -199,11 +199,11 @@ function showTimer() {
                 <td class="auto-style16">
                     <nav id="colorNav">
                         <ul>
-                            <%--<li class="green">
+                            <li class="green">
                                 <a href="Bienvenida_Administrador.aspx">
                                     <img class="icon" src="Estilos/pictures/icon1.png" /></a>
-                            </li>--%>
-                            <%--<li class="red">
+                            </li>
+                            <li class="red">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon2.png" /></a>
                                 <ul>
@@ -211,7 +211,7 @@ function showTimer() {
                                     <li><a href="Administracion_de_Casos.aspx">Administración de Casos</a></li>
                                     <li><a href="Administracion_de_Casos_Traslados.aspx">Casos Traslados</a></li>
                                 </ul>
-                            </li>--%>
+                            </li>
                             <li class="blue">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon13.png" /></a>
@@ -235,20 +235,20 @@ function showTimer() {
                                     <li><a href="Reporte_Ventas.aspx">Ventas</a></li>
                                 </ul>
                             </li>--%>
-                           <%-- <li class="purple">
+                            <li class="purple">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/Mensajes.png" /></a>
                                 <ul>
                                     <li><a href="Administracion_Buenservicio.aspx">Pieza Buen Servicio</a></li>
                                     <li><a onclick="document.getElementById('Chat_Completo').style.display = 'block';">Comunicación Global</a></li>
                                 </ul>
-                            </li>--%>
+                            </li>
                             <li class="purple">
                                 <a>
                                     <img class="icon" src="Estilos/pictures/icon6.png" /></a>
                                 <ul>
-                                   <%-- <li><a href="Cambio_Contrasena_Admin.aspx">Cambio de Contraseña</a></li>
-                                    <li><a href="Manual_de_Usuario_Admin.aspx">Manual de Usuario</a></li>--%>
+                                    <li><a href="Cambio_Contrasena_Admin.aspx">Cambio de Contraseña</a></li>
+                                    <li><a href="Manual_de_Usuario_Admin.aspx">Manual de Usuario</a></li>
                                     <li><a onclick="return salir()">Cerrar Sesión</a></li>
                                 </ul>
                             </li>
