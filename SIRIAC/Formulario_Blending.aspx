@@ -1347,6 +1347,43 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                     <hr />
+                    <asp:UpdatePanel ID="UpdatePanel21" runat="server">
+                        <ContentTemplate>
+                            <asp:Panel CssClass="panel_informativo" ID="Panel26" runat="server" GroupingText="Informacion Adicional">
+                                <table class="tabla">
+                                    <tr>
+                                        <td>
+                                             <p class="etiquetas" style="font-weight:bold; font-size: 16px; float:right;">SOLO APLICA PARA FOX</p>
+                                            <br /><br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="etiquetas" style="text-align:justify; font-size: 13px; font-weight: bold; font-style:italic;">
+                                                
+                                                Señor XXXX lo estamos llamando de claro Colombia, ya que Ud. adquirió con nosotros un servicio de FOX
+                                                recientemente. Durante estos 3 meses Ud. ha disfrutado de un contenido exclusivo de películas y series 
+                                                de temporada sin anuncios comerciales y con la posibilidad de visualizarlo en el momento que desea 
+                                                gracias al servicio de FOX Play.
+                                                <br /><br />
+                                                En el momento en que Ud. adquirió nuestro servicio le dimos 3 meses gratis para que disfrutara de esta 
+                                                programación. En este momento nos estamos comunicando para entregarle una nueva promoción con el fin de 
+                                                que pueda seguir disfrutando de los 9 canales del paquete FOX Premium  a mitad de precio durante 12 meses. 
+                                                Actualmente el servicio tiene un costo de $33.900 pesos mensuales y sobre este valor se le aplicaría un 
+                                                descuento del 50%,  es decir Ud. pagaría solamente $16.950 pesos IVA Incluido por este servicio. 
+                                                <br /><br />
+                                                Este beneficio empezará a aplicar en el momento en que finalicen los 3 meses de prueba es decir el día 
+                                                dd/mm/YYY. De acuerdo con esta información, me gustaría saber si Ud. desea continuar con este servicio de 
+                                                contenido exclusivo teniendo en cuenta que pagará la mitad de precio por un año.
+                                                <br />
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <hr />
                     <asp:UpdatePanel ID="UpdatePanel17" runat="server">
                         <ContentTemplate>
                             <asp:Panel CssClass="panel_informativo" ID="Panel16" runat="server" GroupingText="Árbol de Tipificación">
